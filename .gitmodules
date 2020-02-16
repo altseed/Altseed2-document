@@ -1,0 +1,3 @@
+[submodule "Src"]
+	path = Src
+	url = https://github.com/altseed/altseed2-csharp.git

@@ -1,4 +1,6 @@
-/build
-/source/_build
+Site
+obj
+api/*.yml
+api/*.manifest
 .DS_Store
 .vscode
