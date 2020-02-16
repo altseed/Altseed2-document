@@ -1,4 +1,13 @@
-# This is the **HOMEPAGE**.
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
-## Quick Start Notes:
-1. Add images to the *images* folder if the file is referencing an image.
+# Altseed2
+
+これはトップページ。
+
+- [リファレンス](References/Altseed.yml)
+
+## ソースコード埋め込みの例
+
+[!code-csharp[Main](Samples/Sample.cs)]
+
+## リファレンス参照の例
+
+解説やチュートリアル中に[Engine](References/Altseed.Engine.yml)クラスが云々みたいなリンクをたくさん張っておくと使いやすいドキュメントになりそう。

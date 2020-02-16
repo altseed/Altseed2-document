@@ -6,8 +6,9 @@
 
 - Visual Studio
   - ほかのC#コンパイラでいけるかは不明
+  - Homebrew で入れた Mono はダメとある。
 - [DocFX](https://github.com/dotnet/docfx)
-  - `choco install docfx` するか ↑からバイナリを落としてパスを通す
+  - `choco install docfx` するか Release からバイナリを落として解凍し、パスを通す
 
 # 生成
 
@@ -17,5 +18,3 @@ docfx build
 ```
 
 `docfx --serve` とするとリッチなページがみられる。（CORSに引っかからない）
-
-`Site\Api` 以下にクラス一覧のファイルが生成される

@@ -1,6 +1,6 @@
 Site
 obj
-api/*.yml
-api/*.manifest
+References/*.yml
+References/*.manifest
 .DS_Store
 .vscode

@@ -1,5 +1,7 @@
-- name: Articles
-  href: articles/
-- name: Api Documentation
-  href: api/
-  homepage: api/index.md
+- name: Top
+  href: index.md
+  homepage: index.md
+- name: ほげほげ
+  href: Articles/
+- name: リファレンス
+  href: References/

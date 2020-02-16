@@ -1,3 +1,6 @@
 [submodule "Src"]
 	path = Src
 	url = https://github.com/altseed/altseed2-csharp.git
+[submodule "mathew"]
+	path = mathew
+	url = https://github.com/MathewSachin/docfx-tmpl.git

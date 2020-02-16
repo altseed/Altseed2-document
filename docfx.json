@@ -4,40 +4,40 @@
       "src": [
         {
           "files": [
-            "src/Engine/**.csproj"
+            "Src/Engine/**.csproj"
           ]
         }
       ],
-      "dest": "api",
+      "dest": "References",
+      "filter": "filter.yml",
       "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "disableDefaultFilter": true
     }
   ],
   "build": {
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
-        ]
-      },
-      {
-        "files": [
-          "articles/**.md"
+          "toc.yml",
+          "index.md",
+          "References/**.yml",
+          "References/**.md",
+          "Articles/**.yml",
+          "Articles/**.md"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**"
+          "Images/**"
         ]
       }
     ],
     "overwrite": [
       {
         "files": [
-          "apidoc/**.md"
+          "Overwrite/**.md"
         ],
         "exclude": [
           "obj/**",
@@ -45,11 +45,16 @@
         ]
       }
     ],
+    "globalMetadata": {
+      "_appFooter": "Copyright (c) Altseed 2020.",
+      "_disableContribution": true
+    },
     "dest": "Site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+      "mathew/src"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
