@@ -30,7 +30,9 @@
     "resource": [
       {
         "files": [
-          "Images/**"
+          "Images/**",
+          "Logo.png",
+          "favicon.ico"
         ]
       }
     ],
@@ -47,14 +49,18 @@
     ],
     "globalMetadata": {
       "_appFooter": "Copyright (c) Altseed 2020.",
-      "_disableContribution": true
+      "_disableContribution": true,
+      "_appTitle": "Altseed2",
+      "_enableSearch": true,
+      "_appFaviconPath":"favicon.ico"
     },
     "dest": "Site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "mathew/src"
+      "mathew/src",
+      "TemplateCustomize/"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
