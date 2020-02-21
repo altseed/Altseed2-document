@@ -1,0 +1,29 @@
+
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+<!DOCTYPE html>
+<html>
+  {{>partials/head}}
+
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+
+        {{>partials/navbar}}
+
+        <link rel="stylesheet" href="styles/top.css" />
+        <div id="title">
+            <img src="Logo.png" />
+            <div id="title_texts">
+                <h1>Altseed2</h1>
+                <p>マルチプラットフォームな C# 用ゲームエンジン</p>
+            </div>
+        </div>
+
+        <div id="content">
+            {{{conceptual}}}
+        </div>
+        
+    {{>partials/footer}}
+    </div>
+    {{>partials/scripts}}
+  </body>
+</html>
