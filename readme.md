@@ -12,16 +12,30 @@
 
 # 生成
 
-```
-docfx metadata
-docfx build
-```
-
-`docfx --serve` とするとリッチなページがみられる。（CORSに引っかからない）
+`docfx --serve` 
 
 # 書き方
 
 - 基本的には Markdown。シンタックスについては[ココ](https://github.github.com/gfm/)を参照
 - 一部 DocFX 独自拡張があるのでそれについては[ココ](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html?tabs=tabid-1%2Ctabid-a)
   - ソースコード埋め込みとNOTEくらいか
-  
+
+## 構造について
+```
+- index.md ・・・ トップページ
+- References　・・・ リファレンス（自動生成なので触らない）
+- Samples
+  - *.md ・・・ サンプルに関する文書（書く）
+  - *.cs ・・・ サンプルに埋め込むサンプルコード（書く）
+  - *.png ・・・ サンプルに埋め込む画像（撮るか描く）
+  - toc.yml ・・・ サンプルの目次（書く）
+- Tutorials
+  - *.md ・・・ チュートリアルに関する文書（書く）
+  - *.cs ・・・ チュートリアルに埋め込むサンプルコード（書く）
+  - *.png ・・・ チュートリアルに埋め込む画像（撮るか描く）
+  - toc.yml ・・・ チュートリアルの目次（書く）
+- Site ・・・ 出力先
+```
+
+- toc.yml は新しいファイルを生成したら手動で追記する必要あり（目次に載せないなら書かない）
+- SamplesとTutorials以下に置いたpng画像はコピーされる

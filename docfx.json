@@ -33,6 +33,8 @@
       {
         "files": [
           "Images/**",
+          "Samples/**.png",
+          "Tutorials/**.png",
           "Logo.png",
           "favicon.ico"
         ]
