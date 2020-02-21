@@ -22,8 +22,10 @@
           "index.md",
           "References/**.yml",
           "References/**.md",
-          "Articles/**.yml",
-          "Articles/**.md"
+          "Samples/**.yml",
+          "Samples/**.md",
+          "Tutorials/**.yml",
+          "Tutorials/**.md"
         ]
       }
     ],
@@ -34,6 +36,12 @@
           "Logo.png",
           "favicon.ico"
         ]
+      },
+      {
+        "files": [
+          "top.css"
+        ],
+        "dest": "styles"
       }
     ],
     "overwrite": [
@@ -52,7 +60,7 @@
       "_disableContribution": true,
       "_appTitle": "Altseed2",
       "_enableSearch": true,
-      "_appFaviconPath":"favicon.ico"
+      "_appFaviconPath": "favicon.ico"
     },
     "dest": "Site",
     "globalMetadataFiles": [],

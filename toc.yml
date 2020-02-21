@@ -1,7 +1,6 @@
-- name: Top
-  href: index.md
-  homepage: index.md
-- name: ほげほげ
-  href: Articles/
+- name: チュートリアル
+  href: Tutorials/
+- name: サンプル
+  href: Samples/
 - name: リファレンス
   href: References/

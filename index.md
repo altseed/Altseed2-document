@@ -1,13 +1,16 @@
-# Altseed2
+---
+title: Altseed2
+documentType: index
+---
 
 これはトップページ。
 
-- [リファレンス](References/Altseed.yml)
+# ほげほげ
 
-## ソースコード埋め込みの例
+ここに特徴を書く
 
-[!code-csharp[Main](Samples/Sample.cs)]
+# ほげほげ
 
-## リファレンス参照の例
+ここに特徴を書く
 
-解説やチュートリアル中に[Engine](References/Altseed.Engine.yml)クラスが云々みたいなリンクをたくさん張っておくと使いやすいドキュメントになりそう。
+- [リファレンス](xref:Altseed)

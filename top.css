@@ -1,0 +1,51 @@
+img#logo {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#content {
+    margin: 0 auto;
+    width: 95%;
+    padding-bottom: 60px;
+}
+
+#title {
+    margin: 20px 0;
+    width: 80%;
+    background-color: #84a5ce;
+    filter: drop-shadow(10px 5px 5px rgba(0,0,0,0.6));
+    display: flex;
+}
+
+#title * {
+    color: #ffffff;
+    font-family: "verdana", "serif", "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif";
+}
+
+#title img, #title_texts {
+    display: block;
+}
+
+#title img {
+    margin: 5px 20px;
+    border-radius: 50%;
+    background-color:#FFF;
+}
+
+#title_texts {
+    margin-top: 10px;
+}
+
+#title_texts h1, #title_texts p {
+    display: block;
+    margin: 20px;
+}
+
+#title h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#title p {
+    font-size: 16px;
+}
