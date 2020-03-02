@@ -3,7 +3,9 @@ title: Altseed2
 documentType: index
 ---
 
-# Altseed2 とは
+# ダミー
+
+# Altseed2とは
 
 Altseed2 はグラフィック、サウンド、ジョイスティックなどの機能をまとめたゲーム用ライブラリです。
 
