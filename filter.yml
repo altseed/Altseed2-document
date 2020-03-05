@@ -1,4 +1,21 @@
 apiRules:
-  - exclude:
-      uidRegex: ^Altseed\.Core
-      type: Class
+
+  - exclude: # HogeArray
+      uidRegex: ^Altseed\.(ArrayExtension|IArray`1|.*Array)
+  - exclude: # Registerable
+      uidRegex: ^Altseed\.Registerable(Collection)?
+  - exclude: # 内部用クラス
+      uidRegex: ^Altseed\.(Core|CommandList|Glyph|MemoryHandle|IOHelper|Rendered.*)
+  - exclude: # FontType
+      uidRegex: ^Altseed\.Font\.FontType
+
+  - exclude: # 内部用メンバー
+      uidRegex: ^Altseed\..*\.(#ctor\(Altseed\.MemoryHandle\)|Finalize|TryGetFromCache\(IntPtr\)|GetInstance|selfPtr|cacheRepo|cbg_.*)
+
+  - exclude: # シリアライズ
+      uidRegex: ^Altseed\..*\.(#ctor\(SerializationInfo,StreamingContext\)|ISerializable#GetObjectData.*)
+      type: Method
+
+  - exclude: # privateフィールド
+      uidRegex: ^Altseed\..*\.S?_.*
+      type: Field
