@@ -1,2 +1,4 @@
 - name: サンプルのサンプル（削除予定）
   href: index.md
+- name: 音の再生
+  href: Sound/sound.md
