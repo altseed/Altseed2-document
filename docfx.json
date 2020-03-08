@@ -73,7 +73,9 @@
       "TemplateCustomize/"
     ],
     "postProcessors": [],
-    "xrefService": "https://xref.docs.microsoft.com/query?uid={uid}",
+    "xrefService": [
+      "https://xref.docs.microsoft.com/query?uid={uid}"
+    ],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,

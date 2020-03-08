@@ -1,11 +1,13 @@
 apiRules:
+  - exclude:
+      uidRegex: ^System\.Object
 
   - exclude: # HogeArray
       uidRegex: ^Altseed\.(ArrayExtension|IArray`1|.*Array)
   - exclude: # Registerable
       uidRegex: ^Altseed\.Registerable(Collection)?
   - exclude: # 内部用クラス
-      uidRegex: ^Altseed\.(Core|CommandList|Glyph|MemoryHandle|IOHelper|Rendered.*)
+      uidRegex: ^Altseed\.(Core|CommandList|Window|Glyph|MemoryHandle|IOHelper|Rendered.*|Registerable.*)
   - exclude: # FontType
       uidRegex: ^Altseed\.Font\.FontType
 
@@ -13,9 +15,13 @@ apiRules:
       uidRegex: ^Altseed\..*\.(#ctor\(Altseed\.MemoryHandle\)|Finalize|TryGetFromCache\(IntPtr\)|GetInstance|selfPtr|cacheRepo|cbg_.*)
 
   - exclude: # シリアライズ
-      uidRegex: ^Altseed\..*\.(#ctor\(SerializationInfo,StreamingContext\)|ISerializable#GetObjectData.*)
+      uidRegex: ^Altseed\..*\.(.*\(SerializationInfo,StreamingContext\)|ISerializable#GetObjectData.*)
       type: Method
 
   - exclude: # privateフィールド
       uidRegex: ^Altseed\..*\.S?_.*
       type: Field
+
+  - exclude: # Engineのinternal プロパティ
+      uidRegex: ^Altseed\.Engine\.(Core|Graphics|Renderer|Resources|Window)
+      type: Property

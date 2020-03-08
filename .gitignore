@@ -4,3 +4,4 @@ References/*.yml
 References/*.manifest
 .DS_Store
 .vscode
+/_exported_templates
