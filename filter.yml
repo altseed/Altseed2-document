@@ -1,6 +1,6 @@
 apiRules:
   - exclude:
-      uidRegex: ^System\.Object
+      uidRegex: ^System\.object
 
   - exclude: # HogeArray
       uidRegex: ^Altseed\.(ArrayExtension|IArray`1|.*Array)
