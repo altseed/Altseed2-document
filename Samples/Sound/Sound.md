@@ -52,12 +52,12 @@ OGG等のフォーマットでは、音のデータが圧縮された状態で�
 
 ### 効果音の再生
 
-[!code-csharp[Main](SE.cs)]
+[!code-csharp[Main](../../Src/Samples/Sound/SE.cs)]
 
 ### BGMの再生
 
-[!code-csharp[Main](BGM.cs)]
+[!code-csharp[Main](../../Src/Samples/Sound/BGM.cs)]
 
 ### BGMのループ再生
 
-[!code-csharp[Main](LoopingBGM.cs)]
+[!code-csharp[Main](../../Src/Samples/Sound/LoopingBGM.cs)]
