@@ -24,8 +24,8 @@
                     "index.md",
                     "References/**.yml",
                     "References/**.md",
-                    "Samples/**.yml",
-                    "Samples/**.md",
+                    "Manual/**.yml",
+                    "Manual/**.md",
                     "Tutorials/**.yml",
                     "Tutorials/**.md"
                 ]
@@ -35,7 +35,7 @@
             {
                 "files": [
                     "Images/**",
-                    "Samples/**.png",
+                    "Manual/**.png",
                     "Tutorials/**.png",
                     "Logo.png",
                     "favicon.ico"

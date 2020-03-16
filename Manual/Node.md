@@ -1,10 +1,10 @@
+
 # ノード
 
-Altseed2では、ゲームに登場する*キャラクター等のオブジェクト*、及び*オブジェクトが持つ機能*等をノードとして管理します。  
-例として、ゲームに画像を表示する際には、描画機能を持ったノード([SpriteNode](xref:Altseed.SpriteNode))をエンジンに追加します。
+Altseed2では、ゲームに登場する*キャラクター等のオブジェクト*、及び*オブジェクトが持つ機能*等をノードとして管理します。
+例えばゲームに画像を表示する際には、描画機能を持ったノード([SpriteNode](xref:Altseed.SpriteNode))をエンジンに追加します。
 
-ノードは親子関係の階層構造を持ちます。  
-また、ノードはエンジンに実装されているものを使うだけでなく、独自に継承・拡張して利用することができます。
+ノードは親子関係の階層構造を持ちます。また、ノードはエンジンに実装されているものを使うだけでなく、独自に継承・拡張して利用することができます。
 
 > [!NOTE]
 > 初代Altseedにおけるシーンやレイヤーはノード機能にまとめられました。
@@ -15,16 +15,16 @@ Altseed2では、ゲームに登場する*キャラクター等のオブジェ�
 > 便宜上ノードの追加・削除という表現をしていますが、ノードインスタンスの作成・削除とは直接関係が有りません。
 > 必要に応じて、登録・登録解除と読み替えてください。
 
-
 ## [Node](xref:Altseed.Node)
 
-[Node](xref:Altseed.Node)は全てのノードの基本です。全てのノードはこのNodeを継承する必要があります（もちろんSpriteNode等のNodeを継承したクラスをさらに継承しても構いません）。  
+[Node](xref:Altseed.Node) は全てのノードの基本です。全てのノードはこのNodeを継承する必要があります（もちろん [SpriteNode](xref:Altseed.SpriteNode) 等のNodeを継承したクラスをさらに継承しても構いません）。  
 使い道は主に以下の二つです。
+
 - ノードを自作する場合に、継承して使う。
 - 複数のノードをまとめて管理したい場合に、親ノードとして利用する。
 
-エンジンへの追加は[Engine.AddNode](xref:Altseed.Engine.AddNode)メソッドを使います。逆に削除したい場合は、[Engine.RemoveNode](xref:Altseed.Engine.RemoveNode)メソッドを使います。  
-親子関係の追加・削除も同様に、[AddChildNode](xref:Altseed.Node.AddChildNode)メソッド、[RemoveChildNode](xref:Altseed.Node.RemoveChildNode)メソッドを使います。
+エンジンへの追加は[Engine.AddNode](xref:Altseed.Engine.AddNode(Altseed.Node))メソッドを使います。逆に削除したい場合は、[Engine.RemoveNode](xref:Altseed.Engine.RemoveNode(Altseed.Node))メソッドを使います。  
+親子関係の追加・削除も同様に、[AddChildNode](xref:Altseed.Node.AddChildNode(Altseed.Node))メソッド、[RemoveChildNode](xref:Altseed.Node.RemoveChildNode(Altseed.Node))メソッドを使います。
 
 > [!IMPORTANT]
 > ノードは作成だけしても、エンジンに登録されていなければ**更新されません**。  
@@ -32,6 +32,8 @@ Altseed2では、ゲームに登場する*キャラクター等のオブジェ�
 
 > [!NOTE]
 > Nodeを新たに追加しても、親子構造が反映されるのは次の更新処理時（＝1フレーム後）になります。
+
+
 
 ## サンプル
 

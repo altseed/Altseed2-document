@@ -26,6 +26,10 @@ h5 {
     border-bottom: 1px solid #ddd !important;
 }
 
+.alert h5{
+    border-bottom: 0 !important;
+}
+
 table.member-table {
     table-layout: fixed;
     border: 0 !important;

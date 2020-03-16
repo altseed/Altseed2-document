@@ -8,8 +8,8 @@
 
 * Altseed2 の初期化・更新処理・終了処理
 * [Node](xref:Altseed.Node) の登録・削除・更新
-
-<!-- TODO:残り書く -->
+* 各モジュール
+  * [Sound](xref:Altseed.SoundMixer)：サウンドの再生
 
 
 ## 基本的な実行手順
@@ -22,17 +22,9 @@ Altseed2 を使用するプログラムの基本構造は次のようになり�
 > [Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration))、[Terminate](xref:Altseed.Engine.Terminate)、[DoEvents](xref:Altseed.Engine.DoEvents)、[Update](xref:Altseed.Engine.Update)のメソッドはこのサンプルのように必ず使用します。  
 > また Altseed2 のすべての機能は [Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration)) してから [Terminate](xref:Altseed.Engine.Terminate) するまでの間に実行されるようにしてください。[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration)) の前や、[Terminate](xref:Altseed.Engine.Terminate) の後で、Altseed2 の機能を使用すると予期せぬエラーが発生することがあります。
 
-
 ## [Configuration](xref:Altseed.Configuration) について
 
-Altseed2 の一部機能は、初期化時に [Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration)) の引数として渡す　[Configuration](xref:Altseed.Configuration) を用いて設定します。 [Configuration](xref:Altseed.Configuration) を用いて行う設定の内容については [Configuration のリファレンス](xref:Altseed.Configuration) をご覧ください。
-
-## Node
-
-Altseed2 では [Node](xref:Altseed.Node) を [Engine](xref:Altseed.Engine) に登録することにより、画面に描画されたり、そのふるまいを実行したりすることができます。
-
-<!-- TODO:残り書く -->
-
+Altseed2 の一部機能は、初期化時に [Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration)) の引数として渡す　[Configuration](xref:Altseed.Configuration) を用いて設定します。 設定項目の詳細については [Configuration](xref:Altseed.Configuration) のリファレンス をご覧ください。
 
 ## ポーズ（一時停止）
 
