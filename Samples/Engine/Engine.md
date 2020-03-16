@@ -6,8 +6,8 @@
 
 [Engine](xref:Altseed.Engine) は次の機能を提供します。
 
-* Altseed2 の初期化・更新処理・終了処理（[基本的な実行手順](#基本的な実行手順)を参照）
-* [Node](xref:Altseed.Node) の登録・削除・更新（[Node](#Node)を参照）
+* Altseed2 の初期化・更新処理・終了処理
+* [Node](xref:Altseed.Node) の登録・削除・更新
 
 <!-- TODO:残り書く -->
 
@@ -16,7 +16,7 @@
 
 Altseed2 を使用するプログラムの基本構造は次のようになります。
 
-[!code-csharp[Main](Empty.cs)]
+[!code-csharp[Main](../../Src/Samples/Engine/Empty.cs)]
 
 > [!CAUTION]
 > [Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration))、[Terminate](xref:Altseed.Engine.Terminate)、[DoEvents](xref:Altseed.Engine.DoEvents)、[Update](xref:Altseed.Engine.Update)のメソッドはこのサンプルのように必ず使用します。  

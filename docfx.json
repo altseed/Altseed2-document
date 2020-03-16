@@ -1,85 +1,88 @@
 {
-  "metadata": [
-    {
-      "src": [
+    "metadata": [
         {
-          "files": [
-            "Src/Engine/**.csproj"
-          ]
+            "src": [
+                {
+                    "files": [
+                        "Src/Engine/**.csproj"
+                    ]
+                }
+            ],
+            "dest": "References",
+            "filter": "filter.yml",
+            "disableDefaultFilter": true,
+            "properties": {
+                "TargetFramework": "netstandard2.1"
+            }
         }
-      ],
-      "dest": "References",
-      "filter": "filter.yml",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": true
+    ],
+    "build": {
+        "content": [
+            {
+                "files": [
+                    "toc.yml",
+                    "index.md",
+                    "References/**.yml",
+                    "References/**.md",
+                    "Samples/**.yml",
+                    "Samples/**.md",
+                    "Tutorials/**.yml",
+                    "Tutorials/**.md"
+                ]
+            }
+        ],
+        "resource": [
+            {
+                "files": [
+                    "Images/**",
+                    "Samples/**.png",
+                    "Tutorials/**.png",
+                    "Logo.png",
+                    "favicon.ico"
+                ]
+            },
+            {
+                "src": "Style",
+                "files": [
+                    "*.css"
+                ],
+                "dest": "styles"
+            }
+        ],
+        "overwrite": [
+            {
+                "files": [
+                    "Overwrite/**.md"
+                ],
+                "exclude": [
+                    "obj/**",
+                    "Site/**"
+                ]
+            }
+        ],
+        "globalMetadata": {
+            "_appFooter": "Copyright (c) Altseed 2020.",
+            "_disableContribution": true,
+            "_appTitle": "Altseed2",
+            "_enableSearch": true,
+            "_appFaviconPath": "favicon.ico"
+        },
+        "dest": "Site",
+        "globalMetadataFiles": [],
+        "fileMetadataFiles": [],
+        "template": [
+            "default",
+            "mathew/src",
+            "TemplateCustomize/"
+        ],
+        "postProcessors": [],
+        "xrefService": [
+            "https://xref.docs.microsoft.com/query?uid={uid}"
+        ],
+        "markdownEngineName": "markdig",
+        "noLangKeyword": false,
+        "keepFileLink": false,
+        "cleanupCacheHistory": false,
+        "disableGitFeatures": false
     }
-  ],
-  "build": {
-    "content": [
-      {
-        "files": [
-          "toc.yml",
-          "index.md",
-          "References/**.yml",
-          "References/**.md",
-          "Samples/**.yml",
-          "Samples/**.md",
-          "Tutorials/**.yml",
-          "Tutorials/**.md"
-        ]
-      }
-    ],
-    "resource": [
-      {
-        "files": [
-          "Images/**",
-          "Samples/**.png",
-          "Tutorials/**.png",
-          "Logo.png",
-          "favicon.ico"
-        ]
-      },
-      {
-        "files": [
-          "top.css"
-        ],
-        "dest": "styles"
-      }
-    ],
-    "overwrite": [
-      {
-        "files": [
-          "Overwrite/**.md"
-        ],
-        "exclude": [
-          "obj/**",
-          "Site/**"
-        ]
-      }
-    ],
-    "globalMetadata": {
-      "_appFooter": "Copyright (c) Altseed 2020.",
-      "_disableContribution": true,
-      "_appTitle": "Altseed2",
-      "_enableSearch": true,
-      "_appFaviconPath": "favicon.ico"
-    },
-    "dest": "Site",
-    "globalMetadataFiles": [],
-    "fileMetadataFiles": [],
-    "template": [
-      "default",
-      "mathew/src",
-      "TemplateCustomize/"
-    ],
-    "postProcessors": [],
-    "xrefService": [
-      "https://xref.docs.microsoft.com/query?uid={uid}"
-    ],
-    "markdownEngineName": "markdig",
-    "noLangKeyword": false,
-    "keepFileLink": false,
-    "cleanupCacheHistory": false,
-    "disableGitFeatures": false
-  }
 }
