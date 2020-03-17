@@ -2,5 +2,9 @@
   href: index.md
 - name: エンジン
   href: Engine/Engine.md
+- name: ノード
+  href: Node.md
 - name: サウンド
-  href: Sound/sound.md
+  href: Sound/Sound.md
+- name: ログ
+  href: Log/Log.md

@@ -1,6 +1,6 @@
 - name: チュートリアル
   href: Tutorials/
-- name: サンプル
-  href: Samples/
+- name: 機能解説
+  href: Manual/
 - name: リファレンス
   href: References/

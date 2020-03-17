@@ -5,9 +5,9 @@ apiRules:
   - exclude: # HogeArray
       uidRegex: ^Altseed\.(ArrayExtension|IArray`1|.*Array)
   - exclude: # Registerable
-      uidRegex: ^Altseed\.Registerable(Collection)?
+      uidRegex: ^Altseed\.(Registerable(Collection)?|Registerable.*)
   - exclude: # 内部用クラス
-      uidRegex: ^Altseed\.(Core|CommandList|Window|Graphics|RootNode|Glyph|MemoryHandle|Resource(s|Type)|IOHelper|Rendered.*|Registerable.*)
+      uidRegex: ^Altseed\.(Core|CommandList|Window|Graphics|RootNode|Glyph|MemoryHandle|Resource(s|Type)|IOHelper|Renderer|Rendered.*|Engine\.DrawnNodeSorter)
   - exclude: # FontType
       uidRegex: ^Altseed\.Font\.FontType
 
@@ -15,7 +15,7 @@ apiRules:
       uidRegex: ^Altseed\..*\.(#ctor\(Altseed\.MemoryHandle\)|Finalize|TryGetFromCache\(IntPtr\)|GetInstance|selfPtr|cacheRepo|cbg_.*)
 
   - exclude: # シリアライズ
-      uidRegex: ^Altseed\..*\.(.*\(SerializationInfo,StreamingContext\)|ISerializable#GetObjectData.*)
+      uidRegex: ^Altseed\..*\.(.*\(SerializationInfo,StreamingContext\)|ISerializable#GetObjectData.*|.*OnDeserialization)
       type: Method
 
   - exclude: # privateフィールド
