@@ -46,3 +46,13 @@
 
 読み込んだ内容は、[TempBuffer](xref:Altseed.StreamFile.TempBuffer)で、Byte配列として得られます。
 また、現在読み込まれているデータのサイズは、[TempBufferSize](xref:Altseed.StreamFile.TempBufferSize)で得られます。  
+
+## サンプル
+
+### StaticFileによるファイル読み込み
+
+[!code-csharp[Main](../../Src/Samples/File/StaticFile.cs)]
+
+### StreamFileによるファイル読み込み
+
+[!code-csharp[Main](../../Src/Samples/File/StreamFile.cs)]
