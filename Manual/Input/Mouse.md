@@ -6,10 +6,10 @@
 ## [Mouse](xref:Altseed.Mouse)
 
 [Mouse](xref:Altseed.Mouse)では次の機能を提供します。
-* マウスカーソルの座標を取得・設定([カーソル座標](#カーソル座標)を参照)
-* マウスボタンの状態を取得([マウスボタン](#マウスボタン)を参照)
-* マウスホイールの回転量を取得を取得([マウスホイール](#マウスホイール)を参照)
-* カーソルモードの取得または設定([カーソルモード](#カーソルモード)を参照)
+* マウスカーソルの座標を取得・設定
+* マウスボタンの状態を取得
+* マウスホイールの回転量を取得を取得
+* カーソルモードの取得または設定
 
 ## 基本的な呼び出し手順
 
@@ -24,7 +24,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 サンプル
 
-[!code-csharp[Main](Mouse.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/Mouse.cs)]
 
 
 カーソルの座標の取得・設定は以下のプロパティを通して行います。
@@ -38,7 +38,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 サンプル
 
-[!code-csharp[Main](Mouse.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/Mouse.cs)]
 
 スティックの取得には以下のメソッドを用います。
 * [GetMouseButtonState](xref:Altseed.Mouse.GetMouseButtonState(Altseed.MouseButtons))
@@ -51,12 +51,12 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 サンプル
 
-[!code-csharp[Main](Mouse.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/Mouse.cs)]
 
 マウスホイールの回転量を取得するには以下のプロパティを使用します。
 * [Wheel](xref:Altseed.Mouse.Wheel)
 
-戻り値は-1~1の範囲の[float](xref:System.Float)です。
+戻り値は-1~1の範囲の[float](xref:System.Single)です。
 
 
 ### カーソルモード
@@ -65,10 +65,3 @@ CursorModeを取得・設定するには、以下のプロパティを使用し�
 * [CursorMode](xref:Altseed.Mouse.CursorMode)
 
 カーソルモードの設定は[CursorMode](xref:Altseed.CursorMode)の中から行ってください。
-
-#### CursorMode
-* Normal  ...  デフォルト値
-* Hidden  ...  カーソル非表示の状態
-* Disable ...  カーソルの入力が無効の状態。カーソルがウィンドウ中央にロックされます。
-
-

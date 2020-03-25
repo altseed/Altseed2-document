@@ -8,18 +8,18 @@ JoyCon(R),  JoyCon(L)
 ## [Joystick](xref:Altseed.Joystick)
 
 [Joystick](xref:Altseed.Joystick)では次の機能を提供します。
-* ジョイスティックコントローラーの存在を確認([存在を確認](#存在を確認)を参照)
-* ジョイスティックコントローラーのプロダクト名の取得([プロダクト名の取得](#プロダクト名の取得)を参照)
-* ジョイスティックの種類を取得([ジョイスティックの種類を取得](#ジョイスティックの種類を取得)を参照)
-* ジョイスティックコントローラーのボタン入力の取得（[ボタン入力の取得](#ボタン入力の取得)を参照）
-* ジョイスティックコントローラーのスティック入力の取得([スティック入力の取得](#スティック入力の取得)を参照）
-* ジョイスティックコントローラーの振動（[振動](#振動)を参照）
+* ジョイスティックコントローラーの存在を確認
+* ジョイスティックコントローラーのプロダクト名の取得
+* ジョイスティックの種類を取得
+* ジョイスティックコントローラーのボタン入力の取得
+* ジョイスティックコントローラーのスティック入力の取得
+* ジョイスティックコントローラーの振動
 
 ## 基本的な呼び出し手順
 
 Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration))を呼び出した後、Engine.Joystick という形でJoystickの各種メソッドを呼び出してください。
 > [!NOTE]
-> [JoystickButtonTypes](xref:Altseed.JoystickButtonTypes)や[ButtonState](xref:Altseed.ButtonState)は
+> [JoystickButtonType](xref:Altseed.JoystickButtonType)や[ButtonState](xref:Altseed.ButtonState)は
 > Joystickには含まれていません。
 
 
@@ -28,7 +28,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 サンプル
 
-[!code-csharp[Main](Button.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/Button.cs)]
 
 ボタンの取得は以下のメソッドを用いて行います。
 * [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonTypes))
@@ -51,7 +51,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 ## スティック入力の取得
 
 サンプル
-[!code-csharp[Main](Axis.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/Axis.cs)]
 
 スティックの取得には以下のメソッドを用います。
 * [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,System.JoystickAxisType))
@@ -76,10 +76,10 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 ### 振動
 
 サンプル
-[!code-csharp[Main](Empty.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/Empty.cs)]
 
 ジョイスティックコントローラーを振動させるには以下のメソッドを使用します。
-* [Vibrate](xref:Altseed.Joystick.Vibrate(System.Int32,System.Float,System.Float))
+* [Vibrate](xref:Altseed.Joystick.Vibrate(System.Int32,System.Single,System.Single))
 
 第1引数は振動させたいジョイスティックコントローラーのインデックスです。
 第2引数では振動の周波数を指定します。(40.0 ~ 1252.0)
@@ -119,4 +119,4 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 * [GetJoystickName](xref:Altseed.Joystick.GetJoystickName(System.Int32))
 
 認識されているか確認したいコントローラーのインデックスを指定してください。
-戻り値は bool です。
+戻り値は bool[xref:Sysytem.Boolean] です。

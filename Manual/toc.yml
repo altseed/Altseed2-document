@@ -10,3 +10,9 @@
   href: Log/Log.md
 - name: ファイル
   href: File/File.md
+- name: ジョイスティック
+  href: Input/Joystick.md
+- name: キーボード
+  href: Input/Keyboard.md
+- name: マウス
+  href: Input/Mouse.md

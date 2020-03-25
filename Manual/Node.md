@@ -39,4 +39,4 @@ Altseed2では、ゲームに登場する*キャラクター等のオブジェ�
 
 ### Nodeの作成と親子関係の構築
 
-[!code-csharp[Main](CreatingNode.cs)]
+[!code-csharp[Main](../../Src/Samples/CreatingNode.cs)]

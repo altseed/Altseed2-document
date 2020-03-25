@@ -6,7 +6,7 @@
 ## [Keyboard](xref:Altseed.Keyboard)
 
 [Keyboard](xref:Altseed.Keyboard)では次の機能を提供します。
-* キーボード入力の取得([キー入力](#キー入力)を参照))
+* キーボード入力の取得
 
 ## 基本的な呼び出し手順
 
@@ -21,7 +21,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 サンプル
 
-[!code-csharp[Main](Keyboard.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/Keyboard.cs)]
 
 
 カーソルの座標の取得・設定は以下のプロパティを通して行います。
