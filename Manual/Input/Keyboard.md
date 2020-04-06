@@ -11,9 +11,7 @@
 ## 基本的な呼び出し手順
 
 Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration))を呼び出した後、Engine.Keyboard という形でKeyboardの各種メソッドを呼び出してください。
-> [!NOTE]
-> [MouseButtons](xref:Altseed.MouseButtons)や[ButtonState](xref:Altseed.ButtonState)は
-> Mouseには含まれていません。
+
 
 
 

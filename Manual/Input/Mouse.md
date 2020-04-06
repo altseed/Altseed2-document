@@ -65,3 +65,16 @@ CursorModeを取得・設定するには、以下のプロパティを使用し�
 * [CursorMode](xref:Altseed.Mouse.CursorMode)
 
 カーソルモードの設定は[CursorMode](xref:Altseed.CursorMode)の中から行ってください。
+
+#### CursorMode
+* Normal  ...  デフォルト値
+* Hidden  ...  カーソル非表示の状態
+* Disable ...  カーソルの入力が無効の状態。カーソルがウィンドウ中央にロックされます。
+
+
+## カーソル画像
+
+カーソル画像を指定するには、以下のメソッドを使います。
+* [SetCursorImage](xref:Altseed.Mouse.SetCursorImage(Altseed.Cursor))
+
+第一引数に、設定したい画像を読み込んだ[カーソル](xref:Altseed.Cursor)オブジェクトを渡します。
