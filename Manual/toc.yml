@@ -18,3 +18,5 @@
   href: Input/Keyboard.md
 - name: マウス
   href: Input/Mouse.md
+- name: カーソル
+  href: Input/Cursor.md

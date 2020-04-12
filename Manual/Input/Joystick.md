@@ -43,7 +43,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 ### [GetButtonStateByIndex](xref:Altseed.Joystick.GetButtonStateByIndex(System.Int32,System.Int32))
 第２引数にボタンのインデックスを指定します。
-> [!WARNING]
+> [!IMPORTANT]
 > ジョイスティックコントローラーのボタンとインデックスの対応はコントローラーごとに異なります。特定のボタンを取得したい場合は[GetAxisStateByIndex](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonTypes))を使うことをおすすめします。
 
 
@@ -73,7 +73,8 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 
 
-### 振動
+
+## 振動
 
 サンプル
 [!code-csharp[Main](../../Src/Samples/Input/Empty.cs)]
@@ -86,7 +87,8 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 第3引数では振動の振幅を指定します。(0.0 ~ 1.0)
 
 一度このメソッドを実行すると、5秒程度コントローラーが振動します。
-振動をキャンセルしたい場合は振幅に0を指定してこのメソッドを実行してください。
+> [!TIP]
+> 振動をキャンセルしたい場合は、振幅に0を指定してこのメソッドを実行してください。
 
 [!CAUTION] 
 * 周波数は 40.0 から 1252.0 の間に収めてください。これを超える範囲の値は、前述の範囲内の一番近い値に書き換えられます。
@@ -95,7 +97,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 
 
-### ジョイスティックの種類を取得
+## ジョイスティックの種類を取得
 
 ジョイスティックの種類を取得するには、以下のメソッドを使用します。
 * [GetJoystickType](xref:Altseed.Joystick.GetJoystickType(System.Int32))
@@ -105,7 +107,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 
 
-### プロダクト名の取得
+## プロダクト名の取得
 
 プロダクト名の取得を取得するには、以下のメソッドを使用します。
 * [GetJoystickName](xref:Altseed.Joystick.GetJoystickName(System.Int32))
@@ -113,7 +115,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 プロダクト名を取得したいコントローラーのインデックスを指定してください。
 戻り値は System.String です。
 
-### 存在を確認
+## 存在を確認
 
 ジョイスティックコントローラーがAltseedで認識されているか確認するには以下のメソッドを使用します。
 * [GetJoystickName](xref:Altseed.Joystick.GetJoystickName(System.Int32))
