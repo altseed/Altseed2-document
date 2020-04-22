@@ -1,2 +1,24 @@
-- name: Index
-  href: Index.md
+- name: "チュートリアル"
+  href: index.md
+- name: "0章 : Altseedを初めよう"
+  href: Chap0/index.md
+- name: "1章 : ウィンドウを表示してみよう"
+  href: Chap1/index.md
+- name: "2章 : キャラクターを描画してみよう"
+  href: Chap2/index.md
+- name: "3章 : キャラクターに弾を撃たせてみよう"
+  href: Chap3/index.md
+- name: "4章 : クラスを自分で設計してみよう"
+  href: Chap4/index.md
+- name: "5章 : 敵・敵のショットを表示してみよう"
+  href: Chap5/index.md
+- name: "6章 : 当たり判定の機能を使ってみよう"
+  href: Chap6/index.md
+- name: "7章 : 音を鳴らしてみよう"
+  href: Chap7/index.md
+- name: "8章 : 得点を表示してみよう"
+  href: Chap8/index.md
+- name: "9章 : ゲームオーバー画面を作ってみよう"
+  href: Chap9/index.md
+- name: "10章 : いざ、公開準備"
+  href: Chap10/index.md
