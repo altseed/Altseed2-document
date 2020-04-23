@@ -27,6 +27,6 @@ jobs:
       continue-on-error: true
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: test
-        path: ./
+        name: Site
+        path: ./Site/
 
