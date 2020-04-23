@@ -9,19 +9,19 @@ on:
 jobs:
 
   doc:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     name: Doc
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
     - name: Update Submodules
       run: |
+        choco install docfx
         git submodule update --init
 
-    - uses: nikeee/docfx-action@master
-      name: Build Documentation
-      with:
-        args: docfx.json
+    - name: Build
+      run: |
+        docfx --serve
 
     - name: Upload artifact
       continue-on-error: true
