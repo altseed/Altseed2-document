@@ -71,7 +71,7 @@
         "globalMetadataFiles": [],
         "fileMetadataFiles": [],
         "template": [
-            "default",
+            "statictoc",
             "mathew/src",
             "TemplateCustomize/"
         ],
