@@ -1,0 +1,30 @@
+name: Altseed
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  doc:
+    runs-on: ubuntu-latest
+    name: Doc
+    steps:
+    - uses: actions/checkout@v1
+      run: |
+        git submodule update --init
+
+    - uses: nikeee/docfx-action@master
+      name: Build Documentation
+      with:
+        args: docfx.json
+
+    - name: Upload artifact
+      continue-on-error: true
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: test
+        path: ./
+
