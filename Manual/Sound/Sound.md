@@ -48,6 +48,15 @@ OGG等のフォーマットでは、音のデータが圧縮された状態で�
 > [!TIP]
 > BGMなどを除き、再生中に停止などの操作を行うことは稀です。そのため再生の度に、再生情報を含むインスタンスを生成することは無駄が大きいため、都度IDを用いて操作する仕組みになっています。
 
+### スペクトル情報の取得
+
+[SoundMixer](xref:Altseed.SoundMixer)クラスにはメディアアートのための機能として、スペクトルアナライザが実装されています。[GetSpectrumData](xref:Altseed.SoundMixer.GetSpectrumData(Altseed.SoundMixer))メソッドを使用することで、再生中の音声のスペクトル情報を取得し、それを使って独自のサウンドビジュアライザを作ることができます。
+
+> [!TIP]
+> 音は波としての性質を持ちます。スペクトルアナライザでは、その波のデータに対して、どの周波数の成分の波形がどれくらいの量含まれているかを解析します。解析する手法としてフーリエ変換が用いられています。
+
+![spectrum](spectrum.png)
+
 ## サンプル
 
 ### 効果音の再生
@@ -61,3 +70,7 @@ OGG等のフォーマットでは、音のデータが圧縮された状態で�
 ### BGMのループ再生
 
 [!code-csharp[Main](../../Src/Samples/Sound/LoopingBGM.cs)]
+
+### スペクトル情報の取得
+
+[!code-csharp[Main](../../Src/Samples/Sound/Spectrum.cs)]
