@@ -13,6 +13,8 @@ jobs:
     name: Doc
     steps:
     - uses: actions/checkout@v1
+
+	- name: Update Submodules
       run: |
         git submodule update --init
 
