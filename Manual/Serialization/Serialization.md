@@ -36,11 +36,11 @@ Altseed2では一部を除き，殆どのクラス・構造体がバイナリシ
 
 ## サンプル(シリアライズの手順)
 
-シリアライズには [`System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`](https://docs.microsoft.com/ja-jp/dotnet/api/system.runtime.serialization.formatters.binary.binaryformatter?view=netframework-4.8) を使用します。  
+シリアライズには [`System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`](https://docs.microsoft.com/ja-jp/dotnet/api/system.runtime.serialization.formatters.binary.binaryformatter?view=netstandard-2.1) を使用します。  
 以下に，[StaticFile](xref:Altseed.StaticFile)のシリアライズを例にシリアライズ/デシリアライズの手順を示します。
 
 
-[!code-csharp[Sample](../../Src/Samples/File/Serialization.cs)]
+[!code-csharp[Sample](../../Src/Samples/Serialization/Serialization.cs)]
 
 結果は以下のようになります。  
 
