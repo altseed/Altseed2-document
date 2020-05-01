@@ -4,7 +4,8 @@ namespace Tutorial
     {
         [STAThread]
         static void Main(string[] args)
-        {            // エンジンを初期化
+        {
+            // エンジンを初期化
             Engine.Initialize("Tutorial", 960, 720);
 
 +           // タイトル画面をエンジンに追加
