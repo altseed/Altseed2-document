@@ -64,6 +64,16 @@ namespace Tutorial
             // キャラクターノードにプレイヤーを追加
             characterNode.AddChildNode(player);
 
+            ------removed start-----
+            characterNode.AddChildNode(new StraightShotEnemy(player, new Vector2F(600, 620)));
+
+            characterNode.AddChildNode(new RadialShotEnemy(player, new Vector2F(400, 160), 3));
+
+            characterNode.AddChildNode(new StraightShotEnemy(player, new Vector2F(600, 620));
+
+            characterNode.AddChildNode(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
+            ------removed end-----
+
             ------added start------
 
             // 全てのウェーブを初期化する

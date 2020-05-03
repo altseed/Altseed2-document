@@ -108,8 +108,11 @@ Waveに敵を追加します。
 [!code-diff[Main](RadialShotEnemy.cs)]
 
 プレイヤーを追いかける敵です。
+プレイヤーへの参照を使用し、プレイヤーのほうに近づきます。
 
 [!code-diff[Main](ChaseEnemy.cs)]
+
+それぞれの敵を追加します。
 
 [!code-diff[Main](MainNode_3.cs)]
 
