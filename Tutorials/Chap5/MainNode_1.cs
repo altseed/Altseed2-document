@@ -1,7 +1,5 @@
 ﻿using Altseed;
-------added start------
-using System.Collections.Generic;
-------added end------
++using System.Collections.Generic;
 
 namespace Tutorial
 {
@@ -42,12 +40,8 @@ namespace Tutorial
             // キャラクターノードにプレイヤーを追加
             characterNode.AddChildNode(player);
 
-            ------added start------
-
-            // 敵を追加する。
-            characterNode.AddChildNode(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
-
-            ------added end------
++            // 敵を追加する。
++            characterNode.AddChildNode(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
         }
     }
 }

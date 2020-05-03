@@ -1,6 +1,4 @@
-﻿------added start------
-
-using Altseed;
+﻿using Altseed;
 using System;
 
 namespace Tutorial
@@ -57,5 +55,3 @@ namespace Tutorial
         }
     }
 }
-
-------added end------

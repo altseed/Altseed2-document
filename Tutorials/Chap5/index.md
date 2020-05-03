@@ -66,6 +66,8 @@ Meteor.csを追加し、下記のコードを記述します。
 敵のクラスを用意しただけでは、敵は出現してくれません。
 そこでMainNodeを編集して、敵が出現するようにします。
 
+- MainNode.cs
+
 [!code-diff[Main](MainNode_1.cs)]
 
 ## 弾を打つ敵
@@ -76,13 +78,19 @@ Meteor.csを追加し、下記のコードを記述します。
 
 前章で作成した弾クラスのコンストラクタを消します。
 
+- Bullet.cs
+
 [!code-diff[Main](Bullet.cs)]
 
 それに合わせて、プレイヤーのコードも変更します。
 プレイヤーの弾クラスは弾クラスを継承するようにします。
 それに合わせて、プレイヤーはプレイヤーの弾クラスを発射するようにします。
 
+- Player.cs
+
 [!code-diff[Main](Player.cs)]
+
+- PlayerBullet.cs
 
 [!code-diff[Main](PlayerBullet.cs)]
 
@@ -90,12 +98,18 @@ Meteor.csを追加し、下記のコードを記述します。
 基本的には味方が弾を打つ処理と、敵の移動を組み合わせたものになります。
 それぞれ、敵の弾クラスは弾クラスを継承し、弾を打つ敵クラスは敵クラスを継承します。
 
+- StraightShotEnemy.cs
+
 [!code-diff[Main](StraightShotEnemy.cs)]
+
+- EnemyBullet.cs
 
 [!code-diff[Main](EnemyBullet.cs)]
 
 この敵も出現するようにしましょう。
 Waveに敵を追加します。
+
+- MainNode.cs
 
 [!code-diff[Main](MainNode_2.cs)]
 
@@ -104,11 +118,16 @@ Waveに敵を追加します。
 他の敵もそれぞれ実装します。
 
 複数方向に打てる敵です。
+経過時間を計測し、経過時間ごとに異なる方向に弾を打ちます。
+
+- RadialShotEnemy.cs
 
 [!code-diff[Main](RadialShotEnemy.cs)]
 
 プレイヤーを追いかける敵です。
 プレイヤーへの参照を使用し、プレイヤーのほうに近づきます。
+
+- ChaseEnemy.cs
 
 [!code-diff[Main](ChaseEnemy.cs)]
 
