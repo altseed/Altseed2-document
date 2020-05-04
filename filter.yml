@@ -7,9 +7,13 @@ apiRules:
   - exclude: # Registerable
       uidRegex: ^Altseed\.(Registerable(Collection)?|Registerable.*)
   - exclude: # 内部用クラス
-      uidRegex: ^Altseed\.(Core|CommandList|Window|Graphics|RootNode|Glyph|MemoryHandle|Resource(s|Type)|IOHelper|Renderer|Rendered.*|Engine\.DrawnNodeSorter)
+      uidRegex: ^Altseed\.(Core|CommandList|Window|Graphics|RootNode|Glyph|MemoryHandle|Resource(s|Type)|IOHelper|Renderer|Rendered.*|Engine\.DrawnNodeSorter|CullingSystem|SerializationHelper|RenderTextureCache)
   - exclude: # FontType
       uidRegex: ^Altseed\.Font\.FontType
+  - exclude: # AltseedContext.Entry
+      uidRegex: ^Altseed\.AltseedContext\.Entry
+  - exclude: # CollisionCollection
+      uidRegex: ^Altseed\.CollisionCollection
 
   - exclude: # 内部用メンバー
       uidRegex: ^Altseed\..*\.(#ctor\(Altseed\.MemoryHandle\)|Finalize|TryGetFromCache\(IntPtr\)|GetInstance|selfPtr|cacheRepo|cbg_.*)
