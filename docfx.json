@@ -37,6 +37,7 @@
                     "Images/**",
                     "Manual/**.png",
                     "Tutorials/**.png",
+                    "Tutorials/**.gif",
                     "Logo.png",
                     "favicon.ico"
                 ]
