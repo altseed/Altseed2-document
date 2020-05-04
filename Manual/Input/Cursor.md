@@ -3,16 +3,10 @@
 [Cursor](xref:Altseed.Cursor) は カーソルの画像を設定するためのクラスです。
 
 
-## [Cursor](xref:Altseed.Cursor)
-
-[Cursor](xref:Altseed.Cursor)では次の機能を提供します。
-* カーソルを生成([Create](#Create)を参照)
-
-
 ## 基本的な使い方
 
 Altseed2の[Create](xref:Altseed.Cursor.Create(System.String,Altseed.Vector2I)を呼び出し、カーソルインスタンスを生成します。
-生成したカーソルインスタンスを、Mouseの[Create](xref:Altseed.Cursor.Create(Altseed.Vector2I))に入れてカーソルをセットすると、カーソル画像が変更されます。
+生成したカーソルインスタンスを、Mouseの[Create](xref:Altseed.Cursor.Create(System.String,Altseed.Vector2I))に入れてカーソルをセットすると、カーソル画像が変更されます。
 > [!NOTE]
 > ホットスポットとは、カーソルのクリック判定の出る座標のことです。
 > 
@@ -25,7 +19,7 @@ Altseed2の[Create](xref:Altseed.Cursor.Create(System.String,Altseed.Vector2I)�
 
 サンプル
 
-[!code-csharp[Main](Mouse.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/Mouse.cs)]
 
 カーソルインスタンスを生成するメソッドです。
 第一引数にカーソルの画像、第二引数にホットスポットを指定します。

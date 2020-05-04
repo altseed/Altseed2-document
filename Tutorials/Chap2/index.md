@@ -76,7 +76,7 @@
 
 詳しくは以下を参照してください。
 
-[Keyboard-キー入力](~/Manual/Input/Keyboard.md#キー入力)
+[Keyboard](~/Manual/Input/Keyboard.md)
 
 #### 左右上下に移動
 

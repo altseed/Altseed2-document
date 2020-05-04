@@ -21,8 +21,9 @@
 
 [C# によるプログラミング入門 : 継承](https://ufcpp.net/study/csharp/oo_inherit.html)
 
-`CollidableObject`のコードは以下のようになります。  
-[[CollidableObject](CollidableObject.cs)]  
+`CollidableObject`のコードは以下のようになります。 
+
+[!code-csharp[Main](CollidableObject.cs)]
 
 これまで`SpriteNode`を継承していたため、`CollidableObject`でも`SpriteNode`を継承しています。  
 また、`Enemy`クラスと`Bullet`クラスに定義していた`RemoveMyselfIfOutOfWindow`関数ですが同じ処理が二か所にあって冗長です。基本的に同じ処理は一か所にまとめた方が良いのでそれぞれの親クラスになる`CollidableObject`でこの関数を定義することにします。
@@ -119,6 +120,7 @@ Survey関数です。
 
 
 `CollideWith`関数では衝突時の処理を書いていきます。
+
 ```C#
 // 衝突時に実行
 private void CollideWith(CollidableObject obj)
@@ -450,7 +452,7 @@ protected virtual void OnCollision(CollidableObject obj)
 衝突したときに出すエフェクトである`DeathEffect`クラスを作ります。  
 `DeathEffect`のコードは以下のようになります。  
 
-[[DeathEffect](DeathEffect.cs)]  
+[!code-csharp[Main](DeathEffect.cs)]  
 
 どのように実装されているかというと以下のような画像の一部を表示して表示位置をずらしてあげることでアニメーションのような効果を出しています。  
 

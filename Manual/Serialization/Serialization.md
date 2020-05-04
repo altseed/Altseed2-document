@@ -12,15 +12,15 @@ Altseed2では一部を除き，殆どのクラス・構造体がバイナリシ
 ## シリアライズ非対応のクラス
 
 以下のクラスはシリアライズに対応していません。  
-これらは[Engine](xref:Engine)クラスにてシングルトンとしてインスタンスが提供されているクラスです。
+これらは[Engine](xref:Altseed.Engine)クラスにてシングルトンとしてインスタンスが提供されているクラスです。
 
-- [BuildinShader](xref:Altseed.BuildinShader)
-- [CommandList](xref:Altseed.CommandList)
+- [BuiltinShader](xref:Altseed.BuiltinShader)
+<!-- - [CommandList](xref:Altseed.CommandList) -->
 - [Easing](xref:Altseed.Easing)
 - [File](xref:Altseed.File)
 - [Glyph](xref:Altseed.Glyph)
-- [JoyStick](xref:Altseed.JoyStick)
-- [KeyBoard](xref:Altseed.KeyBoard)
+- [JoyStick](xref:Altseed.Joystick)
+- [KeyBoard](xref:Altseed.Keyboard)
 - [Log](xref:Altseed.Log)
 - [Mouse](xref:Altseed.Mouse)
 - [SoundMixer](xref:Altseed.SoundMixer)

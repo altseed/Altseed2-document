@@ -23,38 +23,37 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 > Joystickには含まれていません。
 
 
-
 ## ボタン入力の取得
 
 サンプル
 
-[!code-csharp[Main](../../Src/Samples/Input/Button.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/JoystickButton.cs)]
 
 ボタンの取得は以下のメソッドを用いて行います。
-* [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonTypes))
+* [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonType))
 * [GetButtonStateByIndex](xref:Altseed.Joystick.GetButtonStateByIndex(System.Int32,System.Int32))
 
 ### メソッド共通
 第一引数に取得したいジョイスティックコントローラーのインデックスを指定します。
 戻り値は[ButtonState](xref:Altseed.ButtonState)です。
 
-### [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonTypes))
-第２引数に[JoystickButtonTypes](xref:Altseed.JoystickButtonTypes)を指定します。
+### [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonType))
+第２引数に[JoystickButtonType](xref:Altseed.JoystickButtonType)を指定します。
 
 ### [GetButtonStateByIndex](xref:Altseed.Joystick.GetButtonStateByIndex(System.Int32,System.Int32))
 第２引数にボタンのインデックスを指定します。
 > [!IMPORTANT]
-> ジョイスティックコントローラーのボタンとインデックスの対応はコントローラーごとに異なります。特定のボタンを取得したい場合は[GetAxisStateByIndex](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonTypes))を使うことをおすすめします。
+> ジョイスティックコントローラーのボタンとインデックスの対応はコントローラーごとに異なります。特定のボタンを取得したい場合は[GetAxisStateByIndex](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonType))を使うことをおすすめします。
 
 
 
 ## スティック入力の取得
 
 サンプル
-[!code-csharp[Main](../../Src/Samples/Input/Axis.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/JoystickAxis.cs)]
 
 スティックの取得には以下のメソッドを用います。
-* [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,System.JoystickAxisType))
+* [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonType))
 * [GetButtonStateByIndex](xref:Altseed.Joystick.GetButtonStateByIndex(System.Int32,System.Int32))
 
 ### メソッド共通
@@ -64,8 +63,8 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 [ButtonState](xref:Altseed.ButtonState)です。
 
-### [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickAxisType))
-第２引数に[JoystickButtonTypes](xref:Altseed.JoystickAxisType)を指定します。
+### [GetButtonStateByType](xref:Altseed.Joystick.GetButtonStateByType(System.Int32,Altseed.JoystickButtonType))
+第２引数に[JoystickButtonType](xref:Altseed.JoystickAxisType)を指定します。
 
 
 ### [GetButtonStateByIndex](xref:Altseed.Joystick.GetButtonStateByIndex(System.Int32,System.Int32))
@@ -77,7 +76,7 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 ## 振動
 
 サンプル
-[!code-csharp[Main](../../Src/Samples/Input/Empty.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/JoystickVibrate.cs)]
 
 ジョイスティックコントローラーを振動させるには以下のメソッドを使用します。
 * [Vibrate](xref:Altseed.Joystick.Vibrate(System.Int32,System.Single,System.Single))
