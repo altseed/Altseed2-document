@@ -2,7 +2,7 @@
 
 画像を描画するには、
 - 画像を格納する[Texture2D](xref:Altseed.Texture2D)
-- Texture2Dを描画する[SpriteNode](xref:SpriteNode)
+- Texture2Dを描画する[SpriteNode](xref:Altseed.SpriteNode)
 を使用します。
 
 ## [Texture2D](xref:Altseed.Texture2D)
@@ -27,7 +27,7 @@
 また、[LoadAsync](xref:Altseed.Texture2D.LoadAsync(System.String))メソッドを用いて、非同期的に画像を読み込むことができます。
 非同期読み込みによって、読み込みを待たずに描画処理を行うことができます。
 
-## [SpriteNode](xref:SpriteNode)
+## [SpriteNode](xref:Altseed.SpriteNode)
 
 描画するテクスチャやそれに適用するオプションを設定可能にしたノードです。描画するテクスチャ、そのテクスチャの切り出し範囲、 ~~反転描画のフラグ~~ などを設定することができます。
 

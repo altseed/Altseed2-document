@@ -37,6 +37,7 @@
                     "Images/**",
                     "Manual/**.png",
                     "Tutorials/**.png",
+                    "Tutorials/**.gif",
                     "Logo.png",
                     "favicon.ico"
                 ]
@@ -61,7 +62,7 @@
             }
         ],
         "globalMetadata": {
-            "_appFooter": "Copyright (c) Altseed 2020.",
+            "_appFooter": "Copyright &copy; 2020 Altseed .",
             "_disableContribution": true,
             "_appTitle": "Altseed2",
             "_enableSearch": true,

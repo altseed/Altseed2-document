@@ -2,7 +2,7 @@
 
 ファイル操作に関する機能を提供します。  
 [Engine.File](xref:Altseed.File)では、ファイルを読み込む先のディレクトリ・パッケージの指定やディレクトリのパッケージ化が可能です。
-そして、ファイルを読み込むことができ、[StaticFile.Load](xref:Altseed.StaticFile.Load(System.String))メソッドを用いて[StaticFile](xref:Altseed.StaticFile)インスタンスを作成するか、[StreamFile.Load](xref:Altseed.StreamFile.Load(System.String))メソッドを用いて[StreamFile](xref:Altseed.StreamFile)インスタンスを作成する方法の2種類があります。  
+そして、ファイルを読み込むことができ、[StaticFile.Create](xref:Altseed.StaticFile.Create(System.String))メソッドを用いて[StaticFile](xref:Altseed.StaticFile)インスタンスを作成するか、[StreamFile.Create](xref:Altseed.StreamFile.Create(System.String))メソッドを用いて[StreamFile](xref:Altseed.StreamFile)インスタンスを作成する方法の2種類があります。  
 
 ## [Engine.File](xref:Altseed.File)
 
@@ -24,23 +24,23 @@
 パッケージの作成は、[Engine.File.Pack](xref:Altseed.File.Pack(System.String,System.String))メソッドで、パッケージ化するディレクトリとパッケージのパスを指定することでできます。
 また、[Engine.File.PackWithPassword](xref:Altseed.File.PackWithPassword(System.String,System.String,System.String))メソッドによって、パスワード付きでパッケージ化することが可能です。
 パスワード付きのパッケージにすることで、パッケージ化されたリソースデータをユーザから抽出されるのを防ぐことができます。
-パスワード付きのパッケージをルートに指定する場合、[Engine.File.AddRootPackageWithPassword](Engine.File.AddRootPackageWithPassword(System.String,System.String))メソッドを使用してください。
+パスワード付きのパッケージをルートに指定する場合、[Engine.File.AddRootPackageWithPassword](xref:Altseed.File.AddRootPackageWithPassword(System.String,System.String))メソッドを使用してください。
 
 ## [StaticFile](xref:Altseed.StaticFile)
 
 [StaticFile](xref:Altseed.StaticFile)は、ファイルを一括で全て読み込むクラスです。
-ファイルを読み込んで[StaticFile](xref:Altseed.StaticFile)インスタンスを生成するには[Load](xref:Altseed.StaticFile.Load(System.String))メソッドを使います。  
+ファイルを読み込んで[StaticFile](xref:Altseed.StaticFile)インスタンスを生成するには[Create](xref:Altseed.StaticFile.Create(System.String))メソッドを使います。  
 
 読み込んだファイルの内容は、[Buffer](xref:Altseed.StaticFile.Buffer)で、Byte配列として得られます。
 
 > [!TIP]
-> 一度、[Load](xref:Altseed.StaticFile.Load(System.String))するとキャッシュされます。
-> よって、同じパスでファイルを[Load](xref:Altseed.StaticFile.Load(System.String))した場合、キャッシュから読み込まれるため、読み込み時間が小さくなります。
+> 一度、[Create](xref:Altseed.StaticFile.Create(System.String))するとキャッシュされます。
+> よって、同じパスでファイルを[Create](xref:Altseed.StaticFile.Create(System.String))した場合、キャッシュから読み込まれるため、読み込み時間が小さくなります。
 
 ## [StreamFile](xref:Altseed.StreamFile)
 
 [StreamFile](xref:Altseed.StaticFile)は、ファイルを部分的に読み込むクラスです。
-ファイルを読み込んで[StreamFile](xref:Altseed.StreamFile)インスタンスを生成するには[Load](xref:Altseed.StreamFile.Load(System.String))メソッドを使います。  
+ファイルを読み込んで[StreamFile](xref:Altseed.StreamFile)インスタンスを生成するには[Create](xref:Altseed.StreamFile.Create(System.String))メソッドを使います。  
 
 [Read](xref:Altseed.StreamFile.Read(System.Int32))メソッドによって、指定されたサイズの分だけ、ファイルに格納されているデータを読み込みます。  
 
