@@ -8,8 +8,8 @@ namespace Tutorial
     {
         ...略...
 
-        // 現在ウェーブを表示するノード
-        private TextNode waveNode;
+        // スコアを表示するノード
+        private TextNode scoreNode;
 
 +       // 他画面へ遷移しているかどうか
 +       private bool fading = false;
