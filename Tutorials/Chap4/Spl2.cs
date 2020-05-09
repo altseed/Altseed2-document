@@ -4,16 +4,16 @@ using System.Collections.Generic;
 
 namespace Tutorial
 {
-+    // プレイヤーのクラス
-+    public class Player : SpriteNode
-+    {
-+    }
++   // プレイヤーのクラス
++   public class Player : SpriteNode
++   {
++   }
 
     class Program
     {
         // プレイヤーの移動を行う
--        static void MovePlayer(SpriteNode player)
-+        static void MovePlayer(Player player)
+-       static void MovePlayer(SpriteNode player)
++       static void MovePlayer(Player player)
         {
             // ↑キーでY座標を減少
             if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
@@ -50,8 +50,8 @@ namespace Tutorial
             var list = new List<SpriteNode>();
 
             // 自機
--            var player = new SpriteNode();
-+            var player = new Player();
+-           var player = new SpriteNode();
++           var player = new Player();
             // 自機のテクスチャを読み込む
             player.Texture = Texture2D.LoadStrict("Resources/Player.png");
             // 自機の座標を設定

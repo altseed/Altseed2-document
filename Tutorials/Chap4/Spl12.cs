@@ -12,13 +12,13 @@ namespace ShootingGame
             // エンジンを初期化
             Engine.Initialize("Tutorial", 960, 720);
 
--            // 自機
--            var player = new Player(new Vector2F(100, 360));
+-           // 自機
+-           var player = new Player(new Vector2F(100, 360));
 -
--            // 自機をエンジンに追加
--            Engine.AddNode(player);
-+            // メイン画面をエンジンに追加
-+            Engine.AddNode(new MainNode());
+-           // 自機をエンジンに追加
+-           Engine.AddNode(player);
++           // メイン画面をエンジンに追加
++           Engine.AddNode(new MainNode());
 
             // メインループ
             while (Engine.DoEvents())

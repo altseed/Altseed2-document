@@ -7,19 +7,16 @@ namespace Tutorial
     // プレイヤーのクラス
     public class Player : SpriteNode
     {
-+        // フレーム毎に実行
-+        protected override void OnUpdate()
-+        {
-+            // 移動を実行
-+            Move();
-+
-+            // CollidableObjectのOnupdate呼び出し
-+            base.OnUpdate();
-+        }
++       // フレーム毎に実行
++       protected override void OnUpdate()
++       {
++           // 移動を実行
++           Move();
++       }
 
         // 移動を行う
--        public void Move()
-+        void Move()
+-       public void Move()
++       void Move()
         {
             // ↑キーでY座標を減少
             if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
@@ -76,8 +73,8 @@ namespace Tutorial
                 // エンジンを更新
                 Engine.Update();
 
--                // プレイヤーを動かす
--                player.Move();
+-               // プレイヤーを動かす
+-               player.Move();
 
                 // Zキーが押された時に実行
                 if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)

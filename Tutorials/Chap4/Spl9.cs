@@ -28,9 +28,6 @@ namespace Tutorial
 
             // ショットを実行
             Shot();
-
-            // CollidableObjectのOnupdate呼び出し
-            base.OnUpdate();
         }
 
         // 移動を行う
@@ -117,26 +114,23 @@ namespace Tutorial
             // 座標を速度分進める
             Position += new Vector2F(10.0f, 0.0f);
 
-            // CollidableObjectのOnUpdateを呼び出す
-            base.OnUpdate();
-
-+            // 画面外に出たら自身を削除
-+            RemoveMyselfIfOutOfWindow();
++           // 画面外に出たら自身を削除
++           RemoveMyselfIfOutOfWindow();
         }
 
-+        // 画面外に出た時自身を消去
-+        private void RemoveMyselfIfOutOfWindow()
-+        {
-+            var halfSize = Texture.Size / 2;
-+            if (Position.X < -halfSize.X
-+                || Position.X > Engine.WindowSize.X + halfSize.X
-+                || Position.Y < -halfSize.Y
-+                || Position.Y > Engine.WindowSize.Y + halfSize.Y)
-+            {
-+                // 自身を削除
-+                Parent?.RemoveChildNode(this);
-+            }
-+        }
++       // 画面外に出た時自身を消去
++       private void RemoveMyselfIfOutOfWindow()
++       {
++           var halfSize = Texture.Size / 2;
++           if (Position.X < -halfSize.X
++               || Position.X > Engine.WindowSize.X + halfSize.X
++               || Position.Y < -halfSize.Y
++               || Position.Y > Engine.WindowSize.Y + halfSize.Y)
++           {
++               // 自身を削除
++               Parent?.RemoveChildNode(this);
++           }
++       }
     }
 
     class Program
