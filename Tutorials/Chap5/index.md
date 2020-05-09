@@ -35,7 +35,7 @@ Enemy.csを追加し、下記のコードを記述します。
 また、``` Parent?.RemoveChildNode(this); ``` という記述があります。
 これは、
 
-```
+```cs
 if(Parent != null)
     Parent.RemoveChildNode(this);
 ```
@@ -152,7 +152,7 @@ Listは、常に内部のコレクションの最後に値を追加するのみ�
 
 例えば、下記のような挙動になります。
 
-```
+```cs
 
 Queue<int> queue = new Queue<int>();
 
