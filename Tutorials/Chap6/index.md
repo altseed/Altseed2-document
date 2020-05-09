@@ -7,7 +7,7 @@
 
 「当たり判定」とは読んで字の如く、オブジェクト同士が当たっているかどうか判定するものです。当たり判定の実装方法には色々な手法が考えられますが、今回は簡単のために「円同士の当たり判定をピクセル単位で取る」という方法を扱います。
 
-例えば下のような２つの円のオブジェクトを考え、２つの円の中心座標を考えてみましょう。２つの円の半径をa, bとおき、２つの円のx座標の差をd、y座標の差をeとおくと、中学校で習うような「三平方の定理」よりd^2+e^2<(a+b)^2ならば２つの円は「ぶつかっている」ということになりますね。   
+例えば下のような２つの円のオブジェクトを考え、２つの円の中心座標を考えてみましょう。２つの円の半径をa, bとおき、２つの円のx座標の差をd、y座標の差をeとおくと、中学校で習うような「三平方の定理」よりd²+e²<(a+b)²ならば２つの円は「ぶつかっている」ということになりますね。   
 
 ![当たり判定](06_collision.png)  
 
@@ -30,30 +30,30 @@
 
 変数とコンストラクタを解説していきます。
 ```C#
-        // コライダのコレクション
-        public static HashSet<CollidableObject> objects = new HashSet<CollidableObject>();
+// コライダのコレクション
+public static HashSet<CollidableObject> objects = new HashSet<CollidableObject>();
 
-        // コライダ
-        protected CircleCollider collider = new CircleCollider();
+// コライダ
+protected CircleCollider collider = new CircleCollider();
 
-        // OnUpdate内で衝突判定を調査するかどうか
-        protected bool doSurvey;
+// OnUpdate内で衝突判定を調査するかどうか
+protected bool doSurvey;
 
-        // 所属するメインノードへの参照
-        public MainNode mainNode;
+// 所属するメインノードへの参照
+public MainNode mainNode;
 
-        // コンストラクタ
-        public CollidableObject(MainNode mainNode, Vector2F position)
-        {
-            // メインノードへの参照を設定
-            this.mainNode = mainNode;
+// コンストラクタ
+public CollidableObject(MainNode mainNode, Vector2F position)
+{
+    // メインノードへの参照を設定
+    this.mainNode = mainNode;
 
-            // コライダの座標を設定
-            collider.Position = position;
+    // コライダの座標を設定
+    collider.Position = position;
 
-            // 座標を設定
-            Position = position;
-        }
+    // 座標を設定
+    Position = position;
+}
 ```
   
 それぞれのコライダとの当たり判定をとるためにコライダのコレクションを保存しておく必要があります。コライダオブジェクトは変数`objects`に保存します。  
@@ -62,7 +62,7 @@
 [C# によるプログラミング入門 : 静的メンバー](https://ufcpp.net/study/csharp/oo_static.html)  
 
 変数`collider`はコライダの本体で、先ほど言ったようにAltseed2で用意された`CircleCollider`を使用します。
-`doSurvey`と`maiNode`はコメントにある通りです。  
+`doSurvey`と`mainNode`はコメントにある通りです。  
 コンストラクタの`collider.Position = position`はコライダの位置設定で`Position = position`は本体の描画されているオブジェクトの位置設定であることに注意してください。  
 
 次に`OnUpdate`です。  
@@ -87,29 +87,32 @@ protected override void OnUpdate()
 
 Survey関数です。
 ```C#
-        // 衝突判定を調査する
-        private void Survey()
-        {
-            // objects内の全オブジェクトを検索し，衝突が確認されたオブジェクト間でCollideWithを実行
-            foreach (var obj in objects)
-                if (collider.GetIsCollidedWith(obj.collider))
-                    CollideWith(obj);
-        }
+// 衝突判定を調査する
+private void Survey()
+{
+    // objects内の全オブジェクトを検索し，衝突が確認されたオブジェクト間でCollideWithを実行
+    foreach (var obj in objects)
+        if (collider.GetIsCollidedWith(obj.collider))
+            CollideWith(obj);
+}
 ```
 
 コライダ間の衝突は`GetIsCollidedWith`関数で取ることができます。この関数は衝突している場合`true`を返すのでif文で衝突した場合に`CollideWith`が呼ばれます。`CollideWith`には衝突した場合の処理を書いていきます。
 
 ここで、`foreach`とは`for`文の拡張で、
 
-    foreach (var obj in objects)
+```cs
+foreach (var obj in objects)
+```
 
 というのは、 「 `objects` の要素をとりだして、 `obj` と名前を付ける」 ことを`objects` の全要素について行ってくれます。  
 今回は`foreach`文を使って`objects`から取り出した`CollidableObject`である`obj`のコライダ`obj.collider`と自身のコライダ`collider`の間での当たり判定を取っています。  
 また、`var`というキーワードがあります。これは**型推論**と呼ばれるもので、名前の通り変数の宣言の際に型を推論してくれるというものです。なので上の`foreach`文は  
+
 ```C#
-            foreach (CollidableObject obj in objects)
-                if (collider.GetIsCollidedWith(obj.collider))
-                    CollideWith(obj);
+foreach (CollidableObject obj in objects)
+    if (collider.GetIsCollidedWith(obj.collider))
+        CollideWith(obj);
 ```
 このようにしても大丈夫です。ただ、`var`を使ったほうが記述が短くて楽です。  
 
@@ -141,10 +144,18 @@ private void CollideWith(CollidableObject obj)
     OnCollision(obj);
 }
 ```
-オブジェクトにより当たった時の処理は異なるので継承先で`OnCollision`関数をオーバーライドさせて処理を継承先に委託するようにしています。  
-`OnCollision`関数にあるキーワード`virtual`は抽象メソッドと呼ばれるものでこれをつけることで継承先で関数のオーバーライドができます。  
+ここで，`Survey`を実行しないオブジェクト(=`doSurvey`が`false`)に対して`OnCollision`を呼び出しています。
+何故，全ての`CollidableObject`に対して`Survey`を実行させず，`doSurvey`のような面倒な処理を挟むのかというのが気になるかと思います。
+後々説明しますが，`doSurvey`フラグは自機や敵では`true`，自機弾や敵弾では`false`にします。
+もし仮に全ての`CollidableObject`にて`Survey`を走らせるとなると，衝突判定が計算される回数は`objects`に登録されている`CollidableObject`の2乗に相当します。
+弾というオブジェクトは，自機や敵の個数に比べて大量に画面上に出現する機会が多いです。その為，弾幕シューティングを作ったときなどは処理が重くなることがあります。
+それを避けるために`doSurvey`というフラグを用いて`Survey`を実行する回数を最小限に留める事が出来ます。
+プログラミングを行う際はこのようにパフォーマンスを意識するという事も大事です(最初のうちは動くこと重視，慣れてきたら意識すると良いです)。
 
-[C# によるプログラミング入門 : 抽象メソッド、抽象クラス](https://ufcpp.net/study/csharp/oo_abstract.html)  
+オブジェクトにより当たった時の処理は異なるので継承先で`OnCollision`関数をオーバーライドさせて処理を継承先に委託するようにしています。  
+`OnCollision`関数にあるキーワード`virtual`は仮想メソッドと呼ばれるものでこれをつけることで継承先で関数のオーバーライドができます。  
+
+[C# によるプログラミング入門 : 多態性](https://ufcpp.net/study/csharp/oo_polymorphism.html?key=virtual_method#virtual_method)
 
 
 ```C#
@@ -463,30 +474,30 @@ protected virtual void OnCollision(CollidableObject obj)
 そこで、`Src` を使用します。`Src`は`SpriteNode`クラスの持つフィールドで、`Src`に値を設定すると画像の中で指定された範囲のみが描画されるようになります。`Src`に値を設定する方法ですが、第一引数は表示したい範囲の左上の座標を、第二引数はその座標から表示する範囲を指定します
 
 ```C#
-            // 描画範囲を設定
-            Src = new RectF(pos, size);
+// 描画範囲を設定
+Src = new RectF(pos, size);
 ```
 
 設定する変数`size`と`pos`は`count`という毎フレーム1ずつ増える整数の変数を作って計算します。今回は2フレームごとに画像をずらすような式にしてあります。上に示した画像は爆破の画像が横に9枚並んでいるもので、2フレーム×9=18なので`count`が18になった場合`Parent.RemoveChildNode(this);`により自身を削除してエフェクトの再生を終了します。
 
 ```C#
-            // 表示されるテクスチャのサイズを取得
-            var size = new Vector2F(Texture.Size.X / 9, Texture.Size.Y);
+// 表示されるテクスチャのサイズを取得
+var size = new Vector2F(Texture.Size.X / 9, Texture.Size.Y);
 
-            // 表示されるテクスチャの左上の座標を計算する
-            var pos = new Vector2F(size.X * (count / 2 % 9), size.Y);
+// 表示されるテクスチャの左上の座標を計算する
+var pos = new Vector2F(size.X * (count / 2 % 9), size.Y);
 
-            // 描画範囲を設定
-            Src = new RectF(pos, size);
+// 描画範囲を設定
+Src = new RectF(pos, size);
 
-            // カウントを進める
-            count++;
+// カウントを進める
+count++;
 
-            // カウントが18以上で自身を削除
-            if (count >= 18)
-            {
-                Parent.RemoveChildNode(this);
-            }
+// カウントが18以上で自身を削除
+if (count >= 18)
+{
+    Parent.RemoveChildNode(this);
+}
 ```
 
 爆破のエフェクトが完成したので衝突時の処理を書いていきましょう。  
@@ -499,62 +510,62 @@ protected virtual void OnCollision(CollidableObject obj)
 `Player` クラス
 
 ```C#
-        // 衝突時に実行
-        protected override void OnCollision(CollidableObject obj)
-        {
-            // 衝突対象が敵か敵の弾だったら
-            if (obj is Enemy || obj is EnemyBullet)
-            {
-                // 自身を親から削除
-                Parent.RemoveChildNode(this);
-            }
-        }
+// 衝突時に実行
+protected override void OnCollision(CollidableObject obj)
+{
+    // 衝突対象が敵か敵の弾だったら
+    if (obj is Enemy || obj is EnemyBullet)
+    {
+        // 自身を親から削除
+        Parent.RemoveChildNode(this);
+    }
+}
 ```
 
 `PlayerBullet` クラス
 ```C#
-        // 衝突時に実行
-        protected override void OnCollision(CollidableObject obj)
-        {
-            // 衝突対象が敵だったら自身を削除
-            if (obj is Enemy)
-            {
-                Parent?.RemoveChildNode(this);
-            }
-        }
+// 衝突時に実行
+protected override void OnCollision(CollidableObject obj)
+{
+    // 衝突対象が敵だったら自身を削除
+    if (obj is Enemy)
+    {
+        Parent?.RemoveChildNode(this);
+    }
+}
 ```
 
 `Enemy` クラス
 ```C#
-        // 衝突時に実行
-        protected override void OnCollision(CollidableObject obj)
-        {
-            // 衝突対象が自機弾だったら
-            if (obj is PlayerBullet)
-            {
-                // スコアを加算
-                mainNode.score += score;
+// 衝突時に実行
+protected override void OnCollision(CollidableObject obj)
+{
+    // 衝突対象が自機弾だったら
+    if (obj is PlayerBullet)
+    {
+        // スコアを加算
+        mainNode.score += score;
 
-                // 死亡時エフェクトを再生
-                Parent.AddChildNode(new DeathEffect(Position));
+        // 死亡時エフェクトを再生
+        Parent.AddChildNode(new DeathEffect(Position));
 
-                // 自身を削除
-                Parent.RemoveChildNode(this);
-            }
-        }
+        // 自身を削除
+        Parent.RemoveChildNode(this);
+    }
+}
 ```
 
 `EnemyBullet` クラス
 ```C#
-        // 衝突時に実行
-        protected override void OnCollision(CollidableObject obj)
-        {
-            // 衝突対象がプレイヤーだったらBulletのOnCollisionを実行して削除
-            if (obj is Player)
-            {
-                Parent?.RemoveChildNode(this);
-            }
-        }
+// 衝突時に実行
+protected override void OnCollision(CollidableObject obj)
+{
+    // 衝突対象がプレイヤーだったらBulletのOnCollisionを実行して削除
+    if (obj is Player)
+    {
+        Parent?.RemoveChildNode(this);
+    }
+}
 ```  
 
 ここで`is`というキーワードがありますね。これは**is演算子**と呼ばれるものです。この`is`というのは変数`obj`がどの型を継承しているのか判断するために使えます。一例ですが、`if (obj is Enemy)`と書けば、`obj`が`Enemy`クラスか、その派生クラスの時に処理をすることができます。  
