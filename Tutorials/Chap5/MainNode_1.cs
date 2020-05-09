@@ -40,8 +40,8 @@ namespace Tutorial
             // キャラクターノードにプレイヤーを追加
             characterNode.AddChildNode(player);
 
-+            // 敵を追加する。
-+            characterNode.AddChildNode(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
++           // 敵を追加する。
++           characterNode.AddChildNode(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
         }
     }
 }

@@ -24,9 +24,6 @@ namespace Tutorial
         // フレーム毎に実行
         protected override void OnUpdate()
         {
-            // CollidableObjectのOnUpdateを実行
-            base.OnUpdate();
-
             // 画面外に出たら自身を削除
             RemoveMyselfIfOutOfWindow();
         }
