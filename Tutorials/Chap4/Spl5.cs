@@ -13,7 +13,7 @@ namespace Tutorial
             // 移動を実行
             Move();
 
-            // CollidableObjectのOnupdate呼び出し
+            // 親クラスの OnUpdate メソッドを呼び出す
             base.OnUpdate();
         }
 
@@ -55,7 +55,7 @@ namespace Tutorial
 +            // 座標を速度分進める
 +            Position += new Vector2F(10.0f, 0.0f);
 +
-+            // CollidableObjectのOnUpdateを呼び出す
++            // 親クラスの OnUpdate メソッドを呼び出す
 +            base.OnUpdate();
 +        }
 +    }

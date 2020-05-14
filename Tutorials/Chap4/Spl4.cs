@@ -13,7 +13,7 @@ namespace Tutorial
 +            // 移動を実行
 +            Move();
 +
-+            // CollidableObjectのOnupdate呼び出し
++            // 親クラスの OnUpdate メソッドを呼び出す
 +            base.OnUpdate();
 +        }
 

@@ -30,50 +30,52 @@ Visual Studioのインストーラは [Visual Studioのウェブページ](https
 ダウンロードされたインストーラをクリックし、起動すると、次のようなウィンドウが出てきます。
 「続行」をクリックしてください。
 
-<img src="install_win_1.png" height="240px">
+![install_win_1](install_win_1.png)
 
 次に、Visual Studioをインストールするに際し、併せてインストールするものを選んでいきます。
 Altseed2 を使った開発には「.NET Core」が必要です。
 「.NET デスクトップ開発」と「.NET Core クロスプラットフォームの開発」にチェックをつけておきましょう。
 
-<img src="install_win_2.png" height="240px"><img src="install_win_3.png" height="240px">
+![install_win_2](install_win_2.png)
+![install_win_3](install_win_3.png)
 
 インストールしたいものが決まったら「インストール」をクリックしましょう。
 インストールが始まると、次のような画面が表示されます。
 
-<img src="install_win_4.png" height="240px">
+![install_win_4](install_win_4.png)
 
 Visual Studioなるツールは、容量がとても大きいため、インストールに多くの時間を要します。
 じっくり待ちましょう。
 
 インストールが完了し、Visual Studioが起動すると、この画面が表示されるはずです。
 ここまでできたら、晴れて Visual Studioの準備は完了となります。
-なお、Visual Studioからサインインを求められることがありますが、これは必須ではありません。
+なお、Visual Studioからサインインを求められることがあります。
+ライセンス認証に必須ですが、今すぐ必要ということはないため、あとでやっておきましょう。
 
-<img src="install_win_5.png" height="240px">
+![install_win_5](install_win_5.png)
 
 
 ### Mac の場合
 まず「Visual Studio for Mac」を選択し、インストーラをダウンロードしてください。
 ダウンロードされたインストーラをクリックし、起動すると、次のようなウィンドウが出てきます。
 
-<img src="install_mac_1.png" height="240px">
+![install_mac_1](install_mac_1.png)
 
 「Install Visual Studio for Mac」をクリックし、新しくウィンドウを表示させます。
 暫く待って、このような画面が出たら「続行」をクリックします。  
 
-<img src="install_mac_2.png" height="240px">
+![install_mac_2](install_mac_2.png)
 
 次に、Visual Studioをインストールするに際し、併せてインストールするものを選んでいきます。
 Altseed2 を使った開発には「.NET Core」が必要です。
 「.NET Core」にチェックをつけておきましょう。
 
-<img src="install_mac_3.png" height="240px">
+![install_mac_3](install_mac_3.png)
 
 インストールしたいものが決まったら「インストール」をクリックしましょう。
 インストールが始まると、次のような画面が表示されます。
 
-<img src="install_mac_4.png" height="240px">
+![install_mac_4](install_mac_4.png)
 
 Visual Studioなるツールは、容量がとても大きいため、インストールに多くの時間を要します。
 じっくり待ちましょう。
@@ -82,10 +84,11 @@ Visual Studioなるツールは、容量がとても大きいため、インス�
 
 インストールが完了し、Visual Studioが起動すると、この画面が表示されるはずです。
 ここまでできたら、晴れて Visual Studioの準備は完了となります。
-なお、Visual Studioからサインインを求められることがありますが、これは必須ではありません。
+なお、Visual Studioからサインインを求められることがあります。
+ライセンス認証に必須ですが、今すぐ必要ということはないため、あとでやっておきましょう。
 また、キーボードの配置を選択する画面が出てきますが、デフォルトのままで問題ないでしょう。
 
-<img src="install_mac_5.png" height="240px">
+![install_mac_5](install_mac_5.png)
 
 ## プロジェクトの作成
 インストールが終わったら、プロジェクトを作成します。
@@ -100,19 +103,19 @@ Visual Studioなるツールは、容量がとても大きいため、インス�
 ただし、今回は C#を使用するため、アイコンに「C#」と書かれていることを確認してください。
 選択したら「次へ」をクリックします。
 
-<img src="project_win_1.png" height="240px">
+![project_win_1](project_win_1.png)
 
 次に、プロジェクトの名前と、プロジェクトを作成する場所の設定を行います。
 プロジェクトの名前は「ShootingGame」など、自由に設定してください。
 それ以外の設定は変更しなくても問題ありません。
 
-<img src="project_win_2.png" height="240px">
+![project_win_2](project_win_2.png)
 
 しばらく待つと、この画面が出てきます。
 これが、Visual Studioのエディタ画面です。
 ここまで来たら、プロジェクトの作成は完了となります。
 
-<img src="project_win_3.png" height="240px">
+![project_win_3](project_win_3.png)
 
 ### Macの場合
 まず、Visual Studioを起動したら「新規」をクリックします。
@@ -123,22 +126,22 @@ Visual Studioなるツールは、容量がとても大きいため、インス�
 しかし、今回は C#を使用するため、このままにしてください。
 選択したら「次へ」をクリックします。
 
-<img src="project_mac_1.png" height="240px">
+![project_mac_1](project_mac_1.png)
 
 次に、プロジェクトの名前と、プロジェクトを作成する場所の設定を行います。
 プロジェクトの名前は「ShootingGame」など、自由に設定してください。
 それ以外の設定は変更しなくても問題ありません。
 
-<img src="project_mac_2.png" height="240px">
+![project_mac_2](project_mac_2.png)
 
 しばらく待つと、この画面が出てきます。
 これが、Visual Studioのエディタ画面です。
 ここまで来たら、プロジェクトの作成は完了となります。
 
-<img src="project_mac_3.png" height="240px">
+![project_mac_3](project_mac_3.png)
 
 ## Altseed2 の導入
-Altseed2 といった拡張機能も、導入しない限りは使うことができません。
+Altseed2 といった「拡張機能」も、導入しない限りは使うことができません。
 Visual Studioには「NuGet」という、拡張機能を管理するアプリケーションが同梱されています。
 今回はこのNuGetを使用してAltseed2を導入していきます。
 
@@ -146,7 +149,7 @@ Visual Studioには「NuGet」という、拡張機能を管理するアプリ�
 右側のメニューから「依存関係」をダブルクリックしてください。
 すると、このような画面が表示されます。
 
-<img src="altseed_win_1.png" height="240px">
+![altseed_win_1](altseed_win_1.png)
 
 左上の検索欄から「Altseed2」と入力してください。
 すると、拡張機能の一覧に「Altseed2」が出てきます。
@@ -156,7 +159,7 @@ Visual Studioには「NuGet」という、拡張機能を管理するアプリ�
 左側のメニューから「依存関係」をダブルクリックしてください。
 すると、このような画面が表示されます。
 
-<img src="altseed_mac_1.png" height="240px">
+![altseed_mac_1](altseed_mac_1.png)
 
 左上の検索欄から「Altseed2」と入力してください。
 すると、拡張機能の一覧に「Altseed2」が出てきます。
