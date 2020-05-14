@@ -6,6 +6,10 @@
   href: Node.md
 - name: 画像
   href: Graphics/Texture.md
+- name: マテリアル
+  href: Graphics/Material.md
+- name: ポストエフェクト
+  href: Graphics/PostEffect.md
 - name: サウンド
   href: Sound/Sound.md
 - name: ログ
@@ -24,3 +28,5 @@
   href: Serialization/Serialization.md
 - name: 衝突判定
   href: Physics/Collision.md
+- mane: 画面遷移
+  href: Transition/Transition.md
