@@ -167,7 +167,8 @@ public class Bullet : SpriteNode
 まず、下図に示すように、「ShootingGame」の青く示された部分を右クリックしてください。
 その後、選択肢のウィンドウが出てくるので、「追加」、「新しい項目」の順にクリックしてください。
 
-<img src="newfile_win_1.png" height="240px"><img src="newfile_win_2.png" height="240px">
+![newfile_win_1](newfile_win_1.png)
+![newfile_win_2](newfile_win_2.png)
 
 すると、「新しい項目の追加 - ShootingGame」というウィンドウが表示されます。
 ウィンドウが表示されたら、画面左側の選択肢から「コード」を選択し、その後、画面中央の選択肢から「クラス」を選択します。
@@ -175,14 +176,16 @@ public class Bullet : SpriteNode
 今回は`Player`クラスを別のファイルに移動したいため、ファイル名を「Player.cs」とします。
 入力が終わったら、「追加」をクリックします。
 
-<img src="newfile_win_3.png" height="240px">
+![newfile_win_3](newfile_win_3.png)
 
 ここまで終わったら、「ソリューション」のところに「Player.cs」が追加されているはずです。
 あとは、Program.csに記述されている`Player`クラスの部分を切り取って、Player.csに貼り付けるだけです。
 ただし、ただ切り貼りしただけではエラーが発生します。
-その場合は、Player.csの内容を適宜変更しておきましょう。
+これは、ソースファイルに`Altseed`という名前空間が知らされていないことが原因です。
+Player.csの頭に「`using Altseed;`」と記述しましょう。
 
-<img src="newfile_win_4.png" height="240px"><img src="newfile_win_5.png" height="240px">
+![newfile_win_4](newfile_win_4.png)
+![newfile_win_5](newfile_win_5.png)
 
 これと同様の手順を踏んで、Bullet.csを追加し、`Bullet`クラスを移してみてください。
 
@@ -190,7 +193,7 @@ public class Bullet : SpriteNode
 まず、下図に示すように、「ShootingGame」の青く示された部分を右クリックしてください。
 その後、選択肢のウィンドウが出てくるので、「追加」、「新しいファイル」の順にクリックしてください。
 
-<img src="newfile_mac_1.png" height="240px">
+![newfile_mac_1](newfile_mac_1.png)
 
 すると、「新しいファイル」というウィンドウが表示されます。
 ウィンドウが表示されたら、画面左側の選択肢から「General」を選択し、その後、画面中央の選択肢から「空のクラス」を選択します。
@@ -198,14 +201,16 @@ public class Bullet : SpriteNode
 今回は`Player`クラスを別のファイルに移動したいため、ファイル名を「Player」とします。
 入力が終わったら、「新規」をクリックします。
 
-<img src="newfile_mac_2.png" height="240px">
+![newfile_mac_2](newfile_mac_2.png)
 
 ここまで終わったら、「ソリューション」のところに「Player.cs」が追加されているはずです。
 あとは、Program.csに記述されている`Player`クラスの部分を切り取って、Player.csに貼り付けるだけです。
 ただし、ただ切り貼りしただけではエラーが発生します。
-その場合は、Player.csの内容を適宜変更しておきましょう。
+これは、ソースファイルに`Altseed`という名前空間が知らされていないことが原因です。
+Player.csの頭に「`using Altseed;`」と記述しましょう。
 
-<img src="newfile_mac_3.png" height="240px"><img src="newfile_mac_4.png" height="240px">
+![newfile_mac_3](newfile_mac_3.png)
+![newfile_mac_4](newfile_mac_4.png)
 
 これと同様の手順を踏んで、Bullet.csを追加し、`Bullet`クラスを移してみてください。
 
