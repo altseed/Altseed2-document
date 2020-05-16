@@ -15,20 +15,14 @@ namespace Tutorial
             if (count % 100 == 0)
             {
                 // 敵が残っていたら画面に追加
-                if (enemies[wave - 1].Count > 0)
+                if (enemies.Count > 0)
                 {
-                    characterNode.AddChildNode(enemies[wave - 1].Dequeue());
+                    characterNode.AddChildNode(enemies.Dequeue());
                 }
                 else
                 {
-                    // カウントをリセット
-                    count = 0;
-
-                    //ウェーブを次に進める
-                    wave++;
-
-+                   // もし最終ウェーブが終わっていて，かつ画面遷移中でなければ実行
-+                   if (wave > waves && !fading)
++                   // もし画面遷移中でなければ実行
++                   if (!fading)
 +                   {
 +                       // BGMをフェードアウト
 +                       if (bgmID.HasValue)

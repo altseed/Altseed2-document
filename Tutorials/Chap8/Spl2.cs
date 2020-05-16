@@ -1,16 +1,13 @@
 ﻿using Altseed;
-+using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Tutorial
 {
     // メインステージのクラス
     public class MainNode : Node
     {
-        // キャラクターを表示するノード
-        private Node characterNode = new Node();
-        
-        // プレイヤーの参照
-        private Player player;
+
+        ...略...
 
         // エンジンに追加された時に実行
         protected override void OnAdded()
@@ -35,13 +32,31 @@ namespace Tutorial
             AddChildNode(backTexture);
 
             // プレイヤーを設定
-            player = new Player(new Vector2F(100, 360));
+            player = new Player(this, new Vector2F(100, 360));
 
             // キャラクターノードにプレイヤーを追加
             characterNode.AddChildNode(player);
 
-+           // 敵を追加する。
-+           characterNode.AddChildNode(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
++           // スコアを表示するノードを設定
++           scoreNode = new TextNode();
++           // スコア表示に使うフォントを読み込む
++           scoreNode.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 30);
++           // スコア表示の位置を設定
++           scoreNode.Position = new Vector2F();
++           // スコア表示の文字を設定
++           scoreNode.Text = "スコア";
++
++           // UIノードにスコア表示ノードを追加
++           uiNode.AddChildNode(scoreNode);
+
+            // ウェーブを初期化する
+            InitWave();
+
+            // BGMを初期化する
+            InitBGM();
         }
+
+        ...略...
+
     }
 }

@@ -7,18 +7,18 @@ namespace Tutorial
     // プレイヤーのクラス
     public class Player : SpriteNode
     {
-+        // コンストラクタ
-+        public Player(Vector2F position)
-+        {
-+            // 座標を設定
-+            Position = position;
++       // コンストラクタ
++       public Player(Vector2F position)
++       {
++           // 座標を設定
++           Position = position;
 +
-+            // テクスチャを読み込む
-+            Texture = Texture2D.LoadStrict("Resources/Player.png");
++           // テクスチャを読み込む
++           Texture = Texture2D.LoadStrict("Resources/Player.png");
 +
-+            // 中心座標を設定
-+            CenterPosition = Texture.Size / 2;
-+        }
++           // 中心座標を設定
++           CenterPosition = Texture.Size / 2;
++       }
 
         // フレーム毎に実行
         protected override void OnUpdate()
@@ -28,9 +28,6 @@ namespace Tutorial
 
             // ショットを実行
             Shot();
-
-            // 親クラスの OnUpdate メソッドを呼び出す
-            base.OnUpdate();
         }
 
         // 移動を行う
@@ -68,17 +65,17 @@ namespace Tutorial
             if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
             {
                 // 発射される自機弾
--                var bullet = new Bullet();
-+                var bullet = new Bullet(Position);
+-               var bullet = new Bullet();
++               var bullet = new Bullet(Position);
 
--                // 自機弾のテクスチャを読み込む
--                bullet.Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
--                // 自機弾の座標を設定
--                bullet.Position = player.Position;
--                // 自機弾の中心座標を設定
--                bullet.CenterPosition = bullet.Texture.Size / 2;
--                // 自機弾の表示位置を自機より奥に設定
--                bullet.ZOrder--;
+-               // 自機弾のテクスチャを読み込む
+-               bullet.Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
+-               // 自機弾の座標を設定
+-               bullet.Position = player.Position;
+-               // 自機弾の中心座標を設定
+-               bullet.CenterPosition = bullet.Texture.Size / 2;
+-               // 自機弾の表示位置を自機より奥に設定
+-               bullet.ZOrder--;
 
                 // 自機弾をエンジンに追加
                 Engine.AddNode(bullet);
@@ -89,30 +86,27 @@ namespace Tutorial
     // 弾のクラス
     public class Bullet : SpriteNode
     {
-+        // コンストラクタ
-+        public Bullet(Vector2F position)
-+        {
-+            // 座標を設定
-+            Position = position;
++       // コンストラクタ
++       public Bullet(Vector2F position)
++       {
++           // 座標を設定
++           Position = position;
 +
-+            // テクスチャを読み込む
-+            Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
++           // テクスチャを読み込む
++           Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
 +
-+            // 中心座標を設定
-+            CenterPosition = Texture.Size / 2;
++           // 中心座標を設定
++           CenterPosition = Texture.Size / 2;
 +
-+            // 表示位置をプレイヤーや敵より奥に設定
-+            ZOrder--;
-+        }
++           // 表示位置をプレイヤーや敵より奥に設定
++           ZOrder--;
++       }
 
         // フレーム毎に実行
         protected override void OnUpdate()
         {
             // 座標を速度分進める
             Position += new Vector2F(10.0f, 0.0f);
-
-            // 親クラスの OnUpdate メソッドを呼び出す
-            base.OnUpdate();
         }
     }
 
@@ -125,14 +119,14 @@ namespace Tutorial
             Engine.Initialize("Tutorial", 960, 720);
 
             // 自機
--            var player = new Player();
-+            var player = new Player(new Vector2F(100, 360));
--            // 自機のテクスチャを読み込む
--            player.Texture = Texture2D.LoadStrict("Resources/Player.png");
--            // 自機の座標を設定
--            player.Position = new Vector2F(100, 360);
--            // 自機の中心座標を設定
--            player.CenterPosition = player.Texture.Size / 2;
+-           var player = new Player();
++           var player = new Player(new Vector2F(100, 360));
+-           // 自機のテクスチャを読み込む
+-           player.Texture = Texture2D.LoadStrict("Resources/Player.png");
+-           // 自機の座標を設定
+-           player.Position = new Vector2F(100, 360);
+-           // 自機の中心座標を設定
+-           player.CenterPosition = player.Texture.Size / 2;
 
             // 自機をエンジンに追加
             Engine.AddNode(player);

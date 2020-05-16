@@ -1,4 +1,4 @@
-using Altseed;
+﻿using Altseed;
 using System.Collections.Generic;
 
 namespace Tutorial
@@ -9,23 +9,14 @@ namespace Tutorial
         // カウンタ
         private int count = 0;
 
-        // ウェーブの個数
-        private const int waves = 3;
-
-        // 現在ウェーブ
-        private int wave = 1;
-
         // 敵を格納するキュー
-        private Queue<Enemy>[] enemies = new Queue<Enemy>[waves];
+        private Queue<Enemy> enemies = new Queue<Enemy>();
 
         // キャラクターを表示するノード
         private Node characterNode = new Node();
-
+        
         // プレイヤーの参照
         private Player player;
-
-        // スコア
-        public int score;
 
         // エンジンに追加された時に実行
         protected override void OnAdded()
@@ -55,8 +46,8 @@ namespace Tutorial
             // キャラクターノードにプレイヤーを追加
             characterNode.AddChildNode(player);
 
-            // 全てのウェーブを初期化する
-            InitAllWave();
+            // ウェーブを初期化する
+            InitWave();
 
 +           // BGMを初期化する
 +           InitBGM();
@@ -75,60 +66,24 @@ namespace Tutorial
 +           // BGMを読み込む
 +           var bgm = Sound.LoadStrict("Resources/BGM.wav", false);
 +
-
 +           // BGMのプレイ開始
 +           Engine.Sound.Play(bgm);
 +       }
 
-        // 全ウェーブの初期化
-        private void InitAllWave()
+        // ウェーブの初期化
+        private void InitWave()
         {
-            // 各キューの初期化
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                enemies[i] = new Queue<Enemy>();
-            }
-
-            // ウェーブ1を初期化
-            InitWave1();
-            // ウェーブ2を初期化
-            InitWave2();
-            // ウェーブ3を初期化
-            InitWave3();
-        }
-
-        // ウェーブ1の初期化
-        private void InitWave1()
-        {
-            // enemies[0].Enqueue～でウェーブ1に敵を追加
+            // enemies.Enqueue～でウェーブに敵を追加
             // 追加した順番に敵が出現する
 
 
-            enemies[0].Enqueue(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
+            enemies.Enqueue(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
 
-            enemies[0].Enqueue(new StraightShotEnemy(player, new Vector2F(600, 620)));
+            enemies.Enqueue(new StraightShotEnemy(player, new Vector2F(600, 620)));
 
-            enemies[0].Enqueue(new Meteor(player, new Vector2F(910, 400), new Vector2F(-4.0f, 0.0f)));
+            enemies.Enqueue(new Meteor(player, new Vector2F(910, 400), new Vector2F(-4.0f, 0.0f)));
 
-            enemies[0].Enqueue(new RadialShotEnemy(player, new Vector2F(400, 160), 3));
-        }
-
-        // ウェーブ2の初期化
-        private void InitWave2()
-        {
-            // enemies[1].Enqueue～でウェーブ1に敵を追加
-            // 追加した順番に敵が出現する
-
-
-        }
-
-        // ウェーブ3の初期化
-        private void InitWave3()
-        {
-            // enemies[2].Enqueue～でウェーブ1に敵を追加
-            // 追加した順番に敵が出現する
-
-
+            enemies.Enqueue(new RadialShotEnemy(player, new Vector2F(400, 160), 3));
         }
 
         // フレーム毎に実行
@@ -148,17 +103,9 @@ namespace Tutorial
             if (count % 100 == 0)
             {
                 // 敵が残っていたら画面に追加
-                if (enemies[wave - 1].Count > 0)
+                if (enemies.Count > 0)
                 {
-                    characterNode.AddChildNode(enemies[wave - 1].Dequeue());
-                }
-                else
-                {
-                    // カウントをリセット
-                    count = 0;
-
-                    //ウェーブを次に進める
-                    wave++;
+                    characterNode.AddChildNode(enemies.Dequeue());
                 }
             }
         }

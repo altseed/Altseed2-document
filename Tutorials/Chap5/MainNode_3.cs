@@ -1,7 +1,5 @@
 ﻿using Altseed;
-------added start------
 using System.Collections.Generic;
-------added end------
 
 namespace Tutorial
 {
@@ -23,9 +21,9 @@ namespace Tutorial
 
             // 敵を追加する。
 
-+            characterNode.AddChildNode(new StraightShotEnemy(player, new Vector2F(600, 620)));
++           characterNode.AddChildNode(new StraightShotEnemy(player, new Vector2F(600, 620)));
 
-+            characterNode.AddChildNode(new RadialShotEnemy(player, new Vector2F(400, 160), 3));
++           characterNode.AddChildNode(new RadialShotEnemy(player, new Vector2F(400, 160), 3));
 
             characterNode.AddChildNode(new StraightShotEnemy(player, new Vector2F(600, 620));
 

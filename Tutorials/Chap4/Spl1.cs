@@ -6,33 +6,33 @@ namespace Tutorial
 {
     class Program
     {
-+        // プレイヤーの移動を行う
-+        static void MovePlayer(SpriteNode player)
-+        {
-+            // ↑キーでY座標を減少
-+            if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
-+            {
-+                player.Position += new Vector2F(0.0f, -2.5f);
-+            }
++       // プレイヤーの移動を行う
++       static void MovePlayer(SpriteNode player)
++       {
++           // ↑キーでY座標を減少
++           if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
++           {
++               player.Position += new Vector2F(0.0f, -2.5f);
++           }
 +
-+            // ↓キーでY座標を増加
-+            if (Engine.Keyboard.GetKeyState(Keys.Down) == ButtonState.Hold)
-+            {
-+                player.Position += new Vector2F(0.0f, 2.5f);
-+            }
++           // ↓キーでY座標を増加
++           if (Engine.Keyboard.GetKeyState(Keys.Down) == ButtonState.Hold)
++           {
++               player.Position += new Vector2F(0.0f, 2.5f);
++           }
 +
-+            // →キーでX座標を増加
-+            if (Engine.Keyboard.GetKeyState(Keys.Right) == ButtonState.Hold)
-+            {
-+                player.Position += new Vector2F(2.5f, 0.0f);
-+            }
++           // →キーでX座標を増加
++           if (Engine.Keyboard.GetKeyState(Keys.Right) == ButtonState.Hold)
++           {
++               player.Position += new Vector2F(2.5f, 0.0f);
++           }
 +
-+            // ←キーでX座標を減少
-+            if (Engine.Keyboard.GetKeyState(Keys.Left) == ButtonState.Hold)
-+            {
-+                player.Position -= new Vector2F(2.5f, 0.0f);
-+            }
-+        }
++           // ←キーでX座標を減少
++           if (Engine.Keyboard.GetKeyState(Keys.Left) == ButtonState.Hold)
++           {
++               player.Position -= new Vector2F(2.5f, 0.0f);
++           }
++       }
 
         [STAThread]
         static void Main(string[] args)
@@ -61,32 +61,32 @@ namespace Tutorial
                 // エンジンを更新
                 Engine.Update();
 
--                // ↑キーでY座標を減少
--                if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
--                {
--                    player.Position += new Vector2F(0.0f, -2.5f);
--                }
+-               // ↑キーでY座標を減少
+-               if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
+-               {
+-                   player.Position += new Vector2F(0.0f, -2.5f);
+-               }
 -
--                // ↓キーでY座標を増加
--                if (Engine.Keyboard.GetKeyState(Keys.Down) == ButtonState.Hold)
--                {
--                    player.Position += new Vector2F(0.0f, 2.5f);
--                }
+-               // ↓キーでY座標を増加
+-               if (Engine.Keyboard.GetKeyState(Keys.Down) == ButtonState.Hold)
+-               {
+-                   player.Position += new Vector2F(0.0f, 2.5f);
+-               }
 -
--                // →キーでX座標を増加
--                if (Engine.Keyboard.GetKeyState(Keys.Right) == ButtonState.Hold)
--                {
--                    player.Position += new Vector2F(2.5f, 0.0f);
--                }
+-               // →キーでX座標を増加
+-               if (Engine.Keyboard.GetKeyState(Keys.Right) == ButtonState.Hold)
+-               {
+-                   player.Position += new Vector2F(2.5f, 0.0f);
+-               }
 -
--                // ←キーでX座標を減少
--                if (Engine.Keyboard.GetKeyState(Keys.Left) == ButtonState.Hold)
--                {
--                    player.Position -= new Vector2F(2.5f, 0.0f);
--                }
+-               // ←キーでX座標を減少
+-               if (Engine.Keyboard.GetKeyState(Keys.Left) == ButtonState.Hold)
+-               {
+-                   player.Position -= new Vector2F(2.5f, 0.0f);
+-               }
 
-+                // プレイヤーを動かす
-+                MovePlayer(player);
++               // プレイヤーを動かす
++               MovePlayer(player);
 
                 // Zキーが押された時に実行
                 if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)

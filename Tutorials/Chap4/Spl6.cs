@@ -13,11 +13,8 @@ namespace Tutorial
             // 移動を実行
             Move();
 
-+            // ショットを実行
-+            Shot();
-
-            // 親クラスの OnUpdate メソッドを呼び出す
-            base.OnUpdate();
++           // ショットを実行
++           Shot();
         }
 
         // 移動を行う
@@ -48,28 +45,28 @@ namespace Tutorial
             }
         }
 
-+        // ショット
-+        private void Shot()
-+        {
-+            // Zキーでショットを放つ
-+            if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
-+            {
-+                // 発射される自機弾
-+                var bullet = new Bullet();
++       // ショット
++       private void Shot()
++       {
++           // Zキーでショットを放つ
++           if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
++           {
++               // 発射される自機弾
++               var bullet = new Bullet();
 +
-+                // 自機弾のテクスチャを読み込む
-+                bullet.Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
-+                // 自機弾の座標を設定
-+                bullet.Position = player.Position;
-+                // 自機弾の中心座標を設定
-+                bullet.CenterPosition = bullet.Texture.Size / 2;
-+                // 自機弾の表示位置を自機より奥に設定
-+                bullet.ZOrder--;
++               // 自機弾のテクスチャを読み込む
++               bullet.Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
++               // 自機弾の座標を設定
++               bullet.Position = player.Position;
++               // 自機弾の中心座標を設定
++               bullet.CenterPosition = bullet.Texture.Size / 2;
++               // 自機弾の表示位置を自機より奥に設定
++               bullet.ZOrder--;
 +
-+                // 自機弾をエンジンに追加
-+                Engine.AddNode(bullet);
-+            }
-+        }
++               // 自機弾をエンジンに追加
++               Engine.AddNode(bullet);
++           }
++       }
     }
 
     // 弾のクラス
@@ -80,9 +77,6 @@ namespace Tutorial
         {
             // 座標を速度分進める
             Position += new Vector2F(10.0f, 0.0f);
-
-            // 親クラスの OnUpdate メソッドを呼び出す
-            base.OnUpdate();
         }
     }
 
@@ -112,24 +106,24 @@ namespace Tutorial
                 // エンジンを更新
                 Engine.Update();
 
--                // Zキーが押された時に実行
--                if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
--                {
--                    // 発射される自機弾
--                    var bullet = new Bullet();
+-               // Zキーが押された時に実行
+-               if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
+-               {
+-                   // 発射される自機弾
+-                   var bullet = new Bullet();
 -
--                    // 自機弾のテクスチャを読み込む
--                    bullet.Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
--                    // 自機弾の座標を設定
--                    bullet.Position = player.Position;
--                    // 自機弾の中心座標を設定
--                    bullet.CenterPosition = bullet.Texture.Size / 2;
--                    // 自機弾の表示位置を自機より奥に設定
--                    bullet.ZOrder--;
+-                   // 自機弾のテクスチャを読み込む
+-                   bullet.Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
+-                   // 自機弾の座標を設定
+-                   bullet.Position = player.Position;
+-                   // 自機弾の中心座標を設定
+-                   bullet.CenterPosition = bullet.Texture.Size / 2;
+-                   // 自機弾の表示位置を自機より奥に設定
+-                   bullet.ZOrder--;
 -
--                    // 自機弾をエンジンに追加
--                    Engine.AddNode(bullet);
--                }
+-                   // 自機弾をエンジンに追加
+-                   Engine.AddNode(bullet);
+-               }
 
                 // Escapeキーでゲーム終了
                 if (Engine.Keyboard.GetKeyState(Keys.Escape) == ButtonState.Push)

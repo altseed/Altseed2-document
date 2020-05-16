@@ -1,6 +1,4 @@
-﻿------added start------
-
-using Altseed;
+﻿using Altseed;
 
 namespace Tutorial
 {
@@ -43,5 +41,3 @@ namespace Tutorial
         }
     }
 }
-
-------added end------
