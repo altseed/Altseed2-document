@@ -42,17 +42,16 @@ namespace Tutorial
             }
         }
     }
-
-+   // 弾のクラス
-+   public class Bullet : SpriteNode
-+   {
-+       // フレーム毎に実行
-+       protected override void OnUpdate()
-+       {
-+           // 座標を速度分進める
-+           Position += new Vector2F(10.0f, 0.0f);
-+       }
-+   }
++    // 弾のクラス
++    public class Bullet : SpriteNode
++    {
++        // フレーム毎に実行
++        protected override void OnUpdate()
++        {
++            // 座標を速度分進める
++            Position += new Vector2F(10.0f, 0.0f);
++        }
++    }
 
     class Program
     {
