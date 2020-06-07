@@ -5,9 +5,11 @@
 - name: ノード
   href: Node.md
 - name: 画像
-  href: Graphics/Texture.md
+  href: Graphics/Sprite.md
 - name: マテリアル
   href: Graphics/Material.md
+- name: カメラ
+  href: Graphics/Camera.md
 - name: ポストエフェクト
   href: Graphics/PostEffect.md
 - name: サウンド

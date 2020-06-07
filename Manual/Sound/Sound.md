@@ -50,7 +50,7 @@ OGG等のフォーマットでは、音のデータが圧縮された状態で�
 
 ### スペクトル情報の取得
 
-[SoundMixer](xref:Altseed.SoundMixer)クラスにはメディアアートのための機能として、スペクトルアナライザが実装されています。[GetSpectrumData](xref:Altseed.SoundMixer.GetSpectrumData(System.Int32,System.Int32,Altseed.FFTWindow))メソッドを使用することで、再生中の音声のスペクトル情報を取得し、それを使って独自のサウンドビジュアライザを作ることができます。
+[SoundMixer](xref:Altseed.SoundMixer)クラスにはメディアアートのための機能として、スペクトルアナライザが実装されています。[GetSpectrumData](xref:Altseed.SoundMixer.GetSpectrum(System.Int32,System.Int32,Altseed.FFTWindow))メソッドを使用することで、再生中の音声のスペクトル情報を取得し、それを使って独自のサウンドビジュアライザを作ることができます。
 
 > [!TIP]
 > 音は波としての性質を持ちます。スペクトルアナライザでは、その波のデータに対して、どの周波数の成分の波形がどれくらいの量含まれているかを解析します。解析する手法としてフーリエ変換が用いられています。
