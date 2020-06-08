@@ -1,7 +1,9 @@
 # カメラ
 
-[CameraNode](xref:Altseed.CameraNode)は指定の領域の描画結果を写し撮るノードです。規定では写し撮った領域は画面に描画されます。描画結果を [RenderTexure](xref:Altseed.RenderTexture) として取り出して再利用することもできます。領域の左上座標は [Transform](xref:Altseed.CameraNode.Transform) プロパティで設定できます。
+[CameraNode](xref:Altseed.CameraNode)は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。描画結果を [RenderTexure](xref:Altseed.RenderTexture) として取り出して再利用することもできます。領域の左上座標は [Transform](xref:Altseed.CameraNode.Transform) プロパティで設定できます。
 
+> [!IMPORTANT]
+>　エンジンにカメラが一つも登録されていない場合は、暗黙的に存在するデフォルトカメラによって登録されている全ての [DrawnNode](xref:Altseed.DrawnNode) が描画されます。エンジンにカメラが一つでも登録した場合は、デフォルトカメラが無効化されるため、下記[CameraGroup](xref:Altseed.DrawnNode.CameraGroup) プロパティ を適切に設定していない [DrawnNode](xref:Altseed.DrawnNode) は描画されません。
 
 ## クリア
 
