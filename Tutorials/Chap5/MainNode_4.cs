@@ -1,13 +1,13 @@
 ﻿using Altseed;
-using System.Collections.Generic;
++ using System.Collections.Generic;
 
 namespace Tutorial
 {
     // メインステージのクラス
     public class MainNode : Node
     {
-        // カウンタ
-        private int count = 0;
++       // カウンタ
++       private int count = 0;
 
 +       // 敵を格納するキュー
 +       private Queue<Enemy> enemies = new Queue<Enemy>();

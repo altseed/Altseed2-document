@@ -41,7 +41,7 @@ namespace Tutorial
             characterNode.AddChildNode(player);
 
 +           // 敵を追加する。
-+           characterNode.AddChildNode(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
++           characterNode.AddChildNode(new Meteor(player, new Vector2F(910, 400), new Vector2F(-4.0f, 0.0f)));
         }
     }
 }

@@ -71,13 +71,16 @@ Meteor.csを追加し、下記のコードを記述します。
 
 [!code-diff[Main](MainNode_1.cs)]
 
+![Meteor](imgs/Meteor.png)
+
 ## 弾を打つ敵
 
 弾を打つ敵を用意しますが、その前に弾を共通化します。
 味方の弾と敵の弾を全く異なるクラスにしてもいいですが、ほとんどの機能は共通なので同じようなコードが2箇所に書かれてしまいます。
 そのため、弾クラスを用意して、それを継承するようにします。
 
-前章で作成した弾クラスのコンストラクタを消します。
+前章で作成した弾クラスのコンストラクタを一部修正します。
+弾の画像に関する部分を消しています。
 
 - Bullet.cs
 
@@ -87,13 +90,17 @@ Meteor.csを追加し、下記のコードを記述します。
 プレイヤーの弾クラスは弾クラスを継承するようにします。
 それに合わせて、プレイヤーはプレイヤーの弾クラスを発射するようにします。
 
-- Player.cs
-
-[!code-diff[Main](Player.cs)]
+新たにBulletクラスを継承してPlayerBulletクラスを追加します。
 
 - PlayerBullet.cs
 
 [!code-diff[Main](PlayerBullet.cs)]
+
+- Player.cs
+
+PlayerBulletを撃つように変更します。
+
+[!code-diff[Main](Player.cs)]
 
 次に敵の弾と弾を打つ敵クラスを実装します。
 基本的には味方が弾を打つ処理と、敵の移動を組み合わせたものになります。
@@ -108,11 +115,13 @@ Meteor.csを追加し、下記のコードを記述します。
 [!code-diff[Main](EnemyBullet.cs)]
 
 この敵も出現するようにしましょう。
-Waveに敵を追加します。
+MainNodeに敵を追加します。
 
 - MainNode.cs
 
 [!code-diff[Main](MainNode_2.cs)]
+
+![StraightShotEnemy](imgs/StraightShotEnemy.png)
 
 ## 他の敵
 
@@ -135,6 +144,8 @@ Waveに敵を追加します。
 それぞれの敵を追加します。
 
 [!code-diff[Main](MainNode_3.cs)]
+
+![Enemies](imgs/Enemies.png)
 
 ## 続・敵の出現
 
@@ -175,6 +186,8 @@ Console.WriteLine(value);
 そして、一定時間ごとにQueueから敵ノードを取り出し、追加することで敵が徐々に出現するようにします。
 
 [!code-diff[Main](MainNode_4.cs)]
+
+![Finish](imgs/Finish.png)
 
 ## まとめ
 
