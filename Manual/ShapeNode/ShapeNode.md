@@ -72,3 +72,13 @@ Altseed2には図形を描画するノードが存在します。
 |頂点1|Point1|
 |頂点2|Point2|
 |頂点3|Point3|
+
+## サンプルコード
+
+サンプルコードは以下の通りです。
+
+[!code-cs[Sample](../../Src/Samples/ShapeNode/ShapeNode.cs)]
+
+これを実行するとこのように図形が描画されます。
+
+![Result](Image/ShapeNodes.png)
