@@ -3,29 +3,29 @@ apiRules:
       uidRegex: ^System\.object
 
   - exclude: # HogeArray
-      uidRegex: ^Altseed\.(ArrayExtension|IArray`1|.*Array)
+      uidRegex: ^Altseed2\.(ArrayExtension|IArray`1|.*Array)
   - exclude: # Registerable
-      uidRegex: ^Altseed\.(Registerable(Collection)?|Registerable.*)
+      uidRegex: ^Altseed2\.(Registerable(Collection)?|Registerable.*)
   - exclude: # 内部用クラス
-      uidRegex: ^Altseed\.(Core|CommandList|Window|Graphics|RootNode|Glyph|MemoryHandle|Resource(s|Type)|IOHelper|Renderer|Rendered.*|Engine\.DrawnNodeSorter|CullingSystem|SerializationHelper|RenderTextureCache)
+      uidRegex: ^Altseed2\.(Core|CommandList|Window|Graphics|RootNode|Glyph|MemoryHandle|Resource(s|Type)|IOHelper|Renderer|Rendered.*|Engine\.DrawnNodeSorter|CullingSystem|SerializationHelper|RenderTextureCache)
   - exclude: # FontType
-      uidRegex: ^Altseed\.Font\.FontType
-  - exclude: # AltseedContext.Entry
-      uidRegex: ^Altseed\.AltseedContext\.Entry
+      uidRegex: ^Altseed2\.Font\.FontType
+  - exclude: # Altseed2Context.Entry
+      uidRegex: ^Altseed2\.Altseed2Context\.Entry
   - exclude: # CollisionCollection
-      uidRegex: ^Altseed\.CollisionCollection
+      uidRegex: ^Altseed2\.CollisionCollection
 
   - exclude: # 内部用メンバー
-      uidRegex: ^Altseed\..*\.(#ctor\(Altseed\.MemoryHandle\)|Finalize|TryGetFromCache\(IntPtr\)|GetInstance|selfPtr|cacheRepo|cbg_.*)
+      uidRegex: ^Altseed2\..*\.(#ctor\(Altseed2\.MemoryHandle\)|Finalize|TryGetFromCache\(IntPtr\)|GetInstance|selfPtr|cacheRepo|cbg_.*)
 
   - exclude: # シリアライズ
-      uidRegex: ^Altseed\..*\.(.*\(SerializationInfo,StreamingContext\)|ISerializable#GetObjectData.*|.*OnDeserialization)
+      uidRegex: ^Altseed2\..*\.(.*\(SerializationInfo,StreamingContext\)|ISerializable#GetObjectData.*|.*OnDeserialization)
       type: Method
 
   - exclude: # privateフィールド
-      uidRegex: ^Altseed\..*\.S?_.*
+      uidRegex: ^Altseed2\..*\.S?_.*
       type: Field
 
   - exclude: # Engineのinternal プロパティ
-      uidRegex: ^Altseed\.Engine\.(Core|Graphics|Renderer|Resources|Window)
+      uidRegex: ^Altseed2\.Engine\.(Core|Graphics|Renderer|Resources|Window)
       type: Property

@@ -5,7 +5,7 @@ Altseed2には図形を描画するノードが存在します。
 
 ## 円の描画
 
-円の描画は[`CircleNode`](xref:Altseed.CircleNode)で行う事が出来ます。
+円の描画は[`CircleNode`](xref:Altseed2.CircleNode)で行う事が出来ます。
 
 設定できる情報と対応するプロパティは以下の通りです。
 
@@ -20,7 +20,7 @@ Altseed2には図形を描画するノードが存在します。
 
 ## 円弧の描画
 
-円弧の描画は[`ArcNode`](xref:Altseed.ArcNode)で行う事が出来ます。
+円弧の描画は[`ArcNode`](xref:Altseed2.ArcNode)で行う事が出来ます。
 `ArcNode`では`CircleNode`の内容に加えて，描画をする角度の範囲を設定できます。
 
 設定できる情報と対応するプロパティは以下の通りです。
@@ -40,7 +40,7 @@ Altseed2には図形を描画するノードが存在します。
 
 ## 直線の描画
 
-直線の描画は[`LineNode`](xref:Altseed.LineNode)で行う事が出来ます。
+直線の描画は[`LineNode`](xref:Altseed2.LineNode)で行う事が出来ます。
 
 設定できる情報と対応するプロパティは以下の通りです。
 
@@ -52,7 +52,7 @@ Altseed2には図形を描画するノードが存在します。
 
 ## 短形の描画
 
-短形の描画は[`RectangleNode`](xref:Altseed.RectangleNode)で行う事が出来ます。
+短形の描画は[`RectangleNode`](xref:Altseed2.RectangleNode)で行う事が出来ます。
 
 設定できる情報と対応するプロパティは以下の通りです。
 
@@ -63,7 +63,7 @@ Altseed2には図形を描画するノードが存在します。
 
 ## 三角形の描画
 
-三角形の描画は[`TriangleNode`](xref:Altseed.TriangleNode)で行う事が出来ます。
+三角形の描画は[`TriangleNode`](xref:Altseed2.TriangleNode)で行う事が出来ます。
 
 設定できる情報と対応するプロパティは以下の通りです。
 

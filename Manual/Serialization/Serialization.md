@@ -12,19 +12,19 @@ Altseed2では一部を除き，殆どのクラス・構造体がバイナリシ
 ## シリアライズ非対応のクラス
 
 以下のクラスはシリアライズに対応していません。  
-これらは[Engine](xref:Altseed.Engine)クラスにてシングルトンとしてインスタンスが提供されているクラスです。
+これらは[Engine](xref:Altseed2.Engine)クラスにてシングルトンとしてインスタンスが提供されているクラスです。
 
-- [BuiltinShader](xref:Altseed.BuiltinShader)
-<!-- - [CommandList](xref:Altseed.CommandList) -->
-- [Easing](xref:Altseed.Easing)
-- [File](xref:Altseed.File)
-- [Glyph](xref:Altseed.Glyph)
-- [JoyStick](xref:Altseed.Joystick)
-- [KeyBoard](xref:Altseed.Keyboard)
-- [Log](xref:Altseed.Log)
-- [Mouse](xref:Altseed.Mouse)
-- [SoundMixer](xref:Altseed.SoundMixer)
-- [Tool](xref:Altseed.Tool)
+- [BuiltinShader](xref:Altseed2.BuiltinShader)
+<!-- - [CommandList](xref:Altseed2.CommandList) -->
+- [Easing](xref:Altseed2.Easing)
+- [File](xref:Altseed2.File)
+- [Glyph](xref:Altseed2.Glyph)
+- [JoyStick](xref:Altseed2.Joystick)
+- [KeyBoard](xref:Altseed2.Keyboard)
+- [Log](xref:Altseed2.Log)
+- [Mouse](xref:Altseed2.Mouse)
+- [SoundMixer](xref:Altseed2.SoundMixer)
+- [Tool](xref:Altseed2.Tool)
 
 ## 使い道
 
@@ -37,7 +37,7 @@ Altseed2では一部を除き，殆どのクラス・構造体がバイナリシ
 ## サンプル(シリアライズの手順)
 
 シリアライズには [`System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`](https://docs.microsoft.com/ja-jp/dotnet/api/system.runtime.serialization.formatters.binary.binaryformatter?view=netstandard-2.1) を使用します。  
-以下に，[StaticFile](xref:Altseed.StaticFile)のシリアライズを例にシリアライズ/デシリアライズの手順を示します。
+以下に，[StaticFile](xref:Altseed2.StaticFile)のシリアライズを例にシリアライズ/デシリアライズの手順を示します。
 
 
 [!code-csharp[Sample](../../Src/Samples/Serialization/Serialization.cs)]

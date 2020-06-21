@@ -1,12 +1,12 @@
 ﻿# カーソル
 
-[Cursor](xref:Altseed.Cursor) は カーソルの画像を設定するためのクラスです。
+[Cursor](xref:Altseed2.Cursor) は カーソルの画像を設定するためのクラスです。
 
 
 ## 基本的な使い方
 
-Altseed2の[Create](xref:Altseed.Cursor.Create(System.String,Altseed.Vector2I)を呼び出し、カーソルインスタンスを生成します。
-生成したカーソルインスタンスを、Mouseの[Create](xref:Altseed.Cursor.Create(System.String,Altseed.Vector2I))に入れてカーソルをセットすると、カーソル画像が変更されます。
+Altseed2の[Create](xref:Altseed2.Cursor.Create(System.String,Altseed2.Vector2I)を呼び出し、カーソルインスタンスを生成します。
+生成したカーソルインスタンスを、Mouseの[Create](xref:Altseed2.Cursor.Create(System.String,Altseed2.Vector2I))に入れてカーソルをセットすると、カーソル画像が変更されます。
 > [!NOTE]
 > ホットスポットとは、カーソルのクリック判定の出る座標のことです。
 > 
@@ -26,6 +26,6 @@ Altseed2の[Create](xref:Altseed.Cursor.Create(System.String,Altseed.Vector2I)�
 
 
 
-戻り値は[ButtonState](xref:Altseed.Cursor)です。
+戻り値は[ButtonState](xref:Altseed2.Cursor)です。
 画像のロードに失敗したときは null を返します。
 

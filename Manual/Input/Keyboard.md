@@ -1,16 +1,16 @@
 ﻿# キーボード
 
-[Keyboard](xref:Altseed.Keyboard) は キーボード入力に関する基本的な機能を提供します。
+[Keyboard](xref:Altseed2.Keyboard) は キーボード入力に関する基本的な機能を提供します。
 
 
-## [Keyboard](xref:Altseed.Keyboard)
+## [Keyboard](xref:Altseed2.Keyboard)
 
-[Keyboard](xref:Altseed.Keyboard)では次の機能を提供します。
+[Keyboard](xref:Altseed2.Keyboard)では次の機能を提供します。
 * キーボード入力の取得
 
 ## 基本的な呼び出し手順
 
-Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed.Configuration))を呼び出した後、Engine.Keyboard という形でKeyboardの各種メソッドを呼び出してください。
+Altseed2の[Initialize](xref:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration))を呼び出した後、Engine.Keyboard という形でKeyboardの各種メソッドを呼び出してください。
 
 
 
@@ -23,9 +23,9 @@ Altseed2の[Initialize](xref:Altseed.Engine.Initialize(System.String,System.Int3
 
 
 カーソルの座標の取得・設定は以下のプロパティを通して行います。
-* [GetKeyState](xref:Altseed.Keyboard.GetKeyState
+* [GetKeyState](xref:Altseed2.Keyboard.GetKeyState
 
-戻り値は[ButtonState](xref:Altseed.ButtonState)です。
+戻り値は[ButtonState](xref:Altseed2.ButtonState)です。
 
 
 
