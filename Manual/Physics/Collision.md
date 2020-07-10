@@ -67,5 +67,5 @@ Altseed2では物理演算を用いて，2Dの衝突判定を行う機構が備�
 [!code-csharp[Main](../../Src/Samples/Physics/Collision.cs)]
 
 #### 結果
-衝突を開始したときに`Collision started.`と出力され，以降衝突している間ずっと`Collision is keeped.`と出力されます。  
-衝突終了時には`Collision finished.`と出力されます。
+衝突を開始したときに色が赤くなり，以降衝突している間回転します。  
+衝突終了時には色が戻ります。
