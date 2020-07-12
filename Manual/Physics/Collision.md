@@ -11,7 +11,7 @@ Altseed2では物理演算を用いて，2Dの衝突判定を行う機構が備�
 |:---:|:---:|:---:|
 |[CircleCollider](xref:Altseed2.CircleCollider)|円形|[中心](xref:Altseed2.Collider.Position)，[半径](xref:Altseed2.CircleCollider.Radius)|
 |[PolygonCollider](xref:Altseed2.PolygonCollider)|多角形|[各頂点の座標](xref:Altseed2.PolygonCollider.Vertexes)|
-|[CircleCollider](xref:Altseed2.CircleCollider)|短形|[左上の座標](xref:Altseed2.Collider.Position)，[サイズ(縦・横)](xref:Altseed2.RectangleCollider.Size)|
+|[RectangleCollider](xref:Altseed2.RectangleCollider)|短形|[左上の座標](xref:Altseed2.Collider.Position)，[サイズ(縦・横)](xref:Altseed2.RectangleCollider.Size)|
 
 [Collider](xref:Altseed2.Collider)との衝突判定は[GetIsCollidedWith(Collider)](xref:Altseed2.Collider.GetIsCollidedWith(Altseed2.Collider))メソッドを使用します。  
 指定したコライダと衝突していたらtrue，衝突していなかったらfalseを返します。  
