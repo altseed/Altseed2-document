@@ -7,11 +7,11 @@ Altseed2では物理演算を用いて，2Dの衝突判定を行う機構が備�
 [Collider](xref:Altseed2.Collider)クラスは自身のメンバの情報をもとに他[Collider](xref:Altseed2.Collider)のインスタンスとの衝突の有無を判定します。  
 [Collider](xref:Altseed2.Collider)と衝突判定の種類は以下の通りです。
 
-| [Collider](xref:Altseed2.Collider) | 衝突判定のタイプ | 使用するメンバ |
-| :---: | :---: | :---: |
-| [CircleCollider](xref:Altseed2.CircleCollider) | 円形 | [中心](xref:Altseed2.Collider.Position)，[半径](xref:Altseed2.CircleCollider.Radius) |
-| [PolygonCollider](xref:Altseed2.PolygonCollider) | 多角形 | [各頂点の座標](xref:Altseed2.PolygonCollider.Vertexes) |
-| [RectangleCollider](xref:Altseed2.RectangleCollider) | 短形 | [左上の座標](xref:Altseed2.Collider.Position)，[中心座標](xref:Altseed2.RectangleCollider.CenterPosition)，[サイズ(縦・横)](xref:Altseed2.RectangleCollider.Size) |
+|[Collider](xref:Altseed2.Collider)|衝突判定のタイプ|使用するメンバ|
+|:---:|:---:|:---:|
+|[CircleCollider](xref:Altseed2.CircleCollider)|円形|[中心](xref:Altseed2.Collider.Position)，[半径](xref:Altseed2.CircleCollider.Radius)|
+|[PolygonCollider](xref:Altseed2.PolygonCollider)|多角形|[各頂点の座標](xref:Altseed2.PolygonCollider.Vertexes)|
+|[RectangleCollider](xref:Altseed2.RectangleCollider)|短形|[左上の座標](xref:Altseed2.Collider.Position)，[サイズ(縦・横)](xref:Altseed2.RectangleCollider.Size)|
 
 [Collider](xref:Altseed2.Collider)との衝突判定は[GetIsCollidedWith(Collider)](xref:Altseed2.Collider.GetIsCollidedWith(Altseed2.Collider))メソッドを使用します。  
 指定したコライダと衝突していたらtrue，衝突していなかったらfalseを返します。  
@@ -47,13 +47,13 @@ Altseed2では物理演算を用いて，2Dの衝突判定を行う機構が備�
 
 [ColliderNode](xref:Altseed2.ColliderNode)クラスと[CollisionManagerNode](xref:Altseed2.CollisionManagerNode)クラスはそれぞれ以下の図のような関係でなければなりません。  
 
-> [!IMPORTANT]
+> [!CAUTION]
 > [ColliderNode](xref:Altseed2.ColliderNode)の自動登録には，シーンとなるノードに対して，**[CollisionManagerNode](xref:Altseed2.CollisionManagerNode)が子ノードであり，かつ[ColliderNode](xref:Altseed2.ColliderNode)が孫ノードである**事が重要です。  
 > それ以外の場合における[ColliderNode](xref:Altseed2.ColliderNode)の自動的な追加/削除は発生しません。
 
-![Structure](Structure.png)
+![Structure](Image/Structure.png)
 
-> [!IMPORTANT]
+> [!NOTE]
 > 衝突判定を行うノードが[ICollisionEventReceiver](xref:Altseed2.ICollisionEventReceiver)インターフェイスを実装している場合，
 > 
 > - 衝突の開始
@@ -67,5 +67,24 @@ Altseed2では物理演算を用いて，2Dの衝突判定を行う機構が備�
 [!code-csharp[Main](../../Src/Samples/Physics/Collision.cs)]
 
 #### 結果
-衝突を開始したときに`Collision started.`と出力され，以降衝突している間ずっと`Collision is keeped.`と出力されます。  
-衝突終了時には`Collision finished.`と出力されます。
+衝突を開始したときに色が赤くなり，以降衝突している間回転します。  
+衝突終了時には色が戻ります。
+
+## [ColliderVisualizeNode](xref:Altseed2.ColliderVisualizeNode)クラス
+
+[ColliderVisualizeNode](xref:Altseed2.ColliderVisualizeNode)は[ColliderNode](xref:Altseed2.ColliderNode)の持つ当たり判定を視覚化できる[DrawnNode](xref:Altseed2.DrawnNode)の一種です。
+`ColliderNode.CreateVisualizeNode(ColliderNode)`を使用することで取得できます。
+
+> [!IMPORTANT]
+> 得られた[ColliderVisualizeNode](xref:Altseed2.ColliderVisualizeNode)を，`Node.AddChildNode(Node)`や`Engine.AddNode(Node)`などの手段で登録しなければ衝突判定の視覚化は行われません。
+
+> [!CAUTION]
+> ColliderVisualizeNode](xref:Altseed2.ColliderVisualizeNode)の同期は元となる[ColliderNode](xref:Altseed2.ColliderNode)が[CollisionManagerNode](xref:Altseed2.CollisionManagerNode)の管理下にある必要があります。
+
+使い方は以下のサンプルコードを参考にしてください。
+
+[!code-csharp[Main](../../Src/Samples/Physics/ColliderVisualization.cs)]
+
+このコードを実行すると以下のように円形の当たり判定が赤色で示されます。
+
+![Visualization](Image/Visualization.png)
