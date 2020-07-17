@@ -1,77 +1,63 @@
 ﻿# ジョイスティック
 
-[Joystick](xref:Altseed2.Joystick) は ジョイスティックコントローラーについての機能を提供します。 コントローラーの検出やコントローラー名の取得、ボタンやスティックの入力の取得、振動といったことは[Joystick](xref:Altseed2.Joystick)で行うことができます。
+[Joystick](xref:Altseed2.Joystick)クラスはジョイスティックコントローラーについての機能を提供します。
+コントローラーの検出やコントローラー情報の取得、ボタンやスティックの入力の取得が可能です。
 
-## 対応状況
-JoyCon(R),  JoyCon(L)
-
-## [Joystick](xref:Altseed2.Joystick)
-
-[Joystick](xref:Altseed2.Joystick)では次の機能を提供します。
-* ジョイスティックコントローラーの存在を確認
-* ジョイスティックコントローラーのプロダクト名の取得
-* ジョイスティックの種類を取得
-* ジョイスティックコントローラーのボタン入力の取得
-* ジョイスティックコントローラーのスティック入力の取得
-* ジョイスティックコントローラーの振動
+[SDL GameControllerDB](https://github.com/gabomdq/SDL_GameControllerDB)に対応しているコントローラー（およそ数百種類）では、[JoystickButtonType](xref:Altseed2.JoystickButtonType)や[JoystickAxisType](xref:Altseed2.JoystickAxisType)を利用して抽象化されたコントローラーへのアクセスが可能です。
 
 ## 基本的な呼び出し手順
 
-Altseed2の[Initialize](xref:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration))を呼び出した後、Engine.Joystick という形でJoystickの各種メソッドを呼び出してください。
-> [!NOTE]
-> [JoystickButtonType](xref:Altseed2.JoystickButtonType)や[ButtonState](xref:Altseed2.ButtonState)は
-> Joystickには含まれていません。
+Altseed2の[Initialize](xref:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration))を呼び出した後、`Engine.Joystick` という形でJoystickの各種メソッドを呼び出してください。
+
+Joystickを接続・取り外しした際には、自動的にインデックスが更新されます。
+
+## ジョイスティックの情報の取得
+[Engine.Joystick.GetJoystickInfo(int joystickIndex)](xref:Altseed2.Joystick.GetJoystickInfo(System.Int32))を利用して、指定したインデックスのジョイスティックの情報を取得できます。
+返り値は[JoystickInfo](xref:Altseed2.JoystickInfo)です。
+ジョイスティックが接続されていない場合は`null`を返します。
+
+[JoystickInfo](xref:Altseed2.JoystickInfo)を通して、ジョイスティックの情報を取得できます。
+
+- [IsGamepad](xref:Altseed2.JoystickInfo.IsGamepad): ジョイスティックがGameControllerDBに登録された製品かどうかを取得できます。
+- [GamepadName](xref:Altseed2.JoystickInfo.GamepadName): [IsGamepad](xref:Altseed2.JoystickInfo.IsGamepad)が`true`の場合にのみ使えます。GameControllerDBに登録された、わかりやすい名前を取得できます。
+- [Name](xref:Altseed2.JoystickInfo.Name): [IsGamepad](xref:Altseed2.JoystickInfo.IsGamepad)が`false`の場合はこちらを利用してください。
+
+また、[Engine.Joystick.IsPresent(int joystickIndex)](xref:Altseed2.Joystick.IsPresent(System.Int32))を利用しても、指定したインデックスにジョイスティックが接続されているかどうかを取得できます。
 
 
 ## ボタン入力の取得
 
-サンプル
-
-[!code-csharp[Main](../../Src/Samples/Input/JoystickButton.cs)]
-
 ボタンの取得は以下のメソッドを用いて行います。
-* [GetButtonState](xref:Altseed2.Joystick.GetButtonState(System.Int32,Altseed2.JoystickButtonType))
-* [GetButtonState](xref:Altseed2.Joystick.GetButtonState(System.Int32,System.Int32))
-
-### メソッド共通
 第一引数に取得したいジョイスティックコントローラーのインデックスを指定します。
 戻り値は[ButtonState](xref:Altseed2.ButtonState)です。
 
-### [GetButtonState](xref:Altseed2.Joystick.GetButtonState(System.Int32,Altseed2.JoystickButtonType))
+### [GetButtonState(int joystickIndex, JoystickButtonType buttonType)](xref:Altseed2.Joystick.GetButtonState(System.Int32,Altseed2.JoystickButtonType))
 第2引数に[JoystickButtonType](xref:Altseed2.JoystickButtonType)を指定します。
+[JoystickInfo](xref:Altseed2.JoystickInfo)の[IsGamepad](xref:Altseed2.JoystickInfo.IsGamepad)が`true`の時のみ利用できます。
 
-### [GetButtonState](xref:Altseed2.Joystick.GetButtonState(System.Int32,System.Int32))
+### [GetButtonState(int joystickIndex, int buttonIndex)](xref:Altseed2.Joystick.GetButtonState(System.Int32,System.Int32))
 第2引数にボタンのインデックスを指定します。
-> [!IMPORTANT]
-> ジョイスティックコントローラーのボタンとインデックスの対応はコントローラーごとに異なります。特定のボタンを取得したい場合は[GetAxisState](xref:Altseed2.Joystick.GetButtonState(System.Int32,Altseed2.JoystickButtonType))を使うことをおすすめします。
 
-
+[!code-csharp[Main](../../Src/Samples/Input/JoystickButton.cs)]
 
 ## スティック入力の取得
 
-サンプル
-[!code-csharp[Main](../../Src/Samples/Input/JoystickAxis.cs)]
-
 スティックの取得には以下のメソッドを用います。
-* [GetButtonStateByType](xref:Altseed2.Joystick.GetButtonStateByType(System.Int32,Altseed2.JoystickButtonType))
-* [GetButtonStateByIndex](xref:Altseed2.Joystick.GetButtonStateByIndex(System.Int32,System.Int32))
 
-### メソッド共通
 第一引数に取得したいジョイスティックコントローラーのインデックスを指定します。
 戻り値は-1から1の間のfloatです。
-取得できる値は、左右スティックの水平方向(LeftH,RightH), 垂直方向(LeftV,RightV)です。
+取得できる値は、左右スティックの水平方向(LeftX, RightX), 垂直方向(LeftY, RightY)、左右のトリガー(LeftTrigger, RightTrigger)です。
 
-[ButtonState](xref:Altseed2.ButtonState)です。
-
-### [GetButtonStateByType](xref:Altseed2.Joystick.GetButtonStateByType(System.Int32,Altseed2.JoystickButtonType))
+### [GetAxisState(int joystickIndex, JoystickAxisType axisType)](xref:Altseed2.Joystick.GetAxisState(System.Int32,Altseed2.JoystickAxisType))
 第２引数に[JoystickButtonType](xref:Altseed2.JoystickAxisType)を指定します。
+[JoystickInfo](xref:Altseed2.JoystickInfo)の[IsGamepad](xref:Altseed2.JoystickInfo.IsGamepad)が`true`の時のみ利用できます。
 
+### [GetAxisState(int joystickIndex, int axisIndex)](xref:Altseed2.Joystick.GetAxisState(System.Int32,System.Int32))
+第２引数にスティックのインデックスを指定します。
 
-### [GetButtonStateByIndex](xref:Altseed2.Joystick.GetButtonStateByIndex(System.Int32,System.Int32))
-第２引数にボタンのインデックスを指定します。
+[!code-csharp[Main](../../Src/Samples/Input/JoystickAxis.cs)]
 
-
-
+<!-- 
 
 ## 振動
 
@@ -92,32 +78,4 @@ Altseed2の[Initialize](xref:Altseed2.Engine.Initialize(System.String,System.Int
 [!CAUTION] 
 * 周波数は 40.0 から 1252.0 の間に収めてください。これを超える範囲の値は、前述の範囲内の一番近い値に書き換えられます。
 * 振幅は 0.0 から 1.0 の範囲内に収めてください。これを超える範囲の値は、前述の範囲内に一番近い値に書き換えられます。
-
-
-
-
-## ジョイスティックの種類を取得
-
-ジョイスティックの種類を取得するには、以下のメソッドを使用します。
-* [GetJoystickType](xref:Altseed2.Joystick.GetJoystickType(System.Int32))
-
-第一引数は取得したいジョイスティックコントローラーのインデックスを指定してください。
-戻り値は [JoystickType](xref:Altseed2.JoystickType) です。
-
-
-
-## プロダクト名の取得
-
-プロダクト名の取得を取得するには、以下のメソッドを使用します。
-* [GetJoystickName](xref:Altseed2.Joystick.GetJoystickName(System.Int32))
-
-プロダクト名を取得したいコントローラーのインデックスを指定してください。
-戻り値は System.String です。
-
-## 存在を確認
-
-ジョイスティックコントローラーがAltseedで認識されているか確認するには以下のメソッドを使用します。
-* [GetJoystickName](xref:Altseed2.Joystick.GetJoystickName(System.Int32))
-
-認識されているか確認したいコントローラーのインデックスを指定してください。
-戻り値は bool[xref:Sysytem.Boolean] です。
+ -->
