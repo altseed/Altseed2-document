@@ -26,6 +26,10 @@
 パスワード付きのパッケージにすることで、パッケージ化されたリソースデータをユーザから抽出されるのを防ぐことができます。
 パスワード付きのパッケージをルートに指定する場合、[Engine.File.AddRootPackageWithPassword](xref:Altseed2.File.AddRootPackageWithPassword(System.String,System.String))メソッドを使用してください。
 
+> [!NOTE]
+> パッケージング機能の内部実装はZIP圧縮になっています。
+> したがって、任意のZIPファイルをパッケージファイルとして読み込むことができます。
+
 ## [StaticFile](xref:Altseed2.StaticFile)
 
 [StaticFile](xref:Altseed2.StaticFile)は、ファイルを一括で全て読み込むクラスです。
@@ -56,3 +60,15 @@
 ### StreamFileによるファイル読み込み
 
 [!code-csharp[Main](../../Src/Samples/File/StreamFile.cs)]
+
+### パッケージファイルの作成・読み込み
+
+[!code-csharp[Main](../../Src/Samples/File/Package.cs)]
+
+### パスワード付きのパッケージファイルの作成・読み込み
+
+[!code-csharp[Main](../../Src/Samples/File/PackageWithPasssword.cs)]
+
+### ZIPファイルをパッケージファイルとして読み込み
+
+[!code-csharp[Main](../../Src/Samples/File/PackageFromZip.cs)]
