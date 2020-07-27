@@ -3,7 +3,7 @@
 [Joystick](xref:Altseed2.Joystick)クラスはジョイスティックコントローラーについての機能を提供します。
 コントローラーの検出やコントローラー情報の取得、ボタンやスティックの入力の取得が可能です。
 
-[SDL GameControllerDB](https://github.com/gabomdq/SDL_GameControllerDB)に対応しているコントローラー（およそ数百種類）では、[JoystickButtonType](xref:Altseed2.JoystickButtonType)や[JoystickAxisType](xref:Altseed2.JoystickAxisType)を利用して抽象化されたコントローラーへのアクセスが可能です。
+[SDL GameControllerDB](https://github.com/gabomdq/SDL_GameControllerDB)に対応しているコントローラー（およそ数百種類）では、[JoystickButton](xref:Altseed2.JoystickButton)や[JoystickAxis](xref:Altseed2.JoystickAxis)を利用して抽象化されたコントローラーへのアクセスが可能です。
 
 ## 基本的な呼び出し手順
 
@@ -31,8 +31,8 @@ Joystickを接続・取り外しした際には、自動的にインデックス
 第一引数に取得したいジョイスティックコントローラーのインデックスを指定します。
 戻り値は[ButtonState](xref:Altseed2.ButtonState)です。
 
-### [GetButtonState(int joystickIndex, JoystickButtonType buttonType)](xref:Altseed2.Joystick.GetButtonState(System.Int32,Altseed2.JoystickButtonType))
-第2引数に[JoystickButtonType](xref:Altseed2.JoystickButtonType)を指定します。
+### [GetButtonState(int joystickIndex, JoystickButton button)](xref:Altseed2.Joystick.GetButtonState(System.Int32,Altseed2.JoystickButton))
+第2引数に[JoystickButton](xref:Altseed2.JoystickButton)を指定します。
 [JoystickInfo](xref:Altseed2.JoystickInfo)の[IsGamepad](xref:Altseed2.JoystickInfo.IsGamepad)が`true`の時のみ利用できます。
 
 ### [GetButtonState(int joystickIndex, int buttonIndex)](xref:Altseed2.Joystick.GetButtonState(System.Int32,System.Int32))
@@ -48,8 +48,8 @@ Joystickを接続・取り外しした際には、自動的にインデックス
 戻り値は-1から1の間のfloatです。
 取得できる値は、左右スティックの水平方向(LeftX, RightX), 垂直方向(LeftY, RightY)、左右のトリガー(LeftTrigger, RightTrigger)です。
 
-### [GetAxisState(int joystickIndex, JoystickAxisType axisType)](xref:Altseed2.Joystick.GetAxisState(System.Int32,Altseed2.JoystickAxisType))
-第２引数に[JoystickButtonType](xref:Altseed2.JoystickAxisType)を指定します。
+### [GetAxisState(int joystickIndex, JoystickAxis axis)](xref:Altseed2.Joystick.GetAxisState(System.Int32,Altseed2.JoystickAxis))
+第２引数に[JoystickAxis](xref:Altseed2.JoystickAxis)を指定します。
 [JoystickInfo](xref:Altseed2.JoystickInfo)の[IsGamepad](xref:Altseed2.JoystickInfo.IsGamepad)が`true`の時のみ利用できます。
 
 ### [GetAxisState(int joystickIndex, int axisIndex)](xref:Altseed2.Joystick.GetAxisState(System.Int32,System.Int32))
