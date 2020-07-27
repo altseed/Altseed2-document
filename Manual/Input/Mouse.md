@@ -15,7 +15,7 @@
 
 Altseed2の[Initialize](xref:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration))を呼び出した後、Engine.Mouse という形でMouseの各種メソッドを呼び出してください。
 > [!NOTE]
-> [MouseButtons](xref:Altseed2.MouseButtons)や[ButtonState](xref:Altseed2.ButtonState)は
+> [MouseButton](xref:Altseed2.MouseButton)や[ButtonState](xref:Altseed2.ButtonState)は
 > Mouseには含まれていません。
 
 
@@ -41,7 +41,7 @@ Altseed2の[Initialize](xref:Altseed2.Engine.Initialize(System.String,System.Int
 [!code-csharp[Main](../../Src/Samples/Input/Mouse.cs)]
 
 スティックの取得には以下のメソッドを用います。
-* [GetMouseButtonState](xref:Altseed2.Mouse.GetMouseButtonState(Altseed2.MouseButtons))
+* [GetMouseButtonState](xref:Altseed2.Mouse.GetMouseButtonState(Altseed2.MouseButton))
 
 戻り値は[ButtonState](xref:Altseed2.ButtonState)です。
 

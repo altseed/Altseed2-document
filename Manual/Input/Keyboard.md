@@ -23,7 +23,7 @@ Altseed2の[Initialize](xref:Altseed2.Engine.Initialize(System.String,System.Int
 
 
 カーソルの座標の取得・設定は以下のプロパティを通して行います。
-* [GetKeyState](xref:Altseed2.Keyboard.GetKeyState
+* [GetKeyState](xref:Altseed2.Keyboard.GetKeyState)
 
 戻り値は[ButtonState](xref:Altseed2.ButtonState)です。
 
