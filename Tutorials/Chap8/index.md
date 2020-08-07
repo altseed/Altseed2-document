@@ -14,14 +14,13 @@
 
 以下のコードを追加してください。
 
-[!code-diff[MainNode](Spl1.cs)]
+[!code-diff[MainNode](Text/Spl1.cs)]
 
 二つの`TextNode`用の変数を書いたら、
 
 次はこの`TextNode`の設定していきます。
 
-
-[!code-diff[MainNode](Spl2.cs)]
+[!code-diff[MainNode](Text/Spl2.cs)]
 
 設定した内容は、
 * `TextNode`インスタンスの代入
@@ -34,7 +33,7 @@
 
 ここで一度実行してみます。
 
-<img src="text_display.png" height="320px">
+<img src="Image/text_display.png" height="320px">
 
 「スコア」が画面上部に表示されているのが確認できました。
 
@@ -48,7 +47,7 @@
 
 では、以下のコードを追加・削除してください。
 
-[!code-diff[MainNode](Spl3.cs)]
+[!code-diff[MainNode](Text/Spl3.cs)]
 
 まず、先ほど追加した仮テキストを代入する箇所を削除します。
 
@@ -64,7 +63,7 @@
 
 では実行してみます
 
-<img src="score_display.png" height="320px">
+<img src="Image/score_display.png" height="320px">
 
 左上の方に「Score」が表示できてますね。
 
@@ -75,4 +74,4 @@
 ## コード全体
 
 最後に、今回修正を加えた、今回の`MainNode`全体を載せておきます。困ったときは見比べたりコピペしてみてください。
-[!code-cs[MainNode](Spl4.cs)]
+[!code-diff[MainNode](Text/Spl4.cs)]
