@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Altseed;
+using Altseed2;
 
 namespace Tutorial
 {
@@ -10,7 +10,7 @@ namespace Tutorial
         public static HashSet<CollidableObject> objects = new HashSet<CollidableObject>();
 
         // コライダ
-        protected CircleCollider collider = new CircleCollider();
+        protected CircleCollider collider = CircleCollider.Create();
 
         // OnUpdate内で衝突判定を調査するかどうか
         protected bool doSurvey;
