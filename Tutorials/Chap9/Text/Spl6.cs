@@ -1,11 +1,11 @@
-﻿+ using Altseed;
++ using Altseed2;
 +
 + namespace Tutorial
 + {
-+   // ゲームオーバー画面
-+   public class GameOverNode : Node
++   // クリア画面
++   public class LevelCompletedNode : Node
 +   {
-+       // 画面が遷移中かどうか
++       // 画面遷移中かどうか
 +       private bool fading = false;
 +
 +       // エンジンに追加された時に実行
@@ -16,31 +16,33 @@
 +           // タイトルのフォントを読み込む
 +           titleText.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 100);
 +           // タイトルの文字を設定
-+           titleText.Text = "Game Over";
++           titleText.Text = "Clear!";
 +           // タイトルの座標を設定
-+           titleText.Position = new Vector2F(241, 51);
-+
++           titleText.Position = new Vector2F(Engine.WindowSize.X / 2, 100f);
++           // タイトルの中心座標を設定
++           titleText.CenterPosition = titleText.ContentSize / 2;
 +           // タイトルを追加
 +           AddChildNode(titleText);
 +
-+           // 画面下に表示される案内
++           // 画面下の案内
 +           var announce = new TextNode();
 +           // 案内のフォントを読み込む
 +           announce.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 50);
-+           // 案内の文字を設定
++           // 案内のテキストを設定
 +           announce.Text = "Press Z to go title";
 +           // 案内の座標を設定
-+           announce.Position = new Vector2F(296, 575);
-+
-+           // 案内を追加
++           announce.Position = new Vector2F(Engine.WindowSize.X / 2, 600f);
++           // 案内の中心座標を設定
++           announce.CenterPosition = announce.ContentSize / 2;
++           //案内を追加
 +           AddChildNode(announce);
 +       }
 +
 +       // フレーム毎に実行
 +       protected override void OnUpdate()
 +       {
-+           // 画面が遷移中でなく，Zキーが押された時に実行
-+           if (!fading && Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
++           // 画面遷移中でなく，かつZキーが押された時に実行
++           if (!fading && Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
 +           {
 +               // エンジンから自身を削除
 +               Engine.RemoveNode(this);
