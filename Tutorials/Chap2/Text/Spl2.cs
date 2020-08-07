@@ -30,11 +30,17 @@ namespace Tutorial
                 Engine.Update();
 
 +               // ↑キーでY座標を減少
-+               if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
++               if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 +               {
 +                   player.Position += new Vector2F(0.0f, -2.5f);
 +               }
-+           }
+
+                // Escapeキーでゲーム終了
+                if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
+                {
+                    break;
+                }
+            }
 
             // エンジンの終了処理を行う
             Engine.Terminate();

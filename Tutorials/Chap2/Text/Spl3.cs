@@ -30,34 +30,34 @@ namespace Tutorial
                 Engine.Update();
 
                 // ↑キーでY座標を減少
-                if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
+                if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
                 {
                     player.Position += new Vector2F(0.0f, -2.5f);
                 }
 
 +               // ↓キーでY座標を増加
-+               if (Engine.Keyboard.GetKeyState(Keys.Down) == ButtonState.Hold)
++               if (Engine.Keyboard.GetKeyState(Key.Down) == ButtonState.Hold)
 +               {
 +                   player.Position += new Vector2F(0.0f, 2.5f);
 +               }
 +
 +               // →キーでX座標を増加
-+               if (Engine.Keyboard.GetKeyState(Keys.Right) == ButtonState.Hold)
++               if (Engine.Keyboard.GetKeyState(Key.Right) == ButtonState.Hold)
 +               {
 +                   player.Position += new Vector2F(2.5f, 0.0f);
 +               }
 +
 +               // ←キーでX座標を減少
-+               if (Engine.Keyboard.GetKeyState(Keys.Left) == ButtonState.Hold)
++               if (Engine.Keyboard.GetKeyState(Key.Left) == ButtonState.Hold)
 +               {
 +                   player.Position -= new Vector2F(2.5f, 0.0f);
 +               }
 +
-+               // Escapeキーでゲーム終了
-+               if (Engine.Keyboard.GetKeyState(Keys.Escape) == ButtonState.Push)
-+               {
-+                   break;
-+               }
+                // Escapeキーでゲーム終了
+                if (Engine.Keyboard.GetKeyState(Keys.Escape) == ButtonState.Push)
+                {
+                    break;
+                }
             }
 
             // エンジンの終了処理を行う

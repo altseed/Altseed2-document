@@ -18,7 +18,7 @@ namespace Tutorial
 +           // 自機の座標を設定
 +           player.Position = new Vector2F(100, 360);
 +           // 自機の中心座標を設定
-+           player.CenterPosition = player.Texture.Size / 2;
++           player.CenterPosition = player.ContentSize / 2;
 +
 +           // 自機をエンジンに追加
 +           Engine.AddNode(player);
@@ -28,6 +28,12 @@ namespace Tutorial
             {
                 // エンジンを更新
                 Engine.Update();
+
+                // Escapeキーでゲーム終了
+                if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
+                {
+                    break;
+                }
             }
 
             // エンジンの終了処理を行う
