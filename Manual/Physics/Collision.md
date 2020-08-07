@@ -70,16 +70,16 @@ Altseed2では物理演算を用いて，2Dの衝突判定を行う機構が備�
 衝突を開始したときに色が赤くなり，以降衝突している間回転します。  
 衝突終了時には色が戻ります。
 
-## [ColliderVisualizeNode](xref:Altseed2.ColliderVisualizeNode)クラス
+## 衝突範囲の描画
 
-[ColliderVisualizeNode](xref:Altseed2.ColliderVisualizeNode)は[ColliderNode](xref:Altseed2.ColliderNode)の持つ当たり判定を視覚化できる[DrawnNode](xref:Altseed2.DrawnNode)の一種です。
-`ColliderNode.CreateVisualizeNode(ColliderNode)`を使用することで取得できます。
+`ColliderVisualizeNodeFactory.Create(ColliderNode)`を使用することで，衝突領域を描画できるノードを取得できます。
 
 > [!IMPORTANT]
-> 得られた[ColliderVisualizeNode](xref:Altseed2.ColliderVisualizeNode)を，`Node.AddChildNode(Node)`や`Engine.AddNode(Node)`などの手段で登録しなければ衝突判定の視覚化は行われません。
+> 得られたノードを，`Node.AddChildNode(Node)`で登録しなければ衝突判定の視覚化は行われません。
+> 生成元の[ColliderNode](xref:Altseed2.ColliderNode)を[CollisionManagerNode](xref:Altseed2.CollisionManagerNode)の子にすることで，描画範囲を衝突範囲に同期することが出来ます。
 
 > [!CAUTION]
-> ColliderVisualizeNode](xref:Altseed2.ColliderVisualizeNode)の同期は元となる[ColliderNode](xref:Altseed2.ColliderNode)が[CollisionManagerNode](xref:Altseed2.CollisionManagerNode)の管理下にある必要があります。
+> 衝突範囲の描画の同期は，元となる[ColliderNode](xref:Altseed2.ColliderNode)が[CollisionManagerNode](xref:Altseed2.CollisionManagerNode)の管理下にある必要があります。
 
 使い方は以下のサンプルコードを参考にしてください。
 
