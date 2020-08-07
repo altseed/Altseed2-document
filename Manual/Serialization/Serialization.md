@@ -15,11 +15,13 @@ Altseed2では一部を除き，殆どのクラス・構造体がバイナリシ
 これらは[Engine](xref:Altseed2.Engine)クラスにてシングルトンとしてインスタンスが提供されているクラスです。
 
 - [BuiltinShader](xref:Altseed2.BuiltinShader)
-<!-- - [CommandList](xref:Altseed2.CommandList) -->
+- [CommandList](xref:Altseed2.CommandList)
 - [Easing](xref:Altseed2.Easing)
 - [File](xref:Altseed2.File)
 - [Glyph](xref:Altseed2.Glyph)
+- [Graphics](xref:Altseed2.Graphics)
 - [JoyStick](xref:Altseed2.Joystick)
+- [JoyStickInfo](xref:Altseed2.JoystickInfo)
 - [KeyBoard](xref:Altseed2.Keyboard)
 - [Log](xref:Altseed2.Log)
 - [Mouse](xref:Altseed2.Mouse)
