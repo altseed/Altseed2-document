@@ -1,4 +1,4 @@
-﻿using Altseed;
+using Altseed2;
 
 namespace Tutorial
 {
@@ -13,9 +13,9 @@ namespace Tutorial
         private void Shot()
         {
             // Zキーでショットを放つ
-            if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
+            if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
             {
-+               Parent.AddChildNode(new PlayerBullet(Position + CenterPosition));
++               Parent.AddChildNode(new PlayerBullet(Position));
 
 -               Parent.AddChildNode(new Bullet(Position + CenterPosition, new Vector2F(10f, 0.0f)));
             }

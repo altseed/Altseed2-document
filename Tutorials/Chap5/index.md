@@ -22,7 +22,7 @@ Enemy.csを追加し、下記のコードを記述します。
 
 - Enemy.cs
 
-[!code-diff[Main](Enemy.cs)]
+[!code-diff[Main](Text/Enemy.cs)]
 
 前章では、`protected`や`public`の説明をしていませんでした。
 これらはアクセス指定子といいます。
@@ -52,7 +52,7 @@ Meteor.csを追加し、下記のコードを記述します。
 
 - Meteor.cs
 
-[!code-diff[Main](Meteor.cs)]
+[!code-diff[Main](Text/Meteor.cs)]
 
 隕石は移動するだけの敵です。
 更新するごとに速度の分、位置を動かしていきます。
@@ -69,9 +69,9 @@ Meteor.csを追加し、下記のコードを記述します。
 
 - MainNode.cs
 
-[!code-diff[Main](MainNode_1.cs)]
+[!code-diff[Main](Text/MainNode_1.cs)]
 
-![Meteor](imgs/Meteor.png)
+![Meteor](Image/Meteor.png)
 
 ## 弾を打つ敵
 
@@ -84,7 +84,7 @@ Meteor.csを追加し、下記のコードを記述します。
 
 - Bullet.cs
 
-[!code-diff[Main](Bullet.cs)]
+[!code-diff[Main](Text/Bullet.cs)]
 
 それに合わせて、プレイヤーのコードも変更します。
 プレイヤーの弾クラスは弾クラスを継承するようにします。
@@ -94,13 +94,13 @@ Meteor.csを追加し、下記のコードを記述します。
 
 - PlayerBullet.cs
 
-[!code-diff[Main](PlayerBullet.cs)]
+[!code-diff[Main](Text/PlayerBullet.cs)]
 
 - Player.cs
 
 PlayerBulletを撃つように変更します。
 
-[!code-diff[Main](Player.cs)]
+[!code-diff[Main](Text/Player.cs)]
 
 次に敵の弾と弾を打つ敵クラスを実装します。
 基本的には味方が弾を打つ処理と、敵の移動を組み合わせたものになります。
@@ -108,20 +108,20 @@ PlayerBulletを撃つように変更します。
 
 - StraightShotEnemy.cs
 
-[!code-diff[Main](StraightShotEnemy.cs)]
+[!code-diff[Main](Text/StraightShotEnemy.cs)]
 
 - EnemyBullet.cs
 
-[!code-diff[Main](EnemyBullet.cs)]
+[!code-diff[Main](Text/EnemyBullet.cs)]
 
 この敵も出現するようにしましょう。
 MainNodeに敵を追加します。
 
 - MainNode.cs
 
-[!code-diff[Main](MainNode_2.cs)]
+[!code-diff[Main](Text/MainNode_2.cs)]
 
-![StraightShotEnemy](imgs/StraightShotEnemy.png)
+![StraightShotEnemy](Image/StraightShotEnemy.png)
 
 ## 他の敵
 
@@ -132,20 +132,20 @@ MainNodeに敵を追加します。
 
 - RadialShotEnemy.cs
 
-[!code-diff[Main](RadialShotEnemy.cs)]
+[!code-diff[Main](Text/RadialShotEnemy.cs)]
 
 プレイヤーを追いかける敵です。
 プレイヤーへの参照を使用し、プレイヤーのほうに近づきます。
 
 - ChaseEnemy.cs
 
-[!code-diff[Main](ChaseEnemy.cs)]
+[!code-diff[Main](Text/ChaseEnemy.cs)]
 
 それぞれの敵を追加します。
 
-[!code-diff[Main](MainNode_3.cs)]
+[!code-diff[Main](Text/MainNode_3.cs)]
 
-![Enemies](imgs/Enemies.png)
+![Enemies](Image/Enemies.png)
 
 ## 続・敵の出現
 
@@ -185,9 +185,9 @@ Console.WriteLine(value);
 親ノードには敵を追加せず、Queueに敵ノードを追加します。
 そして、一定時間ごとにQueueから敵ノードを取り出し、追加することで敵が徐々に出現するようにします。
 
-[!code-diff[Main](MainNode_4.cs)]
+[!code-diff[Main](Text/MainNode_4.cs)]
 
-![Finish](imgs/Finish.png)
+![Finish](Image/Finish.png)
 
 ## まとめ
 

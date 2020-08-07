@@ -1,4 +1,4 @@
-﻿using Altseed;
+using Altseed2;
 using System;
 
 namespace Tutorial
@@ -16,7 +16,7 @@ namespace Tutorial
             Texture = Texture2D.LoadStrict("Resources/UFO.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
 
             // 倒された時に加算されるスコアを設定
             score = 20;
