@@ -19,7 +19,7 @@
 
 `Player.cs`に以下のソースコードを追加します。  
 
-[!code-diff[Main](Spl1.cs)]
+[!code-diff[Main](Text/Spl1.cs)]
 
 ``` C#
 // ショット時の効果音
@@ -55,25 +55,25 @@ Engine.Sound.Play(shotSound);
 
 ショット音と同様に`Player.cs`に以下のソースコードを追加します。
 
-[!code-diff[Main](Spl2.cs)]
+[!code-diff[Main](Text/Spl2.cs)]
 
 ### 敵共通の死亡時サウンドを追加
 
 すべての敵共通で再生するため、`Enemy.cs`に以下のソースコードを追加します。
 
-[!code-diff[Main](Spl3.cs)]
+[!code-diff[Main](Text/Spl3.cs)]
 
 ### まっすぐな弾を発射する敵のショット音を追加
 
 `StraightShotEnemy.cs`に以下のソースコードを追加します。
 
-[!code-diff[Main](Spl4.cs)]
+[!code-diff[Main](Text/Spl4.cs)]
 
 ### 放射ショットの敵のショット音を追加
 
 `RadialShotEnemy.cs`に以下のソースコードを追加します。
 
-[!code-diff[Main](Spl5.cs)]
+[!code-diff[Main](Text/Spl5.cs)]
 
 以上を追加し、ビルドするとSEが適切なタイミングで再生されると思います。
 
@@ -83,7 +83,7 @@ Engine.Sound.Play(shotSound);
 
 メインステージのBGMであるため、`MainNode.cs`に以下のソースコードを追加します。
 
-[!code-diff[Main](Spl6.cs)]
+[!code-diff[Main](Text/Spl6.cs)]
 
 BGMに関する初期化をするメソッド`InitBGM`を実装し、
 メインステージが始まった時点で再生するため、`OnAdded`で呼び出します。  
@@ -99,7 +99,7 @@ BGMを再生する場合も、基本的はSEと変わらず、`Sound`クラス�
 
 `InitBGM`メソッドに以下の処理を追加しましょう。
 
-[!code-diff[Main](Spl7.cs)]
+[!code-diff[Main](Text/Spl7.cs)]
 
 BGMをループさせるには、`Sound`クラスインスタンスの`IsLoopingMode`プロパティを`true`にします。  
 そして、音源の任意の区間をループさせる場合、
@@ -113,7 +113,7 @@ BGMをループさせるには、`Sound`クラスインスタンスの`IsLooping
 
 `MainNode.cs`に以下のソースコードを変更します。
 
-[!code-diff[Main](Spl8.cs)]
+[!code-diff[Main](Text/Spl8.cs)]
 
 再生している音は、`Engine.Sound.Play`メソッドの戻り値である`int`型のIDによって、制御できます。  
 今回は、BGMはずっと再生させておくため、制御はしませんが、
