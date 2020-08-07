@@ -1,4 +1,4 @@
-using Altseed;
+using Altseed2;
 using System;
 using System.Collections.Generic;
 
@@ -10,25 +10,25 @@ namespace Tutorial
 +       static void MovePlayer(SpriteNode player)
 +       {
 +           // ↑キーでY座標を減少
-+           if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
++           if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 +           {
 +               player.Position += new Vector2F(0.0f, -2.5f);
 +           }
 +
 +           // ↓キーでY座標を増加
-+           if (Engine.Keyboard.GetKeyState(Keys.Down) == ButtonState.Hold)
++           if (Engine.Keyboard.GetKeyState(Key.Down) == ButtonState.Hold)
 +           {
 +               player.Position += new Vector2F(0.0f, 2.5f);
 +           }
 +
 +           // →キーでX座標を増加
-+           if (Engine.Keyboard.GetKeyState(Keys.Right) == ButtonState.Hold)
++           if (Engine.Keyboard.GetKeyState(Key.Right) == ButtonState.Hold)
 +           {
 +               player.Position += new Vector2F(2.5f, 0.0f);
 +           }
 +
 +           // ←キーでX座標を減少
-+           if (Engine.Keyboard.GetKeyState(Keys.Left) == ButtonState.Hold)
++           if (Engine.Keyboard.GetKeyState(Key.Left) == ButtonState.Hold)
 +           {
 +               player.Position -= new Vector2F(2.5f, 0.0f);
 +           }
@@ -50,7 +50,7 @@ namespace Tutorial
             // 自機の座標を設定
             player.Position = new Vector2F(100, 360);
             // 自機の中心座標を設定
-            player.CenterPosition = player.Texture.Size / 2;
+            player.CenterPosition = player.ContentSize / 2;
 
             // 自機をエンジンに追加
             Engine.AddNode(player);
@@ -62,25 +62,25 @@ namespace Tutorial
                 Engine.Update();
 
 -               // ↑キーでY座標を減少
--               if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
+-               if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 -               {
 -                   player.Position += new Vector2F(0.0f, -2.5f);
 -               }
 -
 -               // ↓キーでY座標を増加
--               if (Engine.Keyboard.GetKeyState(Keys.Down) == ButtonState.Hold)
+-               if (Engine.Keyboard.GetKeyState(Key.Down) == ButtonState.Hold)
 -               {
 -                   player.Position += new Vector2F(0.0f, 2.5f);
 -               }
 -
 -               // →キーでX座標を増加
--               if (Engine.Keyboard.GetKeyState(Keys.Right) == ButtonState.Hold)
+-               if (Engine.Keyboard.GetKeyState(Key.Right) == ButtonState.Hold)
 -               {
 -                   player.Position += new Vector2F(2.5f, 0.0f);
 -               }
 -
 -               // ←キーでX座標を減少
--               if (Engine.Keyboard.GetKeyState(Keys.Left) == ButtonState.Hold)
+-               if (Engine.Keyboard.GetKeyState(Key.Left) == ButtonState.Hold)
 -               {
 -                   player.Position -= new Vector2F(2.5f, 0.0f);
 -               }
@@ -89,7 +89,7 @@ namespace Tutorial
 +               MovePlayer(player);
 
                 // Zキーが押された時に実行
-                if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
+                if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
                 {
                     // 発射される自機弾
                     var bullet = new SpriteNode();
@@ -98,7 +98,7 @@ namespace Tutorial
                     // 自機弾の座標を設定
                     bullet.Position = player.Position;
                     // 自機弾の中心座標を設定
-                    bullet.CenterPosition = bullet.Texture.Size / 2;
+                    bullet.CenterPosition = bullet.ContentSize / 2;
                     // 自機弾の表示位置を自機より奥に設定
                     bullet.ZOrder--;
 
@@ -115,7 +115,7 @@ namespace Tutorial
                 }
 
                 // Escapeキーでゲーム終了
-                if (Engine.Keyboard.GetKeyState(Keys.Escape) == ButtonState.Push)
+                if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
                 {
                     break;
                 }

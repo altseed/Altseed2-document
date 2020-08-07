@@ -17,7 +17,7 @@
 
 手始めに、キャラクターの移動に関する処理をメソッドで表現します。
 
-[!code-diff[Main](Spl1.cs)]
+[!code-diff[Main](Text/Spl1.cs)]
 
 ソースコードでは、以下のようにメソッドを追加しました。
 
@@ -46,7 +46,7 @@ C#の機能にクラスというものがあったことを思い出してくだ
 
 まず、プレイヤーに相当するクラスを追加します。
 
-[!code-diff[Main](Spl2.cs)]
+[!code-diff[Main](Text/Spl2.cs)]
 
 ソースコードでは、以下のようにクラスを追加しました。
 
@@ -67,7 +67,7 @@ class Player : SpriteNode
 この`Player`クラスには、新たな機能が何も追加されていません。
 そこで、プレイヤーを動かす処理を`Player`クラスの内部に持っていきます。
 
-[!code-diff[Main](Spl3.cs)]
+[!code-diff[Main](Text/Spl3.cs)]
 
 `MovePlayer`メソッドの処理を、`Player`クラスの`Move`メソッドに移動させました。
 `Player`クラスは、継承元である`SpriteNode`クラスの情報を持っているため、`Position`や`Texture`が自身の情報となります。
@@ -76,7 +76,7 @@ class Player : SpriteNode
 
 続いて、Altseed2のUpdate機能を使って、`Player`クラスの更新を`Player`クラスの内部で行えるようにしましょう。
 
-[!code-diff[Main](Spl4.cs)]
+[!code-diff[Main](Text/Spl4.cs)]
 
 `OnUpdate`は、Altseed2が更新されるたびに実行されるメソッドです。
 この中に`Move`メソッドを加えることで、今までと同じように`Move`メソッドがAltseed2が更新されるたびに実行されます。
@@ -98,7 +98,7 @@ protected override void OnUpdate()
 今度は、先ほどと同じようにして弾のソースコードを整理していきます。
 弾に相当するクラスを追加しましょう。
 
-[!code-diff[Main](Spl5.cs)]
+[!code-diff[Main](Text/Spl5.cs)]
 
 `Bullet`クラスを追加しました。
 
@@ -117,7 +117,7 @@ public class Bullet : SpriteNode
 ## 弾を撃つ処理をプレイヤーに移動する
 弾を撃っているのはプレイヤーなので、弾を撃つ処理をプレイヤーに移動してみましょう。
 
-[!code-diff[Main](Spl6.cs)]
+[!code-diff[Main](Text/Spl6.cs)]
 
 プレイヤーに関する処理のほとんどが`Player`クラスに移動しましたね。
 `Main`メソッドの`while`文の中身がAltseed2の更新処理だけになりました。
@@ -130,7 +130,7 @@ public class Bullet : SpriteNode
 これら初期値の設定も、クラスの中で行いたいものです。
 そこで登場するのが「コンストラクタ」です。
 
-[!code-diff[Main](Spl7.cs)]
+[!code-diff[Main](Text/Spl7.cs)]
 
 コンストラクタは、インスタンスが生成されたときに実行されるメソッドの一種です。
 インスタンス生成と同時に画像を読み込むには、このコンストラクタにその処理を記述します。
@@ -142,7 +142,7 @@ public class Bullet : SpriteNode
 ここまででできたプログラムを実行してわかると思いますが、方向キーを押しっぱなしにしていると、プレイヤーが画面外に出てしまいます。
 そこで、プレイヤーが画面外に出ないように、処理を追加する必要があります。
 
-[!code-diff[Main](Spl8.cs)]
+[!code-diff[Main](Text/Spl8.cs)]
 
 追加した処理では、変更後の x 座標と y 座標について、画面に表示される範囲に収まるように数値を設定しています。
 このようにすることで、プレイヤーが画面外に出ることはなくなります。
@@ -152,7 +152,7 @@ public class Bullet : SpriteNode
 しかし、画面外に出た弾を削除せずに、エンジンに弾を追加していくと、エンジンの処理が重くなっていきます。
 そのため、弾が画面外に出て行ったら削除する処理を追加する必要があります。
 
-[!code-diff[Main](Spl9.cs)]
+[!code-diff[Main](Text/Spl9.cs)]
 
 弾が画面外に出たら、親ノードを取得して`RemoveChildNode`メソッドを実行します。
 このメソッドを実行すると、弾のインスタンスはAltseed2の管理対象から除外されます。
@@ -167,8 +167,8 @@ public class Bullet : SpriteNode
 まず、下図に示すように、「ShootingGame」の青く示された部分を右クリックしてください。
 その後、選択肢のウィンドウが出てくるので、「追加」、「新しい項目」の順にクリックしてください。
 
-![newfile_win_1](newfile_win_1.png)
-![newfile_win_2](newfile_win_2.png)
+![newfile_win_1](Image/newfile_win_1.png)
+![newfile_win_2](Image/newfile_win_2.png)
 
 すると、「新しい項目の追加 - ShootingGame」というウィンドウが表示されます。
 ウィンドウが表示されたら、画面左側の選択肢から「コード」を選択し、その後、画面中央の選択肢から「クラス」を選択します。
@@ -176,7 +176,7 @@ public class Bullet : SpriteNode
 今回は`Player`クラスを別のファイルに移動したいため、ファイル名を「Player.cs」とします。
 入力が終わったら、「追加」をクリックします。
 
-![newfile_win_3](newfile_win_3.png)
+![newfile_win_3](Image/newfile_win_3.png)
 
 ここまで終わったら、「ソリューション」のところに「Player.cs」が追加されているはずです。
 あとは、Program.csに記述されている`Player`クラスの部分を切り取って、Player.csに貼り付けるだけです。
@@ -184,8 +184,8 @@ public class Bullet : SpriteNode
 これは、ソースファイルに`Altseed`という名前空間が知らされていないことが原因です。
 Player.csの頭に「`using Altseed;`」と記述しましょう。
 
-![newfile_win_4](newfile_win_4.png)
-![newfile_win_5](newfile_win_5.png)
+![newfile_win_4](Image/newfile_win_4.png)
+![newfile_win_5](Image/newfile_win_5.png)
 
 これと同様の手順を踏んで、Bullet.csを追加し、`Bullet`クラスを移してみてください。
 
@@ -193,7 +193,7 @@ Player.csの頭に「`using Altseed;`」と記述しましょう。
 まず、下図に示すように、「ShootingGame」の青く示された部分を右クリックしてください。
 その後、選択肢のウィンドウが出てくるので、「追加」、「新しいファイル」の順にクリックしてください。
 
-![newfile_mac_1](newfile_mac_1.png)
+![newfile_mac_1](Image/newfile_mac_1.png)
 
 すると、「新しいファイル」というウィンドウが表示されます。
 ウィンドウが表示されたら、画面左側の選択肢から「General」を選択し、その後、画面中央の選択肢から「空のクラス」を選択します。
@@ -201,7 +201,7 @@ Player.csの頭に「`using Altseed;`」と記述しましょう。
 今回は`Player`クラスを別のファイルに移動したいため、ファイル名を「Player」とします。
 入力が終わったら、「新規」をクリックします。
 
-![newfile_mac_2](newfile_mac_2.png)
+![newfile_mac_2](Image/newfile_mac_2.png)
 
 ここまで終わったら、「ソリューション」のところに「Player.cs」が追加されているはずです。
 あとは、Program.csに記述されている`Player`クラスの部分を切り取って、Player.csに貼り付けるだけです。
@@ -209,8 +209,8 @@ Player.csの頭に「`using Altseed;`」と記述しましょう。
 これは、ソースファイルに`Altseed`という名前空間が知らされていないことが原因です。
 Player.csの頭に「`using Altseed;`」と記述しましょう。
 
-![newfile_mac_3](newfile_mac_3.png)
-![newfile_mac_4](newfile_mac_4.png)
+![newfile_mac_3](Image/newfile_mac_3.png)
+![newfile_mac_4](Image/newfile_mac_4.png)
 
 これと同様の手順を踏んで、Bullet.csを追加し、`Bullet`クラスを移してみてください。
 
@@ -218,7 +218,7 @@ Player.csの頭に「`using Altseed;`」と記述しましょう。
 
 ソースコードが複数のファイルに振り分けられたことで、Program.csの内容がこれだけになりました。
 
-[!code-diff[Main](Spl10.cs)]
+[!code-diff[Main](Text/Spl10.cs)]
 
 しかし、このソースコードでは、プレイヤーや弾を、エンジンに直接登録してしまっています。
 このままでは、何か別の画面に切り替えようとした場合に、エンジンに直接登録されたオブジェクトをいちいち登録解除するのが面倒です。
@@ -230,7 +230,7 @@ Player.csの頭に「`using Altseed;`」と記述しましょう。
 ファイルを新規作成できたら、メインステージを表す`MainNode`クラスに処理を書き込んでいきます。
 MainNode.csに以下のように書いてください。
 
-[!code-diff[Main](Spl11.cs)]
+[!code-diff[Main](Text/Spl11.cs)]
 
 `OnAdded`は、このノードがエンジンに登録されたときに実行されるメソッドです。
 ノードの初期状態を設定するには、このメソッドを使います。
@@ -253,7 +253,7 @@ protected override void OnAdded()
 では、`MainNode`クラスのインスタンスを作成し、それをエンジンに登録してみましょう。
 Program.csに移って、以下のようにソースコードを書き換えてください。
 
-[!code-diff[Main](Spl12.cs)]
+[!code-diff[Main](Text/Spl12.cs)]
 
 このようにすると、`MainNode`の子ノードとして登録されているオブジェクト群が更新され、先ほどと同じ挙動をします。
 
@@ -263,7 +263,7 @@ Program.csに移って、以下のようにソースコードを書き換えて�
 それっぽい背景が欲しいものです。
 ということで、`MainNode`に背景を追加する機能を追加しておきましょう。
 
-[!code-diff[Main](Spl13.cs)]
+[!code-diff[Main](Text/Spl13.cs)]
 
 シューティングゲームらしい絵面になりました。
 

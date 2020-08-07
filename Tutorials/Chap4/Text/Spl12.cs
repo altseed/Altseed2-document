@@ -2,7 +2,7 @@ using Altseed;
 using System;
 using System.Collections.Generic;
 
-namespace ShootingGame
+namespace Tutorial
 {
     class Program
     {
@@ -27,7 +27,7 @@ namespace ShootingGame
                 Engine.Update();
 
                 // Escapeキーでゲーム終了
-                if (Engine.Keyboard.GetKeyState(Keys.Escape) == ButtonState.Push)
+                if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
                 {
                     break;
                 }

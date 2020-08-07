@@ -1,4 +1,4 @@
-using Altseed;
+using Altseed2;
 using System;
 using System.Collections.Generic;
 
@@ -17,7 +17,7 @@ namespace Tutorial
             Texture = Texture2D.LoadStrict("Resources/Player.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
         }
 
         // フレーム毎に実行
@@ -39,31 +39,31 @@ namespace Tutorial
             var y = Position.Y;
 
             // ↑キーでY座標を減少
-            if (Engine.Keyboard.GetKeyState(Keys.Up) == ButtonState.Hold)
+            if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
             {
                 y -= 2.5f;
             }
 
             // ↓キーでY座標を増加
-            if (Engine.Keyboard.GetKeyState(Keys.Down) == ButtonState.Hold)
+            if (Engine.Keyboard.GetKeyState(Key.Down) == ButtonState.Hold)
             {
                 y += 2.5f;
             }
 
             // →キーでX座標を増加
-            if (Engine.Keyboard.GetKeyState(Keys.Right) == ButtonState.Hold)
+            if (Engine.Keyboard.GetKeyState(Key.Right) == ButtonState.Hold)
             {
                 x += 2.5f;
             }
 
             // ←キーでX座標を減少
-            if (Engine.Keyboard.GetKeyState(Keys.Left) == ButtonState.Hold)
+            if (Engine.Keyboard.GetKeyState(Key.Left) == ButtonState.Hold)
             {
                 x -= 2.5f;
             }
 
             // テクスチャのサイズの半分を取得する
-            var halfSize = Texture.Size / 2;
+            var halfSize = ContentSize / 2;
 
             // X座標が画面外に行かないように調整
             x = MathHelper.Clamp(x, Engine.WindowSize.X - halfSize.X, halfSize.X);
@@ -78,7 +78,7 @@ namespace Tutorial
         private void Shot()
         {
             // Zキーでショットを放つ
-            if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
+            if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
             {
                 // 発射される自機弾
                 var bullet = new Bullet(Position);
@@ -102,7 +102,7 @@ namespace Tutorial
             Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
 
             // 表示位置をプレイヤーや敵より奥に設定
             ZOrder--;
@@ -154,7 +154,7 @@ namespace Tutorial
                 Engine.Update();
 
                 // Escapeキーでゲーム終了
-                if (Engine.Keyboard.GetKeyState(Keys.Escape) == ButtonState.Push)
+                if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
                 {
                     break;
                 }
