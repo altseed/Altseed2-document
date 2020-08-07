@@ -16,12 +16,14 @@
 ## ウインドウの表示
 0章でVisualStudioのセットアップができたと思います。
 VisualStudioの右側にソリューションエクスプローラーと呼ばれるものがあると思います。   
-![pic1](pic1.png)   
+
+![pic1](Image/pic1.png)
+
 このProgram.csを開いてください。コードが表示されます。
 
 ウィンドウを表示するプログラムは以下になります。 
 
-[!code-csharp[Main](Spl1.cs)]
+[!code-cs[Main](Text/Spl1.cs)]
 
 そのままコピーアンドペーストすると`namespace`が書き変わってしまうので`namespace`は変えないように気を付けてください。  
 
@@ -30,7 +32,8 @@ VisualStudioの右側にソリューションエクスプローラーと呼ば�
 
 上のコードを実行します。VisualStudio画面上部の開始ボタンを押すか`F5`キーを押すことで実行することができます。
 実行に成功すると以下のようなウィンドウが表示で来ると思います。  
-![Window](window.png)
+
+![Window](Image/window.png)
 
 コードの解説をしていきます。   
 重要なのは`Main`の中です。C#では実行するとこのMainの中身が呼び出されます。ここが今回ウィンドウを表示させている部分です。
@@ -55,7 +58,7 @@ VisualStudioの右側にソリューションエクスプローラーと呼ば�
 もう一つ、Escキーを押したときにウィンドウを閉じる処理が書いてあります。
 ```C#
 // Escapeキーでゲーム終了
-if (Engine.Keyboard.GetKeyState(Keys.Escape) == ButtonState.Push)
+if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
 {
   break;
 }

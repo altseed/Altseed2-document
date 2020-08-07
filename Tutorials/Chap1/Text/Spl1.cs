@@ -18,7 +18,7 @@ namespace Tutorial
                 Engine.Update();
 
                 // Escapeキーでゲーム終了
-                if (Engine.Keyboard.GetKeyState(Keys.Escape) == ButtonState.Push)
+                if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
                 {
                     break;
                 }
