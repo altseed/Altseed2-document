@@ -1,179 +1,105 @@
 apiRules:
     - exclude:
-        uidRegex: ^System\.object
+          uidRegex: ^System\.object
     - exclude:
-        hasAttribute:
-            uid: System.ComponentModel.EditorBrowsableAttribute
-            ctorArguments:
-            - System.ComponentModel.EditorBrowsableState.Never
+          hasAttribute:
+              uid: System.ComponentModel.EditorBrowsableAttribute
+              ctorArguments:
+                  - System.ComponentModel.EditorBrowsableState.Never
+
+    - exclude:
+          uidRegex: ^Altseed2\..*\.(S?_.*|[a-z].*|Finalize|GetInstance)
+    - exclude:
+          uidRegex: ^Altseed2\..*Node\.Altseed2#I(Cullable)?Drawn#.*
+    - exclude:
+          uidRegex: ^Altseed2\..*\.System#.*
+    - exclude:
+          uidRegex: ^Altseed2\..*\..*Serializ.*
 
     # 特定のクラスなど
     - exclude:
-        uidRegex: ^Altseed2\.AltseedContext
+          uidRegex: ^Altseed2\..*Array
     - exclude:
-        uidRegex: ^Altseed2\.ArrayExtension
+          uidRegex: ^Altseed2\.AltseedContext
     - exclude:
-        uidRegex: ^Altseed2\.BuiltinShader(Type)?
+          uidRegex: ^Altseed2\.ArrayExtension
     - exclude:
-        uidRegex: ^Altseed2\.Collider(Visualize)?Node
+          uidRegex: ^Altseed2\.CameraNodeCollection
     - exclude:
-        uidRegex: ^Altseed2\.CullingSystem
+          uidRegex: ^Altseed2\.CollisionCollection
     - exclude:
-        uidRegex: ^Altseed2\.Core
+          uidRegex: ^Altseed2\.Core
     - exclude:
-        uidRegex: ^Altseed2\.IOHelper
+          uidRegex: ^Altseed2\.CullingSystem
     - exclude:
-        uidRegex: ^Altseed2\.Registerable.*
+          uidRegex: ^Altseed2\.DrawnCollection
     - exclude:
-        uidRegex: ^Altseed2\.Renderer
+          uidRegex: ^Altseed2\.DrawnExtension
     - exclude:
-        uidRegex: ^Altseed2\.Rendered.*
+          uidRegex: ^Altseed2\.Graphics
     - exclude:
-        uidRegex: ^Altseed2\.RenderTextureCache
+          uidRegex: ^Altseed2\.IArray.*
     - exclude:
-        uidRegex: ^Altseed2\.Resources
+          uidRegex: ^Altseed2\.I(Cullable)?Drawn
     - exclude:
-        uidRegex: ^Altseed2\.ResourceType
+          uidRegex: ^Altseed2\.IOHelper
     - exclude:
-        uidRegex: ^Altseed2\.RootNode
-    - exclude: # Typoだけど
-        uidRegex: ^Altseed2\.SerrializationHelper 
-    - exclude: # Typoだけど
-        uidRegex: ^Altseed2\.TransformNodeInfo 
+          uidRegex: ^Altseed2\.Registerable.*
     - exclude:
-        uidRegex: ^Altseed2\.Window
+          uidRegex: ^Altseed2\.Rendered.*
     - exclude:
-        uidRegex: ^Altseed2\..*Collection
+          uidRegex: ^Altseed2\.Renderer.*
     - exclude:
-        uidRegex: ^Altseed2\..*Array
+          uidRegex: ^Altseed2\.RenderTextureCache
+    - exclude:
+          uidRegex: ^Altseed2\.Resources
+    - exclude:
+          uidRegex: ^Altseed2\.ResourceType
+    - exclude:
+          uidRegex: ^Altseed2\.RootNode
+    - exclude:
+          uidRegex: ^Altseed2\.SerializationHelper
+    - exclude:
+          uidRegex: ^Altseed2\.ShaderCompileResult
+    - exclude:
+          uidRegex: ^Altseed2\.TransformNodeInfo
+    - exclude:
+          uidRegex: ^Altseed2\.Window
+
+    # 個別のメンバー
 
     - exclude:
-        uidRegex: ^Altseed2\..*\.(GetInstance|Finalize)
-
+          uidRegex: ^Altseed2\..*Node\.((Unr|R)egistered|Added|Removed)
     - exclude:
-        uidRegex: ^Altseed2\.ArcNode\.(_.*|changed|Draw|CullingId|renderedPolygon|UpdateInheritedTransform|UpdateVertexes|CalcInheritedTransform|GetBaseVector.*|GetDegrees.*)
-
+          uidRegex: ^Altseed2\..*Node\.Update
     - exclude:
-        uidRegex: ^Altseed2\.CameraNode\.(_.*|Registered|RenderedCamera|Unregistered)
-
+          uidRegex: ^Altseed2\.ArcNode\.(Get.*|UpdateVertexes)
     - exclude:
-        uidRegex: ^Altseed2\.CircleCollider\.(_.*)
-
+          uidRegex: ^Altseed2\.CameraNode\.RenderedCamera
     - exclude:
-        uidRegex: ^Altseed2\.CircleColliderNode\.(_.*|.*Collider|UpdateCollider|Version)
-
+          uidRegex: ^Altseed2\..*Collider(Visualize)?Node\.(.*Collider|Update.*|CalcScale|SearchManagerFromChildren)
     - exclude:
-        uidRegex: ^Altseed2\.CircleColliderVisualizeNode\.(currentVersion|owner|UpdateInheritedTransform|UpdatePolygon|VisualizerVertNum)
-    
+          uidRegex: ^Altseed2\.ColliderVisualizeNodeFactory\.(AreaColor|VertNum)
     - exclude:
-        uidRegex: ^Altseed2\.CircleNode\.(_.*|CullingId|changed|Draw|renderedPolygon|UpdateInheritedTransform|UpdateVertexes|CalcInheritedTransform)
-    
+          uidRegex: ^Altseed2\.CollisionInfo\.#ctor
     - exclude:
-        uidRegex: ^Altseed2\.Collider\.(_.*|CullingId|Draw|renderedPolygon|UpdateInheritedTransform|UpdateVertexes)
-
+          uidRegex: ^Altseed2\.CollisionManagerNode\.(AddCollider|EnumerateColliderNodes|RemoveCollider)
     - exclude:
-        uidRegex: ^Altseed2\.CollisionManagerNode\.(_.*|AddCollider.*|Added.*|EnumerateColliderNodes.*|RemoveCollider.*|Removed|Update)
-
+          uidRegex: ^Altseed2\.Engine\.(Config|Core|CullingSystem|Renderer|Resources|Window|DrawCameraGroup|(Unr|R)egister.*|Update.+)
     - exclude:
-        uidRegex: ^Altseed2\.Configuration\.(S?_.*)
-
+          uidRegex: ^Altseed2\.Matrix.*\.(Values|CalcTransform)
     - exclude:
-        uidRegex: ^Altseed2\.DrawnNode\.(_.*|CullingId|Draw|isDrawn|isDrawnActually|Registered|Unregistered|UpdateDescendantsIsDrawnActually)
-
+          uidRegex: ^Altseed2\.Node\.(GetAncestorSpecificNode)
     - exclude:
-        uidRegex: ^Altseed2\.Engine\.(_.*|Context|Core|CullingSystem|Config|isActive|(R|Unr)egister.*Node.*|Renderer|Resources|Update.*Group.*|Window)
-
+          uidRegex: ^Altseed2\.PolygonCollider(Node)?\.Vertexes
     - exclude:
-        uidRegex: ^Altseed2\.File\.(_.*|GetInstance)
-
+          uidRegex: ^Altseed2\.Shader\.Compile.*
     - exclude:
-        uidRegex: ^Altseed2\.Font\.(S?_.*|textures|AddImageGlyph\(System\.Int32.*)
-
+          uidRegex: ^Altseed2\.ShapeNode\.(OverwriteVertexColor|SetVertexes)
     - exclude:
-        uidRegex: ^Altseed2\.Graphics\.(_.*|BuiltinShader|BeginFrame.*|DoEvents|EndFrame)
-
+          uidRegex: ^Altseed2\..*File\.GetBuffer
     - exclude:
-        uidRegex: ^Altseed2\.LineNode\.(S?_.*|Draw|renderedPolygon|CullingId|UpdateInheritedTransform|UpdateVertexes|CalcInheritedTransform)
-        
+          uidRegex: ^Altseed2\.Tool\.Render
     - exclude:
-        uidRegex: ^Altseed2\.Material\.(S?_.*|matrixes|shaders|textures|vectors|Set.*Private.*)
-
-    - exclude:
-        uidRegex: ^Altseed2\.Matrix.*\.(S?_.*|#ctor.*|System#ICloneable#Clone|System#Runtime#Serialization#ISerializable#GetObjectData)
-
-    - exclude:
-        uidRegex: ^Altseed2\.Mouse.*\.(S?_.*)
-
-    - exclude:
-        uidRegex: ^Altseed2\.Node.*\.((S|serialization)?_.*|Added.*|isRootChild|OnDeserialized.*|OnSerialized.*|OnSerializing.*|Registered|ResetSerializationField|Removed|surpressing|Unregistered|Update)
-
-    - exclude:
-        uidRegex: ^Altseed2\.PolygonCollider\.(S?_.*|Vertexes)
-
-    - exclude:
-        uidRegex: ^Altseed2\.PolygonColliderNode\.(S?_.*|.*Collider|UpdateCollider|Version|Vertexes)
-
-    - exclude:
-        uidRegex: ^Altseed2\.PolygonColliderVisualizeNode\.(currentVersion|owner|UpdateInheritedTransform|UpdatePolygon)
-
-    - exclude:
-        uidRegex: ^Altseed2\.PolygonNode\.(_.*|CullingId|Draw|renderedPolygon|UpdateInheritedTransform|CalcInheritedTransform)
-
-    - exclude:
-        uidRegex: ^Altseed2\.PostEffect.*Node\.(_.*|[a-z].*|Draw)
-
-    - exclude:
-        uidRegex: ^Altseed2\.PostEffectNode\.(_.*|Cache|(Call)*Draw\(.*|(R|Unr)+egistered|InitializeCache|UpdateCache|GetBuffer.*)
-
-    - exclude:
-        uidRegex: ^Altseed2\.RectangleCollider\.(_.*)
-
-    - exclude:
-        uidRegex: ^Altseed2\.RectangleColliderNode\.(_.*|.*Collider|UpdateCollider|Version)
-
-    - exclude:
-        uidRegex: ^Altseed2\.RectangleColliderVisualizeNode\.(currentVersion|owner|UpdateInheritedTransform|UpdatePolygon|VisualizerVertNum)
-    
-    - exclude:
-        uidRegex: ^Altseed2\.RectangleNode\.(_.*|CullingId|Draw|renderedPolygon|changed|UpdateInheritedTransform|UpdateVertexes)
-
-    - exclude:
-        uidRegex: ^Altseed2\.RenderTexture\.(S?_.*)
-
-    - exclude:
-        uidRegex: ^Altseed2\.RuledTransitionEffectNode\.(S?_.*|Draw.*)
-    
-    - exclude:
-        uidRegex: ^Altseed2\.RuledTransitionNode\.(S?_.*|Draw.*)
-    
-    - exclude:
-        uidRegex: ^Altseed2\.TransitionNode\.(GetCoroutine.*)    
-    - exclude:
-        uidRegex: ^Altseed2\.Sound\.(S?_.*|Draw.*|Path)
-    
-    - exclude:
-        uidRegex: ^Altseed2\.SpriteNode\.(S?_.*|Draw.*|renderedSprite|UpdateInheritedTransform|CullingId)
-
-    - exclude:
-        uidRegex: ^Altseed2\.S.*File\.(S?_.*|Path)
-
-    - exclude:
-        uidRegex: ^Altseed2\.TextNode\.(S?_.*|CullingId|Draw|renderedText|UpdateInheritedTransform)
-
-    - exclude:
-        uidRegex: ^Altseed2\.TextureBase\.(S?_.*)
-
-    - exclude:
-        uidRegex: ^Altseed2\.Texture2D\.(Path)
-
-    - exclude:
-        uidRegex: ^Altseed2\.Tool\.(S?_.*)
-
-    - exclude:
-        uidRegex: ^Altseed2\.TransformNode\.(S?_.*|Added.*|CalcInheritedTransform|Transform|TransformNodeInfo|DrawTransformInfo|GetAnchorDistance|SetAnchorMargin|UpdateInheritedTransform|UpdatePosition|UpdateSize)
-
-    - exclude:
-        uidRegex: ^Altseed2\.TransitionNode\.(S?_.*)
-
-    - exclude:
-        uidRegex: ^Altseed2\.TriangleNode\.(S?_.*|changed|CullingId|Draw|renderedPolygon|UpdateInheritedTransform|UpdateVertexes)
+          uidRegex: ^Altseed2\.TransformNode\.Transform
+ 
