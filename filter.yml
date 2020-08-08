@@ -85,7 +85,7 @@ apiRules:
     - exclude:
           uidRegex: ^Altseed2\.CollisionManagerNode\.(AddCollider|EnumerateColliderNodes|RemoveCollider)
     - exclude:
-          uidRegex: ^Altseed2\.Engine\.(Config|Core|CullingSystem|Renderer|Resources|Window|DrawCameraGroup|(Unr|R)egister.*|Update.+)
+          uidRegex: ^Altseed2\.Engine\.(Config|Core|CullingSystem|Renderer|Resources|Window|DrawCameraGroup|(Unr|R)egister.*|Update.+)$
     - exclude:
           uidRegex: ^Altseed2\.Matrix.*\.(Values|CalcTransform)
     - exclude:

@@ -463,11 +463,11 @@ protected virtual void OnCollision(CollidableObject obj)
 衝突したときに出すエフェクトである`DeathEffect`クラスを作ります。  
 `DeathEffect`のコードは以下のようになります。  
 
-[!code-csharp[Main](DeathEffect.cs)]  
+[!code-csharp[Main](Text/DeathEffect.cs)]  
 
 どのように実装されているかというと以下のような画像の一部を表示して表示位置をずらしてあげることでアニメーションのような効果を出しています。  
 
-![DeathEffect](Explosion.png)
+![DeathEffect](Image/Explosion.png)
 
 
 コード中で使われている`Src`について説明します。今までは`Texture`に設定された画像全てを描画していましたが、今回は画像の一部だけを切り取って描画する必要があります。

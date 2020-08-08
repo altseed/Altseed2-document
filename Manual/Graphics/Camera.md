@@ -1,9 +1,14 @@
 # カメラ
 
-[CameraNode](xref:Altseed2.CameraNode)は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。描画結果を [RenderTexure](xref:Altseed2.RenderTexture) として取り出して再利用することもできます。領域の左上座標は [Transform](xref:Altseed2.CameraNode.Transform) プロパティで設定できます。
+[CameraNode](xref:Altseed2.CameraNode)は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。[CameraNode](xref:Altseed2.CameraNode)が撮影する領域は[Angle](xref:Altseed2.CameraNode.Angle)、[CenterPosition](xref:Altseed2.CameraNode.CenterPosition)、[Position](xref:Altseed2.CameraNode.Position)、[Scale](xref:Altseed2.CameraNode.Scale) プロパティを用いることで設定できます。
+
+> [!NOTE]
+> 既定では、[CameraNode](xref:Altseed2.CameraNode)が撮影する領域は、点 (0, 0) を左上とする、[ウインドウサイズ](xref:Altseed2.Engine.WindowSize)と同じ大きさ（[TargetTexture](xref:Altseed2.CameraNode.TargetTexture)を設定した場合はその[大きさ](xref:Altseed2.TextureBase.Size)）の長方形の領域です。上記の各種プロパティを設定することで、この長方形を変形することで撮影する領域を調整すると考えるとよいです。
+
+描画結果を [RenderTexure](xref:Altseed2.RenderTexture) として取り出して再利用することもできます。[Material](xref:Altseed2.Material) などを付けて再描画することができます。
 
 > [!IMPORTANT]
->　エンジンにカメラが一つも登録されていない場合は、暗黙的に存在するデフォルトカメラによって登録されている全ての [DrawnNode](xref:Altseed2.DrawnNode) が描画されます。エンジンにカメラが一つでも登録した場合は、デフォルトカメラが無効化されるため、下記[CameraGroup](xref:Altseed2.DrawnNode.CameraGroup) プロパティ を適切に設定していない [DrawnNode](xref:Altseed2.DrawnNode) は描画されません。
+>　エンジンにカメラが一つも登録されていない場合は、暗黙的に存在するデフォルトカメラによって登録されている描画できる全てのノードが描画されます。しかし **エンジンにカメラが一つでも登録した場合は、デフォルトカメラが無効化されるため、下記の[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティを適切に設定していないノードは描画されません。**
 
 ## クリア
 
@@ -12,18 +17,16 @@
 > [!NOTE]
 > 複数のカメラの描画結果を画面に出力する場合、透明な色でクリアすることによって、より下に（先に）出力されるカメラの描画結果も表示することができます。
 
-## Group
+## グループ
 
-各 [DrawnNode](xref:Altseed2.DrawnNode) のもつ[CameraGroup](xref:Altseed2.DrawnNode.CameraGroup) プロパティはどのカメラの描画対象となるかを指定するものです。
-[CameraNode](xref:Altseed2.CameraNode) の [Group](xref:Altseed2.CameraNode.Group) プロパティが n であるとき、[CameraGroup](xref:Altseed2.DrawnNode.CameraGroup) プロパティの下から n ビット目が [DrawnNode](xref:Altseed2.DrawnNode) であるような [DrawnNode](xref:Altseed2.DrawnNode) を写します。
+[SpriteNode](xref:Altseed2.SpriteNode) や [PostEffectNode](xref:Altseed2.PostEffectNode) のような描画できるノードが持っている[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティは、どのカメラの描画によって描画されるかを指定するものです。
+[Group](xref:Altseed2.CameraNode.Group) プロパティが n である[CameraNode](xref:Altseed2.CameraNode)は、描画できるノードのうち [CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティの下から n ビット目が 1 であるものを描画します。例えば、[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) が 6（二進数で110）である[SpriteNode](xref:Altseed2.SpriteNode)は、[Group](xref:Altseed2.CameraNode.Group) プロパティが 1 または 2 である[CameraNode](xref:Altseed2.CameraNode)によって描画されますが、[Group](xref:Altseed2.CameraNode.Group) プロパティが 0 または 2 以上である[CameraNode](xref:Altseed2.CameraNode)には描画されません。
 
 > [!NOTE]
-> [DrawnNode](xref:Altseed2.DrawnNode) の値で複数のビットを立てることによって、複数のカメラに[DrawnNode](xref:Altseed2.DrawnNode)を写すことができます。
-> [CameraNode](xref:Altseed2.CameraNode) は [Group](xref:Altseed2.CameraNode.Group) プロパティの値に従い降順に描画結果を生成します。これはペイントソフトなどにおけるレイヤーの重ね順のように機能します。
+> [CameraNode](xref:Altseed2.CameraNode) は [Group](xref:Altseed2.CameraNode.Group) プロパティの値に従い **降順** に描画結果を生成します。これはペイントソフトなどにおけるレイヤーの重ね順のように機能します。
 
 > [!IMPORTANT]
->また[RenderTexure](xref:Altseed2.RenderTexture) として取り出して再利用する際は、[Group](xref:Altseed2.CameraNode.Group) プロパティの値がより大きいカメラによって写される[DrawnNode](xref:Altseed2.DrawnNode)でのみ使用できます。
->[Group](xref:Altseed2.CameraNode.Group) プロパティの値が同じかより小さいカメラによって写される[DrawnNode](xref:Altseed2.DrawnNode)では、[RenderTexure](xref:Altseed2.RenderTexture)への描画がその時点でまだ行われていないため、まだ何も描画されていないか1フレーム前の描画結果が使用されます。
+> 上記の通り、画面もしくは[RenderTexure](xref:Altseed2.RenderTexture) への描画は[Group](xref:Altseed2.CameraNode.Group) プロパティの値に従い **降順** に行われます。[RenderTexure](xref:Altseed2.RenderTexture)への描画結果を[SpriteNode](xref:Altseed2.SpriteNode)などで再利用する場合、その[SpriteNode](xref:Altseed2.SpriteNode)は[RenderTexure](xref:Altseed2.RenderTexture)への描画を行った[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup)よりも[Group](xref:Altseed2.CameraNode.Group) プロパティの値がより大きい[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup)によって撮影する場合のみ正常に描画されます。[Group](xref:Altseed2.CameraNode.Group) プロパティの値が同じか、より小さい[CameraNode](xref:Altseed2.CameraNode)によって撮影しようとした場合、[RenderTexure](xref:Altseed2.RenderTexture) への描画がその時点でまだ行われていないため、何も描画されていないか1フレーム前の描画結果を使用して描画が行われます。
 
 ## サンプル
 

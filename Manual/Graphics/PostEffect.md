@@ -1,6 +1,6 @@
 # ポストエフェクト
 
-[PostEffectNode](xref:Altseed2.PostEffectNode)は画面やカメラに対し何らかの効果を加えて表示される映像を変化させるノードです。[DrawnNode](xref:Altseed2.DrawnNode)が描画された後にポストエフェクトの描画が行われます。
+[PostEffectNode](xref:Altseed2.PostEffectNode)は画面やカメラに対し何らかの効果を加えて表示される映像を変化させるノードです。
 
 ## 組み込みポストエフェクト
 
