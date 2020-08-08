@@ -9,7 +9,7 @@
 
 まず以下のコードを追加してタイトル画面を作りましょう。
 
-[!code-diff[Main](Spl1.cs)]
+[!code-diff[Main](Text/Spl1.cs)]
 
 基本的に実装は今迄行ってきたような，`SpriteNode`や`TextNode`を用いた画像/文字の描画です。  
 
@@ -31,20 +31,20 @@ Engine.AddNode(new MainNode());
 
 タイトル画面にいるときは，ノードの親子関係はこのようになっています。
 
-![Pic1](Pic1.png)
+![Pic1](Image/Pic1.png)
 
 此処における`Root`は，`Engine`内で定義されている全てのノードの祖先となるノードです。
 `TitleNode`の子ノードとして，タイトルのテキストや案内の文字，背景のテクスチャがあります。
 この状態で`Engine.RemoveNode(TitleNode)`を行うとノードの親子関係はこのようになります。
 
-![Pic2](Pic2.png)
+![Pic2](Image/Pic2.png)
 
 `Root`と`TitleNode`の親子関係が解消され，`TitleNode`に登録されているテキストやテクスチャがウィンドウに描画されなくなります。
 `Root.RemoveNode(TitleNode)`とやっていることに違いはありません。
 
 次に`Engine.AddNode(MainNode)`を行う事でノードの親子関係は次のようになります。
 
-![Pic3](Pic3.png)
+![Pic3](Image/Pic3.png)
 
 `Root`の子に`MainNode`が追加され，`MainNode`での実装が実行されます。
 前の章で実装してきたシューティングゲーム本体の内容ですね。
@@ -66,7 +66,7 @@ private bool fading = false;
 
 ```cs
 // 画面が遷移中でなく，Zキーが押された時に実行
-if (!fading && Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
+if (!fading && Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
 {
 ```
 
@@ -78,7 +78,7 @@ if (!fading && Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
 タイトルを実装したので，実際にゲームを始めた時に最初に表示されるようにしてみましょう。  
 `Program.cs`のコードを次のように書き換えてみましょう。
 
-[!code-diff[Main](Spl2.cs)]
+[!code-diff[Main](Text/Spl2.cs)]
 
 これで最初に表示されるノードが`MainNode`から`TitleNode`に変わりました。
 
@@ -87,17 +87,17 @@ if (!fading && Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
 次は死亡時にゲームオーバー画面を表示してみましょう。
 `TitleNode`と同様に実装します。
 
-[!code-diff[Main](Spl3.cs)]
+[!code-diff[Main](Text/Spl3.cs)]
 
 次に，`MainNode`に，ゲームオーバーへの遷移メソッドを実装します。
 
-[!code-diff[Main](Spl4.cs)]
+[!code-diff[Main](Text/Spl4.cs)]
 
 これで，`ToGameOver()`メソッドを呼び出すことでゲームオーバー画面に遷移できるようになりました。
 ゲームオーバーの呼び出しはプレイヤーが死亡したとき，つまりプレイヤーが敵/敵弾に衝突したときに呼び出せば良いですね。  
 それでは，以下のように`Player.cs`にて呼び出してみましょう。
 
-[!code-diff[Main](Spl5.cs)]
+[!code-diff[Main](Text/Spl5.cs)]
 
 これでプレイヤーが敵/敵弾に衝突したときにゲームオーバー画面が呼び出されるようになりました。
 
@@ -121,10 +121,10 @@ BGMが再生中，つまり`bgmID`がnullじゃないときに`bgmID.HasValue`�
 クリア画面も追加してみましょう。
 `TitleNode`や`GameOverNode`と同じ要領でクリア画面も作ってみましょう。
 
-[!code-diff[Main](Spl6.cs)]
+[!code-diff[Main](Text/Spl6.cs)]
 
 同様に，`MainNode.cs`にもクリア画面への遷移を追加してみましょう。
 
-[!code-diff[Main](Spl7.cs)]
+[!code-diff[Main](Text/Spl7.cs)]
 
 これで，ウェーブをクリアしたときに自動的にBGMがフェードアウトされ，クリア画面に遷移します。

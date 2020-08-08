@@ -9,7 +9,7 @@
 
 例えば下のような２つの円のオブジェクトを考え、２つの円の中心座標を考えてみましょう。２つの円の半径をa, bとおき、２つの円のx座標の差をd、y座標の差をeとおくと、中学校で習うような「三平方の定理」よりd²+e²<(a+b)²ならば２つの円は「ぶつかっている」ということになりますね。   
 
-![当たり判定](06_collision.png)  
+![当たり判定](Image/06_collision.png)
 
 ## 当たり判定実装
 当たり判定の仕組みは上で説明したとおりですが、自分で一から実装するのは面倒なのでAltseed2ではこの当たり判定をまとめたクラスである`CircleCollider`が用意されています。  
@@ -23,7 +23,7 @@
 
 `CollidableObject`のコードは以下のようになります。 
 
-[!code-csharp[Main](CollidableObject.cs)]
+[!code-cs[Main](Text/CollidableObject.cs)]
 
 これまで`SpriteNode`を継承していたため、`CollidableObject`でも`SpriteNode`を継承しています。  
 また、`Enemy`クラスと`Bullet`クラスに定義していた`RemoveMyselfIfOutOfWindow`関数ですが同じ処理が二か所にあって冗長です。基本的に同じ処理は一か所にまとめた方が良いのでそれぞれの親クラスになる`CollidableObject`でこの関数を定義することにします。
@@ -208,7 +208,7 @@ protected virtual void OnCollision(CollidableObject obj)
             Texture = Texture2D.LoadStrict("Resources/Player.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
 
 +           // コライダの半径を設定
 +           collider.Radius = Texture.Size.Y / 2;
@@ -298,7 +298,7 @@ protected virtual void OnCollision(CollidableObject obj)
             Texture = Texture2D.LoadStrict("Resources/Bullet_Red.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
 
 +           // 半径を設定
 +           collider.Radius = Texture.Size.X / 2;
@@ -314,7 +314,7 @@ protected virtual void OnCollision(CollidableObject obj)
             Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
 
 +           // 半径を設定
 +           collider.Radius = Texture.Size.X / 2;
@@ -331,7 +331,7 @@ protected virtual void OnCollision(CollidableObject obj)
             Texture = Texture2D.LoadStrict("Resources/UFO.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ConentSize / 2;
 
 +           // 半径を設定
 +           collider.Radius = Texture.Size.X / 2;
@@ -357,7 +357,7 @@ protected virtual void OnCollision(CollidableObject obj)
             Texture = Texture2D.LoadStrict("Resources/UFO.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
 
 +           // 半径を設定
 +           collider.Radius = Texture.Size.X / 2;
@@ -383,7 +383,7 @@ protected virtual void OnCollision(CollidableObject obj)
             Texture = Texture2D.LoadStrict("Resources/UFO.png");
 
             // 中心座標を設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
 
 +           // 半径を設定
 +           collider.Radius = Texture.Size.X / 2;
@@ -412,7 +412,7 @@ protected virtual void OnCollision(CollidableObject obj)
             Texture = Texture2D.LoadStrict("Resources/Meteor.png");
 
             // 中心座標の設定
-            CenterPosition = Texture.Size / 2;
+            CenterPosition = ContentSize / 2;
 
 +           // 半径の設定
 +           collider.Radius = Texture.Size.X / 2;
@@ -430,10 +430,10 @@ protected virtual void OnCollision(CollidableObject obj)
         private void Shot()
         {
             // Zキーでショットを放つ
-            if (Engine.Keyboard.GetKeyState(Keys.Z) == ButtonState.Push)
+            if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
             {
-+               Parent.AddChildNode(new PlayerBullet(mainNode, Position + CenterPosition));
--               Parent.AddChildNode(new PlayerBullet(Position + CenterPosition));
++               Parent.AddChildNode(new PlayerBullet(mainNode, Position));
+-               Parent.AddChildNode(new PlayerBullet(Position));
             }
         }
 ```
