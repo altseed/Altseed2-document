@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="2d-geometryobject2d">図形オブジェクト2D (GeometryObject2D)</h2>
+  <h3>概要</h3>
+  <p><a href="./Object2D.html">オブジェクト2Dクラス</a>を拡張し、<a href="./Shape.html">図形クラス</a>を持った上でそれを描画できる2D描画オブジェクトです。<br />下の図のように、描画する図形にテクスチャを合成することも可能です。</p>
+  <p><img src="img/GeometryObject2D.png" alt="図形オブジェクト2D" /></p>
+  <p>具体的には、Shapeプロパティに描画したい図形を設定すると、その形状の情報をもとに図形を描画します。</p>
+  <p>また、図形が<a href="./LineShape.html">線分</a>以外の形状の時は、指定したテクスチャを図形に合成することが可能です。</p>
+  <h3>主なメソッド</h3>
+  <p>なし</p>
+  <h3>主なプロパティ</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">Shape</td>
+  <td style="text-align: left;">描画する図形のハンドル</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Texture</td>
+  <td style="text-align: left;">描画する2Dテクスチャのハンドル</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">AlphaBlendMode</td>
+  <td style="text-align: left;">図形描画の際に適用されるアルファブレンドの種類</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">CenterPosition</td>
+  <td style="text-align: left;">図形に適用する変換(拡大、回転、移動)の基準位置(親から見た相対座標にて設定)</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">Color</td>
+  <td style="text-align: left;">図形描画の際の合成色のRGBA値を0~255の間で指定(Aの値を255未満にすると透明になる。)</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">DrawingPriority</td>
+  <td style="text-align: left;">描画の優先順位</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">TextureFilterType</td>
+  <td style="text-align: left;">描画時のテクスチャフィルタ(近傍補間:Nearestもしくは線形補間:Linear)</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なイベント</h3>
+  <p>なし</p>
+  <h3>使用方法</h3>
+  <p>GeometryObject2Dクラスのサンプルです。</p>
+  <pre class="sourceCode cpp"><code class="sourceCode cpp">﻿#include &lt;Base.h&gt;
+  
+  <span class="co">/**</span>
+  <span class="kw">@brief</span><span class="co">  GeometryObject2Dのサンプル。図形を表示しています。</span>
+  <span class="co">*/</span>
+  <span class="dt">int</span> main()
+  {
+      <span class="co">// AC-Engineを初期化する</span>
+      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;GeometryObject2D&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+  
+      <span class="co">// シーンを生成する</span>
+      <span class="dt">auto</span> scene = std::make_shared&lt;ace::Scene&gt;();
+  
+      <span class="co">// レイヤーを生成する。</span>
+      <span class="dt">auto</span> layer = std::make_shared&lt;ace::Layer2D&gt;();
+  
+      <span class="co">// テクスチャを画像ファイルから生成する。</span>
+      <span class="dt">auto</span> texture = ace::Engine::GetGraphics()-&gt;CreateTexture2D(ace::ToAString(<span class="st">&quot;Data/Texture/Sample1.png&quot;</span>).c_str());
+  
+      <span class="co">// 図形描画クラスのコンストラクタを呼び出す。</span>
+      <span class="dt">auto</span> geometryObj1 = std::make_shared&lt;ace::GeometryObject2D&gt;();
+      <span class="dt">auto</span> geometryObj2 = std::make_shared&lt;ace::GeometryObject2D&gt;();
+      <span class="dt">auto</span> geometryObj3 = std::make_shared&lt;ace::GeometryObject2D&gt;();
+  
+      <span class="co">// 図形描画クラスをレイヤーに追加する。</span>
+      layer-&gt;AddObject(geometryObj1);
+      layer-&gt;AddObject(geometryObj2);
+      layer-&gt;AddObject(geometryObj3);
+  
+      <span class="co">// レイヤーをシーンに追加する。</span>
+      scene-&gt;AddLayer(layer);
+  
+      <span class="co">// シーンを変更する。</span>
+      ace::Engine::ChangeScene(scene);
+      
+      <span class="co">// 弧を図形描画クラス1にて描画する。</span>
+      {
+          <span class="co">// 弧の外径、内径、頂点数、中心位置、開始頂点番号、終了頂点番号を指定する。</span>
+          <span class="dt">auto</span> arc = std::make_shared&lt;ace::ArcShape&gt;();
+          arc-&gt;SetOuterDiameter(<span class="dv">100</span>);
+          arc-&gt;SetInnerDiameter(<span class="dv">10</span>);
+          arc-&gt;SetNumberOfCorners(<span class="dv">96</span>);
+          arc-&gt;SetPosition(ace::Vector2DF(<span class="dv">300</span>, <span class="dv">100</span>));
+          arc-&gt;SetStartingCorner(<span class="dv">90</span>);
+          arc-&gt;SetEndingCorner(<span class="dv">5</span>);
+  
+          <span class="co">// 弧を描画する図形として設定し、合成するテクスチャも設定する。</span>
+          geometryObj1-&gt;SetShape(arc);
+          geometryObj1-&gt;SetTexture(texture);
+          geometryObj1-&gt;SetPosition(ace::Vector2DF(<span class="dv">0</span>, <span class="dv">0</span>));
+      }
+  
+      <span class="co">// 矩形を図形描画クラス2にて描画する。</span>
+      {
+          <span class="co">// 矩形の描画範囲、UV範囲を指定する。</span>
+          <span class="dt">auto</span> rect = std::make_shared&lt;ace::RectangleShape&gt;();
+          rect-&gt;SetDrawingArea(ace::RectF(<span class="dv">10</span>, <span class="dv">210</span>, <span class="dv">300</span>, <span class="dv">200</span>));
+          rect-&gt;SetUV(ace::RectF(<span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>));
+  
+          <span class="co">// 矩形を描画する図形として設定し、合成するテクスチャも設定する。</span>
+          geometryObj2-&gt;SetShape(rect);
+          geometryObj2-&gt;SetTexture(texture);
+          geometryObj2-&gt;SetPosition(ace::Vector2DF(<span class="dv">0</span>, <span class="dv">0</span>));
+      }
+  
+      <span class="co">// 多角形を図形描画クラス3にて描画する。</span>
+      {
+  
+          <span class="dt">auto</span> polygon = std::make_shared&lt;ace::PolygonShape&gt;();
+          <span class="co">// 多角形を構成する頂点を追加していく。（星形になるようにする。）</span>
+          <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; ++i)
+          {
+              ace::Vector2DF vec = ace::Vector2DF(<span class="dv">1</span>, <span class="dv">0</span>);
+              vec.SetDegree(i * <span class="dv">36</span>);
+              vec.SetLength((i % <span class="dv">2</span> == <span class="dv">0</span>) ? <span class="dv">100</span> : <span class="dv">55</span>);
+              polygon-&gt;AddVertex(vec + ace::Vector2DF(<span class="dv">500</span>, <span class="dv">250</span>));
+  
+          }
+  
+          <span class="co">// 多角形を描画する図形として設定し、合成するテクスチャも設定。</span>
+          geometryObj3-&gt;SetShape(polygon);
+          geometryObj3-&gt;SetTexture(texture);
+          geometryObj3-&gt;SetPosition(ace::Vector2DF(<span class="dv">0</span>, <span class="dv">0</span>));
+      }
+  
+      <span class="co">// AC-Engineが進行可能かチェックする。</span>
+      <span class="kw">while</span> (ace::Engine::DoEvents())
+      {
+          <span class="co">// AC-Engineを更新する。</span>
+          ace::Engine::Update();
+      }
+  
+      <span class="co">// AC-Engineを終了する。</span>
+      ace::Engine::Terminate();
+  
+      <span class="kw">return</span> <span class="dv">0</span>;
+  }</code></pre>
+  </body>
+  </html>
+  

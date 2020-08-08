@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="-transition">トランジション (Transition)</h2>
+  <h3>概要</h3>
+  <p>トランジションはシーンを変更する際に、画面が瞬間的に切り替わるのではなく何かしらの画面効果を加えてシーンを変更する機能です。例えば、フェードイン・フェードアウトといった画面効果を与えます。トランジションはシーンを変更する際に<code>Engine.Change.ChangeSceneWithTransition</code>の引数にトランジションのインスタンスを与えることで使用できます。</p>
+  <p>注意する点としてトランジションを設定した場合は即座にシーン変更が行われない点があります。例えばフェードの場合、フェードアウトが終わるまでは前のシーンの更新が実行され、フェードインが開始されてから次のシーンの更新が実行されます。既にトランジションが実行されている最中に、更にシーンを変更しようとすると予期せぬ挙動が発生する可能性があります。</p>
+  <p>トランジションにはメソッドが存在しますが、基本的にそれらのメソッドはトランジションの機能を自分で開発したい人向けであり通常のユーザーはシーンを変更するときにトランジションを継承したクラスのインスタンスを渡すだけでトランジションの機能を使用できます。</p>
+  <p><img src="img/Fade.png" alt="トランジション" /></p>
+  <p>トランジションは既に用意されているトランジションの他に自分でトランジションを開発できます。<code>Transition</code>クラスを継承し動作を定義することで新たなトランジションを実現できます。<code>OnUpdate</code>を継承し、毎フレームの更新の内容を記述します。ここでは、主にトランジションの描画内容の指定、シーンが変更されるタイミング、及びトランジションが終了するタイミングを指定します。<code>DrawTriangleWithPreviousScene</code>と<code>DrawRectangleWithNextScene</code>でシーンを画像として描画し、<code>ChangeScene</code>で前のシーンから次のシーンへ変更、<code>Finish</code>でトランジションを終了します。</p>
+  <p>シーンが変更されるまでは次のシーンは描画できず、変更した後は前のシーンは更新が停止してしまうので、最終フレームが描画されます。</p>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">ChangeScene</td>
+  <td style="text-align: left;">シーンを次のシーンに変更します。トランジションの機能を自分で開発する人向けです。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Finish</td>
+  <td style="text-align: left;">トランジションを終了します。トランジションの機能を自分で開発する人向けです。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">DrawTriangleWithNextScene</td>
+  <td style="text-align: left;">次のシーンを画像として三角形に貼り付けて描画します。トランジションの機能を自分で開発する人向けです。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">DrawTriangleWithPreviousScene(</td>
+  <td style="text-align: left;">前のシーンを画像として三角形に貼り付けて描画します。トランジションの機能を自分で開発する人向けです。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なプロパティ</h3>
+  <h3>主なイベント</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">OnUpdate</td>
+  <td style="text-align: left;">毎フレーム実行される更新イベント</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>使用方法</h3>
+  <p>トランジションの例としてTransitionFadeクラスのサンプルを提示します。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// Transitionを用いて、シーンの変更の見栄えを変更するサンプルです。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">public</span> <span class="kw">class</span> Transition
+  {
+      <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+      <span class="co">/// Scene1の画像を表示するシーン</span>
+      <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+      <span class="kw">class</span> Scene1 : ace.<span class="fu">Scene</span>
+      {
+          <span class="kw">public</span> <span class="fu">Scene1</span>()
+          {
+              <span class="co">// レイヤーを追加する。</span>
+              <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+              <span class="fu">AddLayer</span>(layer);
+  
+              <span class="co">// Scene1を描画するインスタンスを生成してレイヤーに追加する。</span>
+              <span class="dt">var</span> obj = <span class="kw">new</span> ace.<span class="fu">TextureObject2D</span>();
+              obj.<span class="fu">Texture</span> = ace.<span class="fu">Engine</span>.<span class="fu">Graphics</span>.<span class="fu">CreateTexture2D</span>(<span class="st">&quot;Data/Texture/Scene1.png&quot;</span>);
+  
+              layer.<span class="fu">AddObject</span>(obj);
+          }
+  
+          <span class="kw">protected</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnUpdated</span>()
+          {
+              <span class="co">// マウスが左クリックされた時にフェード付きでScene2に遷移する。</span>
+              <span class="kw">if</span> (ace.<span class="fu">Engine</span>.<span class="fu">Mouse</span>.<span class="fu">LeftButton</span>.<span class="fu">ButtonState</span> == ace.<span class="fu">MouseButtonState</span>.<span class="fu">Push</span>)
+              {
+                  <span class="dt">var</span> scene2 = <span class="kw">new</span> <span class="fu">Scene2</span>();
+                  ace.<span class="fu">Engine</span>.<span class="fu">ChangeSceneWithTransition</span>(scene2, <span class="kw">new</span> ace.<span class="fu">TransitionFade</span>(<span class="fl">1.</span>0f, <span class="fl">1.</span>0f));
+              }
+          }
+      }
+  
+      <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+      <span class="co">/// Scene2の画像を表示するシーン</span>
+      <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+      <span class="kw">class</span> Scene2 : ace.<span class="fu">Scene</span>
+      {
+          <span class="kw">public</span> <span class="fu">Scene2</span>()
+          {
+              <span class="co">// レイヤーを追加する。</span>
+              <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+              <span class="fu">AddLayer</span>(layer);
+  
+              <span class="co">// Scene2を描画するインスタンスを生成してレイヤーに追加する。</span>
+              <span class="dt">var</span> obj = <span class="kw">new</span> ace.<span class="fu">TextureObject2D</span>();
+              obj.<span class="fu">Texture</span> = ace.<span class="fu">Engine</span>.<span class="fu">Graphics</span>.<span class="fu">CreateTexture2D</span>(<span class="st">&quot;Data/Texture/Scene2.png&quot;</span>);
+  
+              layer.<span class="fu">AddObject</span>(obj);
+          }
+  
+          <span class="kw">protected</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnUpdated</span>()
+          {
+              <span class="co">// マウスが左クリックされた時にScene1へ遷移する。</span>
+              <span class="kw">if</span> (ace.<span class="fu">Engine</span>.<span class="fu">Mouse</span>.<span class="fu">LeftButton</span>.<span class="fu">ButtonState</span> == ace.<span class="fu">MouseButtonState</span>.<span class="fu">Push</span>)
+              {
+                  <span class="dt">var</span> scene1 = <span class="kw">new</span> <span class="fu">Scene1</span>();
+                  ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene1);
+              }
+          }
+      }
+  
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;Transition&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// シーンをScene1に変更する。</span>
+          <span class="dt">var</span> scene = <span class="kw">new</span> <span class="fu">Scene1</span>();
+          ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene);
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+  
+          <span class="co">// AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }</code></pre>
+  </body>
+  </html>
+  

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title>
+    <base href="http://altseed.github.io/First/">
+    <link href="stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+              Cookies.set('code_state', 'cpp');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_Reference Doc_Reference_Tool Doc_Reference_Tool_FontGenerator">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
+        </div>
+        <h1>フォントジェネレータ</h1>
+        
+        <p>フォントジェネレータを使用して、ACEのTextObject2Dで描画するために使うフォントファイルセットを生成することができます。</p>
+        
+        <p><img alt="フォントジェネレータ外観" src="Doc/Reference/Tool/img/fonttool.png" /></p>
+        
+        <p>各種設定を入力して「生成」ボタンを押すと、指定したフォルダにaffファイルとpngファイル(あわせてフォントファイルセットと呼びます)が生成されます。</p>
+        
+        <h2>フォントファイルセットについて</h2>
+        
+        <p>AltseedのTextObject2Dでテキストを描画するためには、affファイルとそれに対応したpngファイルを用意する必要があります。pngファイルには文字の画像が並んでいて、affファイルに含まれる情報を元にpngファイルの中身を切り貼りして描画する仕様になっています。<strong>affファイルにはpngファイルの名前の情報も含まれているので、フォントジェネレータで生成されたpngファイルの名前を変更しないようにしてください。</strong></p>
+        
+        <h2>設定</h2>
+        
+        <table><thead>
+        <tr>
+        <th>設定</th>
+        <th>解説</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>フォント</td>
+        <td>使用するフォントを指定します。</td>
+        </tr>
+        <tr>
+        <td>テキストファイル</td>
+        <td>使用する文字のリストを含むファイルを指定します。このリストに含まれる文字をテキスト描画に使用できます。</td>
+        </tr>
+        <tr>
+        <td>出力先ディレクトリ</td>
+        <td>フォントファイルセットを出力するフォルダを指定します。</td>
+        </tr>
+        <tr>
+        <td>シート名</td>
+        <td>フォントファイルセットの名前を指定します。ファイル名とaffの内部名に使用されます。</td>
+        </tr>
+        <tr>
+        <td>フォントサイズ</td>
+        <td>フォントのサイズを指定します。</td>
+        </tr>
+        <tr>
+        <td>テクスチャサイズ</td>
+        <td>pngファイルの１辺の長さを指定します。</td>
+        </tr>
+        <tr>
+        <td>枠線太さ</td>
+        <td>枠線の太さを指定します。0にすると枠線なしのフォントファイルセットを生成できます。</td>
+        </tr>
+        <tr>
+        <td>色</td>
+        <td>フォントの色を指定します。</td>
+        </tr>
+        <tr>
+        <td>枠線色</td>
+        <td>フォントの枠線の色を指定します。枠線の太さを0にしている場合は効果はありません。</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>指定するテキストファイルについて</h3>
+        
+        <p>例えば、「あいうabc漢字」と書かれたテキストファイルを指定して生成すると、affファイルに加えて次のようなpngファイルが生成されます。</p>
+        
+        <p><img alt="生成されるpngファイル" src="Doc/Reference/Tool/img/Manual_0.png" /></p>
+        
+        <p>TextObject2Dでは、このファイルを切り貼りして文字を描画するので、「あいうabc漢字」の文字だけが使用できます。</p>
+        
+        <h2>設定セーブ/ロード</h2>
+        
+        <p>「設定セーブ」ボタンから、現在の設定をファイルに保存できます。「設定ロード」ボタンから、ファイルに保存された設定を読み込みます。その際、現在入力されている設定に上書きされるので注意してください。</p>
+        
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="Doc/FAQ.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="system_requirements.html">動作環境</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <a href="http://altseed.sakura.ne.jp/bbs/patio.cgi">ユーザー掲示板</a>
+        </p>
+        <p>
+          <a href="slack.html">Slack</a>
+        </p>
+        <p>
+          <a href="github.html">Github</a>
+        </p>
+        <p>
+          <a href="mail.html">メール</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向け<br>STG制作講座</a>
+        </p>
+        <h3>
+          使い方(基礎編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseBasic/Basic.html">Altseedの基本</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/GeometryObject2D.html">図形の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EngineMisc.html"> エンジンの機能(その他)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Texture.html"> 画像</a>
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="Doc/Reference/Main.html">リファレンス</a>
+      </div>
+    </div>
+  </body>
+</html>

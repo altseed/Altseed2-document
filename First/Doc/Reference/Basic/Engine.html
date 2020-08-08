@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title>
+    <base href="http://altseed.github.io/First/">
+    <link href="stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+              Cookies.set('code_state', 'cpp');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_Reference Doc_Reference_Basic Doc_Reference_Basic_Engine">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
+        </div><h1>エンジン (Engine)</h1>
+
+<h2>概要</h2>
+
+<p>Altseedの機能を提供します。初期化、終了処理及び、殆どの機能を使用するためのプロパティを持っています。Altseedを使用するためには必ずエンジンを使用する必要があります。</p>
+
+<p>エンジンでAltseedの初期化を行えます。
+シーンの変更や終了処理もエンジンで行います。</p>
+
+<p>フレームレート、及びゲーム内時間に関する詳細に関しては<a href="Doc/Reference/BasicDesign.html">基本設計</a>を参照してください。</p>
+
+<p>カーソル、クリップボード操作等、他に属していない機能へのアクセスも提供します。</p>
+
+<h2>主なメソッド</h2>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Initialize</td>
+<td>Altseedを初期化します。使用開始時に必ず実行します。</td>
+</tr>
+<tr>
+<td>DoEvents</td>
+<td>Altseedのフレーム開始処理を実行します。毎フレームの開始時に必ず実行します。falseを返した場合、ACEを終了させる必要があります。</td>
+</tr>
+<tr>
+<td>Update</td>
+<td>Altseedの毎フレームの更新処理を実行します。毎フレーム、かならず実行します。</td>
+</tr>
+<tr>
+<td>Terminate</td>
+<td>Altseedの終了処理を実行します。Altseedを終了時に必ず実行します。</td>
+</tr>
+<tr>
+<td>ChangeScene</td>
+<td>更新するシーンを変更します。</td>
+</tr>
+<tr>
+<td>ChangeSceneWithTransition</td>
+<td>トランジションを適用し、更新するシーンを変更します。</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>Altseedのウインドウを閉じます。</td>
+</tr>
+<tr>
+<td>TakeScreenshot</td>
+<td>スクリーンショットを撮影し、画像として保存します。</td>
+</tr>
+<tr>
+<td>CaptureScreenAsGifAnimation</td>
+<td>画面を録画し、gifアニメとして保存します。</td>
+</tr>
+</tbody></table>
+
+<h2>主なプロパティ</h2>
+
+<h3>フレームレート系</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CurrentFPS</td>
+<td>現在のFPS</td>
+</tr>
+<tr>
+<td>TargetFPS</td>
+<td>目標のFPS。このFPSに近づくように内部の更新が実行されます。</td>
+</tr>
+<tr>
+<td>DeltaTime</td>
+<td>1フレームの処理にかかった時間</td>
+</tr>
+<tr>
+<td>TimeSpan</td>
+<td>処理にかかった時間に対する時間指定可能な機能が進行する時間の倍率</td>
+</tr>
+<tr>
+<td>FramerateMode</td>
+<td>フレームレート制御方法</td>
+</tr>
+</tbody></table>
+
+<h3>各種機能</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Logger</td>
+<td>ログ出力機能にアクセスします。</td>
+</tr>
+<tr>
+<td>Profiler</td>
+<td><a href="Doc/Reference/Profiling/Profiler.html">プロファイリング機能</a>にアクセスします。</td>
+</tr>
+<tr>
+<td>Keyboard</td>
+<td><a href="Doc/Reference/Input/Keyboard.html">キーボード入力機能</a>にアクセスします。</td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td><a href="Doc/Reference/Input/Mouse.html">マウス入力機能</a>にアクセスします。</td>
+</tr>
+<tr>
+<td>JoystickContainer</td>
+<td><a href="Doc/Reference/Input/JoystickContainer.html">ジョイスティック入力機能</a>にアクセスします。</td>
+</tr>
+<tr>
+<td>Sound</td>
+<td><a href="Doc/Reference/Sound/SoundSource.html">音声再生機能</a>にアクセスします。</td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td><a href="Doc/Reference/Graphics/Graphics.html">グラフィックス関連機能</a>にアクセスします。</td>
+</tr>
+<tr>
+<td>AnimationSystem</td>
+<td>アニメーション機能にアクセスします。</td>
+</tr>
+<tr>
+<td>File</td>
+<td><a href="Doc/Reference/IO/File.html">ファイル(ファイルパッケージ)機能</a>にアクセスします。</td>
+</tr>
+<tr>
+<td>ClipboardString</td>
+<td>クリップボードに保存された文字列を読み書きします。</td>
+</tr>
+</tbody></table>
+
+<h2>主なイベント</h2>
+
+<p>なし</p>
+
+<h2>初期化時のオプションについて</h2>
+
+<p>Altseedを初期化する際に、<code>Initialize</code>メソッドに<code>EngineOption</code>構造体のインスタンスを渡すことで、アプリケーションの設定をカスタマイズできます。<code>EngineOption</code>構造体でカスタマイズできる設定を開設します。</p>
+
+<h3>主な設定</h3>
+
+<ul>
+<li><code>IsFullScreen</code>フィールドを<code>true</code>に設定すると、アプリケーションはフルスクリーンで起動します。</li>
+<li><code>GraphicsDevice</code>フィールドに<code>GraphicsDeviceType.OpenGL</code>や<code>GraphicsDeviceType.DirectX</code>などを指定することで、画面の描画に用いるデバイスを選ぶことができます。</li>
+<li><code>WindowPosition</code>を<code>Centering</code>に設定すると、ウィンドウで起動する場合にディスプレイの中心にウィンドウが開きます。</li>
+</ul>
+
+<h3>リロード機能(IsRelodingEnabled)</h3>
+
+<p><code>IsRelodingEnabled</code>を<code>true</code>にすると、ゲームが起動中でも画像を編集するとリアルタイムにゲーム中に反映される<strong>リロード機能</strong>が有効になります。詳細は<a href="Doc/Reference/Misc/Reloading.html">リロード</a>を参照してくだい。</p>
+
+<h3>自動生成レイヤー(AutoGeneratedLayer)</h3>
+
+<p><code>AutoGeneratedLayer</code>に適当な値を設定すると、Altseedの初期化時に自動生成するレイヤーの種類を選んだり、レイヤーを自動生成しないようにすることができます。</p>
+
+<p>基本的にAltseedでは、自分でシーンとレイヤーを作成してエンジンに追加する必要があります。
+しかし、初心者に使い方を教える際やサンプルなどの短いプログラムではシーンとレイヤーの機能を使う必要がなく、シーンとレイヤーの生成は冗長なソースコードになってしまいます。そこで、初期化時に自動生成されるレイヤーの種類を設定することで自動的にシーンとレイヤーが生成されるようになります。</p>
+
+<p>生成されたシーンとレイヤーには、<code>Engine.AddObject2D</code> というメソッドを用いてオブジェクトを追加できます。</p>
+
+<p>また、生成されたシーンとレイヤーは特殊なものではなく、シーンを切り替えた時に消滅します。</p>
+
+<h3>ColorSpace</h3>
+
+<p>Altseedでは、初期化時にカラースペースを設定できます。</p>
+
+<p>通常、ディスプレイや画像にはガンマ補正、逆ガンマ補正が適用された状態になっています。ディスプレイは画素の値と等しい輝度を表示しているわけではなく、
+ある一定のカーブに従った輝度を表示しています。画像はディスプレイが画素の値と等しい輝度を出せない前提で記録されています。この画素値への補正がガンマ補正です。</p>
+
+<p>ガンマ補正が適用されている場合、ただ、画像を表示するだけなら問題は発生しませんが、加算や3D表示をしますとディスプレイに輝度を加算した結果が正しく表示されません。</p>
+
+<p>画素値をそのまま加算する場合を、ガンマスペース、輝度で加算する場合をリニアスペースと呼んでいます。</p>
+
+<p>デフォルトではリニアスペースですが、画素の値で計算したい場合、ガンマスペースを選択します。</p>
+
+<p><img alt="カラースペース" src="Doc/Reference/Basic/img/ColorSpace_GammaSpace.png" /></p>
+
+<p>ガンマスペース</p>
+
+<p><img alt="カラースペース" src="Doc/Reference/Basic/img/ColorSpace_LinearSpace.png" /></p>
+
+<p>リニアスペース</p>
+
+<h2>クリップボードについて</h2>
+
+<p>Altseedでは、コピー貼り付けに使用されるクリップボードを制御できます。ClipboardStringを経由することでコピー貼り付けに使用される文字列を読み書きできます。</p>
+
+<h2>使用方法</h2>
+
+<p>全てのサンプルで使用されているので、そちらを参照してください。</p>
+
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="Doc/FAQ.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="system_requirements.html">動作環境</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <a href="http://altseed.sakura.ne.jp/bbs/patio.cgi">ユーザー掲示板</a>
+        </p>
+        <p>
+          <a href="slack.html">Slack</a>
+        </p>
+        <p>
+          <a href="github.html">Github</a>
+        </p>
+        <p>
+          <a href="mail.html">メール</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向け<br>STG制作講座</a>
+        </p>
+        <h3>
+          使い方(基礎編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseBasic/Basic.html">Altseedの基本</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/GeometryObject2D.html">図形の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EngineMisc.html"> エンジンの機能(その他)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Texture.html"> 画像</a>
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="Doc/Reference/Main.html">リファレンス</a>
+      </div>
+    </div>
+  </body>
+</html>

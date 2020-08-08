@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="-keyboard">キーボード (Keyboard)</h2>
+  <h3>概要</h3>
+  <p>キーボードからの入力を扱うクラスです。</p>
+  <p><a href="../Basic/Engine.html">エンジン</a>のKeyboardプロパティから現在のフレームのキーボードの各キーの押し状態を持った当クラスのインスタンスを取得できます。</p>
+  <p>GetKeyStateにて指定したキーの押し状態を取得することが可能です。</p>
+  <h4>キーの押し状態</h4>
+  <p>押し状態は前のフレームと現在のフレームでそのキーを押したかによって決まり、以下の4通りとなります。(○・・・押している、✕・・・押していない)</p>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">状態</th>
+  <th style="text-align: left;">前のフレーム</th>
+  <th style="text-align: left;">現在のフレーム</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">Free</td>
+  <td style="text-align: left;">✕</td>
+  <td style="text-align: left;">✕</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Release</td>
+  <td style="text-align: left;">○</td>
+  <td style="text-align: left;">✕</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">Push</td>
+  <td style="text-align: left;">✕</td>
+  <td style="text-align: left;">○</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Hold</td>
+  <td style="text-align: left;">○</td>
+  <td style="text-align: left;">○</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">GetKeyState</td>
+  <td style="text-align: left;">指定したキーの押し状態</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なプロパティ</h3>
+  <p>なし</p>
+  <h3>主なイベント</h3>
+  <p>なし</p>
+  <h3>使用方法</h3>
+  <p>Keyboardクラスのサンプルです。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// Keyboardのサンプル。キーボードによる入力を取得しています。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">class</span> Keyboard
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">//AC-Engineを初期化する。</span>
+          <span class="dt">var</span> initialized = ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;Keyboard&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">//キーボードへの参照を取得する。</span>
+              ace.<span class="fu">Keyboard</span> keyboard = ace.<span class="fu">Engine</span>.<span class="fu">Keyboard</span>;
+  
+              <span class="co">//Zキーの押下状態を表示する。</span>
+              <span class="kw">switch</span> (keyboard.<span class="fu">GetKeyState</span>(ace.<span class="fu">Keys</span>.<span class="fu">Z</span>))
+              {
+                  <span class="kw">case</span> ace.<span class="fu">KeyState</span>.<span class="fu">Free</span>: <span class="co">//前フレーム、現フレーム共に非押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Z Free&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">KeyState</span>.<span class="fu">Hold</span>: <span class="co">//前フレーム、現フレーム共に押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Z Hold&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">KeyState</span>.<span class="fu">Release</span>: <span class="co">//前フレームで押下、現フレームで非押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Z Release&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">KeyState</span>.<span class="fu">Push</span>: <span class="co">//前フレームで非押下、現フレームで押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Z Push&quot;</span>);
+                      <span class="kw">break</span>;
+              }
+  
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+  
+          <span class="co">//AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }</code></pre>
+  </body>
+  </html>
+  

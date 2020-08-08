@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="2d-chip2d">チップ2D (Chip2D)</h2>
+  <h3>概要</h3>
+  <p>主に<a href="MapObject2D.html">マップオブジェクト2Dクラス</a>等で使用する、チップを定義したものです。<br />描画するテクスチャやそれに適用するオプションが設定可能です。</p>
+  <p>テクスチャについては、<a href="../Graphics/Texture2D.html">テクスチャ</a>の項を御覧ください。</p>
+  <h3>主なメソッド</h3>
+  <p>なし</p>
+  <h3>主なプロパティ</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">Texture</td>
+  <td style="text-align: left;">描画するテクスチャ</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">TextureFilterType</td>
+  <td style="text-align: left;">テクスチャ描画の際に適用されるフィルタの種類</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">AlphaBlendMode</td>
+  <td style="text-align: left;">テクスチャ描画の際に適用されるアルファブレンドの種類</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Color</td>
+  <td style="text-align: left;">テクスチャ描画の際の合成色</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">TurnLR</td>
+  <td style="text-align: left;">テクスチャ描画の左右反転フラグ</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">TurnUL</td>
+  <td style="text-align: left;">テクスチャ描画の上下反転フラグ</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">Src</td>
+  <td style="text-align: left;">テクスチャ上の描画する切り出し範囲</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">CenterPosition</td>
+  <td style="text-align: left;">テクスチャに適用する変換(拡大、回転、移動)の基準位置(マップオブジェクトから見た相対座標にて設定)</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">Position</td>
+  <td style="text-align: left;">このチップの属するマップオブジェクト2Dに対する相対的な位置</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Angle</td>
+  <td style="text-align: left;">このチップの属するマップオブジェクト2Dに対する相対的な回転角度</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">Scale</td>
+  <td style="text-align: left;">このチップの属するマップオブジェクト2Dに対する相対的な拡大率</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>使用方法</h3>
+  <p>Chip2DはMapObject2Dと必ず組み合わして使用します。<br />そのため、MapObject2Dクラスのサンプルを提示します。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// MapObject2Dのサンプル。敷き詰められたタイルをカメラで撮影して画面に表示しています。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">class</span> MapObject2D
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;MapObject2D&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// シーンを生成する</span>
+          <span class="dt">var</span> scene = <span class="kw">new</span> ace.<span class="fu">Scene</span>();
+  
+          <span class="co">// レイヤーを生成する</span>
+          <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+  
+          <span class="co">// シーンにレイヤーを追加する</span>
+          scene.<span class="fu">AddLayer</span>(layer);
+  
+          <span class="co">// シーンを切り替える</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene);
+  
+          <span class="co">// カメラを設定する。</span>
+          <span class="dt">var</span> camera = <span class="kw">new</span> ace.<span class="fu">CameraObject2D</span>();
+  
+          camera.<span class="fu">Src</span> = <span class="kw">new</span> ace.<span class="fu">RectI</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">640</span>, <span class="dv">480</span>);
+          camera.<span class="fu">Dst</span> = <span class="kw">new</span> ace.<span class="fu">RectI</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">640</span>, <span class="dv">480</span>);
+  
+          {
+              <span class="co">// マップオブジェクトを生成する。</span>
+              <span class="dt">var</span> mapObject = <span class="kw">new</span> ace.<span class="fu">MapObject2D</span>();
+  
+              <span class="dt">var</span> texture = ace.<span class="fu">Engine</span>.<span class="fu">Graphics</span>.<span class="fu">CreateTexture2D</span>(<span class="st">&quot;Data/Texture/Sample2.png&quot;</span>);
+  
+              <span class="co">// マップオブジェクトに50*50=2500個のチップを登録する。</span>
+              <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">50</span>; ++i)
+              {
+                  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; <span class="dv">50</span>; ++j)
+                  {
+                      <span class="co">// チップを生成する。</span>
+                      <span class="dt">var</span> chip = <span class="kw">new</span> ace.<span class="fu">Chip2D</span>();
+  
+                      <span class="co">// チップにテクスチャを設定する。</span>
+                      chip.<span class="fu">Texture</span> = texture;
+  
+                      <span class="co">// チップの描画先を指定する。</span>
+                      chip.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(i * <span class="dv">40</span> - <span class="dv">1000</span>, j * <span class="dv">40</span> - <span class="dv">1000</span>);
+  
+                      <span class="co">// マップオブジェクトにチップを追加する。</span>
+                      mapObject.<span class="fu">AddChip</span>(chip);
+                  }
+              }
+  
+              <span class="co">// レイヤーにマップオブジェクトを追加する。</span>
+              layer.<span class="fu">AddObject</span>(mapObject);
+  
+              <span class="co">// レイヤーにカメラオブジェクトを追加する。</span>
+              layer.<span class="fu">AddObject</span>(camera);
+          }
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// カメラを移動させる</span>
+              <span class="dt">var</span> pos = camera.<span class="fu">Src</span>;
+              pos.<span class="fu">X</span> += <span class="dv">1</span>;
+              pos.<span class="fu">Y</span> += <span class="dv">1</span>;
+              pos.<span class="fu">X</span> %= <span class="dv">1000</span>;
+              pos.<span class="fu">Y</span> %= <span class="dv">1000</span>;
+              camera.<span class="fu">Src</span> = pos;
+  
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+  
+          <span class="co">// AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }</code></pre>
+  </body>
+  </html>
+  

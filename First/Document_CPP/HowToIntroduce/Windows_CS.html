@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="cwindows">C#版の導入(Windows)</h2>
+  <p>C#版の導入方法について説明しています。</p>
+  <h3 id="visualstudio2013">VisualStudio2013の導入</h3>
+  <p><a href="https://www.visualstudio.com/ja-jp/downloads/download-visual-studio-vs#DownloadFamilies_2">VisualStudioのWebページ</a>から<br />「Visual Studio Community 2013 Update 4」をダウンロードします。ただし、会社内でAC-Engineを使用する場合は「Visual Studio Express 2013 with Update 4 for Windows Desktop」をダウンロードします。<br />これらはプログラムのソースコードから実行可能なアプリケーションを生成するツールです。個人で開発する分には無料で使用できます。</p>
+  <p>ダウンロードが終わったら、「Visual Studio」をインストールします。</p>
+  <h3 id="ac-engine">AC-Engineのダウンロード</h3>
+  <p><a href="https://github.com/ac-engine/ac-engine/releases/download/20150530/ACE_CS_20150531_WIN.zip">AC-Engine</a>　をダウンロードします。<br />ダウンロードしたファイルを解凍します。</p>
+  <p>開発には以下のファイルを使用します。</p>
+  <ul>
+  <li>Runtime/ace_cs.dll<br /></li>
+  <li>Runtime/ace_cs.XML<br /></li>
+  <li>Runtime/ace_core.dll</li>
+  </ul>
+  <h3>プロジェクトの作成</h3>
+  <ol>
+  <li><code>ファイル-&gt;新規作成-&gt;プロジェクト</code>を選択します。<br /></li>
+  <li>左のカラムから<code>インストール済み-&gt;テンプレート-&gt;Visual C#</code>を選択した後、中央のカラムから<code>コンソールアプリケーション</code>を選択します。<br /></li>
+  <li>下のテキストボックスの<code>名前</code>にプロジェクト名を入力して<code>OK</code>を選択します。ここからは<code>ACE_Test</code>と入力したと仮定して説明をします。</li>
+  </ol>
+  <p>これでプロジェクトの作成が完了しました。</p>
+  <h3>プロジェクトの設定</h3>
+  <ol>
+  <li>ソリューションエクスプローラーの<code>ACE_Test</code>プロジェクトを右クリックします。<code>追加-&gt;既存の項目</code>を選択して、<code>ace_cs.dll</code>と<code>ace_core.dll</code> を追加します。<br /></li>
+  <li>追加された<code>ace_cs.dll</code>を右クリックして<code>プロパティ</code>を開き、<code>出力ディレクトリーにコピー</code>の項目を「新しい場合はコピーする」に変更します。同様に<code>ace_core.dll</code>に対しても<code>出力ディレクトリーにコピー</code>の項目を変更します。<br /></li>
+  <li><code>ACE_Test-&gt;参照設定</code>を右クリックして<code>参照の追加</code>を選択します。ここで、<code>参照</code>ボタンをクリックし、1で追加された<code>ace_cs.dll</code>を選択して<code>OK</code>を押します。</li>
+  </ol>
+  <p>以上でAC-Engineが使えるようになります。</p>
+  <p>また、<code>ace_cs.XML</code>を<code>ace_cs.dll</code>と同じディレクトリに配置すると関数等の説明がVisualC#上で表示されるようになります。</p>
+  <h3>ビルド、実行</h3>
+  <p>Program.cs を以下のソースコードに書き換えます。</p>
+  <pre><code>using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Text;
+  using System.Threading.Tasks;
+  
+  namespace ACE_Test
+  {
+      class Program
+      {
+          [STAThread]
+          static void Main(string[] args)
+          {
+              // AC-Engineを初期化する。
+              ace.Engine.Initialize(&quot;Empty&quot;, 640, 480, new ace.EngineOption());
+  
+              // AC-Engineが進行可能かチェックする。
+              while (ace.Engine.DoEvents())
+              {
+                  // AC-Engineを更新する。
+                  ace.Engine.Update();
+              }
+  
+              // AC-Engineを終了する。
+              ace.Engine.Terminate();
+          }
+      }
+  }
+  </code></pre>
+  <p>そして、メニューバーからデバッグ-&gt;デバッグ開始を選択します。 黒いウインドウが表示されれば成功です。</p>
+  <h3>今後開発する上での設定</h3>
+  <p>「構築されているプロジェクトのプロセッサ アーキテクチャ “MSIL” と、参照...」のような警告が表示される場合は<code>ビルド-&gt;構成マネージャー</code>を選択し<code>プラットフォーム</code>をx86に変更されると表示されなくなります。</p>
+  </body>
+  </html>
+  

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="-sound">サウンド (Sound)</h2>
+  <h3>概要</h3>
+  <p>音の生成、管理を行う機能を提供します。音を鳴らす場合は必ず使用する必要があります。</p>
+  <p>音源をファイルから生成する際、ファイルを解凍するかどうかを指定できます。通常、oggフォーマット等はwavファイルを圧縮した情報を格納し、再生する際にリアルタイムに解凍しつつ再生しています。ここでは、事前にファイルを解凍するか再生中にリアルタイムに解凍するかを指定できます。事前に解凍する場合、読み込み時間は長くなりメモリも消費しますが再生時のCPU負荷は小さくなります。一方、事前に解凍しない場合は、読み込み時間もメモリも小さくなりますが、再生時に若干CPUの処理を必要とします。基本的に、音が長いBGMは圧縮したまま、音が短くたくさん鳴らす効果音は解凍して読み込みます。</p>
+  <p>再生を開始した音に対する操作はハンドルを経由して操作します。これはBGMは除き殆どの場合音は一度再生を開始したら二度と操作することが少ないからです。<br />サウンドの引数に再生を開始した時に返された値を停止等の関数の引数に与えることで操作できます。</p>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">CreateSoundSource</td>
+  <td style="text-align: left;">音源をファイルから生成します。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Play</td>
+  <td style="text-align: left;">音源を指定しその音を再生します。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">Stop</td>
+  <td style="text-align: left;">再生中の音を停止します。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Pause</td>
+  <td style="text-align: left;">再生中の音を一時停止します。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">Resume</td>
+  <td style="text-align: left;">一時停止中の音を再開します。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">SetVolume</td>
+  <td style="text-align: left;">ボリュームを設定します。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">FadeIn</td>
+  <td style="text-align: left;">音をフェードインさせます。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">FadeOut</td>
+  <td style="text-align: left;">音をフェードアウトさせます。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なプロパティ</h3>
+  <p>なし</p>
+  <h3>主なイベント</h3>
+  <p>なし</p>
+  <h3>使用方法</h3>
+  <p>SoundクラスとSoundSourceのサンプルです。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// Soundを用いて音を鳴らすサンプルです。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">class</span> Sound
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;Sound&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// 音ファイルを読み込む</span>
+          ace.<span class="fu">SoundSource</span> se1 = ace.<span class="fu">Engine</span>.<span class="fu">Sound</span>.<span class="fu">CreateSoundSource</span>(<span class="st">&quot;Data/Sound/se1.wav&quot;</span>, <span class="kw">true</span>);
+          ace.<span class="fu">SoundSource</span> bgm1 = ace.<span class="fu">Engine</span>.<span class="fu">Sound</span>.<span class="fu">CreateSoundSource</span>(<span class="st">&quot;Data/Sound/bgm1.ogg&quot;</span>, <span class="kw">false</span>);
+  
+          <span class="co">// 音を再生する。</span>
+          <span class="dt">int</span> id_se1 = ace.<span class="fu">Engine</span>.<span class="fu">Sound</span>.<span class="fu">Play</span>(se1);
+          <span class="dt">int</span> id_bgm1 = ace.<span class="fu">Engine</span>.<span class="fu">Sound</span>.<span class="fu">Play</span>(bgm1);
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+  
+              <span class="co">// 音が再生終了してるか調べる。</span>
+              <span class="kw">if</span>(!ace.<span class="fu">Engine</span>.<span class="fu">Sound</span>.<span class="fu">IsPlaying</span>(id_bgm1))
+              {
+                  <span class="kw">break</span>;
+              }
+          }
+  
+          <span class="co">// AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }
+  </code></pre>
+  </body>
+  </html>
+  

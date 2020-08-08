@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2>リファレンス</h2>
+  <p>各機能ごとの説明を記述します。</p>
+  <p>プロパティはC++の場合、プロパティに相当する機能が存在しないため、Get○○、Set○○といったメソッドで実装されています。</p>
+  <ul>
+  <li><a href="./BasicDesign.html">基本設計</a><br /></li>
+  <li><a href="./AvailableFileFormats.html">対応ファイルフォーマット</a></li>
+  </ul>
+  <h3>基本</h3>
+  <ul>
+  <li><a href="./Basic/Engine.html">エンジン</a><br /></li>
+  <li><a href="./Basic/Scene.html">シーン</a><br /></li>
+  <li><a href="./Basic/Layer.html">レイヤー</a></li>
+  </ul>
+  <h3>描画</h3>
+  <ul>
+  <li><a href="./Graphics/Graphics.html">グラフィックス</a><br /></li>
+  <li><a href="./Graphics/Texture2D.html">テクスチャ2D</a><br /></li>
+  <li><a href="./Graphics/Effect.html">エフェクト</a><br /></li>
+  <li><a href="./Graphics/Font.html">フォント</a><br /></li>
+  <li><a href="./Graphics/ImagePackage.html">画像パッケージ</a></li>
+  </ul>
+  <h4 id="d">2D</h4>
+  <ul>
+  <li><a href="./2D/Layer2D.html">レイヤー2D</a><br /></li>
+  <li><a href="./2D/Object2D.html">オブジェクト2D</a><br /></li>
+  <li><a href="./2D/TextureObject2D.html">テクスチャオブジェクト2D</a><br /></li>
+  <li><a href="./2D/EffectObject2D.html">エフェクトオブジェクト2D</a><br /></li>
+  <li><a href="./2D/TextObject2D.html">テキストオブジェクト2D</a><br /></li>
+  <li><a href="./2D/MapObject2D.html">マップオブジェクト2D</a><br /></li>
+  <li><a href="./2D/GeometryObject2D.html">図形オブジェクト2D</a><br /></li>
+  <li><p><a href="./2D/CameraObject2D.html">カメラオブジェクト2D</a></p></li>
+  <li><p><a href="./2D/Chip2D.html">チップ2D</a></p></li>
+  </ul>
+  <h4 id="d">2D図形</h4>
+  <ul>
+  <li><a href="./Shape/Shape.html">図形</a><br /></li>
+  <li><a href="./Shape/ArcShape.html">弧</a><br /></li>
+  <li><a href="./Shape/CircleShape.html">円</a><br /></li>
+  <li><a href="./Shape/TriangleShape.html">三角形</a><br /></li>
+  <li><a href="./Shape/RectangleShape.html">矩形</a><br /></li>
+  <li><a href="./Shape/PolygonShape.html">多角形</a><br /></li>
+  <li><a href="./Shape/LineShape.html">線分</a></li>
+  </ul>
+  <h4 id="d-1">3D</h4>
+  <ul>
+  <li>開発中</li>
+  </ul>
+  <h4>ポストエフェクト</h4>
+  <ul>
+  <li><a href="./PostEffect/PostEffect.html">ポストエフェクト</a><br /></li>
+  <li><a href="./PostEffect/PostEffectGrayScale.html">グレースケール</a><br /></li>
+  <li><a href="./PostEffect/PostEffectSepia.html">セピア</a><br /></li>
+  <li><a href="./PostEffect/PostEffectGaussianBlur.html">ガウスぼかし</a><br /></li>
+  <li><a href="./PostEffect/PostEffectLightBloom.html">ライトブルーム</a></li>
+  </ul>
+  <h4>シーン遷移</h4>
+  <ul>
+  <li><a href="./Transition/Transition.html">トランジション</a><br /></li>
+  <li><a href="./Transition/TransitionFade.html">フェード</a></li>
+  </ul>
+  <h3>音</h3>
+  <ul>
+  <li><a href="./Sound/Sound.html">サウンド</a><br /></li>
+  <li><a href="./Sound/SoundSource.html">音源</a></li>
+  </ul>
+  <h3>入力</h3>
+  <ul>
+  <li><a href="./Input/Mouse.html">マウス</a><br /></li>
+  <li><a href="./Input/Keyboard.html">キーボード</a><br /></li>
+  <li><a href="./Input/Joystick.html">ジョイスティック</a><br /></li>
+  <li><a href="./Input/JoystickContainer.html">ジョイスティックコンテナ</a></li>
+  </ul>
+  <h3>ファイル</h3>
+  <ul>
+  <li><a href="./IO/File.html">ファイル</a><br /></li>
+  <li><a href="./IO/StaticFile.html">スタティックファイル</a><br /></li>
+  <li><a href="./IO/StreamFile.html">ストリームファイル</a></li>
+  </ul>
+  <h3>ツール</h3>
+  <ul>
+  <li><a href="./Tool/FontGenerator.html">フォントジェネレーター</a><br /></li>
+  <li><a href="./Tool/ImagePackageGenerator.html">イメージパッケージジェネレーター</a><br /></li>
+  <li><a href="./Tool/FilePackageGenerator.html">ファイルパッケージングジェネレーター</a></li>
+  </ul>
+  <h3>他</h3>
+  <ul>
+  <li><a href="./Misc/Reloading.html">リロード</a></li>
+  </ul>
+  </body>
+  </html>
+  

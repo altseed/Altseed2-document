@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2>表示した画像にポストエフェクトをかける</h2>
+  <p>AC-Engineで表示した画像にポストエフェクトをかけます。</p>
+  <p><img src="PostEffect.png" alt="サンプル" /></p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// 様々なポストエフェクトを適用するサンプルです。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">class</span> PostEffect
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// 説明</span>
+          System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Z : グレースケール追加&quot;</span>);
+          System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;X : セピア調追加&quot;</span>);
+          System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;C : ガウスぼかし追加&quot;</span>);
+          System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;V : ライトブルーム追加&quot;</span>);
+          System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;A : 全てのポストエフェクト消去&quot;</span>);
+  
+          <span class="co">// AC-Engineを初期化する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;PostEffect&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// シーン等を初期化する</span>
+          <span class="dt">var</span> scene = <span class="kw">new</span> ace.<span class="fu">Scene</span>();
+          <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+          <span class="dt">var</span> effectObj = <span class="kw">new</span> ace.<span class="fu">EffectObject2D</span>();
+          <span class="dt">var</span> effect = ace.<span class="fu">Engine</span>.<span class="fu">Graphics</span>.<span class="fu">CreateEffect</span>(<span class="st">&quot;Data/Effect/magic.efk&quot;</span>);
+  
+          scene.<span class="fu">HDRMode</span> = <span class="kw">true</span>; ;
+          scene.<span class="fu">AddLayer</span>(layer);
+          layer.<span class="fu">AddObject</span>(effectObj);
+          ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene);
+  
+          effectObj.<span class="fu">Scale</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">50</span>, <span class="dv">50</span>);
+          effectObj.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">320</span>, <span class="dv">240</span>);
+          effectObj.<span class="fu">Effect</span> = effect;
+          effectObj.<span class="fu">Play</span>();
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+  
+              <span class="co">// Aを押したらポストエフェクトを全て破棄する。</span>
+              <span class="kw">if</span> (ace.<span class="fu">Engine</span>.<span class="fu">Keyboard</span>.<span class="fu">GetKeyState</span>(ace.<span class="fu">Keys</span>.<span class="fu">A</span>) == ace.<span class="fu">KeyState</span>.<span class="fu">Push</span>)
+              {
+                  layer.<span class="fu">ClearPostEffects</span>();
+              }
+  
+              <span class="co">// Zを押したらグレースケールを追加する。</span>
+              <span class="kw">if</span> (ace.<span class="fu">Engine</span>.<span class="fu">Keyboard</span>.<span class="fu">GetKeyState</span>(ace.<span class="fu">Keys</span>.<span class="fu">Z</span>) == ace.<span class="fu">KeyState</span>.<span class="fu">Push</span>)
+              {
+                  <span class="dt">var</span> posteffect = <span class="kw">new</span> ace.<span class="fu">PostEffectGrayScale</span>();
+                  layer.<span class="fu">AddPostEffect</span>(posteffect);
+              }
+  
+              <span class="co">// Xを押したらセピアを追加する。</span>
+              <span class="kw">if</span> (ace.<span class="fu">Engine</span>.<span class="fu">Keyboard</span>.<span class="fu">GetKeyState</span>(ace.<span class="fu">Keys</span>.<span class="fu">X</span>) == ace.<span class="fu">KeyState</span>.<span class="fu">Push</span>)
+              {
+                  <span class="dt">var</span> posteffect = <span class="kw">new</span> ace.<span class="fu">PostEffectSepia</span>();
+                  layer.<span class="fu">AddPostEffect</span>(posteffect);
+              }
+  
+              <span class="co">// Cを押したらガウスぼかしを追加する。</span>
+              <span class="kw">if</span> (ace.<span class="fu">Engine</span>.<span class="fu">Keyboard</span>.<span class="fu">GetKeyState</span>(ace.<span class="fu">Keys</span>.<span class="fu">C</span>) == ace.<span class="fu">KeyState</span>.<span class="fu">Push</span>)
+              {
+                  <span class="dt">var</span> posteffect = <span class="kw">new</span> ace.<span class="fu">PostEffectGaussianBlur</span>();
+                  posteffect.<span class="fu">Intensity</span> = <span class="fl">5.</span>0f;
+                  layer.<span class="fu">AddPostEffect</span>(posteffect);
+              }
+  
+              <span class="co">// Vを押したらライトブルームを追加する。</span>
+              <span class="kw">if</span> (ace.<span class="fu">Engine</span>.<span class="fu">Keyboard</span>.<span class="fu">GetKeyState</span>(ace.<span class="fu">Keys</span>.<span class="fu">V</span>) == ace.<span class="fu">KeyState</span>.<span class="fu">Push</span>)
+              {
+                  <span class="dt">var</span> posteffect = <span class="kw">new</span> ace.<span class="fu">PostEffectLightBloom</span>();
+                  posteffect.<span class="fu">Intensity</span> = <span class="fl">10.</span>0f;
+                  posteffect.<span class="fu">Exposure</span> = <span class="fl">1.</span>0f;
+                  posteffect.<span class="fu">Threshold</span> = <span class="fl">0.</span>3f;
+                  layer.<span class="fu">AddPostEffect</span>(posteffect);
+              }
+          }
+  
+          <span class="co">// AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }
+  </code></pre>
+  </body>
+  </html>
+  

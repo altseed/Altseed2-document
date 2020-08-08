@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="-shape">図形 (Shape)</h2>
+  <h3>概要</h3>
+  <p>図形を扱うクラスです。ただしこのクラスのインスタンスは生成できず、サブクラスである<a href="./ArcShape.html">弧</a>、<a href="./CircleShape.html">円</a>、<a href="./TriangleShape.html">三角形</a>、<a href="./RectangleShape.html">矩形</a>、<a href="./LineShape.html">線分</a>ならびに<a href="./PolygonShape.html">多角形</a>からインスタンスを生成します。</p>
+  <p>図形の描画並びに衝突判定に使用することが可能です。描画に関しては<a href="../2D/GeometryObject2D.html">図形オブジェクト2D</a>の項を参照してください。</p>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">GetIsCollidedWith</td>
+  <td style="text-align: left;">この図形が指定した図形と衝突しているかどうかを返す。</td>
+  </tr>
+  </tbody>
+  </table>
+  <p>※弧、多角形と衝突判定を行おうとすると、処理が重たくなることがあります。</p>
+  <h3>主なプロパティ</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">ShapeType</td>
+  <td style="text-align: left;">この図形クラスの実体がどの図形であるか（弧、円、三角形、矩形、線分、多角形のいずれか）</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なイベント</h3>
+  <p>特になし</p>
+  <h3>使用方法</h3>
+  <p>Shapeクラスを用いた衝突判定のサンプルです。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// Collision2Dのサンプル。マウスによって操作する円がいずれかのオブジェクトにヒットしたら円が赤く変化します。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">public</span> <span class="kw">class</span> Collision2D
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;GeometryObject2D&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// 図形描画クラスのコンストラクタを呼び出す。</span>
+          <span class="dt">var</span> geometryObj0 = <span class="kw">new</span> ace.<span class="fu">GeometryObject2D</span>();
+          <span class="dt">var</span> geometryObj1 = <span class="kw">new</span> ace.<span class="fu">GeometryObject2D</span>();
+          <span class="dt">var</span> geometryObj2 = <span class="kw">new</span> ace.<span class="fu">GeometryObject2D</span>();
+          <span class="dt">var</span> geometryObj3 = <span class="kw">new</span> ace.<span class="fu">GeometryObject2D</span>();
+  
+          <span class="co">// マウスによって動かす円。</span>
+          ace.<span class="fu">CircleShape</span> selfCircle;
+  
+          <span class="co">// 停止している円、三角形、矩形。</span>
+          ace.<span class="fu">CircleShape</span> circle;
+          ace.<span class="fu">TriangleShape</span> triangle;
+          ace.<span class="fu">RectangleShape</span> rect;
+  
+          <span class="co">// シーンを生成する。</span>
+          <span class="dt">var</span> scene = <span class="kw">new</span> ace.<span class="fu">Scene</span>();
+  
+          <span class="co">// シーンにレイヤーを追加する。</span>
+          <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+  
+  
+          <span class="co">// 図形描画クラスをレイヤーに追加する。</span>
+          layer.<span class="fu">AddObject</span>(geometryObj0);
+          layer.<span class="fu">AddObject</span>(geometryObj1);
+          layer.<span class="fu">AddObject</span>(geometryObj2);
+          layer.<span class="fu">AddObject</span>(geometryObj3);
+  
+          <span class="co">// レイヤーを追加する。</span>
+          scene.<span class="fu">AddLayer</span>(layer);
+  
+          <span class="co">// シーンを切り替える。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene);
+  
+          <span class="co">// マウスによって動かす円の形状と描画の設定を行う。</span>
+          {
+              <span class="co">// 円の外径、内径、頂点数、中心位置を指定。</span>
+              selfCircle = <span class="kw">new</span> ace.<span class="fu">CircleShape</span>();
+              selfCircle.<span class="fu">OuterDiameter</span> = <span class="dv">100</span>;
+              selfCircle.<span class="fu">InnerDiameter</span> = <span class="dv">0</span>;
+              selfCircle.<span class="fu">NumberOfCorners</span> = <span class="dv">96</span>;
+              selfCircle.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">100</span>, <span class="dv">50</span>);
+  
+              <span class="co">// 円を描画する図形として最前面に描画されるように設定する。</span>
+              geometryObj0.<span class="fu">Shape</span> = selfCircle;
+              geometryObj0.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">0</span>, <span class="dv">0</span>);
+              geometryObj0.<span class="fu">DrawingPriority</span> = <span class="dv">1</span>;
+          }
+  
+          <span class="co">// 停止している円の形状と描画の設定を行う。</span>
+          {
+              <span class="co">// 円の外径、内径、頂点数、中心位置を指定。</span>
+              circle = <span class="kw">new</span> ace.<span class="fu">CircleShape</span>();
+              circle.<span class="fu">OuterDiameter</span> = <span class="dv">100</span>;
+              circle.<span class="fu">InnerDiameter</span> = <span class="dv">0</span>;
+              circle.<span class="fu">NumberOfCorners</span> = <span class="dv">96</span>;
+              circle.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">100</span>, <span class="dv">50</span>);
+  
+              <span class="co">// 円を描画する図形として設定する。</span>
+              geometryObj1.<span class="fu">Shape</span> = circle;
+              geometryObj1.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">0</span>, <span class="dv">0</span>);
+          }
+  
+          <span class="co">// 停止している三角形の形状と描画の設定を行う。</span>
+          {
+              <span class="co">// 三角形の各頂点の位置を指定します。</span>
+              triangle = <span class="kw">new</span> ace.<span class="fu">TriangleShape</span>();
+              triangle.<span class="fu">SetPointByIndex</span>(<span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">400</span>, <span class="dv">350</span>), <span class="dv">0</span>);
+              triangle.<span class="fu">SetPointByIndex</span>(<span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">300</span>, <span class="dv">450</span>), <span class="dv">1</span>);
+              triangle.<span class="fu">SetPointByIndex</span>(<span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">540</span>, <span class="dv">450</span>), <span class="dv">2</span>);
+  
+              <span class="co">// 三角形を描画する図形として設定する。</span>
+              geometryObj2.<span class="fu">Shape</span> = triangle;
+              geometryObj2.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">0</span>, <span class="dv">0</span>);
+          }
+  
+          <span class="co">// 停止している矩形の形状と描画の設定を行う。</span>
+          {
+              rect = <span class="kw">new</span> ace.<span class="fu">RectangleShape</span>();
+              rect.<span class="fu">DrawingArea</span> = <span class="kw">new</span> ace.<span class="fu">RectF</span>(<span class="dv">10</span>, <span class="dv">110</span>, <span class="dv">300</span>, <span class="dv">200</span>);
+              rect.<span class="fu">Angle</span> = <span class="dv">15</span>;
+  
+              geometryObj3.<span class="fu">Shape</span> = rect;
+              geometryObj3.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">0</span>, <span class="dv">0</span>);
+          }
+  
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              {
+                  <span class="co">//マウスによって制御される円の中心位置をマウスの位置とする。</span>
+                  selfCircle.<span class="fu">Position</span> = ace.<span class="fu">Engine</span>.<span class="fu">Mouse</span>.<span class="fu">Position</span>;
+  
+                  <span class="co">//停止している円、三角形、矩形にマウスによって動く円が衝突した時に円を赤く変化させる。</span>
+                  <span class="co">//そうでない時は白く変化させる。</span>
+                  <span class="kw">if</span> (selfCircle.<span class="fu">GetIsCollidedWith</span>(circle)
+                      || selfCircle.<span class="fu">GetIsCollidedWith</span>(triangle)
+                      || selfCircle.<span class="fu">GetIsCollidedWith</span>(rect))
+                  {
+                      geometryObj0.<span class="fu">Color</span> = <span class="kw">new</span> ace.<span class="fu">Color</span>(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>);
+                  }
+                  <span class="kw">else</span>
+                  {
+                      geometryObj0.<span class="fu">Color</span> = <span class="kw">new</span> ace.<span class="fu">Color</span>(<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>);
+                  }
+              }
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+  
+          <span class="co">// AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  
+  }</code></pre>
+  </body>
+  </html>
+  

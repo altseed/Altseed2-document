@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="2d-cameraobject2d">カメラオブジェクト2D (CameraObject2D)</h2>
+  <h3>概要</h3>
+  <p><a href="./Object2D.html">オブジェクト2Dクラス</a>を拡張し、レイヤー2Dの一部の領域のみを画面に描画できるようにする2D描画オブジェクトクラスです。<br />レイヤー2Dをカメラで撮影して、撮影結果を画面に表示します。例えば、アクションゲームでプレイヤーの動作に合わせて全ての背景や敵キャラクターを動かすのではなく、カメラのみを動かすことにより処理量が少なく、かつわかりやすい実装を実現します。</p>
+  <p>プロパティにはSrcとDstが存在が存在します。図で示すように、Srcは描画元となる撮影される領域、Dstは描画先となる画面上の領域になります。これらのサイズは任意で拡大縮小、横方向のみに拡大して描画といった変形もできます。</p>
+  <p><img src="img/CameraObject2D.png" alt="カメラ" /></p>
+  <p>また、Srcの位置はカメラオブジェクトの位置・回転・拡大の値によって変化します。例えばカメラオブジェクトが右に移動した場合、Srcの位置も右に移動します。キャラクターの位置にあわせてカメラオブジェクトを移動しキャラクターを常に画面の中心に表示するといった使い方に使用できます。</p>
+  <h3>主なメソッド</h3>
+  <p>なし</p>
+  <h3>主なプロパティ</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">Src</td>
+  <td style="text-align: left;">描画元</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Dst</td>
+  <td style="text-align: left;">描画先</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なイベント</h3>
+  <p>なし</p>
+  <h3>使用方法</h3>
+  <p>CameraObject2Dクラスのサンプルです。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// CameraObject2Dのサンプル。マウスポインタの先を拡大表示しています。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">public</span> <span class="kw">class</span> CameraObject2D
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;CameraObject2D&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// シーンを生成する。</span>
+          <span class="dt">var</span> scene = <span class="kw">new</span> ace.<span class="fu">Scene</span>();
+  
+          <span class="co">// レイヤーを生成する。</span>
+          <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+  
+          <span class="co">// シーンにレイヤーを追加する。</span>
+          scene.<span class="fu">AddLayer</span>(layer);
+  
+          <span class="co">// シーンを切り替える。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene);
+  
+          <span class="co">// 画面にテクスチャを表示するオブジェクトを生成する。</span>
+          {
+              <span class="dt">var</span> tex0 = ace.<span class="fu">Engine</span>.<span class="fu">Graphics</span>.<span class="fu">CreateTexture2D</span>(<span class="st">&quot;Data/Texture/Sample1.png&quot;</span>);
+              <span class="dt">var</span> obj0 = <span class="kw">new</span> ace.<span class="fu">TextureObject2D</span>();
+              obj0.<span class="fu">Texture</span> = tex0;
+              layer.<span class="fu">AddObject</span>(obj0);
+          }
+  
+          <span class="co">// 画面全体を表示するカメラを生成する。</span>
+          {
+              <span class="dt">var</span> baseCameraObj = <span class="kw">new</span> ace.<span class="fu">CameraObject2D</span>();
+              baseCameraObj.<span class="fu">Src</span> = <span class="kw">new</span> ace.<span class="fu">RectI</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">640</span>, <span class="dv">480</span>);
+              baseCameraObj.<span class="fu">Dst</span> = <span class="kw">new</span> ace.<span class="fu">RectI</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">640</span>, <span class="dv">480</span>);
+              layer.<span class="fu">AddObject</span>(baseCameraObj);
+          }
+  
+          <span class="co">// マウスポインタの周辺を拡大表示するカメラを生成する。</span>
+          <span class="dt">var</span> cameraObj = <span class="kw">new</span> ace.<span class="fu">CameraObject2D</span>();
+          layer.<span class="fu">AddObject</span>(cameraObj);
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// マウスポインタの位置を取得する。</span>
+              <span class="dt">var</span> pos = ace.<span class="fu">Engine</span>.<span class="fu">Mouse</span>.<span class="fu">Position</span>;
+  
+              <span class="co">// 拡大用カメラの描画元を指定する。</span>
+              cameraObj.<span class="fu">Src</span> = <span class="kw">new</span> ace.<span class="fu">RectI</span>((<span class="dt">int</span>)(pos.<span class="fu">X</span>) - <span class="dv">25</span>, (<span class="dt">int</span>)(pos.<span class="fu">Y</span>) - <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">50</span>);
+  
+              <span class="co">// ポインタを中心に100x100の拡大画像を表示する。</span>
+              cameraObj.<span class="fu">Dst</span> = <span class="kw">new</span> ace.<span class="fu">RectI</span>((<span class="dt">int</span>)(pos.<span class="fu">X</span>) - <span class="dv">50</span>, (<span class="dt">int</span>)(pos.<span class="fu">Y</span>) - <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">100</span>);
+  
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+  
+          <span class="co">// AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }
+  </code></pre>
+  </body>
+  </html>
+  

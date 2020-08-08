@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="2d-object2dcomponent">オブジェクト2Dコンポーネント (Object2DComponent)</h2>
+  <h3>概要</h3>
+  <p>Object2DComponentを継承して独自のパラメータを追加したり、イベントに独自のイベントを設定したりすることで、<a href="./Object2D.html">オブジェクト</a>に機能を追加するコンポーネントを作成することができます。たとえばオブジェクトの回転アニメーション機能などをコンポーネント化することで、その機能の再利用性を高めることができます。</p>
+  <p>Object2DComponentを継承して独自の機能を持つコンポーネントを作成し、AddComponentメソッドによってオブジェクトを登録すると、そのコンポーネントのOnUpdateメソッドが毎フレーム呼び出されるようになります。</p>
+  <p>AC-Engineには同様の機能としてLayer2DComponent, SceneComponentがあります。それぞれレイヤーとシーンに登録して使うコンポーネントの基底クラスです。</p>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">Vanish</td>
+  <td style="text-align: left;">このコンポーネントをオブジェクトから削除します。OnUpdateが呼ばれなくなります。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なプロパティ</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">Owner</td>
+  <td style="text-align: left;">このコンポーネントが登録されているオブジェクト。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">IsUpdated</td>
+  <td style="text-align: left;">このコンポーネントのOnUpdateが実行されるかどうか。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">IsAlive</td>
+  <td style="text-align: left;">このコンポーネントが有効か(実行中か)どうか。取得専用。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なイベント</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">OnUpdate</td>
+  <td style="text-align: left;">オーバーライドして、毎フレーム実行される更新イベントを記述することができます。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>使用方法</h3>
+  <p>Object2DComponentクラスのサンプルです。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// Object2DComponentを用いて、オブジェクトのパラメーターを変更するサンプルです。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">class</span> Object2DComponent
+  {
+      <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+      <span class="co">/// オブジェクトを回転させるコンポーネント</span>
+      <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+      <span class="kw">class</span> RotateComponent : ace.<span class="fu">Object2DComponent</span>
+      {
+          <span class="kw">protected</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnUpdate</span>()
+          {
+              <span class="co">// 毎フレーム、オブジェクトの角度を回転させる</span>
+              Owner.<span class="fu">Angle</span> += <span class="dv">2</span>;
+          }
+      }
+  
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;Object2DComponent&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// 使用するシーン、レイヤー、オブジェクト、コンポーネントを生成する。</span>
+          <span class="dt">var</span> scene = <span class="kw">new</span> ace.<span class="fu">Scene</span>();
+          <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+          <span class="dt">var</span> obj = <span class="kw">new</span> ace.<span class="fu">TextureObject2D</span>();
+          <span class="dt">var</span> component = <span class="kw">new</span> <span class="fu">RotateComponent</span>();
+  
+          <span class="co">// シーンを変更する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene);
+  
+          <span class="co">// シーンにレイヤーを追加する。</span>
+          scene.<span class="fu">AddLayer</span>(layer);
+  
+          <span class="co">// レイヤーにオブジェクトを追加する。</span>
+          layer.<span class="fu">AddObject</span>(obj);
+  
+          <span class="co">// オブジェクトに回転コンポーネントをコンポーネント名&quot;Rotate&quot;で追加する。</span>
+          obj.<span class="fu">AddComponent</span>(component, <span class="st">&quot;Rotate&quot;</span>);
+  
+          <span class="co">// 画像を読み込む。</span>
+          <span class="dt">var</span> texture = ace.<span class="fu">Engine</span>.<span class="fu">Graphics</span>.<span class="fu">CreateTexture2D</span>(<span class="st">&quot;Data/Texture/Block1.png&quot;</span>);
+  
+          <span class="co">// オブジェクトに画像を設定する。</span>
+          obj.<span class="fu">Texture</span> = texture;
+  
+          <span class="co">// オブジェクトの位置を設定する。</span>
+          obj.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(<span class="dv">320</span>, <span class="dv">240</span>);
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+  
+          <span class="co">//AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }
+  </code></pre>
+  </body>
+  </html>
+  

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2>マウスの状態を取得する</h2>
+  <p>AC-Engineでマウスの状態を取得します。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// Mouseのサンプル。マウスによる入力を取得しています。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">class</span> Mouse
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          <span class="dt">var</span> initialized = ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;Mouse&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// AC-Engineが続行可能か調べる。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// マウスへの参照を取得する。</span>
+              ace.<span class="fu">Mouse</span> mouse = ace.<span class="fu">Engine</span>.<span class="fu">Mouse</span>;
+  
+              <span class="co">//マウスカーソルの座標を取得して表示する。</span>
+              {
+                  ace.<span class="fu">Vector2DF</span> v = mouse.<span class="fu">Position</span>;
+  
+                  System.<span class="fu">Console</span>.<span class="fu">Write</span>(<span class="st">&quot;Cursor Position:({0},{1}) &quot;</span>, v.<span class="fu">X</span>, v.<span class="fu">Y</span>);
+              }
+  
+              <span class="co">// マウスの中央ボタンの押下状態を表示する。</span>
+              <span class="kw">switch</span> (mouse.<span class="fu">MiddleButton</span>.<span class="fu">ButtonState</span>)
+              {
+                  <span class="kw">case</span> ace.<span class="fu">MouseButtonState</span>.<span class="fu">Free</span>: <span class="co">//前フレーム、現フレーム共に非押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">Write</span>(<span class="st">&quot;Middle Free&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">MouseButtonState</span>.<span class="fu">Hold</span>: <span class="co">//前フレーム、現フレーム共に押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">Write</span>(<span class="st">&quot;Middle Hold&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">MouseButtonState</span>.<span class="fu">Release</span>: <span class="co">//前フレームで押下、現フレームで非押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">Write</span>(<span class="st">&quot;Middle Release&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">MouseButtonState</span>.<span class="fu">Push</span>: <span class="co">//前フレームで非押下、現フレームで押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">Write</span>(<span class="st">&quot;Middle Push&quot;</span>);
+                      <span class="kw">break</span>;
+              }
+  
+              <span class="co">// マウスのホイールの回転状態を取得して表示する。</span>
+              {
+                  System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot; Wheel : &quot;</span> + mouse.<span class="fu">MiddleButton</span>.<span class="fu">WheelRotation</span>);
+              }
+  
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+  
+          <span class="co">// AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }
+  </code></pre>
+  </body>
+  </html>
+  

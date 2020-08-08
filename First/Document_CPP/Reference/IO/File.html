@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="-file">ファイル (File)</h2>
+  <h3>概要</h3>
+  <p>ファイル操作に関する機能を提供します。このクラスでは、ファイルを読み込む先のディレクトリの指定や<br />実際にファイルを読み込む処理を行います。</p>
+  <p>AC-Engineではファイルを読み込む時のルートを指定できます。<br />一切ルートを指定していないと、カレントディレクトリから相対的にファイルを読み込みます。</p>
+  <p>ルートディレクトリが指定されていると、ルートディレクトリから相対的にファイルを読み込みます。</p>
+  <p>複数のファイルを1つにまとめたパッケージがルートに指定されていると、パッケージ内からファイルを読み込みます。</p>
+  <p>ルートディレクトリやパッケージは複数指定できます。ファイルを読み込む時に複数のファイルが見つかった時、<br />後から追加されたルートディレクトリやパッケージから読み込みます。</p>
+  <p>絶対パスを指定した場合、ルートの指定関係なく絶対パスで指定された先を読み込みます。</p>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">AddRootDirectory</td>
+  <td style="text-align: left;">ファイル操作する時のルートのディレクトリを追加します。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">AddRootPackageWithPassword</td>
+  <td style="text-align: left;">ファイル操作する時のルートのパスワード付パッケージを追加します。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">AddRootPackage</td>
+  <td style="text-align: left;">ファイル操作する時のルートのパッケージを追加します。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">ClearRootDirectories</td>
+  <td style="text-align: left;">追加されたパッケージを全て消去します。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">Exists</td>
+  <td style="text-align: left;">ファイルが存在するか取得します。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なプロパティ</h3>
+  <p>なし</p>
+  <h3>主なイベント</h3>
+  <p>なし</p>
+  <h3>使用方法</h3>
+  <p>なし</p>
+  </body>
+  </html>
+  

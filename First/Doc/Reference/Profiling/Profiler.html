@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title>
+    <base href="http://altseed.github.io/First/">
+    <link href="stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+              Cookies.set('code_state', 'cpp');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_Reference Doc_Reference_Profiling Doc_Reference_Profiling_Profiler">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
+        </div><h1>プロファイラ</h1>
+
+<p>Altseedの機能であるプロファイラを使用して、コードの特定範囲の実行時間や、レイヤーの各情報などを調べることができます。</p>
+
+<h2>コードのプロファイリング</h2>
+
+<p>Altseedのプロファイラ機能は、コードの特定範囲の処理の実行時間を調べ、ゲームの処理を軽量化するための参考にする目的に使用します。</p>
+
+<p>プロファイラ機能を使うには、次のように実行時間が知りたい処理の範囲を<code>Start</code>,<code>End</code>メソッドで囲んでください。この２つのメソッドに指定するIDは、<code>Start</code>,<code>End</code>で対応し、コード全体で一意になるように注意してください。</p>
+<pre class="highlight plaintext"><code>// 計測開始(ID=9)
+Engine.Profiler.Start(9);
+
+// 実行時間を知りたい処理
+Something1();
+Something2();
+
+// 計測終了
+Engine.Profiler.End(9);
+</code></pre>
+
+<p>そして、ゲームコードのどこかで<code>Engine.ProfilerIsVisible</code>を<code>true</code>に設定すると、次のように計測結果が画面に表示されます。<code>false</code>に設定すると、非表示になります。上記のコードでの計測結果は&quot;Profiled Information&quot;の節に表示されます。</p>
+
+<p><img alt="プロファイラ" src="Doc/Reference/Profiling/img/Profiler1.png" /></p>
+
+<h2>プロファイリング結果の見方</h2>
+
+<p><img alt="プロファイラ" src="Doc/Reference/Profiling/img/Profiler2.png" /></p>
+
+<h3>Global Information</h3>
+
+<p>①：ゲームのfps。</p>
+
+<p>②：ドローコール数。これが小さいほど描画が軽くなります。</p>
+
+<h3>Layer Information</h3>
+
+<p>③：レイヤー名。</p>
+
+<p>④：各レイヤーの更新時間（Updateにかかった時間）。</p>
+
+<p>⑤：各レイヤーに登録されているオブジェクトの数。</p>
+
+<h3>Profiled Information</h3>
+
+<p>⑥：プロファイリングの際に指定したID。</p>
+
+<p>⑦：各部分の実行時間。</p>
+
+<p>⑧：各部分を実行したCPU番号。</p>
+
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="Doc/FAQ.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="system_requirements.html">動作環境</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <a href="http://altseed.sakura.ne.jp/bbs/patio.cgi">ユーザー掲示板</a>
+        </p>
+        <p>
+          <a href="slack.html">Slack</a>
+        </p>
+        <p>
+          <a href="github.html">Github</a>
+        </p>
+        <p>
+          <a href="mail.html">メール</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向け<br>STG制作講座</a>
+        </p>
+        <h3>
+          使い方(基礎編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseBasic/Basic.html">Altseedの基本</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/GeometryObject2D.html">図形の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EngineMisc.html"> エンジンの機能(その他)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Texture.html"> 画像</a>
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="Doc/Reference/Main.html">リファレンス</a>
+      </div>
+    </div>
+  </body>
+</html>

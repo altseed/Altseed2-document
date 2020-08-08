@@ -27,7 +27,7 @@
                     "Manual/**.yml",
                     "Manual/**.md",
                     "Tutorials/**.yml",
-                    "Tutorials/**.md"
+                    "Tutorials/**.md",
                 ]
             }
         ],
@@ -38,6 +38,7 @@
                     "Manual/**.png",
                     "Tutorials/**.png",
                     "Tutorials/**.gif",
+                    "First/**",
                     "Logo.png",
                     "favicon.ico"
                 ]

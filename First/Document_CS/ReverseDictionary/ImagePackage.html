@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="psd">psdファイルを元に画像を配置する</h2>
+  <p>AC-Engineでpsdファイルを元に画像を配置します。</p>
+  <p>psdファイルからImagePackageのデータを生成するには <a href="../Reference/Tool/ImagePackageGenerator.html">画像パッケージジェネレーター</a> を使用します。</p>
+  <p><img src="ImagePackage.png" alt="サンプル" /></p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// ImagePackageのサンプル。画像パッケージを元に画像を配置しています。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">class</span> ImagePackage
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;ImagePackage&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          <span class="co">// シーンを生成する</span>
+          <span class="dt">var</span> scene = <span class="kw">new</span> ace.<span class="fu">Scene</span>();
+  
+          <span class="co">// レイヤーを生成する</span>
+          <span class="dt">var</span> layer = <span class="kw">new</span> ace.<span class="fu">Layer2D</span>();
+  
+          <span class="co">// シーンにレイヤーを追加する</span>
+          scene.<span class="fu">AddLayer</span>(layer);
+  
+          <span class="co">// シーンを切り替える</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">ChangeScene</span>(scene);
+  
+          <span class="co">// イメージパッケージを読み込む</span>
+          ace.<span class="fu">ImagePackage</span> imagePackage = ace.<span class="fu">Engine</span>.<span class="fu">Graphics</span>.<span class="fu">CreateImagePackage</span>(<span class="st">&quot;Data/ImagePackage/Game.aip&quot;</span>);
+  
+          <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; imagePackage.<span class="fu">ImageCount</span>; i++)
+          {
+              <span class="co">// テクスチャを取り出す</span>
+              ace.<span class="fu">Texture2D</span> texture = imagePackage.<span class="fu">GetImage</span>(i);
+              ace.<span class="fu">RectI</span> area = imagePackage.<span class="fu">GetImageArea</span>(i);
+  
+              <span class="co">// テクスチャをオブジェクトとして追加する</span>
+              ace.<span class="fu">TextureObject2D</span> textureObject2D = <span class="kw">new</span> ace.<span class="fu">TextureObject2D</span>();
+              textureObject2D.<span class="fu">Texture</span> = texture;
+              textureObject2D.<span class="fu">Position</span> = <span class="kw">new</span> ace.<span class="fu">Vector2DF</span>(area.<span class="fu">X</span>, area.<span class="fu">Y</span>);
+              layer.<span class="fu">AddObject</span>(textureObject2D);
+          }
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+  
+          <span class="co">// AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }
+  </code></pre>
+  </body>
+  </html>
+  

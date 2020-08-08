@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title>
+    <base href="http://altseed.github.io/First/">
+    <link href="stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+              Cookies.set('code_state', 'cpp');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_Reference Doc_Reference_IO Doc_Reference_IO_File">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
+        </div>
+        <h2>ファイル (File)</h2>
+        
+        <h3>概要</h3>
+        
+        <p>ファイル操作に関する機能を提供します。このクラスでは、ファイルを読み込む先のディレクトリの指定や
+        実際にファイルを読み込む処理を行います。</p>
+        
+        <p>Altseedではファイルを読み込む時のルートを指定できます。
+        一切ルートを指定していないと、カレントディレクトリから相対的にファイルを読み込みます。</p>
+        
+        <p>ルートディレクトリが指定されていると、ルートディレクトリから相対的にファイルを読み込みます。</p>
+        
+        <p>複数のファイルを1つにまとめたパッケージがルートに指定されていると、パッケージ内からファイルを読み込みます。</p>
+        
+        <p>ルートディレクトリやパッケージは複数指定できます。ファイルを読み込む時に複数のファイルが見つかった時、
+        後から追加されたルートディレクトリやパッケージから読み込みます。</p>
+        
+        <p>絶対パスを指定した場合、ルートの指定関係なく絶対パスで指定された先を読み込みます。</p>
+        
+        <h4>アップデートパッチの実装について</h4>
+        
+        <p>複数のパッケージを読み込んだ時の優先順位を利用することでアップデートパッチを容易に実装できます。</p>
+        
+        <p>例えば、製品の最初でパッケージXに格納されているファイルAがあるとします。
+        ファイルAに不具合が存在することが発覚し、ファイルAを差し替えることになりました。</p>
+        
+        <p>このとき、更新した新しいファイルAをパッケージYに格納します。
+        そして、プログラム側ではパッケージX, パッケージYの順に(AddRootPackage や AddRootPackageWithPassword で)追加するようにしておきます。</p>
+        
+        <p>すると同じ名前のファイルAを読み込むときにパッケージXからでなく、後から追加したパッケージYから読み込むようになります。</p>
+        
+        <p>このように更新したファイルのみを別のパッケージにまとめることで、
+        実際に読み込む際のファイルのパス指定を変更することなく容易にファイルの更新を行えます。</p>
+        
+        <h3>主なメソッド</h3>
+        
+        <table><thead>
+        <tr>
+        <th>名称</th>
+        <th>説明</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td>AddRootDirectory</td>
+        <td>ファイル操作する時のルートのディレクトリを追加します。</td>
+        </tr>
+        <tr>
+        <td>AddRootPackageWithPassword</td>
+        <td>ファイル操作する時のルートのパスワード付パッケージを追加します。</td>
+        </tr>
+        <tr>
+        <td>AddRootPackage</td>
+        <td>ファイル操作する時のルートのパッケージを追加します。</td>
+        </tr>
+        <tr>
+        <td>ClearRootDirectories</td>
+        <td>追加されたパッケージを全て消去します。</td>
+        </tr>
+        <tr>
+        <td>Exists</td>
+        <td>ファイルが存在するか取得します。</td>
+        </tr>
+        </tbody></table>
+        
+        <h3>主なプロパティ</h3>
+        
+        <p>なし</p>
+        
+        <h3>主なイベント</h3>
+        
+        <p>なし</p>
+        
+        <h3>使用方法</h3>
+        
+        <p>なし</p>
+        
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="Doc/FAQ.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="system_requirements.html">動作環境</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <a href="http://altseed.sakura.ne.jp/bbs/patio.cgi">ユーザー掲示板</a>
+        </p>
+        <p>
+          <a href="slack.html">Slack</a>
+        </p>
+        <p>
+          <a href="github.html">Github</a>
+        </p>
+        <p>
+          <a href="mail.html">メール</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向け<br>STG制作講座</a>
+        </p>
+        <h3>
+          使い方(基礎編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseBasic/Basic.html">Altseedの基本</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/GeometryObject2D.html">図形の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EngineMisc.html"> エンジンの機能(その他)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Texture.html"> 画像</a>
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="Doc/Reference/Main.html">リファレンス</a>
+      </div>
+    </div>
+  </body>
+</html>

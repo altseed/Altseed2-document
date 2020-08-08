@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="-joystickcontainer">ジョイスティックコンテナ (JoystickContainer)</h2>
+  <h3>概要</h3>
+  <p>PCに接続されている全てのジョイスティックに関する情報を返します。</p>
+  <p><a href="../Basic/Engine.html">エンジン</a>のJoystickContainerプロパティから現在のフレームでの全てのジョイスティックの状態をコンテナとして持つ当クラスのインスタンスを取得できます。</p>
+  <p>個々のジョイスティックに関する入力状態については、GetJoystickAtメソッドの返り値であるJoystickクラスのインスタンスより取得可能です。また、個々のジョイスティックの入力状態を持つインスタンスを取得する前に、必ずIsPresentAtでそれが有効かどうか確かめてください。<br />全てのジョイスティックの有効性の状態の更新はRefreshAllJoysticks関数より行えます。</p>
+  <p>Joystickクラスに関しては<a href="./Joystick.html">ジョイスティック</a>の項目をご覧ください。</p>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">IsPresentAt</td>
+  <td style="text-align: left;">指定した番号のジョイスティックが有効かどうかを返す。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">RefreshAllJoysticks</td>
+  <td style="text-align: left;">全てのジョイスティックの有効性の状態を更新する。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">GetJoystickAt</td>
+  <td style="text-align: left;">指定した番号のジョイスティックの入力状態を持ったインスタンスを返す。(指定したジョイスティックが無効の場合はヌルポインタが返ってきます。)</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なプロパティ</h3>
+  <p>なし</p>
+  <h3>主なイベント</h3>
+  <p>なし</p>
+  <h3>使用方法</h3>
+  <p>Joystickクラスのサンプルです。</p>
+  <pre class="sourceCode cs"><code class="sourceCode cs">﻿
+  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span>
+  <span class="co">/// Joystickのサンプル。ジョイスティックによる入力を取得しています。</span>
+  <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">class</span> Joystick
+  {
+      [System.<span class="fu">STAThread</span>]
+      <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span>(<span class="dt">string</span>[] args)
+      {
+          <span class="co">// AC-Engineを初期化する。</span>
+          <span class="dt">var</span> initialized = ace.<span class="fu">Engine</span>.<span class="fu">Initialize</span>(<span class="st">&quot;Joystick&quot;</span>, <span class="dv">640</span>, <span class="dv">480</span>, <span class="kw">new</span> ace.<span class="fu">EngineOption</span>());
+  
+          ace.<span class="fu">JoystickContainer</span> container = ace.<span class="fu">Engine</span>.<span class="fu">JoystickContainer</span>;
+  
+          <span class="co">// 0番目のジョイスティックが接続されているか否かを確かめる</span>
+          <span class="kw">if</span> (container.<span class="fu">GetIsPresentAt</span>(<span class="dv">0</span>))
+          {
+              <span class="co">// 一つも接続されていない場合は終了する</span>
+              System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;No joystick are connected.&quot;</span>);
+              ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+              <span class="kw">return</span>;
+          }
+  
+          <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+          <span class="kw">while</span> (ace.<span class="fu">Engine</span>.<span class="fu">DoEvents</span>())
+          {
+              <span class="co">// 一つ目のジョイスティックの0番目のボタンの入力状態を表示する</span>
+              <span class="kw">switch</span> (container.<span class="fu">GetJoystickAt</span>(<span class="dv">0</span>).<span class="fu">GetButtonState</span>(<span class="dv">0</span>))
+              {
+                  <span class="kw">case</span> ace.<span class="fu">JoystickButtonState</span>.<span class="fu">Free</span>: <span class="co">//前フレーム、現フレーム共に非押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Free&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">JoystickButtonState</span>.<span class="fu">Hold</span>: <span class="co">//前フレーム、現フレーム共に押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Hold&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">JoystickButtonState</span>.<span class="fu">Release</span>: <span class="co">//前フレームで押下、現フレームで非押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Release&quot;</span>);
+                      <span class="kw">break</span>;
+                  <span class="kw">case</span> ace.<span class="fu">JoystickButtonState</span>.<span class="fu">Push</span>: <span class="co">//前フレームで非押下、現フレームで押下。</span>
+                      System.<span class="fu">Console</span>.<span class="fu">WriteLine</span>(<span class="st">&quot;Push&quot;</span>);
+                      <span class="kw">break</span>;
+              }
+  
+              <span class="co">// AC-Engineを更新する。</span>
+              ace.<span class="fu">Engine</span>.<span class="fu">Update</span>();
+          }
+          <span class="co">//AC-Engineの終了処理をする。</span>
+          ace.<span class="fu">Engine</span>.<span class="fu">Terminate</span>();
+      }
+  }
+  </code></pre>
+  </body>
+  </html>
+  

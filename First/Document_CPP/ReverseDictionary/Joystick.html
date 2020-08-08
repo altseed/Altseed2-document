@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2>ジョイスティックの状態を取得する</h2>
+  <p>AC-Engineでジョイスティックの状態を取得します。</p>
+  <pre class="sourceCode cpp"><code class="sourceCode cpp">﻿
+  <span class="ot">#include &lt;ace.h&gt;</span>
+  
+  <span class="co">// Joystickのサンプル。ジョイスティックによる入力を取得しています。</span>
+  <span class="dt">int</span> main()
+  {
+      <span class="co">// AC-Engineを初期化する。</span>
+      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;Joystick&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+  
+      <span class="co">// ジョイスティックが最低一つ接続されているかどうかを確認する。</span>
+      <span class="kw">if</span> (!ace::Engine::GetJoystickContainer()-&gt;GetIsPresentAt(<span class="dv">0</span>))
+      {
+          <span class="co">// 一つも接続されていない場合は終了する</span>
+          ace::Engine::Terminate();
+          printf(<span class="st">&quot;No joystick are connected.</span><span class="ch">\n</span><span class="st">&quot;</span>);
+          <span class="kw">return</span> <span class="dv">0</span>;
+      }
+  
+      <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+      <span class="kw">while</span> (ace::Engine::DoEvents())
+      {
+          <span class="co">// 一つ目のジョイスティックの0番目のボタンの入力状態を表示する</span>
+          ace::Joystick* joystick = ace::Engine::GetJoystickContainer()-&gt;GetJoystickAt(<span class="dv">0</span>);
+          <span class="kw">switch</span> (joystick-&gt;GetButtonState(<span class="dv">0</span>))
+          {
+          <span class="kw">case</span> ace::JoystickButtonState::Free: <span class="co">//前フレームと本フレームで非押下</span>
+              printf(<span class="st">&quot;Free</span><span class="ch">\n</span><span class="st">&quot;</span>);
+              <span class="kw">break</span>;
+          <span class="kw">case</span> ace::JoystickButtonState::Hold: <span class="co">//前フレームと本フレームで押下</span>
+              printf(<span class="st">&quot;Hold</span><span class="ch">\n</span><span class="st">&quot;</span>);
+              <span class="kw">break</span>;
+          <span class="kw">case</span> ace::JoystickButtonState::Release: <span class="co">//前フレームで押下、本フレームで非押下</span>
+              printf(<span class="st">&quot;Release</span><span class="ch">\n</span><span class="st">&quot;</span>);
+              <span class="kw">break</span>;
+          <span class="kw">case</span> ace::JoystickButtonState::Push: <span class="co">//前フレームで非押下、本フレームで押下</span>
+              printf(<span class="st">&quot;Push</span><span class="ch">\n</span><span class="st">&quot;</span>);
+              <span class="kw">break</span>;
+          }
+  
+          <span class="co">// AC-Engineを更新する。</span>
+          ace::Engine::Update();
+      }
+  
+      <span class="co">//AC-Engineの終了処理をする。</span>
+      ace::Engine::Terminate();
+  
+      <span class="kw">return</span> <span class="dv">0</span>;
+  }</code></pre>
+  </body>
+  </html>
+  

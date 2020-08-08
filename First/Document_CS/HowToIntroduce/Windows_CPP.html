@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="cwindows">C++版の導入(Windows)</h2>
+  <p>C++版の導入方法について説明しています。</p>
+  <h3 id="visualstudio2013">VisualStudio2013の導入</h3>
+  <p><a href="https://www.visualstudio.com/ja-jp/downloads/download-visual-studio-vs#DownloadFamilies_2">VisualStudioのWebページ</a>から<br />「Visual Studio Community 2013 Update 4」をダウンロードします。ただし、会社内でAC-Engineを使用する場合は「Visual Studio Express 2013 with Update 4 for Windows Desktop」をダウンロードします。<br />これらはプログラムのソースコードから実行可能なアプリケーションを生成するツールです。個人で開発する分には無料で使用できます。</p>
+  <p>ダウンロードが終わったら、「Visual Studio」をインストールします。</p>
+  <h3 id="ac-engine">AC-Engineのダウンロード</h3>
+  <p><a href="https://github.com/ac-engine/ac-engine/releases/download/20150530/ACE_CPP_20150531_WIN.zip">AC-Engine</a>　をダウンロードします。<br />ダウンロードしたファイルを解凍します。</p>
+  <p>開発には以下のファイルを使用します。</p>
+  <ul>
+  <li>Runtime/ace.h<br /></li>
+  <li>Runtime/ace_core.Debug.dll<br /></li>
+  <li>Runtime/ace_core.dll<br /></li>
+  <li>Runtime/Debug/ace_engine.lib<br /></li>
+  <li>Runtime/Release/ace_engine.lib</li>
+  </ul>
+  <h3>プロジェクトの作成</h3>
+  <p>Visual Studioで開発するためには、最初にプロジェクトを作成する必要があります。以下の手順でプロジェクトを作成します。</p>
+  <ol>
+  <li><code>ファイル-&gt;新規作成-&gt;プロジェクト</code>を選択します。<br /></li>
+  <li>左のカラムから<code>インストール済み-&gt;テンプレート-&gt;Visual C++</code>を選択した後、中央のカラムから<code>コンソールアプリケーション</code>を選択します。<br /></li>
+  <li>下のテキストボックスの<code>名前</code>にプロジェクト名を入力して<code>OK</code>を選択します。ここからは<code>ACE_Test</code>と入力したと仮定して説明をします。<br /></li>
+  <li>ダイアログボックスが表示されますが、何も設定を変更せずにOKを押します。</li>
+  </ol>
+  <p>これでプロジェクトの作成が完了しました。</p>
+  <h3>プロジェクトの設定</h3>
+  <p>プロジェクトの設定をします。</p>
+  <ol>
+  <li>ソリューションエクスプローラから<code>ACE_Test</code>プロジェクトを右クリックし、プロパティを選択します。<br /></li>
+  <li><code>構成プロパティ-&gt;C++-&gt;コード設定</code>を選択します。そして、ランタイムライブラリを<code>マルチスレッドデバッグDLL</code>から<code>マルチスレッドデバッグ</code>に変更します。<br /></li>
+  <li><code>適用</code>をクリックします。<br /></li>
+  <li>左上の<code>アクティブ(Debug)</code>を選択し、<code>Release</code>に切り替えます。<br /></li>
+  <li><code>構成プロパティ-&gt;C++-&gt;コード設定</code>を選択します。そして、ランタイムライブラリを<code>マルチスレッドデバッグ</code>から<code>マルチスレッド</code>に変更します。<br /></li>
+  <li><code>OK</code>をクリックします。</li>
+  </ol>
+  <p>プロジェクトの設定が終わったらACEを追加します。</p>
+  <ol>
+  <li>Runtimeの中身を全て、<code>ACE_Test/ACE_Test/</code>にコピーします。</li>
+  </ol>
+  <p>最低限の動作をさせるならば、とりあえずコピーするだけで動作します。</p>
+  <h3>ビルド、実行</h3>
+  <p>ACE_Test.cpp を以下のソースコードに書き換えます。</p>
+  <pre><code>// ACE_Test.cpp : コンソール アプリケーションのエントリ ポイントを定義します。
+  //
+  
+  #include &quot;stdafx.h&quot;
+  
+  // AC-Engineのヘッダを読み込む
+  #include &quot;ace.h&quot;
+  
+  // AC-Engineのライブラリを読み込む
+  #if _DEBUG
+  #pragma comment(lib,&quot;Debug/ace_engine.lib&quot;)
+  #else
+  #pragma comment(lib,&quot;Release/ace_engine.lib&quot;)
+  #endif
+  
+  int _tmain(int argc, _TCHAR* argv[])
+  {
+      // AC-Engineを初期化する。
+      ace::Engine::Initialize(ace::ToAString(&quot;Empty&quot;).c_str(), 640, 480, ace::EngineOption());
+  
+      // AC-Engineが進行可能かチェックする。
+      while (ace::Engine::DoEvents())
+      {
+          // AC-Engineを更新する。
+          ace::Engine::Update();
+      }
+  
+      // AC-Engineを終了する。
+      ace::Engine::Terminate();
+  
+      return 0;
+  }
+  
+  </code></pre>
+  <p>そして、メニューバーから<code>デバッグ-&gt;デバッグ開始</code>を選択します。<br />黒いウインドウが表示されれば成功です。</p>
+  <h3>今後開発する上での設定</h3>
+  <p>今回は、AC-Engineのランタイムをコピーで済ませました。しかし、実際に開発する際は全てのファイルを配置し直すことをおすすめします。</p>
+  <p><code>Debug/ace_engine.lib</code> と <code>Release/ace_engine.lib</code> は名称を変更し、 <code>ACE_Test.vcxproj</code> と同じディレクトリに移動しましょう。 <code>Debug</code> と <code>Release</code> というフォルダは<br />VisualStudioがコンパイルをする際に一時的に生成されるファイルが配置されるディレクトリでもあります。不要なファイルを消すときに間違えて消してしまうかもしれません。</p>
+  <p><code>ace_core.Debug.dll</code> と <code>ace_core.dll</code> は生成された実行ファイルが存在するディレクトリにもコピーしましょう。VisualStudioからデバッグしている間は問題は置きませんが、<br />実行ファイルを起動する際は、実行ファイルと同じディレクトリにこれらのdllが存在する必要があります。</p>
+  </body>
+  </html>
+  

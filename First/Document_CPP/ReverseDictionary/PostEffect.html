@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2>表示した画像にポストエフェクトをかける</h2>
+  <p>AC-Engineで表示した画像にポストエフェクトをかけます。</p>
+  <p><img src="PostEffect.png" alt="サンプル" /></p>
+  <pre class="sourceCode cpp"><code class="sourceCode cpp">﻿
+  <span class="ot">#include &lt;ace.h&gt;</span>
+  
+  <span class="co">// 様々なポストエフェクトを適用するサンプルです。</span>
+  <span class="dt">int</span> main()
+  {
+      <span class="co">// 説明</span>
+      printf(<span class="st">&quot;Z : グレースケール追加</span><span class="ch">\n</span><span class="st">&quot;</span>);
+      printf(<span class="st">&quot;X : セピア調追加</span><span class="ch">\n</span><span class="st">&quot;</span>);
+      printf(<span class="st">&quot;C : ガウスぼかし追加</span><span class="ch">\n</span><span class="st">&quot;</span>);
+      printf(<span class="st">&quot;V : ライトブルーム追加</span><span class="ch">\n</span><span class="st">&quot;</span>);
+      printf(<span class="st">&quot;A : 全てのポストエフェクト消去</span><span class="ch">\n</span><span class="st">&quot;</span>);
+  
+      <span class="co">// AC-Engineを初期化する。</span>
+      ace::Engine::Initialize(ace::ToAString(<span class="st">&quot;PostEffect&quot;</span>).c_str(), <span class="dv">640</span>, <span class="dv">480</span>, ace::EngineOption());
+  
+      <span class="co">// シーン等を初期化する</span>
+      <span class="dt">auto</span> scene = std::make_shared&lt;ace::Scene&gt;();
+      <span class="dt">auto</span> layer = std::make_shared&lt;ace::Layer2D&gt;();
+      <span class="dt">auto</span> effectObj = std::make_shared&lt;ace::EffectObject2D&gt;();
+      <span class="dt">auto</span> effect = ace::Engine::GetGraphics()-&gt;CreateEffect(ace::ToAString(<span class="st">&quot;Data/Effect/magic.efk&quot;</span>).c_str());
+  
+      scene-&gt;SetHDRMode(<span class="kw">true</span>);
+      scene-&gt;AddLayer(layer);
+      layer-&gt;AddObject(effectObj);
+      ace::Engine::ChangeScene(scene);
+  
+      effectObj-&gt;SetScale(ace::Vector2DF(<span class="dv">50</span>, <span class="dv">50</span>));
+      effectObj-&gt;SetPosition(ace::Vector2DF(<span class="dv">320</span>, <span class="dv">240</span>));
+      effectObj-&gt;SetEffect(effect);
+      effectObj-&gt;Play();
+  
+      <span class="co">// AC-Engineのウインドウが閉じられていないか確認する。</span>
+      <span class="kw">while</span> (ace::Engine::DoEvents())
+      {
+          <span class="co">// AC-Engineを更新する。</span>
+          ace::Engine::Update();
+  
+          <span class="co">// Aを押したらポストエフェクトを全て破棄する。</span>
+          <span class="kw">if</span> (ace::Engine::GetKeyboard()-&gt;GetKeyState(ace::Keys::A) == ace::KeyState::Push)
+          {
+              layer-&gt;ClearPostEffects();
+          }
+  
+          <span class="co">// Zを押したらグレースケールを追加する。</span>
+          <span class="kw">if</span> (ace::Engine::GetKeyboard()-&gt;GetKeyState(ace::Keys::Z) == ace::KeyState::Push)
+          {
+              <span class="dt">auto</span> posteffect = std::make_shared&lt;ace::PostEffectGrayScale&gt;();
+              layer-&gt;AddPostEffect(posteffect);
+          }
+  
+          <span class="co">// Xを押したらセピアを追加する。</span>
+          <span class="kw">if</span> (ace::Engine::GetKeyboard()-&gt;GetKeyState(ace::Keys::X) == ace::KeyState::Push)
+          {
+              <span class="dt">auto</span> posteffect = std::make_shared&lt;ace::PostEffectSepia&gt;();
+              layer-&gt;AddPostEffect(posteffect);
+          }
+  
+          <span class="co">// Cを押したらガウスぼかしを追加する。</span>
+          <span class="kw">if</span> (ace::Engine::GetKeyboard()-&gt;GetKeyState(ace::Keys::C) == ace::KeyState::Push)
+          {
+              <span class="dt">auto</span> posteffect = std::make_shared&lt;ace::PostEffectGaussianBlur&gt;();
+              posteffect-&gt;SetIntensity(<span class="fl">5.</span>0f);
+              layer-&gt;AddPostEffect(posteffect);
+          }
+  
+          <span class="co">// Vを押したらライトブルームを追加する。</span>
+          <span class="kw">if</span> (ace::Engine::GetKeyboard()-&gt;GetKeyState(ace::Keys::V) == ace::KeyState::Push)
+          {
+              <span class="dt">auto</span> posteffect = std::make_shared&lt;ace::PostEffectLightBloom&gt;();
+              posteffect-&gt;SetIntensity(<span class="fl">10.</span>0f);
+              posteffect-&gt;SetExposure(<span class="fl">1.</span>0f);
+              posteffect-&gt;SetThreshold(<span class="fl">0.</span>3f);
+              layer-&gt;AddPostEffect(posteffect);
+          }
+      }
+  
+      <span class="co">// AC-Engineの終了処理をする。</span>
+      ace::Engine::Terminate();
+  
+      <span class="kw">return</span> <span class="dv">0</span>;
+  }</code></pre>
+  </body>
+  </html>
+  

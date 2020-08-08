@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h1>プロファイラ</h1>
+  <p>AC-Engineの機能であるプロファイラを使用して、コードの特定範囲の実行時間や、レイヤーの各情報などを調べることができます。</p>
+  <h2>コードのプロファイリング</h2>
+  <p>AC-Engineのプロファイラ機能は、コードの特定範囲の処理の実行時間を調べ、ゲームの処理を軽量化するための参考にする目的に使用します。</p>
+  <p>プロファイラ機能を使うには、次のように実行時間が知りたい処理の範囲を<code>Start</code>,<code>End</code>メソッドで囲んでください。この２つのメソッドに指定するIDは、<code>Start</code>,<code>End</code>で対応し、コード全体で一意になるように注意してください。</p>
+  <p>```C#<br />// 計測開始(ID=9)<br />Engine.Profiler.Start(9);</p>
+  <p>// 実行時間を知りたい処理<br />Something1();<br />Something2();</p>
+  <p>// 計測終了<br />Engine.Profiler.End(9);<br />```</p>
+  <p>そして、ゲームコードのどこかで<code>Engine.ProfilerIsVisible</code>を<code>true</code>に設定すると、次のように計測結果が画面に表示されます。<code>false</code>に設定すると、非表示になります。上記のコードでの計測結果は&quot;Profiled Information&quot;の節に表示されます。</p>
+  <p><img src="img/Profiler1.png" alt="プロファイラ" /></p>
+  <h2>プロファイリング結果の見方</h2>
+  <p><img src="img/Profiler2.png" alt="プロファイラ" /></p>
+  <h3 id="global-information">Global Information</h3>
+  <p>①：ゲームのfps。</p>
+  <p>②：ドローコール数。これが小さいほど描画が軽くなります。</p>
+  <h3 id="layer-information">Layer Information</h3>
+  <p>③：レイヤー名。</p>
+  <p>④：各レイヤーの更新時間（Updateにかかった時間）。</p>
+  <p>⑤：各レイヤーに登録されているオブジェクトの数。</p>
+  <h3 id="profiled-information">Profiled Information</h3>
+  <p>⑥：プロファイリングの際に指定したID。</p>
+  <p>⑦：各部分の実行時間。</p>
+  <p>⑧：各部分を実行したCPU番号。</p>
+  </body>
+  </html>
+  

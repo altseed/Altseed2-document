@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title>
+    <base href="http://altseed.github.io/First/">
+    <link href="stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+              Cookies.set('code_state', 'cpp');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_Reference Doc_Reference_Input Doc_Reference_Input_Joystick">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
+        </div><h2>ジョイスティック (Joystick)</h2>
+
+<h3>概要</h3>
+
+<p>ジョイスティックからのからの入力を提供します。</p>
+
+<p><a href="Doc/Reference/Basic/Engine.html">エンジン</a>のJoystickプロパティから現在のフレームのジョイスティックの状態を持った当クラスのインスタンスを取得できます。</p>
+
+<p>ジョイスティックが持つボタンならびにアナログスティックの総数、ボタンの押し状態ならびにアナログスティックの倒し具合を調べることが出来ます。</p>
+
+<h4>ボタンの押し状態</h4>
+
+<p>押し状態は前のフレームと現在のフレームでそのボタンを押したかによって決まり、以下の4通りとなります。(○・・・押している、✕・・・押していない)</p>
+
+<table><thead>
+<tr>
+<th>状態</th>
+<th>前のフレーム</th>
+<th>現在のフレーム</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Free</td>
+<td>✕</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>Release</td>
+<td>○</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>✕</td>
+<td>○</td>
+</tr>
+<tr>
+<td>Hold</td>
+<td>○</td>
+<td>○</td>
+</tr>
+</tbody></table>
+
+<h4>アナログスティックの倒し具合</h4>
+
+<p>アナログスティックの倒し具合は、横方向(X)と縦方向(Y)それぞれに関して図に示すように実数値で表現されます。</p>
+
+<p><img alt="アナログスティック" src="Doc/Reference/Input/img/AnalogStick.png" /></p>
+
+<h2>一部のゲームパッドについて</h2>
+
+<p>一部のゲームパッドでは、ボタンの状態を取得するのに、ボタンの番号でなくボタン名で取得できます。
+一部のゲームパッドはPS4、XBOX360、XBOX ONEのゲームパッドです。
+<code>JoystickButtonType</code>を<code>GetButtonStateAt</code>メソッドの引数に指定することで押し状態を取得できます。
+もしくは、<code>JoystickAxisType</code>を<code>GetAxisStateAt</code>メソッドの引数に指定することで倒し具合を取得できます。</p>
+
+<p>サンプルの追加</p>
+
+<h3>主なメソッド</h3>
+
+<table><thead>
+<tr>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GetJoystickName</td>
+<td>ジョイスティックの名称</td>
+</tr>
+<tr>
+<td>GetButtonsCount</td>
+<td>ジョイスティックの持つボタンの総数</td>
+</tr>
+<tr>
+<td>GetAxesCount</td>
+<td>ジョイスティックの持つアナログスティックの数</td>
+</tr>
+<tr>
+<td>GetButtonState</td>
+<td>指定した番号のボタンの押し状態</td>
+</tr>
+<tr>
+<td>GetAxisState</td>
+<td>指定した番号のアナログスティックの倒し具合</td>
+</tr>
+<tr>
+<td>GetButtonStateAt</td>
+<td>指定した名称のボタンの押し状態</td>
+</tr>
+<tr>
+<td>GetAxisStateAt</td>
+<td>指定した名称のアナログスティックの倒し具合</td>
+</tr>
+</tbody></table>
+
+<h3>主なプロパティ</h3>
+
+<p>なし</p>
+
+<h3>主なイベント</h3>
+
+<p>なし</p>
+
+<h3>補足</h3>
+
+<p>このインスタンスを取得するには、<a href="Doc/Reference/Input/JoystickContainer.html">JoystickContainerクラス</a>内のGetJoystickAt関数を呼び出す必要があります。また、ジョイスティックの接続状態をRefreshAllJoysticks関数にて更新することができます。</p>
+
+<h3>使用方法</h3>
+
+<p>Joystickクラスのサンプルです。</p>
+
+<p>一部のゲームパッドを使用する場合のサンプルです。</p>
+
+<p><img alt="SS" src="Doc/img/ss/Joystick_GamePad.jpg" /></p>
+
+<h3 class="cpp">C++</h3>
+<pre class="highlight cpp"><code>
+<span class="cp">#include &lt;Altseed.h&gt;
+</span>
+<span class="cm">/**
+@brief  一部のゲームパッドから入力状態を取得するサンプル。
+*/</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Altseedを初期化する。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">u</span><span class="s">"Joystick_GamePad"</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">EngineOption</span><span class="p">());</span>
+
+    <span class="c1">// ジョイスティックの状態を表示するテキストを生成する。
+</span>    <span class="k">auto</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetGraphics</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CreateDynamicFont</span><span class="p">(</span><span class="n">u</span><span class="s">""</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">asd</span><span class="o">::</span><span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">));</span>
+
+    <span class="c1">// ボタンの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。
+</span>    <span class="k">auto</span> <span class="n">stateText</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">asd</span><span class="o">::</span><span class="n">TextObject2D</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Vector2DF</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+    <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetFont</span><span class="p">(</span><span class="n">font</span><span class="p">);</span>
+    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">AddObject2D</span><span class="p">(</span><span class="n">stateText</span><span class="p">);</span>
+
+    <span class="c1">// ボタンをたくさん認識する可能性があるため行間を詰める。
+</span>    <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetLineSpacing</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">);</span>
+
+    <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">DoEvents</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">asd</span><span class="o">::</span><span class="n">astring</span> <span class="n">displayStr</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">ToAString</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+
+        <span class="c1">// ジョイスティックが接続されているかどうかを確認する。
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetJoystickContainer</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetIsPresentAt</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ジョイスティックが接続されていません。"</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetJoystickContainer</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetJoystickAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">GetJoystickType</span><span class="p">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">JoystickType</span><span class="o">::</span><span class="n">Other</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"認識できないジョイステイックです。"</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="c1">// 1つ目のジョイスティックのボタンの入力状態を表示する。
+</span>            <span class="c1">// RightRightはPSの場合〇、XBOXの場合、Bボタンを示す。
+</span>            <span class="k">auto</span> <span class="n">joystick</span> <span class="o">=</span> <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">GetJoystickContainer</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetJoystickAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+            <span class="k">auto</span> <span class="n">state</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">-&gt;</span><span class="n">GetButtonStateAt</span><span class="p">(</span><span class="n">asd</span><span class="o">::</span><span class="n">JoystickButtonType</span><span class="o">::</span><span class="n">RightRight</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
+</span>            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ボタンを離しています。"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
+</span>            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ボタンを押しています。"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
+</span>            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ボタンを離しました!"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">::</span><span class="n">ButtonState</span><span class="o">::</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
+</span>            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="n">u</span><span class="s">"ボタンを押しました!"</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">stateText</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">displayStr</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+
+        <span class="c1">// Altseedを更新する。
+</span>        <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Update</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Altseedの終了処理をする。
+</span>    <span class="n">asd</span><span class="o">::</span><span class="n">Engine</span><span class="o">::</span><span class="n">Terminate</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<h3 class="csharp">C#</h3>
+<pre class="highlight csharp"><code><span class="c1">/// &lt;summary&gt;
+/// 一部のゲームパッドから入力状態を取得するサンプル。
+/// &lt;/summary&gt;
+</span><span class="k">class</span> <span class="nc">Joystick_GamePad</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"一部のゲームパッドの入力状態を調べ、表示するサンプルです。"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"ゲームパッド入力"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">ClassName</span>
+    <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Joystick_GamePad"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">STAThread</span><span class="p">]</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Altseedを初期化する。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="s">"Joystick_GamePad"</span><span class="p">,</span> <span class="m">640</span><span class="p">,</span> <span class="m">480</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">EngineOption</span><span class="p">());</span>
+
+        <span class="c1">// ジョイスティックの状態を表示するテキストを生成する。
+</span>        <span class="n">var</span> <span class="n">font</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">Graphics</span><span class="p">.</span><span class="nf">CreateDynamicFont</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">255</span><span class="p">));</span>
+
+        <span class="c1">// ボタンの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。
+</span>        <span class="n">var</span> <span class="n">stateText</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">TextObject2D</span><span class="p">();</span>
+        <span class="n">stateText</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">asd</span><span class="p">.</span><span class="nf">Vector2DF</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span>
+        <span class="n">stateText</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="n">font</span><span class="p">;</span>
+        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">AddObject2D</span><span class="p">(</span><span class="n">stateText</span><span class="p">);</span>
+
+        <span class="c1">//ボタンをたくさん認識する可能性があるため表示の行間を詰める。
+</span>        <span class="n">stateText</span><span class="p">.</span><span class="n">LineSpacing</span> <span class="p">=</span> <span class="p">-</span><span class="m">15</span><span class="p">;</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。
+</span>        <span class="k">while</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">DoEvents</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">displayStr</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span>
+
+            <span class="c1">// ジョイスティックが接続されているかどうかを確認する。
+</span>            <span class="k">if</span> <span class="p">(!</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">JoystickContainer</span><span class="p">.</span><span class="nf">GetIsPresentAt</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="p">+=</span> <span class="s">"ジョイスティックが接続されていません。"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">JoystickContainer</span><span class="p">.</span><span class="nf">GetJoystickAt</span><span class="p">(</span><span class="m">0</span><span class="p">).</span><span class="n">JoystickType</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">JoystickType</span><span class="p">.</span><span class="n">Other</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">displayStr</span> <span class="p">+=</span> <span class="s">"認識できないジョイステイックです。"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="c1">// 1つ目のジョイスティックのボタンの入力状態を表示する。
+</span>                <span class="c1">// RightRightはPSの場合〇、XBOXの場合、Bボタンを示す。
+</span>                <span class="n">var</span> <span class="n">joystick</span> <span class="p">=</span> <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="n">JoystickContainer</span><span class="p">.</span><span class="nf">GetJoystickAt</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+
+                <span class="n">var</span> <span class="n">state</span> <span class="p">=</span> <span class="n">joystick</span><span class="p">.</span><span class="nf">GetButtonStateAt</span><span class="p">(</span><span class="n">asd</span><span class="p">.</span><span class="n">JoystickButtonType</span><span class="p">.</span><span class="n">RightRight</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Free</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで非押下
+</span>                <span class="p">{</span>
+                    <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタンを離しています。"</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Hold</span><span class="p">)</span> <span class="c1">//前フレームと本フレームで押下
+</span>                <span class="p">{</span>
+                    <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタンを押しています。"</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Release</span><span class="p">)</span> <span class="c1">//前フレームで押下、本フレームで非押下
+</span>                <span class="p">{</span>
+                    <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタンを離しました!"</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="p">==</span> <span class="n">asd</span><span class="p">.</span><span class="n">ButtonState</span><span class="p">.</span><span class="n">Push</span><span class="p">)</span> <span class="c1">//前フレームで非押下、本フレームで押下
+</span>                <span class="p">{</span>
+                    <span class="n">displayStr</span> <span class="p">+=</span> <span class="p">(</span><span class="s">"ボタンを押しました!"</span><span class="p">);</span>
+                <span class="p">}</span>
+
+            <span class="p">}</span>
+
+            <span class="n">stateText</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">displayStr</span><span class="p">;</span>
+
+            <span class="c1">// Altseedを更新する。
+</span>            <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Update</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+        <span class="c1">//Altseedの終了処理をする。
+</span>        <span class="n">asd</span><span class="p">.</span><span class="n">Engine</span><span class="p">.</span><span class="nf">Terminate</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<h3 class="java">Java</h3>
+<pre class="highlight java"><code><span class="cm">/**
+ * 一部のゲームパッドから入力状態を取得するサンプル。
+*/</span>
+<span class="kd">class</span> <span class="nc">Joystick_GamePad</span> 
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"一部のゲームパッドの入力状態を調べ、表示するサンプルです。"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"ゲームパッド入力"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">getClassName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Joystick_GamePad"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="c1">// Altseedを初期化する。</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Initialize</span><span class="o">(</span><span class="s">"Joystick_GamePad"</span><span class="o">,</span> <span class="mi">640</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">EngineOption</span><span class="o">());</span>
+
+        <span class="c1">// ジョイスティックの状態を表示するテキストを生成する。</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Font</span> <span class="n">font</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getGraphics</span><span class="o">().</span><span class="na">CreateDynamicFont</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="mi">25</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">),</span> <span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Color</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">255</span><span class="o">));</span>
+
+        <span class="c1">// ボタンの入力状態を表示する文字描画オブジェクトを設定して、エンジンに追加する。</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span> <span class="n">stateText</span> <span class="o">=</span> <span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">TextObject2D</span><span class="o">();</span>
+        <span class="n">stateText</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">asd</span><span class="o">.</span><span class="na">Vector2DF</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">5</span><span class="o">));</span>
+        <span class="n">stateText</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">font</span><span class="o">);</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">AddObject2D</span><span class="o">(</span><span class="n">stateText</span><span class="o">);</span>
+
+        <span class="c1">// ボタンをたくさん認識する可能性があるため表示の行間を詰める。</span>
+        <span class="n">stateText</span><span class="o">.</span><span class="na">setLineSpacing</span><span class="o">(-</span><span class="mi">15</span><span class="o">);</span>
+
+        <span class="c1">// Altseedのウインドウが閉じられていないか確認する。</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">DoEvents</span><span class="o">())</span>
+        <span class="o">{</span>
+            <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">displayStr</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+
+            <span class="c1">// ジョイスティックが接続されているかどうかを確認する。</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getJoystickContainer</span><span class="o">().</span><span class="na">GetIsPresentAt</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span>
+            <span class="o">{</span>
+                <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ジョイスティックが接続されていません。"</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">else</span>
+            <span class="o">{</span>
+                <span class="k">if</span><span class="o">((</span><span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getJoystickContainer</span><span class="o">().</span><span class="na">GetJoystickAt</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="na">getJoystickType</span><span class="o">()</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">JoystickType</span><span class="o">.</span><span class="na">Other</span><span class="o">))</span>
+                <span class="o">{</span>
+                    <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"認識できないジョイステイックです。"</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="k">else</span>
+                <span class="o">{</span>
+                    <span class="c1">// 1つ目のジョイスティックのボタンの入力状態を表示する。</span>
+                    <span class="c1">// RightRightはPSの場合〇、XBOXの場合、Bボタンを示す。</span>
+                    <span class="n">asd</span><span class="o">.</span><span class="na">Joystick</span> <span class="n">joystick</span> <span class="o">=</span> <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">getJoystickContainer</span><span class="o">().</span><span class="na">GetJoystickAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+
+                    <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="na">GetButtonStateAt</span><span class="o">(</span><span class="n">asd</span><span class="o">.</span><span class="na">JoystickButtonType</span><span class="o">.</span><span class="na">RightRight</span><span class="o">);</span>
+                    <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Free</span><span class="o">))</span>
+                    <span class="o">{</span>
+                        <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ボタンを離しています。"</span><span class="o">;</span>
+                    <span class="o">}</span>
+                    <span class="k">else</span>
+                    <span class="o">{</span>
+                        <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Hold</span><span class="o">))</span>
+                        <span class="o">{</span>
+                            <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ボタンを押しています。"</span><span class="o">;</span>
+                        <span class="o">}</span>
+                        <span class="k">else</span>
+                        <span class="o">{</span>
+                            <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Release</span><span class="o">))</span>
+                            <span class="o">{</span>
+                                <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ボタンを離しました!"</span><span class="o">;</span>
+                            <span class="o">}</span>
+                            <span class="k">else</span>
+                            <span class="o">{</span>
+                                <span class="k">if</span><span class="o">((</span><span class="n">state</span> <span class="o">==</span> <span class="n">asd</span><span class="o">.</span><span class="na">ButtonState</span><span class="o">.</span><span class="na">Push</span><span class="o">))</span>
+                                <span class="o">{</span>
+                                    <span class="n">displayStr</span> <span class="o">+=</span> <span class="s">"ボタンを押しました!"</span><span class="o">;</span>
+                                <span class="o">}</span>
+                            <span class="o">}</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+
+            <span class="n">stateText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">displayStr</span><span class="o">);</span>
+
+            <span class="c1">// Altseedを更新する。</span>
+            <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Update</span><span class="o">();</span>
+
+        <span class="o">}</span>
+
+
+        <span class="c1">// Altseedの終了処理をする。</span>
+        <span class="n">asd</span><span class="o">.</span><span class="na">Engine</span><span class="o">.</span><span class="na">Terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="Doc/FAQ.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="system_requirements.html">動作環境</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <a href="http://altseed.sakura.ne.jp/bbs/patio.cgi">ユーザー掲示板</a>
+        </p>
+        <p>
+          <a href="slack.html">Slack</a>
+        </p>
+        <p>
+          <a href="github.html">Github</a>
+        </p>
+        <p>
+          <a href="mail.html">メール</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向け<br>STG制作講座</a>
+        </p>
+        <h3>
+          使い方(基礎編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseBasic/Basic.html">Altseedの基本</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/GeometryObject2D.html">図形の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EngineMisc.html"> エンジンの機能(その他)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Texture.html"> 画像</a>
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="Doc/Reference/Main.html">リファレンス</a>
+      </div>
+    </div>
+  </body>
+</html>

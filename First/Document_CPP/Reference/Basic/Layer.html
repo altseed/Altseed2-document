@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="-layer">レイヤー (Layer)</h2>
+  <h3>概要</h3>
+  <p>レイヤーはパラメーター等を表示しているUI、キャラクターが居るフィールドといったゲームの画面内の大まかな描画先を継承により定義します。レイヤー自体には画像を表示する機能はなく、実際に画像を描画するためにはレイヤーにオブジェクトを登録する必要があります。オブジェクトを複数保持しオブジェクトを管理する機能を持っています。</p>
+  <p>レイヤー自体を直接使うことはなく基本的には、レイヤーを継承したレイヤー2Dやレイヤー3D(※)を使用します。レイヤー2Dは2D描画の描画先、レイヤー3Dの3D描画の描画先です。詳細はそれぞれの該当項目を参照してください。</p>
+  <p>本項目では、レイヤー2D及びレイヤー3Dに共通のメソッドとプロパティを解説します。</p>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">AddPostEffect</td>
+  <td style="text-align: left;">このレイヤーにポストエフェクトを追加します。このレイヤーの描画結果及びこのレイヤー以前に描画された結果に対してポストエフェクトを適用することができます。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">ClearPostEffects</td>
+  <td style="text-align: left;">このレイヤーから全てのポストエフェクトを取り除きます。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なプロパティ</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">IsUpdated</td>
+  <td style="text-align: left;">このレイヤーの毎フレーム実行される更新イベントを実行するか取得または設定します。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">IsDrawn</td>
+  <td style="text-align: left;">このレイヤーの描画処理を実行するか取得または設定します。</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: left;">DrawingPriority</td>
+  <td style="text-align: left;">このレイヤーの描画優先度を取得または設定します。値が大きいほど手前に描画されます。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なイベント</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">OnUpdating</td>
+  <td style="text-align: left;">ObjectのOnUpdateが実行される前に毎フレーム実行される更新イベント</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">OnUpdated</td>
+  <td style="text-align: left;">ObjectのOnUpdateが実行された後に毎フレーム実行される更新イベント</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>使用方法</h3>
+  <p>ほぼ全てのサンプルで使用されているので、そちらを参照してください。</p>
+  <p>※　現在のバージョンではレイヤー3Dは開発中です。</p>
+  </body>
+  </html>
+  

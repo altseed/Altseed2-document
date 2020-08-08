@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2 id="2d-texture2d">テクスチャ2D (Texture2D)</h2>
+  <h3>概要</h3>
+  <p>2次元の画像を定義します。グラフィックスから生成できます。<br />基本的にはファイルから生成しますが、空のテクスチャを生成しプログラムから画像を編集することもできます。</p>
+  <p>Engine.Graphics.CreateEmptyTexture2Dにより空のテクスチャを生成できます。<br />このテクスチャはLock関数を実行すると画素を編集できます。<br />Lockを実行し成功すると引数からTextureLockInfomationを取得できます。<br />ここには画像サイズや1画素あたりのメモリサイズ、画素の先頭ポインタが格納されています。<br />それらの情報を用いて、画素に情報を書き込みます。<br />書き込み終わった後はUnlockを実行します。</p>
+  <h3>主なメソッド</h3>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: left;">名称</th>
+  <th style="text-align: left;">説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: left;">Lock</td>
+  <td style="text-align: left;">テクスチャの編集を開始します。</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: left;">Unlock</td>
+  <td style="text-align: left;">テクスチャの編集を終了します。</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>主なプロパティ</h3>
+  <p>なし</p>
+  <h3>主なイベント</h3>
+  <p>なし</p>
+  <h3>使用方法</h3>
+  <p>テクスチャオブジェクト2Dのサンプルを参照してください。</p>
+  <p>これは書き込みを行うサンプルコードの1つです。textureにdataにある情報を書き込みます。</p>
+  <ul>
+  <li><p>C++</p>
+  <pre><code>ace::TextureLockInfomation info = ace::TextureLockInfomation();
+  if (texture-&gt;Lock(&amp;info))
+  {
+  
+  auto dst = (uint8_t*)info.GetPixels();
+  auto src = d;
+  
+  for(int i = 0; i &lt; info.Size.X * info.Size.Y * info.Pitch; i++)
+  {
+      dst[i] = src[i];
+  }
+  
+  texture-&gt;Unlock();
+  }</code></pre></li>
+  <li><p>C#</p>
+  <pre><code>ace.TextureLockInfomation info = new ace.TextureLockInfomation();
+  if (texture.Lock(info))
+  {
+      fixed(byte* d = &amp;data[0])
+      {
+          var dst = (byte*)info.Pixels.ToPointer();
+          var src = d;
+  
+      for(int i = 0; i &lt; info.Size.X * info.Size.Y * info.Pitch; i++)
+      {
+          dst[i] = src[i];
+      }
+  }
+  
+  texture.Unlock();
+  }</code></pre></li>
+  </ul>
+  </body>
+  </html>
+  

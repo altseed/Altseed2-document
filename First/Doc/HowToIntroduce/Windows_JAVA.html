@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Always force latest IE rendering engine or request Chrome Frame-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--Use title if it's in the page YAML frontmatter--><title>Altseed</title>
+    <base href="http://altseed.github.io/First/">
+    <link href="stylesheets/base.css" rel="stylesheet" type="text/css" /><link href="stylesheets/syntax.css" rel="stylesheet" type="text/css" /><script src="javascripts/jquery-1.11.3.min.js" type="text/javascript"></script><script src="javascripts/js.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("button[id='language_all']").click( function ()
+          {
+              Cookies.set('code_state', 'all');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          $("button[id='language_cpp']").click( function ()
+          {
+              Cookies.set('code_state', 'cpp');
+      
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_cs']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          });
+      
+          $("button[id='language_java']").click( function ()
+          {
+              Cookies.set('code_state', 'cs');
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          });
+      
+          code_state = Cookies.get('code_state');
+      
+          if(code_state == 'all')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      
+          if(code_state == 'cpp')
+          {
+              $("pre[class='highlight cpp']").show();
+              $("h3[class='cpp']").show();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'cs')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").show();
+              $("h3[class='csharp']").show();
+              $("pre[class='highlight java']").hide();
+              $("h3[class='java']").hide();
+          }
+      
+          if(code_state == 'java')
+          {
+              $("pre[class='highlight cpp']").hide();
+              $("h3[class='cpp']").hide();
+              $("pre[class='highlight csharp']").hide();
+              $("h3[class='csharp']").hide();
+              $("pre[class='highlight java']").show();
+              $("h3[class='java']").show();
+          }
+      });
+    </script>
+  </head>
+  <body class="Doc Doc_HowToIntroduce Doc_HowToIntroduce_Windows_JAVA">
+    <div id="header">
+      <h1>
+        Altseed
+      </h1>
+      <p>
+        複数のプログラミング言語、複数の環境対応のゲームエンジン
+      </p>
+    </div>
+    <div id="content">
+      <div class="main">
+        <div class="language_selector">
+          <p>
+            表示するサンプルコードの言語を指定できます。
+          </p>
+          <button id="language_all">全ての言語</button><button id="language_cpp">C++</button><button id="language_cs">C#</button><button id="language_java">Java</button>
+        </div><h2>Java版の導入</h2>
+
+<p>Java版の導入方法について説明しています。</p>
+
+<p>Windowsでは、Java版はWindows(64bit)でないと動作しません。ご注意ください。</p>
+
+<h3>Altseedのダウンロード</h3>
+
+<p><a href="http://altseed.github.io/download.html">公式サイト</a>からAltseedのJava版の最新版をダウンロードします。
+ダウンロードしたファイルを解凍します。</p>
+
+<p>開発には以下のファイルを使用します。</p>
+
+<ul>
+<li>Runtime/Altseed.jar</li>
+<li>Runtime/Altseed_core.dll</li>
+</ul>
+
+<h3>JDKのインストール</h3>
+
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a>をインストールします。</p>
+
+<p>Windowsでは、環境変数を以下のように設定します。</p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">環境変数名</th>
+<th style="text-align: right">値</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">JAVA_HOME</td>
+<td style="text-align: right">C:\Program Files\Java\jdk1.8.0_xx</td>
+</tr>
+<tr>
+<td style="text-align: left">PATH</td>
+<td style="text-align: right">C:\Program Files\Java\jdk1.8.0_xx\bin</td>
+</tr>
+</tbody></table>
+
+<p>パスは標準インストールの場合です。
+xxの部分はインストールしたバージョンに合わせて変更します。</p>
+
+<h3>コマンドラインで実行する場合</h3>
+
+<p><code>Altseed.jar</code> が存在するフォルダに<code>Main.java</code>　という空のテキストファイルを用意します。</p>
+
+<p><code>Main.java</code> を以下のソースコードに書き換えます。</p>
+<pre class="highlight plaintext"><code>class Main
+{
+    static
+    {
+        System.loadLibrary("Altseed_core");
+    }
+
+    public static void main(String args[])
+    {
+        asd.Engine.Initialize("Empty", 640, 480, new asd.EngineOption());
+
+        while(asd.Engine.DoEvents())
+        {
+            asd.Engine.Update();
+        }
+
+        asd.Engine.Terminate();
+    }
+}
+
+</code></pre>
+
+<p>コマンドラインから以下のように打ち込みます。</p>
+
+<p>Windowsでは:</p>
+
+<p><code>javac Main.java -classpath ./Altseed.jar</code></p>
+
+<p><code>java -classpath ./;Altseed.jar Main</code></p>
+
+<p>黒いウインドウが表示されれば成功です。</p>
+
+<p>Macでは、GUIを適切に動作させるため、実行時に <code>-XstartOnFirstThread</code> オプションが必要です:</p>
+
+<p><code>javac Main.java -classpath ./Altseed.jar</code></p>
+
+<p><code>java -classpath ./;Altseed.jar -XstartOnFirstThread Main</code></p>
+
+<h3>Eclipseを使用する場合</h3>
+
+<p><a href="https://eclipse.org/">Eclipse</a>をインストールします。</p>
+
+<p>新規にプロジェクトを作成します。</p>
+
+<p><code>ファイル-&gt;新規-&gt;プロジェクト</code> と選択します。
+生成できるプロジェクトが表示されるので<code>Javaプロジェクト</code>を選択します。</p>
+
+<p>Mainクラスを追加します。</p>
+
+<p><code>src</code> を右クリックして、<code>新規-&gt;クラス</code>　と選択します。名前にはMainと入力して完了を押します。</p>
+
+<h4>Altseed.jarの追加</h4>
+
+<p>「パッケージ・エクスプローラー」でプロジェクトを選択します。
+プロジェクトを右クリックして、<code>ビルド・パス-&gt;外部アーカイブの追加</code> を選択します。
+Jarファイルを選択できるので、<code>Altseed.jar</code>　を選択します。</p>
+
+<h4>Altseed_core.dllの追加</h4>
+
+<p>Altseed_core.dllを追加します。</p>
+
+<p>「パッケージ・エクスプローラー」でプロジェクトを選択します。
+プロジェクトを右クリックして、<code>ビルド・パス-&gt;ビルドパスの構成</code> を選択します。</p>
+
+<p>そうすると<code>ソース、プロジェクト、ライブラリー、順序およびエクスポート</code>　というタブが表示されるプロパティのウインドウが表示されます。</p>
+
+<p><code>ライブラリー</code> のタブをクリックします。</p>
+
+<p><code>ライブラリーの追加</code> のボタンをクリックします。</p>
+
+<p>追加できるライブラリーの種類一覧が表示されるので <code>ユーザーライブラリー</code> を選択します。</p>
+
+<p>次に選択できるユーザーライブラリーの一覧が表示されますが、何もないので<code>ユーザーライブラリー</code>　のボタンをクリックし、
+表示されたウインドウの<code>新規</code>　ボタンを押します。</p>
+
+<p>ライブラリ名を入力できるので、適当な名前を入力します。</p>
+
+<p>追加されたライブラリを選択して<code>完了</code>　のボタンを押します。</p>
+
+<p>追加されたライブラリをクリックすると、<code>ネイティブ・ライブラリー・ロケーション</code>　という項目が表示されます。</p>
+
+<p>ダブルクリックすると、ディレクトリを指定できるので<code>Altseed_core.dll</code>　が存在するディレクトリを選択します。</p>
+
+<h4>ソースコードの記述</h4>
+
+<p><code>Main.java</code> を以下のソースコードに書き換えます。</p>
+<pre class="highlight plaintext"><code>class Main
+{
+
+    static
+    {
+        System.loadLibrary("Altseed_core");
+    }
+
+    public static void main(String args[])
+    {
+        asd.Engine.Initialize("Empty", 640, 480, new asd.EngineOption());
+
+        while(asd.Engine.DoEvents())
+        {
+            asd.Engine.Update();
+        }
+
+        asd.Engine.Terminate();
+    }
+}
+
+</code></pre>
+
+<p>実行ボタンを押すと黒いウインドウが表示されれば成功です。</p>
+
+      </div>
+      <div class="menu">
+        <h2>
+          メニュー
+        </h2>
+        <h3>
+          概要
+        </h3>
+        <p>
+          <a href="index.html">TOP</a>
+        </p>
+        <p>
+          <a href="features.html">主要な機能</a>
+        </p>
+        <p>
+          <a href="Doc/FAQ.html">よくある質問</a>
+        </p>
+        <p>
+          <a href="showcase.html">採用事例</a>
+        </p>
+        <p>
+          <a href="history.html">更新履歴</a>
+        </p>
+        <h3>
+          導入
+        </h3>
+        <p>
+          <a href="system_requirements.html">動作環境</a>
+        </p>
+        <p>
+          <a href="download.html">ダウンロード</a>
+        </p>
+        <h3>
+          サポート
+        </h3>
+        <p>
+          <a href="http://altseed.sakura.ne.jp/bbs/patio.cgi">ユーザー掲示板</a>
+        </p>
+        <p>
+          <a href="slack.html">Slack</a>
+        </p>
+        <p>
+          <a href="github.html">Github</a>
+        </p>
+        <p>
+          <a href="mail.html">メール</a>
+        </p>
+        <h3>
+          チュートリアル
+        </h3>
+        <p>
+          <a href="https://github.com/altseed/STGLecture/blob/master/Document/cs/Index.md">C#による初心者向け<br>STG制作講座</a>
+        </p>
+        <h3>
+          使い方(基礎編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseBasic/Basic.html">Altseedの基本</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/GeometryObject2D.html">図形の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextureObject2D.html">画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/TextObject2D.html">文字の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EffectObject2D.html">エフェクトの描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Keyboard.html">キーボード入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Mouse.html">マウス入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Joystick.html">ジョイスティック入力</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Sound.html">音の再生</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Collision2D.html">衝突判定</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/SceneAndLayer.html">シーンとレイヤー</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/PostEffect.html">ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Transition.html">シーン遷移</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/CameraObject2D.html">カメラ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Object2DComponent.html"> オブジェクトの挙動の部品化</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/EngineMisc.html"> エンジンの機能(その他)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseBasic/Texture.html"> 画像</a>
+        </p>
+        <h3>
+          使い方(応用編)
+        </h3>
+        <p>
+          <a href="Doc/HowToUseApplication/Pause.html">ポーズ</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/ImagePackageUI.html">UIの配置</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/CustomPostEffect.html">自作ポストエフェクト</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/MapObject2D.html">大量の画像の描画</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/DrawAdditionally2D.html">追加描画(2D)</a>
+        </p>
+        <p>
+          <a href="Doc/HowToUseApplication/Window.html">外部ウィンドウ</a>
+        </p>
+        <h3>
+          リファレンス
+        </h3>
+        <a href="Doc/Reference/Main.html">リファレンス</a>
+      </div>
+    </div>
+  </body>
+</html>

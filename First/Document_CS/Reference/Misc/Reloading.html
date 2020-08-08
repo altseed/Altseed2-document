@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <STYLE type="text/css">
+  <!--
+  @charset "utf-8";
+  body
+  {
+  	line-height: 1.5em;
+  }
+
+  *::selection
+  {
+  	background-color: rgba(255, 210, 130, 0.5);
+  /*	background-color: rgba(160, 220, 150, 0.5);*/
+  }
+
+  h1, h2, h3, h4
+  {
+  	font-family: "Meiryo UI";
+  	display: block;
+  }
+
+  h1, h2, h3
+  {
+  	padding: 0.2em 0.3em;
+  }
+
+  h1
+  {
+  	font-size: 2em;
+  	background-color: #ddeeee;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h2
+  {
+  	font-size: 1.5em;
+  	background-color: #eef3f3;
+  	border-bottom: 1px solid #999999;
+  	line-height: 1.2em;
+  }
+  h3{
+  	font-size: 1.3em;
+  	background-color: #eeeeee;
+  }
+  h4
+  {
+  	font-size: 1.1em;
+  	margin-top: 0.3em;
+  	margin-bottom: 0em;
+  }
+
+  p
+  {
+  	margin-bottom: 0.9em;
+  }
+  p code {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  pre
+  {
+    margin-top: 0.1em;
+    margin-left: 1em;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 3px 5px;
+    display: block;
+    font: 1em "Consolas";
+  }
+
+  pre code
+  {
+    font: 0.9em "Consolas";
+  }
+
+  code
+  {
+    color: #52595d;
+    font: 0.95em "Consolas";
+    margin: 0em 0.3em;
+  }
+
+  hr
+  {
+  	border: 0;
+  	border-bottom: 2px dashed #acc;
+  	background-color: #fff;
+  }
+
+  ul
+  {
+  	list-style-type: none;
+  }
+
+  li
+  {
+  	border-left: 2px solid #cdd;
+  	margin-bottom: 2px;
+  	padding-left: 0.5em;
+  }
+
+  em
+  {
+  	display: none;
+  }
+
+  table
+  {
+  	border-collapse: collapse;
+  }
+
+  td, th
+  {
+  	border: 1px solid #8bb;
+  	padding: 2px 5px;
+  	vertical-align: middle;
+  }
+  -->
+  </STYLE>
+  <title></title>
+    <base href="http://altseed.github.io/First/">
+    
+  </head>
+  <body>
+  <h2>リロード</h2>
+  <h3>概要</h3>
+  <h1>現在、リロード機能が無効化されています。</h1>
+  <p>AC-Engineはリロードという機能があります。これは、ゲーム起動中に既に読み込んでいる画像等のファイルを書き換えるとゲーム起動中でも変更が反映されるという機能です。<br />現在は、テクスチャ2D、エフェクト、音源のみ対応しております。</p>
+  <p>変更が反映されるタイミングは2つあります。1つ目はゲームのウインドウからフォーカスが外れ再度フォーカスが戻った時です。これはゲーム画面から一旦目を離し、<br />編集ツールを起動し画像等の編集をして再度ゲーム画面を操作しようとした時に発生します。2つ目はEngine.Reloadが実行された時です。何らかの理由で<br />任意のタイミングで再読み込みを発生させたい時、この関数を実行すると変更が反映されます。</p>
+  <p>いずれの機能もAC-Engineの初期化時のオプション、EngineOption.IsReloadingEnabledをtrueにする必要があります。</p>
+  <p>ファイルが変更されたかは更新日時によって確認しており、再読み込みのタイミングで前に読み込んだ時と更新日時が違うとき変更を反映させています。そのため、更新日時が変わらないような編集の仕方を行ってしまった場合、変更は反映されません。</p>
+  <p><img src="img/Reloading.png" alt="リロード" /></p>
+  </body>
+  </html>
+  
