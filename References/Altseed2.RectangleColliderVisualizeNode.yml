@@ -1,0 +1,1096 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.RectangleColliderVisualizeNode
+  commentId: T:Altseed2.RectangleColliderVisualizeNode
+  id: RectangleColliderVisualizeNode
+  parent: Altseed2
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: RectangleColliderVisualizeNode
+  nameWithType: RectangleColliderVisualizeNode
+  fullName: Altseed2.RectangleColliderVisualizeNode
+  type: Class
+  source:
+    remote:
+      path: Engine/Physics/ColliderNode/RectangleColliderNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: RectangleColliderVisualizeNode
+    path: Src/Engine/Physics/ColliderNode/RectangleColliderNode.cs
+    startLine: 74
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: >-
+      [Serializable]
+
+      sealed class RectangleColliderVisualizeNode : RectangleNode, ICullableDrawn, IDrawn
+    content.vb: >-
+      <Serializable>
+
+      NotInheritable Class RectangleColliderVisualizeNode
+          Inherits RectangleNode
+          Implements ICullableDrawn, IDrawn
+  inheritance:
+  - System.Object
+  - Altseed2.Registerable{Altseed2.Node}
+  - Altseed2.Node
+  - Altseed2.TransformNode
+  - Altseed2.ShapeNode
+  - Altseed2.RectangleNode
+  inheritedMembers:
+  - Altseed2.RectangleNode.Color
+  - Altseed2.RectangleNode.RectangleSize
+  - Altseed2.ShapeNode.CameraGroup
+  - Altseed2.ShapeNode.ZOrder
+  - Altseed2.ShapeNode.IsDrawn
+  - Altseed2.ShapeNode.IsDrawnActually
+  - Altseed2.ShapeNode.AlphaBlend
+  - Altseed2.ShapeNode.Src
+  - Altseed2.ShapeNode.Texture
+  - Altseed2.ShapeNode.Material
+  - Altseed2.ShapeNode.InheritedTransform
+  - Altseed2.ShapeNode.ContentSize
+  - Altseed2.ShapeNode.AbsoluteTransform
+  - Altseed2.TransformNode.Angle
+  - Altseed2.TransformNode.Position
+  - Altseed2.TransformNode.CenterPosition
+  - Altseed2.TransformNode.Scale
+  - Altseed2.TransformNode.HorizontalFlip
+  - Altseed2.TransformNode.VerticalFlip
+  - Altseed2.TransformNode.CalcTransform
+  - Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
+  - Altseed2.Node.Parent
+  - Altseed2.Node.Status
+  - Altseed2.Node.Children
+  - Altseed2.Node.AddChildNode(Altseed2.Node)
+  - Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  - Altseed2.Node.OnAdded
+  - Altseed2.Node.OnRemoved
+  - Altseed2.Node.OnUpdate
+  - Altseed2.Node.EnumerateAncestors
+  - Altseed2.Node.EnumerateDescendants
+  - Altseed2.Node.EnumerateDescendants``1
+  - Altseed2.Node.EnumerateDescendants``1(System.Func{{T},System.Boolean})
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - sealed
+  - class
+  modifiers.vb:
+  - NotInheritable
+  - Class
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Altseed2.Registerable{Altseed2.Node}
+  commentId: T:Altseed2.Registerable{Altseed2.Node}
+  parent: Altseed2
+  definition: Altseed2.Registerable`1
+  name: Registerable<Node>
+  nameWithType: Registerable<Node>
+  fullName: Altseed2.Registerable<Altseed2.Node>
+  nameWithType.vb: Registerable(Of Node)
+  fullName.vb: Altseed2.Registerable(Of Altseed2.Node)
+  name.vb: Registerable(Of Node)
+  spec.csharp:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node
+  commentId: T:Altseed2.Node
+  parent: Altseed2
+  name: Node
+  nameWithType: Node
+  fullName: Altseed2.Node
+- uid: Altseed2.TransformNode
+  commentId: T:Altseed2.TransformNode
+  parent: Altseed2
+  name: TransformNode
+  nameWithType: TransformNode
+  fullName: Altseed2.TransformNode
+- uid: Altseed2.ShapeNode
+  commentId: T:Altseed2.ShapeNode
+  parent: Altseed2
+  name: ShapeNode
+  nameWithType: ShapeNode
+  fullName: Altseed2.ShapeNode
+- uid: Altseed2.RectangleNode
+  commentId: T:Altseed2.RectangleNode
+  parent: Altseed2
+  name: RectangleNode
+  nameWithType: RectangleNode
+  fullName: Altseed2.RectangleNode
+- uid: Altseed2.RectangleNode.Color
+  commentId: P:Altseed2.RectangleNode.Color
+  parent: Altseed2.RectangleNode
+  name: Color
+  nameWithType: RectangleNode.Color
+  fullName: Altseed2.RectangleNode.Color
+- uid: Altseed2.RectangleNode.RectangleSize
+  commentId: P:Altseed2.RectangleNode.RectangleSize
+  parent: Altseed2.RectangleNode
+  name: RectangleSize
+  nameWithType: RectangleNode.RectangleSize
+  fullName: Altseed2.RectangleNode.RectangleSize
+- uid: Altseed2.ShapeNode.CameraGroup
+  commentId: P:Altseed2.ShapeNode.CameraGroup
+  parent: Altseed2.ShapeNode
+  name: CameraGroup
+  nameWithType: ShapeNode.CameraGroup
+  fullName: Altseed2.ShapeNode.CameraGroup
+- uid: Altseed2.ShapeNode.ZOrder
+  commentId: P:Altseed2.ShapeNode.ZOrder
+  parent: Altseed2.ShapeNode
+  name: ZOrder
+  nameWithType: ShapeNode.ZOrder
+  fullName: Altseed2.ShapeNode.ZOrder
+- uid: Altseed2.ShapeNode.IsDrawn
+  commentId: P:Altseed2.ShapeNode.IsDrawn
+  parent: Altseed2.ShapeNode
+  name: IsDrawn
+  nameWithType: ShapeNode.IsDrawn
+  fullName: Altseed2.ShapeNode.IsDrawn
+- uid: Altseed2.ShapeNode.IsDrawnActually
+  commentId: P:Altseed2.ShapeNode.IsDrawnActually
+  parent: Altseed2.ShapeNode
+  name: IsDrawnActually
+  nameWithType: ShapeNode.IsDrawnActually
+  fullName: Altseed2.ShapeNode.IsDrawnActually
+- uid: Altseed2.ShapeNode.AlphaBlend
+  commentId: P:Altseed2.ShapeNode.AlphaBlend
+  parent: Altseed2.ShapeNode
+  name: AlphaBlend
+  nameWithType: ShapeNode.AlphaBlend
+  fullName: Altseed2.ShapeNode.AlphaBlend
+- uid: Altseed2.ShapeNode.Src
+  commentId: P:Altseed2.ShapeNode.Src
+  parent: Altseed2.ShapeNode
+  name: Src
+  nameWithType: ShapeNode.Src
+  fullName: Altseed2.ShapeNode.Src
+- uid: Altseed2.ShapeNode.Texture
+  commentId: P:Altseed2.ShapeNode.Texture
+  parent: Altseed2.ShapeNode
+  name: Texture
+  nameWithType: ShapeNode.Texture
+  fullName: Altseed2.ShapeNode.Texture
+- uid: Altseed2.ShapeNode.Material
+  commentId: P:Altseed2.ShapeNode.Material
+  parent: Altseed2.ShapeNode
+  name: Material
+  nameWithType: ShapeNode.Material
+  fullName: Altseed2.ShapeNode.Material
+- uid: Altseed2.ShapeNode.InheritedTransform
+  commentId: P:Altseed2.ShapeNode.InheritedTransform
+  parent: Altseed2.ShapeNode
+  name: InheritedTransform
+  nameWithType: ShapeNode.InheritedTransform
+  fullName: Altseed2.ShapeNode.InheritedTransform
+- uid: Altseed2.ShapeNode.ContentSize
+  commentId: P:Altseed2.ShapeNode.ContentSize
+  parent: Altseed2.ShapeNode
+  name: ContentSize
+  nameWithType: ShapeNode.ContentSize
+  fullName: Altseed2.ShapeNode.ContentSize
+- uid: Altseed2.ShapeNode.AbsoluteTransform
+  commentId: P:Altseed2.ShapeNode.AbsoluteTransform
+  parent: Altseed2.ShapeNode
+  name: AbsoluteTransform
+  nameWithType: ShapeNode.AbsoluteTransform
+  fullName: Altseed2.ShapeNode.AbsoluteTransform
+- uid: Altseed2.TransformNode.Angle
+  commentId: P:Altseed2.TransformNode.Angle
+  parent: Altseed2.TransformNode
+  name: Angle
+  nameWithType: TransformNode.Angle
+  fullName: Altseed2.TransformNode.Angle
+- uid: Altseed2.TransformNode.Position
+  commentId: P:Altseed2.TransformNode.Position
+  parent: Altseed2.TransformNode
+  name: Position
+  nameWithType: TransformNode.Position
+  fullName: Altseed2.TransformNode.Position
+- uid: Altseed2.TransformNode.CenterPosition
+  commentId: P:Altseed2.TransformNode.CenterPosition
+  parent: Altseed2.TransformNode
+  name: CenterPosition
+  nameWithType: TransformNode.CenterPosition
+  fullName: Altseed2.TransformNode.CenterPosition
+- uid: Altseed2.TransformNode.Scale
+  commentId: P:Altseed2.TransformNode.Scale
+  parent: Altseed2.TransformNode
+  name: Scale
+  nameWithType: TransformNode.Scale
+  fullName: Altseed2.TransformNode.Scale
+- uid: Altseed2.TransformNode.HorizontalFlip
+  commentId: P:Altseed2.TransformNode.HorizontalFlip
+  parent: Altseed2.TransformNode
+  name: HorizontalFlip
+  nameWithType: TransformNode.HorizontalFlip
+  fullName: Altseed2.TransformNode.HorizontalFlip
+- uid: Altseed2.TransformNode.VerticalFlip
+  commentId: P:Altseed2.TransformNode.VerticalFlip
+  parent: Altseed2.TransformNode
+  name: VerticalFlip
+  nameWithType: TransformNode.VerticalFlip
+  fullName: Altseed2.TransformNode.VerticalFlip
+- uid: Altseed2.TransformNode.CalcTransform
+  commentId: M:Altseed2.TransformNode.CalcTransform
+  parent: Altseed2.TransformNode
+  name: CalcTransform()
+  nameWithType: TransformNode.CalcTransform()
+  fullName: Altseed2.TransformNode.CalcTransform()
+  spec.csharp:
+  - uid: Altseed2.TransformNode.CalcTransform
+    name: CalcTransform
+    nameWithType: TransformNode.CalcTransform
+    fullName: Altseed2.TransformNode.CalcTransform
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransformNode.CalcTransform
+    name: CalcTransform
+    nameWithType: TransformNode.CalcTransform
+    fullName: Altseed2.TransformNode.CalcTransform
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
+  commentId: M:Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
+  parent: Altseed2.TransformNode
+  name: PropagateTransform(Node, Matrix44F)
+  nameWithType: TransformNode.PropagateTransform(Node, Matrix44F)
+  fullName: Altseed2.TransformNode.PropagateTransform(Altseed2.Node, Altseed2.Matrix44F)
+  spec.csharp:
+  - uid: Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
+    name: PropagateTransform
+    nameWithType: TransformNode.PropagateTransform
+    fullName: Altseed2.TransformNode.PropagateTransform
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Altseed2.Matrix44F
+    name: Matrix44F
+    nameWithType: Matrix44F
+    fullName: Altseed2.Matrix44F
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
+    name: PropagateTransform
+    nameWithType: TransformNode.PropagateTransform
+    fullName: Altseed2.TransformNode.PropagateTransform
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Altseed2.Matrix44F
+    name: Matrix44F
+    nameWithType: Matrix44F
+    fullName: Altseed2.Matrix44F
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.Parent
+  commentId: P:Altseed2.Node.Parent
+  parent: Altseed2.Node
+  name: Parent
+  nameWithType: Node.Parent
+  fullName: Altseed2.Node.Parent
+- uid: Altseed2.Node.Status
+  commentId: P:Altseed2.Node.Status
+  parent: Altseed2.Node
+  name: Status
+  nameWithType: Node.Status
+  fullName: Altseed2.Node.Status
+- uid: Altseed2.Node.Children
+  commentId: P:Altseed2.Node.Children
+  parent: Altseed2.Node
+  name: Children
+  nameWithType: Node.Children
+  fullName: Altseed2.Node.Children
+- uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+  commentId: M:Altseed2.Node.AddChildNode(Altseed2.Node)
+  parent: Altseed2.Node
+  name: AddChildNode(Node)
+  nameWithType: Node.AddChildNode(Node)
+  fullName: Altseed2.Node.AddChildNode(Altseed2.Node)
+  spec.csharp:
+  - uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+    name: AddChildNode
+    nameWithType: Node.AddChildNode
+    fullName: Altseed2.Node.AddChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+    name: AddChildNode
+    nameWithType: Node.AddChildNode
+    fullName: Altseed2.Node.AddChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  commentId: M:Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  parent: Altseed2.Node
+  name: RemoveChildNode(Node)
+  nameWithType: Node.RemoveChildNode(Node)
+  fullName: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  spec.csharp:
+  - uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+    name: RemoveChildNode
+    nameWithType: Node.RemoveChildNode
+    fullName: Altseed2.Node.RemoveChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+    name: RemoveChildNode
+    nameWithType: Node.RemoveChildNode
+    fullName: Altseed2.Node.RemoveChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnAdded
+  commentId: M:Altseed2.Node.OnAdded
+  parent: Altseed2.Node
+  name: OnAdded()
+  nameWithType: Node.OnAdded()
+  fullName: Altseed2.Node.OnAdded()
+  spec.csharp:
+  - uid: Altseed2.Node.OnAdded
+    name: OnAdded
+    nameWithType: Node.OnAdded
+    fullName: Altseed2.Node.OnAdded
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnAdded
+    name: OnAdded
+    nameWithType: Node.OnAdded
+    fullName: Altseed2.Node.OnAdded
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnRemoved
+  commentId: M:Altseed2.Node.OnRemoved
+  parent: Altseed2.Node
+  name: OnRemoved()
+  nameWithType: Node.OnRemoved()
+  fullName: Altseed2.Node.OnRemoved()
+  spec.csharp:
+  - uid: Altseed2.Node.OnRemoved
+    name: OnRemoved
+    nameWithType: Node.OnRemoved
+    fullName: Altseed2.Node.OnRemoved
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnRemoved
+    name: OnRemoved
+    nameWithType: Node.OnRemoved
+    fullName: Altseed2.Node.OnRemoved
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnUpdate
+  commentId: M:Altseed2.Node.OnUpdate
+  parent: Altseed2.Node
+  name: OnUpdate()
+  nameWithType: Node.OnUpdate()
+  fullName: Altseed2.Node.OnUpdate()
+  spec.csharp:
+  - uid: Altseed2.Node.OnUpdate
+    name: OnUpdate
+    nameWithType: Node.OnUpdate
+    fullName: Altseed2.Node.OnUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnUpdate
+    name: OnUpdate
+    nameWithType: Node.OnUpdate
+    fullName: Altseed2.Node.OnUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateAncestors
+  commentId: M:Altseed2.Node.EnumerateAncestors
+  parent: Altseed2.Node
+  name: EnumerateAncestors()
+  nameWithType: Node.EnumerateAncestors()
+  fullName: Altseed2.Node.EnumerateAncestors()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateAncestors
+    name: EnumerateAncestors
+    nameWithType: Node.EnumerateAncestors
+    fullName: Altseed2.Node.EnumerateAncestors
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateAncestors
+    name: EnumerateAncestors
+    nameWithType: Node.EnumerateAncestors
+    fullName: Altseed2.Node.EnumerateAncestors
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants
+  commentId: M:Altseed2.Node.EnumerateDescendants
+  parent: Altseed2.Node
+  name: EnumerateDescendants()
+  nameWithType: Node.EnumerateDescendants()
+  fullName: Altseed2.Node.EnumerateDescendants()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants
+    name: EnumerateDescendants
+    nameWithType: Node.EnumerateDescendants
+    fullName: Altseed2.Node.EnumerateDescendants
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants
+    name: EnumerateDescendants
+    nameWithType: Node.EnumerateDescendants
+    fullName: Altseed2.Node.EnumerateDescendants
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1
+  commentId: M:Altseed2.Node.EnumerateDescendants``1
+  parent: Altseed2.Node
+  name: EnumerateDescendants<T>()
+  nameWithType: Node.EnumerateDescendants<T>()
+  fullName: Altseed2.Node.EnumerateDescendants<T>()
+  nameWithType.vb: Node.EnumerateDescendants(Of T)()
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)()
+  name.vb: EnumerateDescendants(Of T)()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1(System.Func{{T},System.Boolean})
+  commentId: M:Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  parent: Altseed2.Node
+  definition: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  name: EnumerateDescendants<T>(Func<T, Boolean>)
+  nameWithType: Node.EnumerateDescendants<T>(Func<T, Boolean>)
+  fullName: Altseed2.Node.EnumerateDescendants<T>(System.Func<T, System.Boolean>)
+  nameWithType.vb: Node.EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)(System.Func(Of T, System.Boolean))
+  name.vb: EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Altseed2.Registerable`1
+  commentId: T:Altseed2.Registerable`1
+  name: Registerable<T>
+  nameWithType: Registerable<T>
+  fullName: Altseed2.Registerable<T>
+  nameWithType.vb: Registerable(Of T)
+  fullName.vb: Altseed2.Registerable(Of T)
+  name.vb: Registerable(Of T)
+  spec.csharp:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  commentId: M:Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  isExternal: true
+  name: EnumerateDescendants<T>(Func<T, Boolean>)
+  nameWithType: Node.EnumerateDescendants<T>(Func<T, Boolean>)
+  fullName: Altseed2.Node.EnumerateDescendants<T>(System.Func<T, System.Boolean>)
+  nameWithType.vb: Node.EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)(System.Func(Of T, System.Boolean))
+  name.vb: EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )

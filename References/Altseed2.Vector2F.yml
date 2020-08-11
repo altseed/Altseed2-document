@@ -1,0 +1,1137 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.Vector2F
+  commentId: T:Altseed2.Vector2F
+  id: Vector2F
+  parent: Altseed2
+  children:
+  - Altseed2.Vector2F.#ctor(System.Single,System.Single)
+  - Altseed2.Vector2F.Cross(Altseed2.Vector2F,Altseed2.Vector2F)
+  - Altseed2.Vector2F.Degree
+  - Altseed2.Vector2F.Distance(Altseed2.Vector2F,Altseed2.Vector2F)
+  - Altseed2.Vector2F.Dot(Altseed2.Vector2F,Altseed2.Vector2F)
+  - Altseed2.Vector2F.Length
+  - Altseed2.Vector2F.Normal
+  - Altseed2.Vector2F.Normalize
+  - Altseed2.Vector2F.One
+  - Altseed2.Vector2F.Radian
+  - Altseed2.Vector2F.SquaredLength
+  - Altseed2.Vector2F.To2I
+  - Altseed2.Vector2F.ToString
+  - Altseed2.Vector2F.X
+  - Altseed2.Vector2F.Y
+  - Altseed2.Vector2F.Zero
+  langs:
+  - csharp
+  - vb
+  name: Vector2F
+  nameWithType: Vector2F
+  fullName: Altseed2.Vector2F
+  type: Struct
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Vector2F
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 8
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n<xref href=\"System.Single\" data-throw-if-not-resolved=\"false\"></xref>型の二次元ベクトルを表す構造体\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct Vector2F : IEquatable<Vector2F>
+    content.vb: >-
+      <Serializable>
+
+      Public Structure Vector2F
+          Implements IEquatable(Of Vector2F)
+  implements:
+  - System.IEquatable{Altseed2.Vector2F}
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: Altseed2.Vector2F.X
+  commentId: F:Altseed2.Vector2F.X
+  id: X
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Vector2F.X
+  fullName: Altseed2.Vector2F.X
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: X
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 16
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nX座標\n"
+  example: []
+  syntax:
+    content: public float X
+    return:
+      type: System.Single
+    content.vb: Public X As Single
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vector2F.Y
+  commentId: F:Altseed2.Vector2F.Y
+  id: Y
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Vector2F.Y
+  fullName: Altseed2.Vector2F.Y
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Y
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 22
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nY座標\n"
+  example: []
+  syntax:
+    content: public float Y
+    return:
+      type: System.Single
+    content.vb: Public Y As Single
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vector2F.Zero
+  commentId: F:Altseed2.Vector2F.Zero
+  id: Zero
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Zero
+  nameWithType: Vector2F.Zero
+  fullName: Altseed2.Vector2F.Zero
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Zero
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 24
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: static readonly Vector2F Zero
+    return:
+      type: Altseed2.Vector2F
+    content.vb: Shared ReadOnly Zero As Vector2F
+  modifiers.csharp:
+  - static
+  - readonly
+  modifiers.vb:
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Vector2F.One
+  commentId: F:Altseed2.Vector2F.One
+  id: One
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: One
+  nameWithType: Vector2F.One
+  fullName: Altseed2.Vector2F.One
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: One
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 26
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: static readonly Vector2F One
+    return:
+      type: Altseed2.Vector2F
+    content.vb: Shared ReadOnly One As Vector2F
+  modifiers.csharp:
+  - static
+  - readonly
+  modifiers.vb:
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Vector2F.Degree
+  commentId: P:Altseed2.Vector2F.Degree
+  id: Degree
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Degree
+  nameWithType: Vector2F.Degree
+  fullName: Altseed2.Vector2F.Degree
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Degree
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 31
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nベクトルの度数法の角度を取得または設定します。\n"
+  example: []
+  syntax:
+    content: public float Degree { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Degree As Single
+  overload: Altseed2.Vector2F.Degree*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vector2F.Normal
+  commentId: P:Altseed2.Vector2F.Normal
+  id: Normal
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: Vector2F.Normal
+  fullName: Altseed2.Vector2F.Normal
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Normal
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 43
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nこのベクトルの単位ベクトル取得します。\n"
+  example: []
+  syntax:
+    content: public Vector2F Normal { get; }
+    parameters: []
+    return:
+      type: Altseed2.Vector2F
+    content.vb: Public ReadOnly Property Normal As Vector2F
+  overload: Altseed2.Vector2F.Normal*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Altseed2.Vector2F.Length
+  commentId: P:Altseed2.Vector2F.Length
+  id: Length
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: Vector2F.Length
+  fullName: Altseed2.Vector2F.Length
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Length
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 48
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nベクトルの長さを取得または設定します。\n"
+  example: []
+  syntax:
+    content: public float Length { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Length As Single
+  overload: Altseed2.Vector2F.Length*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vector2F.Radian
+  commentId: P:Altseed2.Vector2F.Radian
+  id: Radian
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Radian
+  nameWithType: Vector2F.Radian
+  fullName: Altseed2.Vector2F.Radian
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Radian
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 62
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nベクトルの弧度法の角度を取得または設定します。\n"
+  example: []
+  syntax:
+    content: public float Radian { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Radian As Single
+  overload: Altseed2.Vector2F.Radian*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vector2F.SquaredLength
+  commentId: P:Altseed2.Vector2F.SquaredLength
+  id: SquaredLength
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: SquaredLength
+  nameWithType: Vector2F.SquaredLength
+  fullName: Altseed2.Vector2F.SquaredLength
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: SquaredLength
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 76
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nベクトルの長さの2乗取得します。\n"
+  example: []
+  syntax:
+    content: public float SquaredLength { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property SquaredLength As Single
+  overload: Altseed2.Vector2F.SquaredLength*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Altseed2.Vector2F.#ctor(System.Single,System.Single)
+  commentId: M:Altseed2.Vector2F.#ctor(System.Single,System.Single)
+  id: '#ctor(System.Single,System.Single)'
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Vector2F(Single, Single)
+  nameWithType: Vector2F.Vector2F(Single, Single)
+  fullName: Altseed2.Vector2F.Vector2F(System.Single, System.Single)
+  type: Constructor
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: .ctor
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 83
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n<xref href=\"Altseed2.Vector2F\" data-throw-if-not-resolved=\"false\"></xref>の新しいインスタンスを生成します。\n"
+  example: []
+  syntax:
+    content: public Vector2F(float x, float y)
+    parameters:
+    - id: x
+      type: System.Single
+      description: X座標
+    - id: y
+      type: System.Single
+      description: Y座標
+    content.vb: Public Sub New(x As Single, y As Single)
+  overload: Altseed2.Vector2F.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vector2F.Normalize
+  commentId: M:Altseed2.Vector2F.Normalize
+  id: Normalize
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Normalize()
+  nameWithType: Vector2F.Normalize()
+  fullName: Altseed2.Vector2F.Normalize()
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Normalize
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 150
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n単位ベクトル化します。\n"
+  example: []
+  syntax:
+    content: public void Normalize()
+    content.vb: Public Sub Normalize
+  overload: Altseed2.Vector2F.Normalize*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vector2F.ToString
+  commentId: M:Altseed2.Vector2F.ToString
+  id: ToString
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Vector2F.ToString()
+  fullName: Altseed2.Vector2F.ToString()
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: ToString
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 161
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nこのベクトルを表す文字列取得します。\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: このベクトルを表す文字列取得します。
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.ValueType.ToString
+  overload: Altseed2.Vector2F.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Altseed2.Vector2F.To2I
+  commentId: M:Altseed2.Vector2F.To2I
+  id: To2I
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: To2I()
+  nameWithType: Vector2F.To2I()
+  fullName: Altseed2.Vector2F.To2I()
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: To2I
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 167
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n<xref href=\"Altseed2.Vector2I\" data-throw-if-not-resolved=\"false\"></xref>に型変換します。\n"
+  example: []
+  syntax:
+    content: public Vector2I To2I()
+    return:
+      type: Altseed2.Vector2I
+      description: このインスタンスと等価な<xref href="Altseed2.Vector2I" data-throw-if-not-resolved="false"></xref>の新しいインスタンス
+    content.vb: Public Function To2I As Vector2I
+  overload: Altseed2.Vector2F.To2I*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vector2F.Cross(Altseed2.Vector2F,Altseed2.Vector2F)
+  commentId: M:Altseed2.Vector2F.Cross(Altseed2.Vector2F,Altseed2.Vector2F)
+  id: Cross(Altseed2.Vector2F,Altseed2.Vector2F)
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Cross(Vector2F, Vector2F)
+  nameWithType: Vector2F.Cross(Vector2F, Vector2F)
+  fullName: Altseed2.Vector2F.Cross(Altseed2.Vector2F, Altseed2.Vector2F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Cross
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 175
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n2つのベクトルの外積を求めます。\n"
+  example: []
+  syntax:
+    content: public static float Cross(Vector2F left, Vector2F right)
+    parameters:
+    - id: left
+      type: Altseed2.Vector2F
+      description: 使用するベクトル1
+    - id: right
+      type: Altseed2.Vector2F
+      description: 使用するベクトル2
+    return:
+      type: System.Single
+      description: <code data-dev-comment-type="paramref" class="paramref">left</code>と<code data-dev-comment-type="paramref" class="paramref">right</code>の外積
+    content.vb: Public Shared Function Cross(left As Vector2F, right As Vector2F) As Single
+  overload: Altseed2.Vector2F.Cross*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Vector2F.Distance(Altseed2.Vector2F,Altseed2.Vector2F)
+  commentId: M:Altseed2.Vector2F.Distance(Altseed2.Vector2F,Altseed2.Vector2F)
+  id: Distance(Altseed2.Vector2F,Altseed2.Vector2F)
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Distance(Vector2F, Vector2F)
+  nameWithType: Vector2F.Distance(Vector2F, Vector2F)
+  fullName: Altseed2.Vector2F.Distance(Altseed2.Vector2F, Altseed2.Vector2F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Distance
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 183
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n2つのベクトル間の距離を求めます。\n"
+  example: []
+  syntax:
+    content: public static float Distance(Vector2F v1, Vector2F v2)
+    parameters:
+    - id: v1
+      type: Altseed2.Vector2F
+      description: 距離を求めるベクトル1
+    - id: v2
+      type: Altseed2.Vector2F
+      description: 距離を求めるベクトル2
+    return:
+      type: System.Single
+      description: <code data-dev-comment-type="paramref" class="paramref">v1</code>と<code data-dev-comment-type="paramref" class="paramref">v2</code>の間の距離
+    content.vb: Public Shared Function Distance(v1 As Vector2F, v2 As Vector2F) As Single
+  overload: Altseed2.Vector2F.Distance*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Vector2F.Dot(Altseed2.Vector2F,Altseed2.Vector2F)
+  commentId: M:Altseed2.Vector2F.Dot(Altseed2.Vector2F,Altseed2.Vector2F)
+  id: Dot(Altseed2.Vector2F,Altseed2.Vector2F)
+  parent: Altseed2.Vector2F
+  langs:
+  - csharp
+  - vb
+  name: Dot(Vector2F, Vector2F)
+  nameWithType: Vector2F.Dot(Vector2F, Vector2F)
+  fullName: Altseed2.Vector2F.Dot(Altseed2.Vector2F, Altseed2.Vector2F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Vector2F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Dot
+    path: Src/Engine/Math/Vector2F.cs
+    startLine: 196
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n2つのベクトルの内積を求めます。\n"
+  example: []
+  syntax:
+    content: public static float Dot(Vector2F v1, Vector2F v2)
+    parameters:
+    - id: v1
+      type: Altseed2.Vector2F
+      description: 使用するベクトル1
+    - id: v2
+      type: Altseed2.Vector2F
+      description: 使用するベクトル2
+    return:
+      type: System.Single
+      description: <code data-dev-comment-type="paramref" class="paramref">v1</code>と<code data-dev-comment-type="paramref" class="paramref">v2</code>の内積
+    content.vb: Public Shared Function Dot(v1 As Vector2F, v2 As Vector2F) As Single
+  overload: Altseed2.Vector2F.Dot*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.IEquatable{Altseed2.Vector2F}
+  commentId: T:System.IEquatable{Altseed2.Vector2F}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Vector2F>
+  nameWithType: IEquatable<Vector2F>
+  fullName: System.IEquatable<Altseed2.Vector2F>
+  nameWithType.vb: IEquatable(Of Vector2F)
+  fullName.vb: System.IEquatable(Of Altseed2.Vector2F)
+  name.vb: IEquatable(Of Vector2F)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Altseed2.Vector2F
+    name: Vector2F
+    nameWithType: Vector2F
+    fullName: Altseed2.Vector2F
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Altseed2.Vector2F
+    name: Vector2F
+    nameWithType: Vector2F
+    fullName: Altseed2.Vector2F
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: ValueType.Equals(Object)
+  fullName: System.ValueType.Equals(System.Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Altseed2.Vector2F
+  commentId: T:Altseed2.Vector2F
+  parent: Altseed2
+  name: Vector2F
+  nameWithType: Vector2F
+  fullName: Altseed2.Vector2F
+- uid: Altseed2.Vector2F.Degree*
+  commentId: Overload:Altseed2.Vector2F.Degree
+  name: Degree
+  nameWithType: Vector2F.Degree
+  fullName: Altseed2.Vector2F.Degree
+- uid: Altseed2.Vector2F.Normal*
+  commentId: Overload:Altseed2.Vector2F.Normal
+  name: Normal
+  nameWithType: Vector2F.Normal
+  fullName: Altseed2.Vector2F.Normal
+- uid: Altseed2.Vector2F.Length*
+  commentId: Overload:Altseed2.Vector2F.Length
+  name: Length
+  nameWithType: Vector2F.Length
+  fullName: Altseed2.Vector2F.Length
+- uid: Altseed2.Vector2F.Radian*
+  commentId: Overload:Altseed2.Vector2F.Radian
+  name: Radian
+  nameWithType: Vector2F.Radian
+  fullName: Altseed2.Vector2F.Radian
+- uid: Altseed2.Vector2F.SquaredLength*
+  commentId: Overload:Altseed2.Vector2F.SquaredLength
+  name: SquaredLength
+  nameWithType: Vector2F.SquaredLength
+  fullName: Altseed2.Vector2F.SquaredLength
+- uid: Altseed2.Vector2F.#ctor*
+  commentId: Overload:Altseed2.Vector2F.#ctor
+  name: Vector2F
+  nameWithType: Vector2F.Vector2F
+  fullName: Altseed2.Vector2F.Vector2F
+- uid: Altseed2.Vector2F.Normalize*
+  commentId: Overload:Altseed2.Vector2F.Normalize
+  name: Normalize
+  nameWithType: Vector2F.Normalize
+  fullName: Altseed2.Vector2F.Normalize
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Vector2F.ToString*
+  commentId: Overload:Altseed2.Vector2F.ToString
+  name: ToString
+  nameWithType: Vector2F.ToString
+  fullName: Altseed2.Vector2F.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Altseed2.Vector2I
+  commentId: T:Altseed2.Vector2I
+  parent: Altseed2
+  name: Vector2I
+  nameWithType: Vector2I
+  fullName: Altseed2.Vector2I
+- uid: Altseed2.Vector2F.To2I*
+  commentId: Overload:Altseed2.Vector2F.To2I
+  name: To2I
+  nameWithType: Vector2F.To2I
+  fullName: Altseed2.Vector2F.To2I
+- uid: Altseed2.Vector2F.Cross*
+  commentId: Overload:Altseed2.Vector2F.Cross
+  name: Cross
+  nameWithType: Vector2F.Cross
+  fullName: Altseed2.Vector2F.Cross
+- uid: Altseed2.Vector2F.Distance*
+  commentId: Overload:Altseed2.Vector2F.Distance
+  name: Distance
+  nameWithType: Vector2F.Distance
+  fullName: Altseed2.Vector2F.Distance
+- uid: Altseed2.Vector2F.Dot*
+  commentId: Overload:Altseed2.Vector2F.Dot
+  name: Dot
+  nameWithType: Vector2F.Dot
+  fullName: Altseed2.Vector2F.Dot

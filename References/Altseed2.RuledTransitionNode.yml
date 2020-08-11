@@ -1,0 +1,1406 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.RuledTransitionNode
+  commentId: T:Altseed2.RuledTransitionNode
+  id: RuledTransitionNode
+  parent: Altseed2
+  children:
+  - Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState)
+  - Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState,Altseed2.Texture2D)
+  - Altseed2.RuledTransitionNode.OnClosing(System.Single)
+  - Altseed2.RuledTransitionNode.OnNodeSwapped
+  - Altseed2.RuledTransitionNode.OnOpening(System.Single)
+  - Altseed2.RuledTransitionNode.OnTransitionBegin
+  langs:
+  - csharp
+  - vb
+  name: RuledTransitionNode
+  nameWithType: RuledTransitionNode
+  fullName: Altseed2.RuledTransitionNode
+  type: Class
+  source:
+    remote:
+      path: Engine/Node/Transition/RuledTransitionNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: RuledTransitionNode
+    path: Src/Engine/Node/Transition/RuledTransitionNode.cs
+    startLine: 29
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nパラメータ制御可能な<xref href=\"Altseed2.TransitionNode\" data-throw-if-not-resolved=\"false\"></xref>のクラス\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class RuledTransitionNode : TransitionNode
+    content.vb: >-
+      <Serializable>
+
+      Public Class RuledTransitionNode
+          Inherits TransitionNode
+  inheritance:
+  - System.Object
+  - Altseed2.Registerable{Altseed2.Node}
+  - Altseed2.Node
+  - Altseed2.TransitionNode
+  inheritedMembers:
+  - Altseed2.TransitionNode.OnNodeSwapping
+  - Altseed2.TransitionNode.OnTransitionEnd
+  - Altseed2.TransitionNode.GetCoroutine(System.Single,System.Single)
+  - Altseed2.Node.Parent
+  - Altseed2.Node.Status
+  - Altseed2.Node.Children
+  - Altseed2.Node.AddChildNode(Altseed2.Node)
+  - Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  - Altseed2.Node.OnAdded
+  - Altseed2.Node.OnRemoved
+  - Altseed2.Node.OnUpdate
+  - Altseed2.Node.EnumerateAncestors
+  - Altseed2.Node.EnumerateDescendants
+  - Altseed2.Node.EnumerateDescendants``1
+  - Altseed2.Node.EnumerateDescendants``1(System.Func{{T},System.Boolean})
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState,Altseed2.Texture2D)
+  commentId: M:Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState,Altseed2.Texture2D)
+  id: '#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState,Altseed2.Texture2D)'
+  parent: Altseed2.RuledTransitionNode
+  langs:
+  - csharp
+  - vb
+  name: RuledTransitionNode(RuledTransitionState, RuledTransitionState, Texture2D)
+  nameWithType: RuledTransitionNode.RuledTransitionNode(RuledTransitionState, RuledTransitionState, Texture2D)
+  fullName: Altseed2.RuledTransitionNode.RuledTransitionNode(Altseed2.RuledTransitionState, Altseed2.RuledTransitionState, Altseed2.Texture2D)
+  type: Constructor
+  source:
+    remote:
+      path: Engine/Node/Transition/RuledTransitionNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: .ctor
+    path: Src/Engine/Node/Transition/RuledTransitionNode.cs
+    startLine: 43
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n指定したマスクテクスチャを用いて<xref href=\"Altseed2.RuledTransitionNode\" data-throw-if-not-resolved=\"false\"></xref>の新しいインスタンスを生成します。\n"
+  example: []
+  syntax:
+    content: public RuledTransitionNode(RuledTransitionState closingState, RuledTransitionState openingState, Texture2D maskTexture)
+    parameters:
+    - id: closingState
+      type: Altseed2.RuledTransitionState
+      description: 遷移元のノードにおける<xref href="Altseed2.RuledTransitionState" data-throw-if-not-resolved="false"></xref>のインスタンス
+    - id: openingState
+      type: Altseed2.RuledTransitionState
+      description: 遷移先のノードにおける<xref href="Altseed2.RuledTransitionState" data-throw-if-not-resolved="false"></xref>のインスタンス
+    - id: maskTexture
+      type: Altseed2.Texture2D
+      description: 使用するマスクテクスチャ
+    content.vb: Public Sub New(closingState As RuledTransitionState, openingState As RuledTransitionState, maskTexture As Texture2D)
+  overload: Altseed2.RuledTransitionNode.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState)
+  commentId: M:Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState)
+  id: '#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState)'
+  parent: Altseed2.RuledTransitionNode
+  langs:
+  - csharp
+  - vb
+  name: RuledTransitionNode(RuledTransitionState, RuledTransitionState)
+  nameWithType: RuledTransitionNode.RuledTransitionNode(RuledTransitionState, RuledTransitionState)
+  fullName: Altseed2.RuledTransitionNode.RuledTransitionNode(Altseed2.RuledTransitionState, Altseed2.RuledTransitionState)
+  type: Constructor
+  source:
+    remote:
+      path: Engine/Node/Transition/RuledTransitionNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: .ctor
+    path: Src/Engine/Node/Transition/RuledTransitionNode.cs
+    startLine: 64
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n既定のマスクテクスチャを用いて<xref href=\"Altseed2.RuledTransitionNode\" data-throw-if-not-resolved=\"false\"></xref>の新しいインスタンスを生成します。\n"
+  example: []
+  syntax:
+    content: public RuledTransitionNode(RuledTransitionState closingState, RuledTransitionState openingState)
+    parameters:
+    - id: closingState
+      type: Altseed2.RuledTransitionState
+      description: 遷移元のノードにおける<xref href="Altseed2.RuledTransitionState" data-throw-if-not-resolved="false"></xref>のインスタンス
+    - id: openingState
+      type: Altseed2.RuledTransitionState
+      description: 遷移先のノードにおける<xref href="Altseed2.RuledTransitionState" data-throw-if-not-resolved="false"></xref>のインスタンス
+    content.vb: Public Sub New(closingState As RuledTransitionState, openingState As RuledTransitionState)
+  overload: Altseed2.RuledTransitionNode.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.RuledTransitionNode.OnTransitionBegin
+  commentId: M:Altseed2.RuledTransitionNode.OnTransitionBegin
+  id: OnTransitionBegin
+  parent: Altseed2.RuledTransitionNode
+  langs:
+  - csharp
+  - vb
+  name: OnTransitionBegin()
+  nameWithType: RuledTransitionNode.OnTransitionBegin()
+  fullName: Altseed2.RuledTransitionNode.OnTransitionBegin()
+  type: Method
+  source:
+    remote:
+      path: Engine/Node/Transition/RuledTransitionNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OnTransitionBegin
+    path: Src/Engine/Node/Transition/RuledTransitionNode.cs
+    startLine: 82
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nトランジションが開始する瞬間の処理を記述します。\n"
+  remarks: オーバーライドするときは上書きせず呼び出す事
+  example: []
+  syntax:
+    content: protected override void OnTransitionBegin()
+    content.vb: Protected Overrides Sub OnTransitionBegin
+  overridden: Altseed2.TransitionNode.OnTransitionBegin
+  overload: Altseed2.RuledTransitionNode.OnTransitionBegin*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Altseed2.RuledTransitionNode.OnClosing(System.Single)
+  commentId: M:Altseed2.RuledTransitionNode.OnClosing(System.Single)
+  id: OnClosing(System.Single)
+  parent: Altseed2.RuledTransitionNode
+  langs:
+  - csharp
+  - vb
+  name: OnClosing(Single)
+  nameWithType: RuledTransitionNode.OnClosing(Single)
+  fullName: Altseed2.RuledTransitionNode.OnClosing(System.Single)
+  type: Method
+  source:
+    remote:
+      path: Engine/Node/Transition/RuledTransitionNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OnClosing
+    path: Src/Engine/Node/Transition/RuledTransitionNode.cs
+    startLine: 89
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nノードが入れ替わる前の処理を記述します。\n"
+  remarks: オーバーライドするときは上書きせず呼び出す事
+  example: []
+  syntax:
+    content: protected override void OnClosing(float progress)
+    parameters:
+    - id: progress
+      type: System.Single
+      description: 0.0f ~ 1.0fの範囲で、ノードが入れ替わるまでの進行度を受け取ります。
+    content.vb: Protected Overrides Sub OnClosing(progress As Single)
+  overridden: Altseed2.TransitionNode.OnClosing(System.Single)
+  overload: Altseed2.RuledTransitionNode.OnClosing*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Altseed2.RuledTransitionNode.OnNodeSwapped
+  commentId: M:Altseed2.RuledTransitionNode.OnNodeSwapped
+  id: OnNodeSwapped
+  parent: Altseed2.RuledTransitionNode
+  langs:
+  - csharp
+  - vb
+  name: OnNodeSwapped()
+  nameWithType: RuledTransitionNode.OnNodeSwapped()
+  fullName: Altseed2.RuledTransitionNode.OnNodeSwapped()
+  type: Method
+  source:
+    remote:
+      path: Engine/Node/Transition/RuledTransitionNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OnNodeSwapped
+    path: Src/Engine/Node/Transition/RuledTransitionNode.cs
+    startLine: 96
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nノードが入れ替わった直後の処理を記述します。\n"
+  remarks: オーバーライドするときは上書きせず呼び出す事
+  example: []
+  syntax:
+    content: protected override void OnNodeSwapped()
+    content.vb: Protected Overrides Sub OnNodeSwapped
+  overridden: Altseed2.TransitionNode.OnNodeSwapped
+  overload: Altseed2.RuledTransitionNode.OnNodeSwapped*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Altseed2.RuledTransitionNode.OnOpening(System.Single)
+  commentId: M:Altseed2.RuledTransitionNode.OnOpening(System.Single)
+  id: OnOpening(System.Single)
+  parent: Altseed2.RuledTransitionNode
+  langs:
+  - csharp
+  - vb
+  name: OnOpening(Single)
+  nameWithType: RuledTransitionNode.OnOpening(Single)
+  fullName: Altseed2.RuledTransitionNode.OnOpening(System.Single)
+  type: Method
+  source:
+    remote:
+      path: Engine/Node/Transition/RuledTransitionNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OnOpening
+    path: Src/Engine/Node/Transition/RuledTransitionNode.cs
+    startLine: 105
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nノードが入れ替わった後の処理を記述します。\n"
+  remarks: オーバーライドするときは上書きせず呼び出す事
+  example: []
+  syntax:
+    content: protected override void OnOpening(float progress)
+    parameters:
+    - id: progress
+      type: System.Single
+      description: 0.0f ~ 1.0fの範囲で、ノードが入れ替わった後の進行度を受け取ります。
+    content.vb: Protected Overrides Sub OnOpening(progress As Single)
+  overridden: Altseed2.TransitionNode.OnOpening(System.Single)
+  overload: Altseed2.RuledTransitionNode.OnOpening*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: Altseed2.TransitionNode
+  commentId: T:Altseed2.TransitionNode
+  parent: Altseed2
+  name: TransitionNode
+  nameWithType: TransitionNode
+  fullName: Altseed2.TransitionNode
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Altseed2.Registerable{Altseed2.Node}
+  commentId: T:Altseed2.Registerable{Altseed2.Node}
+  parent: Altseed2
+  definition: Altseed2.Registerable`1
+  name: Registerable<Node>
+  nameWithType: Registerable<Node>
+  fullName: Altseed2.Registerable<Altseed2.Node>
+  nameWithType.vb: Registerable(Of Node)
+  fullName.vb: Altseed2.Registerable(Of Altseed2.Node)
+  name.vb: Registerable(Of Node)
+  spec.csharp:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node
+  commentId: T:Altseed2.Node
+  parent: Altseed2
+  name: Node
+  nameWithType: Node
+  fullName: Altseed2.Node
+- uid: Altseed2.TransitionNode.OnNodeSwapping
+  commentId: M:Altseed2.TransitionNode.OnNodeSwapping
+  parent: Altseed2.TransitionNode
+  name: OnNodeSwapping()
+  nameWithType: TransitionNode.OnNodeSwapping()
+  fullName: Altseed2.TransitionNode.OnNodeSwapping()
+  spec.csharp:
+  - uid: Altseed2.TransitionNode.OnNodeSwapping
+    name: OnNodeSwapping
+    nameWithType: TransitionNode.OnNodeSwapping
+    fullName: Altseed2.TransitionNode.OnNodeSwapping
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransitionNode.OnNodeSwapping
+    name: OnNodeSwapping
+    nameWithType: TransitionNode.OnNodeSwapping
+    fullName: Altseed2.TransitionNode.OnNodeSwapping
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.TransitionNode.OnTransitionEnd
+  commentId: M:Altseed2.TransitionNode.OnTransitionEnd
+  parent: Altseed2.TransitionNode
+  name: OnTransitionEnd()
+  nameWithType: TransitionNode.OnTransitionEnd()
+  fullName: Altseed2.TransitionNode.OnTransitionEnd()
+  spec.csharp:
+  - uid: Altseed2.TransitionNode.OnTransitionEnd
+    name: OnTransitionEnd
+    nameWithType: TransitionNode.OnTransitionEnd
+    fullName: Altseed2.TransitionNode.OnTransitionEnd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransitionNode.OnTransitionEnd
+    name: OnTransitionEnd
+    nameWithType: TransitionNode.OnTransitionEnd
+    fullName: Altseed2.TransitionNode.OnTransitionEnd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.TransitionNode.GetCoroutine(System.Single,System.Single)
+  commentId: M:Altseed2.TransitionNode.GetCoroutine(System.Single,System.Single)
+  parent: Altseed2.TransitionNode
+  isExternal: true
+  name: GetCoroutine(Single, Single)
+  nameWithType: TransitionNode.GetCoroutine(Single, Single)
+  fullName: Altseed2.TransitionNode.GetCoroutine(System.Single, System.Single)
+  spec.csharp:
+  - uid: Altseed2.TransitionNode.GetCoroutine(System.Single,System.Single)
+    name: GetCoroutine
+    nameWithType: TransitionNode.GetCoroutine
+    fullName: Altseed2.TransitionNode.GetCoroutine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransitionNode.GetCoroutine(System.Single,System.Single)
+    name: GetCoroutine
+    nameWithType: TransitionNode.GetCoroutine
+    fullName: Altseed2.TransitionNode.GetCoroutine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.Parent
+  commentId: P:Altseed2.Node.Parent
+  parent: Altseed2.Node
+  name: Parent
+  nameWithType: Node.Parent
+  fullName: Altseed2.Node.Parent
+- uid: Altseed2.Node.Status
+  commentId: P:Altseed2.Node.Status
+  parent: Altseed2.Node
+  name: Status
+  nameWithType: Node.Status
+  fullName: Altseed2.Node.Status
+- uid: Altseed2.Node.Children
+  commentId: P:Altseed2.Node.Children
+  parent: Altseed2.Node
+  name: Children
+  nameWithType: Node.Children
+  fullName: Altseed2.Node.Children
+- uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+  commentId: M:Altseed2.Node.AddChildNode(Altseed2.Node)
+  parent: Altseed2.Node
+  name: AddChildNode(Node)
+  nameWithType: Node.AddChildNode(Node)
+  fullName: Altseed2.Node.AddChildNode(Altseed2.Node)
+  spec.csharp:
+  - uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+    name: AddChildNode
+    nameWithType: Node.AddChildNode
+    fullName: Altseed2.Node.AddChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+    name: AddChildNode
+    nameWithType: Node.AddChildNode
+    fullName: Altseed2.Node.AddChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  commentId: M:Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  parent: Altseed2.Node
+  name: RemoveChildNode(Node)
+  nameWithType: Node.RemoveChildNode(Node)
+  fullName: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  spec.csharp:
+  - uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+    name: RemoveChildNode
+    nameWithType: Node.RemoveChildNode
+    fullName: Altseed2.Node.RemoveChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+    name: RemoveChildNode
+    nameWithType: Node.RemoveChildNode
+    fullName: Altseed2.Node.RemoveChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnAdded
+  commentId: M:Altseed2.Node.OnAdded
+  parent: Altseed2.Node
+  name: OnAdded()
+  nameWithType: Node.OnAdded()
+  fullName: Altseed2.Node.OnAdded()
+  spec.csharp:
+  - uid: Altseed2.Node.OnAdded
+    name: OnAdded
+    nameWithType: Node.OnAdded
+    fullName: Altseed2.Node.OnAdded
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnAdded
+    name: OnAdded
+    nameWithType: Node.OnAdded
+    fullName: Altseed2.Node.OnAdded
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnRemoved
+  commentId: M:Altseed2.Node.OnRemoved
+  parent: Altseed2.Node
+  name: OnRemoved()
+  nameWithType: Node.OnRemoved()
+  fullName: Altseed2.Node.OnRemoved()
+  spec.csharp:
+  - uid: Altseed2.Node.OnRemoved
+    name: OnRemoved
+    nameWithType: Node.OnRemoved
+    fullName: Altseed2.Node.OnRemoved
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnRemoved
+    name: OnRemoved
+    nameWithType: Node.OnRemoved
+    fullName: Altseed2.Node.OnRemoved
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnUpdate
+  commentId: M:Altseed2.Node.OnUpdate
+  parent: Altseed2.Node
+  name: OnUpdate()
+  nameWithType: Node.OnUpdate()
+  fullName: Altseed2.Node.OnUpdate()
+  spec.csharp:
+  - uid: Altseed2.Node.OnUpdate
+    name: OnUpdate
+    nameWithType: Node.OnUpdate
+    fullName: Altseed2.Node.OnUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnUpdate
+    name: OnUpdate
+    nameWithType: Node.OnUpdate
+    fullName: Altseed2.Node.OnUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateAncestors
+  commentId: M:Altseed2.Node.EnumerateAncestors
+  parent: Altseed2.Node
+  name: EnumerateAncestors()
+  nameWithType: Node.EnumerateAncestors()
+  fullName: Altseed2.Node.EnumerateAncestors()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateAncestors
+    name: EnumerateAncestors
+    nameWithType: Node.EnumerateAncestors
+    fullName: Altseed2.Node.EnumerateAncestors
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateAncestors
+    name: EnumerateAncestors
+    nameWithType: Node.EnumerateAncestors
+    fullName: Altseed2.Node.EnumerateAncestors
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants
+  commentId: M:Altseed2.Node.EnumerateDescendants
+  parent: Altseed2.Node
+  name: EnumerateDescendants()
+  nameWithType: Node.EnumerateDescendants()
+  fullName: Altseed2.Node.EnumerateDescendants()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants
+    name: EnumerateDescendants
+    nameWithType: Node.EnumerateDescendants
+    fullName: Altseed2.Node.EnumerateDescendants
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants
+    name: EnumerateDescendants
+    nameWithType: Node.EnumerateDescendants
+    fullName: Altseed2.Node.EnumerateDescendants
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1
+  commentId: M:Altseed2.Node.EnumerateDescendants``1
+  parent: Altseed2.Node
+  name: EnumerateDescendants<T>()
+  nameWithType: Node.EnumerateDescendants<T>()
+  fullName: Altseed2.Node.EnumerateDescendants<T>()
+  nameWithType.vb: Node.EnumerateDescendants(Of T)()
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)()
+  name.vb: EnumerateDescendants(Of T)()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1(System.Func{{T},System.Boolean})
+  commentId: M:Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  parent: Altseed2.Node
+  definition: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  name: EnumerateDescendants<T>(Func<T, Boolean>)
+  nameWithType: Node.EnumerateDescendants<T>(Func<T, Boolean>)
+  fullName: Altseed2.Node.EnumerateDescendants<T>(System.Func<T, System.Boolean>)
+  nameWithType.vb: Node.EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)(System.Func(Of T, System.Boolean))
+  name.vb: EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Altseed2.Registerable`1
+  commentId: T:Altseed2.Registerable`1
+  name: Registerable<T>
+  nameWithType: Registerable<T>
+  fullName: Altseed2.Registerable<T>
+  nameWithType.vb: Registerable(Of T)
+  fullName.vb: Altseed2.Registerable(Of T)
+  name.vb: Registerable(Of T)
+  spec.csharp:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  commentId: M:Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  isExternal: true
+  name: EnumerateDescendants<T>(Func<T, Boolean>)
+  nameWithType: Node.EnumerateDescendants<T>(Func<T, Boolean>)
+  fullName: Altseed2.Node.EnumerateDescendants<T>(System.Func<T, System.Boolean>)
+  nameWithType.vb: Node.EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)(System.Func(Of T, System.Boolean))
+  name.vb: EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.RuledTransitionNode
+  commentId: T:Altseed2.RuledTransitionNode
+  name: RuledTransitionNode
+  nameWithType: RuledTransitionNode
+  fullName: Altseed2.RuledTransitionNode
+- uid: Altseed2.RuledTransitionState
+  commentId: T:Altseed2.RuledTransitionState
+  parent: Altseed2
+  name: RuledTransitionState
+  nameWithType: RuledTransitionState
+  fullName: Altseed2.RuledTransitionState
+- uid: Altseed2.RuledTransitionNode.#ctor*
+  commentId: Overload:Altseed2.RuledTransitionNode.#ctor
+  name: RuledTransitionNode
+  nameWithType: RuledTransitionNode.RuledTransitionNode
+  fullName: Altseed2.RuledTransitionNode.RuledTransitionNode
+- uid: Altseed2.Texture2D
+  commentId: T:Altseed2.Texture2D
+  parent: Altseed2
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Altseed2.Texture2D
+- uid: Altseed2.TransitionNode.OnTransitionBegin
+  commentId: M:Altseed2.TransitionNode.OnTransitionBegin
+  parent: Altseed2.TransitionNode
+  name: OnTransitionBegin()
+  nameWithType: TransitionNode.OnTransitionBegin()
+  fullName: Altseed2.TransitionNode.OnTransitionBegin()
+  spec.csharp:
+  - uid: Altseed2.TransitionNode.OnTransitionBegin
+    name: OnTransitionBegin
+    nameWithType: TransitionNode.OnTransitionBegin
+    fullName: Altseed2.TransitionNode.OnTransitionBegin
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransitionNode.OnTransitionBegin
+    name: OnTransitionBegin
+    nameWithType: TransitionNode.OnTransitionBegin
+    fullName: Altseed2.TransitionNode.OnTransitionBegin
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.RuledTransitionNode.OnTransitionBegin*
+  commentId: Overload:Altseed2.RuledTransitionNode.OnTransitionBegin
+  name: OnTransitionBegin
+  nameWithType: RuledTransitionNode.OnTransitionBegin
+  fullName: Altseed2.RuledTransitionNode.OnTransitionBegin
+- uid: Altseed2.TransitionNode.OnClosing(System.Single)
+  commentId: M:Altseed2.TransitionNode.OnClosing(System.Single)
+  parent: Altseed2.TransitionNode
+  isExternal: true
+  name: OnClosing(Single)
+  nameWithType: TransitionNode.OnClosing(Single)
+  fullName: Altseed2.TransitionNode.OnClosing(System.Single)
+  spec.csharp:
+  - uid: Altseed2.TransitionNode.OnClosing(System.Single)
+    name: OnClosing
+    nameWithType: TransitionNode.OnClosing
+    fullName: Altseed2.TransitionNode.OnClosing
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransitionNode.OnClosing(System.Single)
+    name: OnClosing
+    nameWithType: TransitionNode.OnClosing
+    fullName: Altseed2.TransitionNode.OnClosing
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.RuledTransitionNode.OnClosing*
+  commentId: Overload:Altseed2.RuledTransitionNode.OnClosing
+  name: OnClosing
+  nameWithType: RuledTransitionNode.OnClosing
+  fullName: Altseed2.RuledTransitionNode.OnClosing
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Altseed2.TransitionNode.OnNodeSwapped
+  commentId: M:Altseed2.TransitionNode.OnNodeSwapped
+  parent: Altseed2.TransitionNode
+  name: OnNodeSwapped()
+  nameWithType: TransitionNode.OnNodeSwapped()
+  fullName: Altseed2.TransitionNode.OnNodeSwapped()
+  spec.csharp:
+  - uid: Altseed2.TransitionNode.OnNodeSwapped
+    name: OnNodeSwapped
+    nameWithType: TransitionNode.OnNodeSwapped
+    fullName: Altseed2.TransitionNode.OnNodeSwapped
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransitionNode.OnNodeSwapped
+    name: OnNodeSwapped
+    nameWithType: TransitionNode.OnNodeSwapped
+    fullName: Altseed2.TransitionNode.OnNodeSwapped
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.RuledTransitionNode.OnNodeSwapped*
+  commentId: Overload:Altseed2.RuledTransitionNode.OnNodeSwapped
+  name: OnNodeSwapped
+  nameWithType: RuledTransitionNode.OnNodeSwapped
+  fullName: Altseed2.RuledTransitionNode.OnNodeSwapped
+- uid: Altseed2.TransitionNode.OnOpening(System.Single)
+  commentId: M:Altseed2.TransitionNode.OnOpening(System.Single)
+  parent: Altseed2.TransitionNode
+  isExternal: true
+  name: OnOpening(Single)
+  nameWithType: TransitionNode.OnOpening(Single)
+  fullName: Altseed2.TransitionNode.OnOpening(System.Single)
+  spec.csharp:
+  - uid: Altseed2.TransitionNode.OnOpening(System.Single)
+    name: OnOpening
+    nameWithType: TransitionNode.OnOpening
+    fullName: Altseed2.TransitionNode.OnOpening
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.TransitionNode.OnOpening(System.Single)
+    name: OnOpening
+    nameWithType: TransitionNode.OnOpening
+    fullName: Altseed2.TransitionNode.OnOpening
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.RuledTransitionNode.OnOpening*
+  commentId: Overload:Altseed2.RuledTransitionNode.OnOpening
+  name: OnOpening
+  nameWithType: RuledTransitionNode.OnOpening
+  fullName: Altseed2.RuledTransitionNode.OnOpening

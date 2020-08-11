@@ -1,0 +1,497 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.CollisionInfo
+  commentId: T:Altseed2.CollisionInfo
+  id: CollisionInfo
+  parent: Altseed2
+  children:
+  - Altseed2.CollisionInfo.CollisionType
+  - Altseed2.CollisionInfo.SelfCollider
+  - Altseed2.CollisionInfo.TheirsCollider
+  langs:
+  - csharp
+  - vb
+  name: CollisionInfo
+  nameWithType: CollisionInfo
+  fullName: Altseed2.CollisionInfo
+  type: Class
+  source:
+    remote:
+      path: Engine/Physics/CollisionInfo.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: CollisionInfo
+    path: Src/Engine/Physics/CollisionInfo.cs
+    startLine: 7
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n衝突判定に関する情報を格納したクラス\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public sealed class CollisionInfo
+    content.vb: >-
+      <Serializable>
+
+      Public NotInheritable Class CollisionInfo
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Altseed2.CollisionInfo.CollisionType
+  commentId: P:Altseed2.CollisionInfo.CollisionType
+  id: CollisionType
+  parent: Altseed2.CollisionInfo
+  langs:
+  - csharp
+  - vb
+  name: CollisionType
+  nameWithType: CollisionInfo.CollisionType
+  fullName: Altseed2.CollisionInfo.CollisionType
+  type: Property
+  source:
+    remote:
+      path: Engine/Physics/CollisionInfo.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: CollisionType
+    path: Src/Engine/Physics/CollisionInfo.cs
+    startLine: 13
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n衝突の種類を取得します。\n"
+  example: []
+  syntax:
+    content: public CollisionType CollisionType { get; }
+    parameters: []
+    return:
+      type: Altseed2.CollisionType
+    content.vb: Public ReadOnly Property CollisionType As CollisionType
+  overload: Altseed2.CollisionInfo.CollisionType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Altseed2.CollisionInfo.SelfCollider
+  commentId: P:Altseed2.CollisionInfo.SelfCollider
+  id: SelfCollider
+  parent: Altseed2.CollisionInfo
+  langs:
+  - csharp
+  - vb
+  name: SelfCollider
+  nameWithType: CollisionInfo.SelfCollider
+  fullName: Altseed2.CollisionInfo.SelfCollider
+  type: Property
+  source:
+    remote:
+      path: Engine/Physics/CollisionInfo.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: SelfCollider
+    path: Src/Engine/Physics/CollisionInfo.cs
+    startLine: 18
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n自身の<xref href=\"Altseed2.ColliderNode\" data-throw-if-not-resolved=\"false\"></xref>を取得します。\n"
+  example: []
+  syntax:
+    content: public ColliderNode SelfCollider { get; }
+    parameters: []
+    return:
+      type: Altseed2.ColliderNode
+    content.vb: Public ReadOnly Property SelfCollider As ColliderNode
+  overload: Altseed2.CollisionInfo.SelfCollider*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Altseed2.CollisionInfo.TheirsCollider
+  commentId: P:Altseed2.CollisionInfo.TheirsCollider
+  id: TheirsCollider
+  parent: Altseed2.CollisionInfo
+  langs:
+  - csharp
+  - vb
+  name: TheirsCollider
+  nameWithType: CollisionInfo.TheirsCollider
+  fullName: Altseed2.CollisionInfo.TheirsCollider
+  type: Property
+  source:
+    remote:
+      path: Engine/Physics/CollisionInfo.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: TheirsCollider
+    path: Src/Engine/Physics/CollisionInfo.cs
+    startLine: 23
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n衝突相手の<xref href=\"Altseed2.ColliderNode\" data-throw-if-not-resolved=\"false\"></xref>を取得します。\n"
+  example: []
+  syntax:
+    content: public ColliderNode TheirsCollider { get; }
+    parameters: []
+    return:
+      type: Altseed2.ColliderNode
+    content.vb: Public ReadOnly Property TheirsCollider As ColliderNode
+  overload: Altseed2.CollisionInfo.TheirsCollider*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Altseed2.CollisionInfo.CollisionType*
+  commentId: Overload:Altseed2.CollisionInfo.CollisionType
+  name: CollisionType
+  nameWithType: CollisionInfo.CollisionType
+  fullName: Altseed2.CollisionInfo.CollisionType
+- uid: Altseed2.CollisionType
+  commentId: T:Altseed2.CollisionType
+  parent: Altseed2
+  name: CollisionType
+  nameWithType: CollisionType
+  fullName: Altseed2.CollisionType
+- uid: Altseed2.ColliderNode
+  commentId: T:Altseed2.ColliderNode
+  parent: Altseed2
+  name: ColliderNode
+  nameWithType: ColliderNode
+  fullName: Altseed2.ColliderNode
+- uid: Altseed2.CollisionInfo.SelfCollider*
+  commentId: Overload:Altseed2.CollisionInfo.SelfCollider
+  name: SelfCollider
+  nameWithType: CollisionInfo.SelfCollider
+  fullName: Altseed2.CollisionInfo.SelfCollider
+- uid: Altseed2.CollisionInfo.TheirsCollider*
+  commentId: Overload:Altseed2.CollisionInfo.TheirsCollider
+  name: TheirsCollider
+  nameWithType: CollisionInfo.TheirsCollider
+  fullName: Altseed2.CollisionInfo.TheirsCollider

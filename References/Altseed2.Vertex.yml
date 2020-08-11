@@ -1,0 +1,653 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.Vertex
+  commentId: T:Altseed2.Vertex
+  id: Vertex
+  parent: Altseed2
+  children:
+  - Altseed2.Vertex.#ctor(Altseed2.Vector3F,Altseed2.Color,Altseed2.Vector2F,Altseed2.Vector2F)
+  - Altseed2.Vertex.Color
+  - Altseed2.Vertex.Position
+  - Altseed2.Vertex.UV1
+  - Altseed2.Vertex.UV2
+  langs:
+  - csharp
+  - vb
+  name: Vertex
+  nameWithType: Vertex
+  fullName: Altseed2.Vertex
+  type: Struct
+  source:
+    remote:
+      path: Engine/CorePartial/Graphics.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Vertex
+    path: Src/Engine/CorePartial/Graphics.cs
+    startLine: 8
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n頂点の情報を格納する構造体\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct Vertex : IEquatable<Vertex>
+    content.vb: >-
+      <Serializable>
+
+      Public Structure Vertex
+          Implements IEquatable(Of Vertex)
+  implements:
+  - System.IEquatable{Altseed2.Vertex}
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: Altseed2.Vertex.Position
+  commentId: F:Altseed2.Vertex.Position
+  id: Position
+  parent: Altseed2.Vertex
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: Vertex.Position
+  fullName: Altseed2.Vertex.Position
+  type: Field
+  source:
+    remote:
+      path: Engine/CorePartial/Graphics.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Position
+    path: Src/Engine/CorePartial/Graphics.cs
+    startLine: 15
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n座標\n"
+  example: []
+  syntax:
+    content: public Vector3F Position
+    return:
+      type: Altseed2.Vector3F
+    content.vb: Public Position As Vector3F
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vertex.Color
+  commentId: F:Altseed2.Vertex.Color
+  id: Color
+  parent: Altseed2.Vertex
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: Vertex.Color
+  fullName: Altseed2.Vertex.Color
+  type: Field
+  source:
+    remote:
+      path: Engine/CorePartial/Graphics.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Color
+    path: Src/Engine/CorePartial/Graphics.cs
+    startLine: 19
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n色\n"
+  example: []
+  syntax:
+    content: public Color Color
+    return:
+      type: Altseed2.Color
+    content.vb: Public Color As Color
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vertex.UV1
+  commentId: F:Altseed2.Vertex.UV1
+  id: UV1
+  parent: Altseed2.Vertex
+  langs:
+  - csharp
+  - vb
+  name: UV1
+  nameWithType: Vertex.UV1
+  fullName: Altseed2.Vertex.UV1
+  type: Field
+  source:
+    remote:
+      path: Engine/CorePartial/Graphics.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: UV1
+    path: Src/Engine/CorePartial/Graphics.cs
+    startLine: 23
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nUV値1\n"
+  example: []
+  syntax:
+    content: public Vector2F UV1
+    return:
+      type: Altseed2.Vector2F
+    content.vb: Public UV1 As Vector2F
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vertex.UV2
+  commentId: F:Altseed2.Vertex.UV2
+  id: UV2
+  parent: Altseed2.Vertex
+  langs:
+  - csharp
+  - vb
+  name: UV2
+  nameWithType: Vertex.UV2
+  fullName: Altseed2.Vertex.UV2
+  type: Field
+  source:
+    remote:
+      path: Engine/CorePartial/Graphics.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: UV2
+    path: Src/Engine/CorePartial/Graphics.cs
+    startLine: 27
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nUV値2\n"
+  example: []
+  syntax:
+    content: public Vector2F UV2
+    return:
+      type: Altseed2.Vector2F
+    content.vb: Public UV2 As Vector2F
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Vertex.#ctor(Altseed2.Vector3F,Altseed2.Color,Altseed2.Vector2F,Altseed2.Vector2F)
+  commentId: M:Altseed2.Vertex.#ctor(Altseed2.Vector3F,Altseed2.Color,Altseed2.Vector2F,Altseed2.Vector2F)
+  id: '#ctor(Altseed2.Vector3F,Altseed2.Color,Altseed2.Vector2F,Altseed2.Vector2F)'
+  parent: Altseed2.Vertex
+  langs:
+  - csharp
+  - vb
+  name: Vertex(Vector3F, Color, Vector2F, Vector2F)
+  nameWithType: Vertex.Vertex(Vector3F, Color, Vector2F, Vector2F)
+  fullName: Altseed2.Vertex.Vertex(Altseed2.Vector3F, Altseed2.Color, Altseed2.Vector2F, Altseed2.Vector2F)
+  type: Constructor
+  source:
+    remote:
+      path: Engine/CorePartial/Graphics.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: .ctor
+    path: Src/Engine/CorePartial/Graphics.cs
+    startLine: 36
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n<xref href=\"Altseed2.Vertex\" data-throw-if-not-resolved=\"false\"></xref>の新しいインスタンスを生成します。\n"
+  example: []
+  syntax:
+    content: public Vertex(Vector3F position, Color color, Vector2F uv1, Vector2F uv2)
+    parameters:
+    - id: position
+      type: Altseed2.Vector3F
+      description: 座標
+    - id: color
+      type: Altseed2.Color
+      description: 色
+    - id: uv1
+      type: Altseed2.Vector2F
+      description: UV1
+    - id: uv2
+      type: Altseed2.Vector2F
+      description: UV2
+    content.vb: Public Sub New(position As Vector3F, color As Color, uv1 As Vector2F, uv2 As Vector2F)
+  overload: Altseed2.Vertex.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.IEquatable{Altseed2.Vertex}
+  commentId: T:System.IEquatable{Altseed2.Vertex}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Vertex>
+  nameWithType: IEquatable<Vertex>
+  fullName: System.IEquatable<Altseed2.Vertex>
+  nameWithType.vb: IEquatable(Of Vertex)
+  fullName.vb: System.IEquatable(Of Altseed2.Vertex)
+  name.vb: IEquatable(Of Vertex)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Altseed2.Vertex
+    name: Vertex
+    nameWithType: Vertex
+    fullName: Altseed2.Vertex
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Altseed2.Vertex
+    name: Vertex
+    nameWithType: Vertex
+    fullName: Altseed2.Vertex
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: ValueType.Equals(Object)
+  fullName: System.ValueType.Equals(System.Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Altseed2.Vector3F
+  commentId: T:Altseed2.Vector3F
+  parent: Altseed2
+  name: Vector3F
+  nameWithType: Vector3F
+  fullName: Altseed2.Vector3F
+- uid: Altseed2.Color
+  commentId: T:Altseed2.Color
+  parent: Altseed2
+  name: Color
+  nameWithType: Color
+  fullName: Altseed2.Color
+- uid: Altseed2.Vector2F
+  commentId: T:Altseed2.Vector2F
+  parent: Altseed2
+  name: Vector2F
+  nameWithType: Vector2F
+  fullName: Altseed2.Vector2F
+- uid: Altseed2.Vertex
+  commentId: T:Altseed2.Vertex
+  name: Vertex
+  nameWithType: Vertex
+  fullName: Altseed2.Vertex
+- uid: Altseed2.Vertex.#ctor*
+  commentId: Overload:Altseed2.Vertex.#ctor
+  name: Vertex
+  nameWithType: Vertex.Vertex
+  fullName: Altseed2.Vertex.Vertex

@@ -1,0 +1,1929 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.Engine
+  commentId: T:Altseed2.Engine
+  id: Engine
+  parent: Altseed2
+  children:
+  - Altseed2.Engine.AddNode(Altseed2.Node)
+  - Altseed2.Engine.ClearColor
+  - Altseed2.Engine.CurrentFPS
+  - Altseed2.Engine.DeltaSecond
+  - Altseed2.Engine.DoEvents
+  - Altseed2.Engine.File
+  - Altseed2.Engine.FindNodes``1
+  - Altseed2.Engine.FindNodes``1(System.Func{``0,System.Boolean})
+  - Altseed2.Engine.FramerateMode
+  - Altseed2.Engine.GetNodes
+  - Altseed2.Engine.Graphics
+  - Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)
+  - Altseed2.Engine.Joystick
+  - Altseed2.Engine.Keyboard
+  - Altseed2.Engine.Log
+  - Altseed2.Engine.MaxCameraGroupCount
+  - Altseed2.Engine.Mouse
+  - Altseed2.Engine.Pause(Altseed2.Node)
+  - Altseed2.Engine.RemoveNode(Altseed2.Node)
+  - Altseed2.Engine.Resume
+  - Altseed2.Engine.Sound
+  - Altseed2.Engine.TargetFPS
+  - Altseed2.Engine.Terminate
+  - Altseed2.Engine.Tool
+  - Altseed2.Engine.Update
+  - Altseed2.Engine.WindowSize
+  - Altseed2.Engine.WindowTitle
+  langs:
+  - csharp
+  - vb
+  name: Engine
+  nameWithType: Engine
+  fullName: Altseed2.Engine
+  type: Class
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Engine
+    path: Src/Engine/Engine.cs
+    startLine: 9
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nAltseed2 のエンジンを表します。\n"
+  example: []
+  syntax:
+    content: public static class Engine
+    content.vb: Public Module Engine
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Altseed2.Engine.MaxCameraGroupCount
+  commentId: F:Altseed2.Engine.MaxCameraGroupCount
+  id: MaxCameraGroupCount
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: MaxCameraGroupCount
+  nameWithType: Engine.MaxCameraGroupCount
+  fullName: Altseed2.Engine.MaxCameraGroupCount
+  type: Field
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: MaxCameraGroupCount
+    path: Src/Engine/Engine.cs
+    startLine: 14
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nカメラグループの個数の最大値\n"
+  example: []
+  syntax:
+    content: const int MaxCameraGroupCount = 64
+    return:
+      type: System.Int32
+    content.vb: Const MaxCameraGroupCount As Integer = 64
+  modifiers.csharp:
+  - const
+  modifiers.vb:
+  - Const
+- uid: Altseed2.Engine.ClearColor
+  commentId: P:Altseed2.Engine.ClearColor
+  id: ClearColor
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: ClearColor
+  nameWithType: Engine.ClearColor
+  fullName: Altseed2.Engine.ClearColor
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: ClearColor
+    path: Src/Engine/Engine.cs
+    startLine: 37
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nスクリーンのクリア色を取得または設定します。\n"
+  example: []
+  syntax:
+    content: public static Color ClearColor { get; set; }
+    parameters: []
+    return:
+      type: Altseed2.Color
+    content.vb: Public Shared Property ClearColor As Color
+  overload: Altseed2.Engine.ClearColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)
+  commentId: M:Altseed2.Engine.Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)
+  id: Initialize(System.String,System.Int32,System.Int32,Altseed2.Configuration)
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Initialize(String, Int32, Int32, Configuration)
+  nameWithType: Engine.Initialize(String, Int32, Int32, Configuration)
+  fullName: Altseed2.Engine.Initialize(System.String, System.Int32, System.Int32, Altseed2.Configuration)
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Initialize
+    path: Src/Engine/Engine.cs
+    startLine: 57
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nエンジンを初期化します。\n"
+  example: []
+  syntax:
+    content: public static bool Initialize(string title, int width, int height, Configuration config = null)
+    parameters:
+    - id: title
+      type: System.String
+      description: ウィンドウタイトル
+    - id: width
+      type: System.Int32
+      description: ウィンドウの横幅
+    - id: height
+      type: System.Int32
+      description: ウィンドウの縦幅
+    - id: config
+      type: Altseed2.Configuration
+      description: 設定
+    return:
+      type: System.Boolean
+      description: 初期化に成功したらtrue、それ以外でfalse
+    content.vb: Public Shared Function Initialize(title As String, width As Integer, height As Integer, config As Configuration = Nothing) As Boolean
+  overload: Altseed2.Engine.Initialize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.DoEvents
+  commentId: M:Altseed2.Engine.DoEvents
+  id: DoEvents
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: DoEvents()
+  nameWithType: Engine.DoEvents()
+  fullName: Altseed2.Engine.DoEvents()
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: DoEvents
+    path: Src/Engine/Engine.cs
+    startLine: 108
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nシステムイベントを処理します。\n"
+  example: []
+  syntax:
+    content: public static bool DoEvents()
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function DoEvents As Boolean
+  overload: Altseed2.Engine.DoEvents*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.Update
+  commentId: M:Altseed2.Engine.Update
+  id: Update
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Update()
+  nameWithType: Engine.Update()
+  fullName: Altseed2.Engine.Update()
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Update
+    path: Src/Engine/Engine.cs
+    startLine: 127
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nエンジンを更新します。\n"
+  example: []
+  syntax:
+    content: public static bool Update()
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function Update As Boolean
+  overload: Altseed2.Engine.Update*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.Terminate
+  commentId: M:Altseed2.Engine.Terminate
+  id: Terminate
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Terminate()
+  nameWithType: Engine.Terminate()
+  fullName: Altseed2.Engine.Terminate()
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Terminate
+    path: Src/Engine/Engine.cs
+    startLine: 226
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nエンジンを終了します。\n"
+  example: []
+  syntax:
+    content: public static void Terminate()
+    content.vb: Public Shared Sub Terminate
+  overload: Altseed2.Engine.Terminate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.Pause(Altseed2.Node)
+  commentId: M:Altseed2.Engine.Pause(Altseed2.Node)
+  id: Pause(Altseed2.Node)
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Pause(Node)
+  nameWithType: Engine.Pause(Node)
+  fullName: Altseed2.Engine.Pause(Altseed2.Node)
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Pause
+    path: Src/Engine/Engine.cs
+    startLine: 241
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nノードの更新を一時停止します。\n"
+  example: []
+  syntax:
+    content: public static void Pause(Node keepUpdated = null)
+    parameters:
+    - id: keepUpdated
+      type: Altseed2.Node
+      description: 一時停止の対象から除外するノード
+    content.vb: Public Shared Sub Pause(keepUpdated As Node = Nothing)
+  overload: Altseed2.Engine.Pause*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.Resume
+  commentId: M:Altseed2.Engine.Resume
+  id: Resume
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Resume()
+  nameWithType: Engine.Resume()
+  fullName: Altseed2.Engine.Resume()
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Resume
+    path: Src/Engine/Engine.cs
+    startLine: 249
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nノードの更新を再開します。\n"
+  example: []
+  syntax:
+    content: public static void Resume()
+    content.vb: Public Shared Sub Resume
+  overload: Altseed2.Engine.Resume*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.File
+  commentId: P:Altseed2.Engine.File
+  id: File
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: File
+  nameWithType: Engine.File
+  fullName: Altseed2.Engine.File
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: File
+    path: Src/Engine/Engine.cs
+    startLine: 264
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nファイルを管理するクラスを取得します。\n"
+  example: []
+  syntax:
+    content: public static File File { get; }
+    parameters: []
+    return:
+      type: Altseed2.File
+    content.vb: Public Shared ReadOnly Property File As File
+  overload: Altseed2.Engine.File*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: エンジンが初期されていなかったり終了していて操作を実行できなかった
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.Keyboard
+  commentId: P:Altseed2.Engine.Keyboard
+  id: Keyboard
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Keyboard
+  nameWithType: Engine.Keyboard
+  fullName: Altseed2.Engine.Keyboard
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Keyboard
+    path: Src/Engine/Engine.cs
+    startLine: 271
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nキーボードを管理するクラスを取得します。\n"
+  example: []
+  syntax:
+    content: public static Keyboard Keyboard { get; }
+    parameters: []
+    return:
+      type: Altseed2.Keyboard
+    content.vb: Public Shared ReadOnly Property Keyboard As Keyboard
+  overload: Altseed2.Engine.Keyboard*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: エンジンが初期されていなかったり終了していて操作を実行できなかった
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.Mouse
+  commentId: P:Altseed2.Engine.Mouse
+  id: Mouse
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Mouse
+  nameWithType: Engine.Mouse
+  fullName: Altseed2.Engine.Mouse
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Mouse
+    path: Src/Engine/Engine.cs
+    startLine: 278
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nマウスを管理するクラスを取得します。\n"
+  example: []
+  syntax:
+    content: public static Mouse Mouse { get; }
+    parameters: []
+    return:
+      type: Altseed2.Mouse
+    content.vb: Public Shared ReadOnly Property Mouse As Mouse
+  overload: Altseed2.Engine.Mouse*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: エンジンが初期されていなかったり終了していて操作を実行できなかった
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.Joystick
+  commentId: P:Altseed2.Engine.Joystick
+  id: Joystick
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Joystick
+  nameWithType: Engine.Joystick
+  fullName: Altseed2.Engine.Joystick
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Joystick
+    path: Src/Engine/Engine.cs
+    startLine: 285
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nジョイスティックを管理するクラスを取得します。\n"
+  example: []
+  syntax:
+    content: public static Joystick Joystick { get; }
+    parameters: []
+    return:
+      type: Altseed2.Joystick
+    content.vb: Public Shared ReadOnly Property Joystick As Joystick
+  overload: Altseed2.Engine.Joystick*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: エンジンが初期されていなかったり終了していて操作を実行できなかった
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.Graphics
+  commentId: P:Altseed2.Engine.Graphics
+  id: Graphics
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Graphics
+  nameWithType: Engine.Graphics
+  fullName: Altseed2.Engine.Graphics
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Graphics
+    path: Src/Engine/Engine.cs
+    startLine: 292
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nグラフィックのクラスを取得します。\n"
+  example: []
+  syntax:
+    content: public static Graphics Graphics { get; }
+    parameters: []
+    return:
+      type: Altseed2.Graphics
+    content.vb: Public Shared ReadOnly Property Graphics As Graphics
+  overload: Altseed2.Engine.Graphics*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: エンジンが初期されていなかったり終了していて操作を実行できなかった
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.Log
+  commentId: P:Altseed2.Engine.Log
+  id: Log
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Log
+  nameWithType: Engine.Log
+  fullName: Altseed2.Engine.Log
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Log
+    path: Src/Engine/Engine.cs
+    startLine: 299
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nログを管理するクラスを取得します。\n"
+  example: []
+  syntax:
+    content: public static Log Log { get; }
+    parameters: []
+    return:
+      type: Altseed2.Log
+    content.vb: Public Shared ReadOnly Property Log As Log
+  overload: Altseed2.Engine.Log*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: エンジンが初期されていなかったり終了していて操作を実行できなかった
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.Sound
+  commentId: P:Altseed2.Engine.Sound
+  id: Sound
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Sound
+  nameWithType: Engine.Sound
+  fullName: Altseed2.Engine.Sound
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Sound
+    path: Src/Engine/Engine.cs
+    startLine: 320
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n音を管理するクラスを取得します。\n"
+  example: []
+  syntax:
+    content: public static SoundMixer Sound { get; }
+    parameters: []
+    return:
+      type: Altseed2.SoundMixer
+    content.vb: Public Shared ReadOnly Property Sound As SoundMixer
+  overload: Altseed2.Engine.Sound*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: エンジンが初期されていなかったり終了していて操作を実行できなかった
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.Tool
+  commentId: P:Altseed2.Engine.Tool
+  id: Tool
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: Tool
+  nameWithType: Engine.Tool
+  fullName: Altseed2.Engine.Tool
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Tool
+    path: Src/Engine/Engine.cs
+    startLine: 341
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nツールを管理するクラスを取得します。\n"
+  example: []
+  syntax:
+    content: public static Tool Tool { get; }
+    parameters: []
+    return:
+      type: Altseed2.Tool
+    content.vb: Public Shared ReadOnly Property Tool As Tool
+  overload: Altseed2.Engine.Tool*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: エンジンが初期されていなかったり終了していて操作を実行できなかった
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.GetNodes
+  commentId: M:Altseed2.Engine.GetNodes
+  id: GetNodes
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: GetNodes()
+  nameWithType: Engine.GetNodes()
+  fullName: Altseed2.Engine.GetNodes()
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: GetNodes
+    path: Src/Engine/Engine.cs
+    startLine: 351
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nエンジンに登録されているノードの列挙子を返します。\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<Node> GetNodes()
+    return:
+      type: System.Collections.Generic.IEnumerable{Altseed2.Node}
+    content.vb: Public Shared Function GetNodes As IEnumerable(Of Node)
+  overload: Altseed2.Engine.GetNodes*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.AddNode(Altseed2.Node)
+  commentId: M:Altseed2.Engine.AddNode(Altseed2.Node)
+  id: AddNode(Altseed2.Node)
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: AddNode(Node)
+  nameWithType: Engine.AddNode(Node)
+  fullName: Altseed2.Engine.AddNode(Altseed2.Node)
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: AddNode
+    path: Src/Engine/Engine.cs
+    startLine: 357
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nエンジンにノードを追加します。\n"
+  example: []
+  syntax:
+    content: public static void AddNode(Node node)
+    parameters:
+    - id: node
+      type: Altseed2.Node
+      description: 追加されるノード
+    content.vb: Public Shared Sub AddNode(node As Node)
+  overload: Altseed2.Engine.AddNode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.RemoveNode(Altseed2.Node)
+  commentId: M:Altseed2.Engine.RemoveNode(Altseed2.Node)
+  id: RemoveNode(Altseed2.Node)
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: RemoveNode(Node)
+  nameWithType: Engine.RemoveNode(Node)
+  fullName: Altseed2.Engine.RemoveNode(Altseed2.Node)
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: RemoveNode
+    path: Src/Engine/Engine.cs
+    startLine: 366
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nエンジンからノードを削除します。\n"
+  example: []
+  syntax:
+    content: public static void RemoveNode(Node node)
+    parameters:
+    - id: node
+      type: Altseed2.Node
+      description: 削除するノード
+    content.vb: Public Shared Sub RemoveNode(node As Node)
+  overload: Altseed2.Engine.RemoveNode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.FindNodes``1
+  commentId: M:Altseed2.Engine.FindNodes``1
+  id: FindNodes``1
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: FindNodes<T>()
+  nameWithType: Engine.FindNodes<T>()
+  fullName: Altseed2.Engine.FindNodes<T>()
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: FindNodes
+    path: Src/Engine/Engine.cs
+    startLine: 375
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nエンジンに登録されている <code data-dev-comment-type=\"typeparamref\" class=\"typeparamref\">T</code> 型のノードを列挙します。\n"
+  example: []
+  syntax:
+    content: >-
+      public static IEnumerable<T> FindNodes<T>()
+          where T : Node
+    typeParameters:
+    - id: T
+      description: 検索するノードの型
+    return:
+      type: System.Collections.Generic.IEnumerable{{T}}
+    content.vb: Public Shared Function FindNodes(Of T As Node) As IEnumerable(Of T)
+  overload: Altseed2.Engine.FindNodes*
+  nameWithType.vb: Engine.FindNodes(Of T)()
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Altseed2.Engine.FindNodes(Of T)()
+  name.vb: FindNodes(Of T)()
+- uid: Altseed2.Engine.FindNodes``1(System.Func{``0,System.Boolean})
+  commentId: M:Altseed2.Engine.FindNodes``1(System.Func{``0,System.Boolean})
+  id: FindNodes``1(System.Func{``0,System.Boolean})
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: FindNodes<T>(Func<T, Boolean>)
+  nameWithType: Engine.FindNodes<T>(Func<T, Boolean>)
+  fullName: Altseed2.Engine.FindNodes<T>(System.Func<T, System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: FindNodes
+    path: Src/Engine/Engine.cs
+    startLine: 384
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nエンジンに登録されている <code data-dev-comment-type=\"typeparamref\" class=\"typeparamref\">T</code> 型のノードのうち <code data-dev-comment-type=\"paramref\" class=\"paramref\">condition</code> を満たすものを列挙します。\n"
+  example: []
+  syntax:
+    content: >-
+      public static IEnumerable<T> FindNodes<T>(Func<T, bool> condition)
+          where T : Node
+    parameters:
+    - id: condition
+      type: System.Func{{T},System.Boolean}
+      description: 検索するノードの条件
+    typeParameters:
+    - id: T
+      description: 検索するノードの型
+    return:
+      type: System.Collections.Generic.IEnumerable{{T}}
+    content.vb: Public Shared Function FindNodes(Of T As Node)(condition As Func(Of T, Boolean)) As IEnumerable(Of T)
+  overload: Altseed2.Engine.FindNodes*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code data-dev-comment-type="paramref" class="paramref">condition</code>がnull
+  nameWithType.vb: Engine.FindNodes(Of T)(Func(Of T, Boolean))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Altseed2.Engine.FindNodes(Of T)(System.Func(Of T, System.Boolean))
+  name.vb: FindNodes(Of T)(Func(Of T, Boolean))
+- uid: Altseed2.Engine.WindowSize
+  commentId: P:Altseed2.Engine.WindowSize
+  id: WindowSize
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: WindowSize
+  nameWithType: Engine.WindowSize
+  fullName: Altseed2.Engine.WindowSize
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: WindowSize
+    path: Src/Engine/Engine.cs
+    startLine: 436
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nウィンドウのサイズを取得または設定します。\n"
+  example: []
+  syntax:
+    content: public static Vector2I WindowSize { get; set; }
+    parameters: []
+    return:
+      type: Altseed2.Vector2I
+    content.vb: Public Shared Property WindowSize As Vector2I
+  overload: Altseed2.Engine.WindowSize*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.WindowTitle
+  commentId: P:Altseed2.Engine.WindowTitle
+  id: WindowTitle
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: WindowTitle
+  nameWithType: Engine.WindowTitle
+  fullName: Altseed2.Engine.WindowTitle
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: WindowTitle
+    path: Src/Engine/Engine.cs
+    startLine: 451
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nウインドウのタイトルを取得または設定します。\n"
+  example: []
+  syntax:
+    content: public static string WindowTitle { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared Property WindowTitle As String
+  overload: Altseed2.Engine.WindowTitle*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.FramerateMode
+  commentId: P:Altseed2.Engine.FramerateMode
+  id: FramerateMode
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: FramerateMode
+  nameWithType: Engine.FramerateMode
+  fullName: Altseed2.Engine.FramerateMode
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: FramerateMode
+    path: Src/Engine/Engine.cs
+    startLine: 465
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nフレームレートの制御方法を取得または設定します。\n"
+  example: []
+  syntax:
+    content: public static FramerateMode FramerateMode { get; set; }
+    parameters: []
+    return:
+      type: Altseed2.FramerateMode
+    content.vb: Public Shared Property FramerateMode As FramerateMode
+  overload: Altseed2.Engine.FramerateMode*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.TargetFPS
+  commentId: P:Altseed2.Engine.TargetFPS
+  id: TargetFPS
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: TargetFPS
+  nameWithType: Engine.TargetFPS
+  fullName: Altseed2.Engine.TargetFPS
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: TargetFPS
+    path: Src/Engine/Engine.cs
+    startLine: 474
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n目標フレームレートを取得または設定します。\n"
+  example: []
+  syntax:
+    content: public static float TargetFPS { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property TargetFPS As Single
+  overload: Altseed2.Engine.TargetFPS*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Engine.CurrentFPS
+  commentId: P:Altseed2.Engine.CurrentFPS
+  id: CurrentFPS
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: CurrentFPS
+  nameWithType: Engine.CurrentFPS
+  fullName: Altseed2.Engine.CurrentFPS
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: CurrentFPS
+    path: Src/Engine/Engine.cs
+    startLine: 483
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n現在のFPSを取得します。\n"
+  example: []
+  syntax:
+    content: public static float CurrentFPS { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared ReadOnly Property CurrentFPS As Single
+  overload: Altseed2.Engine.CurrentFPS*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Engine.DeltaSecond
+  commentId: P:Altseed2.Engine.DeltaSecond
+  id: DeltaSecond
+  parent: Altseed2.Engine
+  langs:
+  - csharp
+  - vb
+  name: DeltaSecond
+  nameWithType: Engine.DeltaSecond
+  fullName: Altseed2.Engine.DeltaSecond
+  type: Property
+  source:
+    remote:
+      path: Engine/Engine.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: DeltaSecond
+    path: Src/Engine/Engine.cs
+    startLine: 488
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n前のフレームからの経過時間(秒)を取得します。\n"
+  example: []
+  syntax:
+    content: public static float DeltaSecond { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared ReadOnly Property DeltaSecond As Single
+  overload: Altseed2.Engine.DeltaSecond*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Altseed2.Engine.ClearColor*
+  commentId: Overload:Altseed2.Engine.ClearColor
+  name: ClearColor
+  nameWithType: Engine.ClearColor
+  fullName: Altseed2.Engine.ClearColor
+- uid: Altseed2.Color
+  commentId: T:Altseed2.Color
+  parent: Altseed2
+  name: Color
+  nameWithType: Color
+  fullName: Altseed2.Color
+- uid: Altseed2.Engine.Initialize*
+  commentId: Overload:Altseed2.Engine.Initialize
+  name: Initialize
+  nameWithType: Engine.Initialize
+  fullName: Altseed2.Engine.Initialize
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Altseed2.Configuration
+  commentId: T:Altseed2.Configuration
+  parent: Altseed2
+  name: Configuration
+  nameWithType: Configuration
+  fullName: Altseed2.Configuration
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Altseed2.Engine.DoEvents*
+  commentId: Overload:Altseed2.Engine.DoEvents
+  name: DoEvents
+  nameWithType: Engine.DoEvents
+  fullName: Altseed2.Engine.DoEvents
+- uid: Altseed2.Engine.Update*
+  commentId: Overload:Altseed2.Engine.Update
+  name: Update
+  nameWithType: Engine.Update
+  fullName: Altseed2.Engine.Update
+- uid: Altseed2.Engine.Terminate*
+  commentId: Overload:Altseed2.Engine.Terminate
+  name: Terminate
+  nameWithType: Engine.Terminate
+  fullName: Altseed2.Engine.Terminate
+- uid: Altseed2.Engine.Pause*
+  commentId: Overload:Altseed2.Engine.Pause
+  name: Pause
+  nameWithType: Engine.Pause
+  fullName: Altseed2.Engine.Pause
+- uid: Altseed2.Node
+  commentId: T:Altseed2.Node
+  parent: Altseed2
+  name: Node
+  nameWithType: Node
+  fullName: Altseed2.Node
+- uid: Altseed2.Engine.Resume*
+  commentId: Overload:Altseed2.Engine.Resume
+  name: Resume
+  nameWithType: Engine.Resume
+  fullName: Altseed2.Engine.Resume
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+- uid: Altseed2.Engine.File*
+  commentId: Overload:Altseed2.Engine.File
+  name: File
+  nameWithType: Engine.File
+  fullName: Altseed2.Engine.File
+- uid: Altseed2.File
+  commentId: T:Altseed2.File
+  parent: Altseed2
+  name: File
+  nameWithType: File
+  fullName: Altseed2.File
+- uid: Altseed2.Engine.Keyboard*
+  commentId: Overload:Altseed2.Engine.Keyboard
+  name: Keyboard
+  nameWithType: Engine.Keyboard
+  fullName: Altseed2.Engine.Keyboard
+- uid: Altseed2.Keyboard
+  commentId: T:Altseed2.Keyboard
+  parent: Altseed2
+  name: Keyboard
+  nameWithType: Keyboard
+  fullName: Altseed2.Keyboard
+- uid: Altseed2.Engine.Mouse*
+  commentId: Overload:Altseed2.Engine.Mouse
+  name: Mouse
+  nameWithType: Engine.Mouse
+  fullName: Altseed2.Engine.Mouse
+- uid: Altseed2.Mouse
+  commentId: T:Altseed2.Mouse
+  parent: Altseed2
+  name: Mouse
+  nameWithType: Mouse
+  fullName: Altseed2.Mouse
+- uid: Altseed2.Engine.Joystick*
+  commentId: Overload:Altseed2.Engine.Joystick
+  name: Joystick
+  nameWithType: Engine.Joystick
+  fullName: Altseed2.Engine.Joystick
+- uid: Altseed2.Joystick
+  commentId: T:Altseed2.Joystick
+  parent: Altseed2
+  name: Joystick
+  nameWithType: Joystick
+  fullName: Altseed2.Joystick
+- uid: Altseed2.Engine.Graphics*
+  commentId: Overload:Altseed2.Engine.Graphics
+  name: Graphics
+  nameWithType: Engine.Graphics
+  fullName: Altseed2.Engine.Graphics
+- uid: Altseed2.Graphics
+  commentId: T:Altseed2.Graphics
+  parent: Altseed2
+  name: Graphics
+  nameWithType: Graphics
+  fullName: Altseed2.Graphics
+- uid: Altseed2.Engine.Log*
+  commentId: Overload:Altseed2.Engine.Log
+  name: Log
+  nameWithType: Engine.Log
+  fullName: Altseed2.Engine.Log
+- uid: Altseed2.Log
+  commentId: T:Altseed2.Log
+  parent: Altseed2
+  name: Log
+  nameWithType: Log
+  fullName: Altseed2.Log
+- uid: Altseed2.Engine.Sound*
+  commentId: Overload:Altseed2.Engine.Sound
+  name: Sound
+  nameWithType: Engine.Sound
+  fullName: Altseed2.Engine.Sound
+- uid: Altseed2.SoundMixer
+  commentId: T:Altseed2.SoundMixer
+  parent: Altseed2
+  name: SoundMixer
+  nameWithType: SoundMixer
+  fullName: Altseed2.SoundMixer
+- uid: Altseed2.Engine.Tool*
+  commentId: Overload:Altseed2.Engine.Tool
+  name: Tool
+  nameWithType: Engine.Tool
+  fullName: Altseed2.Engine.Tool
+- uid: Altseed2.Tool
+  commentId: T:Altseed2.Tool
+  parent: Altseed2
+  name: Tool
+  nameWithType: Tool
+  fullName: Altseed2.Tool
+- uid: Altseed2.Engine.GetNodes*
+  commentId: Overload:Altseed2.Engine.GetNodes
+  name: GetNodes
+  nameWithType: Engine.GetNodes
+  fullName: Altseed2.Engine.GetNodes
+- uid: System.Collections.Generic.IEnumerable{Altseed2.Node}
+  commentId: T:System.Collections.Generic.IEnumerable{Altseed2.Node}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Node>
+  nameWithType: IEnumerable<Node>
+  fullName: System.Collections.Generic.IEnumerable<Altseed2.Node>
+  nameWithType.vb: IEnumerable(Of Node)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Altseed2.Node)
+  name.vb: IEnumerable(Of Node)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Altseed2.Engine.AddNode*
+  commentId: Overload:Altseed2.Engine.AddNode
+  name: AddNode
+  nameWithType: Engine.AddNode
+  fullName: Altseed2.Engine.AddNode
+- uid: Altseed2.Engine.RemoveNode*
+  commentId: Overload:Altseed2.Engine.RemoveNode
+  name: RemoveNode
+  nameWithType: Engine.RemoveNode
+  fullName: Altseed2.Engine.RemoveNode
+- uid: Altseed2.Engine.FindNodes*
+  commentId: Overload:Altseed2.Engine.FindNodes
+  name: FindNodes
+  nameWithType: Engine.FindNodes
+  fullName: Altseed2.Engine.FindNodes
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.Func{{T},System.Boolean}
+  commentId: T:System.Func{``0,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  name: Func<T, Boolean>
+  nameWithType: Func<T, Boolean>
+  fullName: System.Func<T, System.Boolean>
+  nameWithType.vb: Func(Of T, Boolean)
+  fullName.vb: System.Func(Of T, System.Boolean)
+  name.vb: Func(Of T, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Engine.WindowSize*
+  commentId: Overload:Altseed2.Engine.WindowSize
+  name: WindowSize
+  nameWithType: Engine.WindowSize
+  fullName: Altseed2.Engine.WindowSize
+- uid: Altseed2.Vector2I
+  commentId: T:Altseed2.Vector2I
+  parent: Altseed2
+  name: Vector2I
+  nameWithType: Vector2I
+  fullName: Altseed2.Vector2I
+- uid: Altseed2.Engine.WindowTitle*
+  commentId: Overload:Altseed2.Engine.WindowTitle
+  name: WindowTitle
+  nameWithType: Engine.WindowTitle
+  fullName: Altseed2.Engine.WindowTitle
+- uid: Altseed2.Engine.FramerateMode*
+  commentId: Overload:Altseed2.Engine.FramerateMode
+  name: FramerateMode
+  nameWithType: Engine.FramerateMode
+  fullName: Altseed2.Engine.FramerateMode
+- uid: Altseed2.FramerateMode
+  commentId: T:Altseed2.FramerateMode
+  parent: Altseed2
+  name: FramerateMode
+  nameWithType: FramerateMode
+  fullName: Altseed2.FramerateMode
+- uid: Altseed2.Engine.TargetFPS*
+  commentId: Overload:Altseed2.Engine.TargetFPS
+  name: TargetFPS
+  nameWithType: Engine.TargetFPS
+  fullName: Altseed2.Engine.TargetFPS
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Altseed2.Engine.CurrentFPS*
+  commentId: Overload:Altseed2.Engine.CurrentFPS
+  name: CurrentFPS
+  nameWithType: Engine.CurrentFPS
+  fullName: Altseed2.Engine.CurrentFPS
+- uid: Altseed2.Engine.DeltaSecond*
+  commentId: Overload:Altseed2.Engine.DeltaSecond
+  name: DeltaSecond
+  nameWithType: Engine.DeltaSecond
+  fullName: Altseed2.Engine.DeltaSecond

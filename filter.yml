@@ -8,7 +8,7 @@ apiRules:
                   - System.ComponentModel.EditorBrowsableState.Never
 
     - exclude:
-          uidRegex: ^Altseed2\..*\.(S?_.*|[a-z].*|Finalize|GetInstance)
+          uidRegex: ^Altseed2\..*\.(S?_.*|[a-z].*|Finalize|GetInstance|Equals|GetHashCode)
     - exclude:
           uidRegex: ^Altseed2\..*Node\.Altseed2#I(Cullable)?Drawn#.*
     - exclude:
@@ -85,13 +85,15 @@ apiRules:
     - exclude:
           uidRegex: ^Altseed2\.CollisionManagerNode\.(AddCollider|EnumerateColliderNodes|RemoveCollider)
     - exclude:
-          uidRegex: ^Altseed2\.Engine\.(Config|Core|CullingSystem|Renderer|Resources|Window|DrawCameraGroup|(Unr|R)egister.*|Update.+)$
+          uidRegex: ^Altseed2\.Engine\.(Config|Core|Context|CullingSystem|Renderer|Resources|Window|DrawCameraGroup.*|(Unr|R)egister.*|Update.+)$
+    - exclude:
+          uidRegex: ^Altseed2\.Engine\.MathHelper\.(CalcTransform.*|GetMinMax.*)
     - exclude:
           uidRegex: ^Altseed2\.Matrix.*\.(Values|CalcTransform)
     - exclude:
           uidRegex: ^Altseed2\.Node\.(GetAncestorSpecificNode)
     - exclude:
-          uidRegex: ^Altseed2\.PolygonCollider(Node)?\.Vertexes
+          uidRegex: ^Altseed2\.PolygonCollider\.VertexesInternal
     - exclude:
           uidRegex: ^Altseed2\.Shader\.Compile.*
     - exclude:

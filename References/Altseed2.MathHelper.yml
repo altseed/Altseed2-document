@@ -1,0 +1,948 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.MathHelper
+  commentId: T:Altseed2.MathHelper
+  id: MathHelper
+  parent: Altseed2
+  children:
+  - Altseed2.MathHelper.CalcFromTransform2D(Altseed2.Matrix44F,Altseed2.Vector2F@,Altseed2.Vector2F@,System.Single@)
+  - Altseed2.MathHelper.CalcFromTransform3D(Altseed2.Matrix44F,Altseed2.Vector3F@,Altseed2.Vector3F@,Altseed2.Matrix44F@)
+  - Altseed2.MathHelper.CalcTransform(Altseed2.Vector2F,System.Single,Altseed2.Vector2F)
+  - Altseed2.MathHelper.Clamp(System.Int32,System.Int32,System.Int32)
+  - Altseed2.MathHelper.Clamp(System.Single,System.Single,System.Single)
+  - Altseed2.MathHelper.Clamp``1(``0,``0,``0)
+  - Altseed2.MathHelper.DegreeToRadian(System.Single)
+  - Altseed2.MathHelper.GetMinMax(Altseed2.Vector2F@,Altseed2.Vector2F@,Altseed2.Vector2F[])
+  - Altseed2.MathHelper.MatrixError
+  - Altseed2.MathHelper.PiPer180
+  - Altseed2.MathHelper.RadianToDegree(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: MathHelper
+  nameWithType: MathHelper
+  fullName: Altseed2.MathHelper
+  type: Class
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: MathHelper
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 7
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n数学の演算を補助するクラス\n"
+  example: []
+  syntax:
+    content: public static class MathHelper
+    content.vb: Public Module MathHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Altseed2.MathHelper.PiPer180
+  commentId: F:Altseed2.MathHelper.PiPer180
+  id: PiPer180
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: PiPer180
+  nameWithType: MathHelper.PiPer180
+  fullName: Altseed2.MathHelper.PiPer180
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: PiPer180
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 9
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: const float PiPer180 = 0.0174532924F
+    return:
+      type: System.Single
+    content.vb: Const PiPer180 As Single = 0.0174532924F
+  modifiers.csharp:
+  - const
+  modifiers.vb:
+  - Const
+- uid: Altseed2.MathHelper.MatrixError
+  commentId: F:Altseed2.MathHelper.MatrixError
+  id: MatrixError
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: MatrixError
+  nameWithType: MathHelper.MatrixError
+  fullName: Altseed2.MathHelper.MatrixError
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: MatrixError
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 14
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n行列で使用\n誤差\n"
+  example: []
+  syntax:
+    content: const float MatrixError = 1E-05F
+    return:
+      type: System.Single
+    content.vb: Const MatrixError As Single = 1E-05F
+  modifiers.csharp:
+  - const
+  modifiers.vb:
+  - Const
+- uid: Altseed2.MathHelper.Clamp(System.Int32,System.Int32,System.Int32)
+  commentId: M:Altseed2.MathHelper.Clamp(System.Int32,System.Int32,System.Int32)
+  id: Clamp(System.Int32,System.Int32,System.Int32)
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Clamp(Int32, Int32, Int32)
+  nameWithType: MathHelper.Clamp(Int32, Int32, Int32)
+  fullName: Altseed2.MathHelper.Clamp(System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Clamp
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 23
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n指定した値を決められた範囲に丸めます。\n"
+  example: []
+  syntax:
+    content: public static int Clamp(int v, int max, int min)
+    parameters:
+    - id: v
+      type: System.Int32
+      description: 丸める値
+    - id: max
+      type: System.Int32
+      description: 最大値
+    - id: min
+      type: System.Int32
+      description: 最小値
+    return:
+      type: System.Int32
+      description: <code data-dev-comment-type="paramref" class="paramref">v</code>が<code data-dev-comment-type="paramref" class="paramref">max</code>以上であったり<code data-dev-comment-type="paramref" class="paramref">min</code>未満であった場合はその値が，それ以外では<code data-dev-comment-type="paramref" class="paramref">v</code>そのまま返される
+    content.vb: Public Shared Function Clamp(v As Integer, max As Integer, min As Integer) As Integer
+  overload: Altseed2.MathHelper.Clamp*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.MathHelper.Clamp(System.Single,System.Single,System.Single)
+  commentId: M:Altseed2.MathHelper.Clamp(System.Single,System.Single,System.Single)
+  id: Clamp(System.Single,System.Single,System.Single)
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Clamp(Single, Single, Single)
+  nameWithType: MathHelper.Clamp(Single, Single, Single)
+  fullName: Altseed2.MathHelper.Clamp(System.Single, System.Single, System.Single)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Clamp
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 37
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n指定した値を決められた範囲に丸めます。\n"
+  example: []
+  syntax:
+    content: public static float Clamp(float v, float max, float min)
+    parameters:
+    - id: v
+      type: System.Single
+      description: 丸める値
+    - id: max
+      type: System.Single
+      description: 最大値
+    - id: min
+      type: System.Single
+      description: 最小値
+    return:
+      type: System.Single
+      description: <code data-dev-comment-type="paramref" class="paramref">v</code>が<code data-dev-comment-type="paramref" class="paramref">max</code>以上であったり<code data-dev-comment-type="paramref" class="paramref">min</code>未満であった場合はその値が，それ以外では<code data-dev-comment-type="paramref" class="paramref">v</code>そのまま返される
+    content.vb: Public Shared Function Clamp(v As Single, max As Single, min As Single) As Single
+  overload: Altseed2.MathHelper.Clamp*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.MathHelper.Clamp``1(``0,``0,``0)
+  commentId: M:Altseed2.MathHelper.Clamp``1(``0,``0,``0)
+  id: Clamp``1(``0,``0,``0)
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Clamp<T>(T, T, T)
+  nameWithType: MathHelper.Clamp<T>(T, T, T)
+  fullName: Altseed2.MathHelper.Clamp<T>(T, T, T)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Clamp
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 51
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n指定した値を決められた範囲に丸めます。\n"
+  example: []
+  syntax:
+    content: >-
+      public static T Clamp<T>(T v, T max, T min)
+          where T : IComparable<T>
+    parameters:
+    - id: v
+      type: '{T}'
+      description: 丸める値
+    - id: max
+      type: '{T}'
+      description: 最大値
+    - id: min
+      type: '{T}'
+      description: 最小値
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+      description: <code data-dev-comment-type="paramref" class="paramref">v</code>が<code data-dev-comment-type="paramref" class="paramref">max</code>以上であったり<code data-dev-comment-type="paramref" class="paramref">min</code>未満であった場合はその値が，それ以外では<code data-dev-comment-type="paramref" class="paramref">v</code>そのまま返される
+    content.vb: Public Shared Function Clamp(Of T As IComparable(Of T))(v As T, max As T, min As T) As T
+  overload: Altseed2.MathHelper.Clamp*
+  nameWithType.vb: MathHelper.Clamp(Of T)(T, T, T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Altseed2.MathHelper.Clamp(Of T)(T, T, T)
+  name.vb: Clamp(Of T)(T, T, T)
+- uid: Altseed2.MathHelper.DegreeToRadian(System.Single)
+  commentId: M:Altseed2.MathHelper.DegreeToRadian(System.Single)
+  id: DegreeToRadian(System.Single)
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: DegreeToRadian(Single)
+  nameWithType: MathHelper.DegreeToRadian(Single)
+  fullName: Altseed2.MathHelper.DegreeToRadian(System.Single)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: DegreeToRadian
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 63
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n度数法の値を弧度法の値に変換します。\n"
+  example: []
+  syntax:
+    content: public static float DegreeToRadian(float degree)
+    parameters:
+    - id: degree
+      type: System.Single
+      description: 変換したい度数法の値
+    return:
+      type: System.Single
+      description: 弧度法としての<code data-dev-comment-type="paramref" class="paramref">degree</code>の値
+    content.vb: Public Shared Function DegreeToRadian(degree As Single) As Single
+  overload: Altseed2.MathHelper.DegreeToRadian*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.MathHelper.RadianToDegree(System.Single)
+  commentId: M:Altseed2.MathHelper.RadianToDegree(System.Single)
+  id: RadianToDegree(System.Single)
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: RadianToDegree(Single)
+  nameWithType: MathHelper.RadianToDegree(Single)
+  fullName: Altseed2.MathHelper.RadianToDegree(System.Single)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: RadianToDegree
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 70
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n弧度法の値を度数法の値に変換します。\n"
+  example: []
+  syntax:
+    content: public static float RadianToDegree(float radian)
+    parameters:
+    - id: radian
+      type: System.Single
+      description: 変換したい弧度法の値
+    return:
+      type: System.Single
+      description: 度数法としての<code data-dev-comment-type="paramref" class="paramref">radian</code>の値
+    content.vb: Public Shared Function RadianToDegree(radian As Single) As Single
+  overload: Altseed2.MathHelper.RadianToDegree*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.MathHelper.CalcTransform(Altseed2.Vector2F,System.Single,Altseed2.Vector2F)
+  commentId: M:Altseed2.MathHelper.CalcTransform(Altseed2.Vector2F,System.Single,Altseed2.Vector2F)
+  id: CalcTransform(Altseed2.Vector2F,System.Single,Altseed2.Vector2F)
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: CalcTransform(Vector2F, Single, Vector2F)
+  nameWithType: MathHelper.CalcTransform(Vector2F, Single, Vector2F)
+  fullName: Altseed2.MathHelper.CalcTransform(Altseed2.Vector2F, System.Single, Altseed2.Vector2F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: CalcTransform
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 79
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nTransformを計算します。\n"
+  example: []
+  syntax:
+    content: static Matrix44F CalcTransform(Vector2F position, float angle, Vector2F scale)
+    parameters:
+    - id: position
+      type: Altseed2.Vector2F
+      description: 座標
+    - id: angle
+      type: System.Single
+      description: 角度（弧度法）
+    - id: scale
+      type: Altseed2.Vector2F
+      description: 拡大率
+    return:
+      type: Altseed2.Matrix44F
+      description: ''
+    content.vb: Shared Function CalcTransform(position As Vector2F, angle As Single, scale As Vector2F) As Matrix44F
+  overload: Altseed2.MathHelper.CalcTransform*
+  modifiers.csharp:
+  - static
+  modifiers.vb:
+  - Shared
+- uid: Altseed2.MathHelper.GetMinMax(Altseed2.Vector2F@,Altseed2.Vector2F@,Altseed2.Vector2F[])
+  commentId: M:Altseed2.MathHelper.GetMinMax(Altseed2.Vector2F@,Altseed2.Vector2F@,Altseed2.Vector2F[])
+  id: GetMinMax(Altseed2.Vector2F@,Altseed2.Vector2F@,Altseed2.Vector2F[])
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: GetMinMax(out Vector2F, out Vector2F, Vector2F[])
+  nameWithType: MathHelper.GetMinMax(out Vector2F, out Vector2F, Vector2F[])
+  fullName: Altseed2.MathHelper.GetMinMax(out Altseed2.Vector2F, out Altseed2.Vector2F, Altseed2.Vector2F[])
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: GetMinMax
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 160
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n左上と右下の座標を割り出します。\n"
+  example: []
+  syntax:
+    content: static void GetMinMax(out Vector2F min, out Vector2F max, params Vector2F[] positions)
+    parameters:
+    - id: min
+      type: Altseed2.Vector2F
+      description: 左上の座標
+    - id: max
+      type: Altseed2.Vector2F
+      description: 右下の座標
+    - id: positions
+      type: Altseed2.Vector2F[]
+      description: 計算する座標
+    content.vb: Shared Sub GetMinMax(ByRef min As Vector2F, ByRef max As Vector2F, ParamArray positions As Vector2F())
+  overload: Altseed2.MathHelper.GetMinMax*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code data-dev-comment-type="paramref" class="paramref">positions</code>がnull
+  nameWithType.vb: MathHelper.GetMinMax(ByRef Vector2F, ByRef Vector2F, Vector2F())
+  modifiers.csharp:
+  - static
+  modifiers.vb:
+  - Shared
+  fullName.vb: Altseed2.MathHelper.GetMinMax(ByRef Altseed2.Vector2F, ByRef Altseed2.Vector2F, Altseed2.Vector2F())
+  name.vb: GetMinMax(ByRef Vector2F, ByRef Vector2F, Vector2F())
+- uid: Altseed2.MathHelper.CalcFromTransform2D(Altseed2.Matrix44F,Altseed2.Vector2F@,Altseed2.Vector2F@,System.Single@)
+  commentId: M:Altseed2.MathHelper.CalcFromTransform2D(Altseed2.Matrix44F,Altseed2.Vector2F@,Altseed2.Vector2F@,System.Single@)
+  id: CalcFromTransform2D(Altseed2.Matrix44F,Altseed2.Vector2F@,Altseed2.Vector2F@,System.Single@)
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: CalcFromTransform2D(Matrix44F, out Vector2F, out Vector2F, out Single)
+  nameWithType: MathHelper.CalcFromTransform2D(Matrix44F, out Vector2F, out Vector2F, out Single)
+  fullName: Altseed2.MathHelper.CalcFromTransform2D(Altseed2.Matrix44F, out Altseed2.Vector2F, out Altseed2.Vector2F, out System.Single)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: CalcFromTransform2D
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 190
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n<xref href=\"Altseed2.Matrix44F\" data-throw-if-not-resolved=\"false\"></xref>から2次元座標，拡大率，角度を算出します。\n"
+  example: []
+  syntax:
+    content: public static void CalcFromTransform2D(Matrix44F transform, out Vector2F absolutePosition, out Vector2F scale, out float angle)
+    parameters:
+    - id: transform
+      type: Altseed2.Matrix44F
+      description: 計算元となる4x4行列
+    - id: absolutePosition
+      type: Altseed2.Vector2F
+      description: 出力される座標
+    - id: scale
+      type: Altseed2.Vector2F
+      description: 出力される拡大率
+    - id: angle
+      type: System.Single
+      description: 出力される角度(度数法)
+    content.vb: Public Shared Sub CalcFromTransform2D(transform As Matrix44F, ByRef absolutePosition As Vector2F, ByRef scale As Vector2F, ByRef angle As Single)
+  overload: Altseed2.MathHelper.CalcFromTransform2D*
+  nameWithType.vb: MathHelper.CalcFromTransform2D(Matrix44F, ByRef Vector2F, ByRef Vector2F, ByRef Single)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Altseed2.MathHelper.CalcFromTransform2D(Altseed2.Matrix44F, ByRef Altseed2.Vector2F, ByRef Altseed2.Vector2F, ByRef System.Single)
+  name.vb: CalcFromTransform2D(Matrix44F, ByRef Vector2F, ByRef Vector2F, ByRef Single)
+- uid: Altseed2.MathHelper.CalcFromTransform3D(Altseed2.Matrix44F,Altseed2.Vector3F@,Altseed2.Vector3F@,Altseed2.Matrix44F@)
+  commentId: M:Altseed2.MathHelper.CalcFromTransform3D(Altseed2.Matrix44F,Altseed2.Vector3F@,Altseed2.Vector3F@,Altseed2.Matrix44F@)
+  id: CalcFromTransform3D(Altseed2.Matrix44F,Altseed2.Vector3F@,Altseed2.Vector3F@,Altseed2.Matrix44F@)
+  parent: Altseed2.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: CalcFromTransform3D(Matrix44F, out Vector3F, out Vector3F, out Matrix44F)
+  nameWithType: MathHelper.CalcFromTransform3D(Matrix44F, out Vector3F, out Vector3F, out Matrix44F)
+  fullName: Altseed2.MathHelper.CalcFromTransform3D(Altseed2.Matrix44F, out Altseed2.Vector3F, out Altseed2.Vector3F, out Altseed2.Matrix44F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/MathHelper.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: CalcFromTransform3D
+    path: Src/Engine/Math/MathHelper.cs
+    startLine: 207
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n<xref href=\"Altseed2.Matrix44F\" data-throw-if-not-resolved=\"false\"></xref>から3次元座標，拡大率，角度を算出します。\n"
+  example: []
+  syntax:
+    content: public static void CalcFromTransform3D(Matrix44F transform, out Vector3F absolutePosition, out Vector3F scale, out Matrix44F rotation)
+    parameters:
+    - id: transform
+      type: Altseed2.Matrix44F
+      description: 計算元となる4x4行列
+    - id: absolutePosition
+      type: Altseed2.Vector3F
+      description: 出力される座標
+    - id: scale
+      type: Altseed2.Vector3F
+      description: 出力される拡大率
+    - id: rotation
+      type: Altseed2.Matrix44F
+      description: 出力される回転行列
+    content.vb: Public Shared Sub CalcFromTransform3D(transform As Matrix44F, ByRef absolutePosition As Vector3F, ByRef scale As Vector3F, ByRef rotation As Matrix44F)
+  overload: Altseed2.MathHelper.CalcFromTransform3D*
+  nameWithType.vb: MathHelper.CalcFromTransform3D(Matrix44F, ByRef Vector3F, ByRef Vector3F, ByRef Matrix44F)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Altseed2.MathHelper.CalcFromTransform3D(Altseed2.Matrix44F, ByRef Altseed2.Vector3F, ByRef Altseed2.Vector3F, ByRef Altseed2.Matrix44F)
+  name.vb: CalcFromTransform3D(Matrix44F, ByRef Vector3F, ByRef Vector3F, ByRef Matrix44F)
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Altseed2.MathHelper.Clamp*
+  commentId: Overload:Altseed2.MathHelper.Clamp
+  name: Clamp
+  nameWithType: MathHelper.Clamp
+  fullName: Altseed2.MathHelper.Clamp
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Altseed2.MathHelper.DegreeToRadian*
+  commentId: Overload:Altseed2.MathHelper.DegreeToRadian
+  name: DegreeToRadian
+  nameWithType: MathHelper.DegreeToRadian
+  fullName: Altseed2.MathHelper.DegreeToRadian
+- uid: Altseed2.MathHelper.RadianToDegree*
+  commentId: Overload:Altseed2.MathHelper.RadianToDegree
+  name: RadianToDegree
+  nameWithType: MathHelper.RadianToDegree
+  fullName: Altseed2.MathHelper.RadianToDegree
+- uid: Altseed2.MathHelper.CalcTransform*
+  commentId: Overload:Altseed2.MathHelper.CalcTransform
+  name: CalcTransform
+  nameWithType: MathHelper.CalcTransform
+  fullName: Altseed2.MathHelper.CalcTransform
+- uid: Altseed2.Vector2F
+  commentId: T:Altseed2.Vector2F
+  parent: Altseed2
+  name: Vector2F
+  nameWithType: Vector2F
+  fullName: Altseed2.Vector2F
+- uid: Altseed2.Matrix44F
+  commentId: T:Altseed2.Matrix44F
+  parent: Altseed2
+  name: Matrix44F
+  nameWithType: Matrix44F
+  fullName: Altseed2.Matrix44F
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: Altseed2.MathHelper.GetMinMax*
+  commentId: Overload:Altseed2.MathHelper.GetMinMax
+  name: GetMinMax
+  nameWithType: MathHelper.GetMinMax
+  fullName: Altseed2.MathHelper.GetMinMax
+- uid: Altseed2.Vector2F[]
+  isExternal: true
+  name: Vector2F[]
+  nameWithType: Vector2F[]
+  fullName: Altseed2.Vector2F[]
+  nameWithType.vb: Vector2F()
+  fullName.vb: Altseed2.Vector2F()
+  name.vb: Vector2F()
+  spec.csharp:
+  - uid: Altseed2.Vector2F
+    name: Vector2F
+    nameWithType: Vector2F
+    fullName: Altseed2.Vector2F
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Altseed2.Vector2F
+    name: Vector2F
+    nameWithType: Vector2F
+    fullName: Altseed2.Vector2F
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Altseed2.MathHelper.CalcFromTransform2D*
+  commentId: Overload:Altseed2.MathHelper.CalcFromTransform2D
+  name: CalcFromTransform2D
+  nameWithType: MathHelper.CalcFromTransform2D
+  fullName: Altseed2.MathHelper.CalcFromTransform2D
+- uid: Altseed2.MathHelper.CalcFromTransform3D*
+  commentId: Overload:Altseed2.MathHelper.CalcFromTransform3D
+  name: CalcFromTransform3D
+  nameWithType: MathHelper.CalcFromTransform3D
+  fullName: Altseed2.MathHelper.CalcFromTransform3D
+- uid: Altseed2.Vector3F
+  commentId: T:Altseed2.Vector3F
+  parent: Altseed2
+  name: Vector3F
+  nameWithType: Vector3F
+  fullName: Altseed2.Vector3F

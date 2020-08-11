@@ -1,0 +1,960 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.Matrix33F
+  commentId: T:Altseed2.Matrix33F
+  id: Matrix33F
+  parent: Altseed2
+  children:
+  - Altseed2.Matrix33F.Clone
+  - Altseed2.Matrix33F.GetRotation(System.Single)
+  - Altseed2.Matrix33F.GetScale(Altseed2.Vector2F)
+  - Altseed2.Matrix33F.GetTranslation(Altseed2.Vector2F)
+  - Altseed2.Matrix33F.Identity
+  - Altseed2.Matrix33F.Inversion
+  - Altseed2.Matrix33F.Item(System.Int32,System.Int32)
+  - Altseed2.Matrix33F.Transform2D(Altseed2.Vector2F)
+  - Altseed2.Matrix33F.Transform3D(Altseed2.Vector3F)
+  - Altseed2.Matrix33F.TransPosition
+  langs:
+  - csharp
+  - vb
+  name: Matrix33F
+  nameWithType: Matrix33F
+  fullName: Altseed2.Matrix33F
+  type: Struct
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Matrix33F
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 9
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n<xref href=\"System.Single\" data-throw-if-not-resolved=\"false\"></xref>型の3x3行列を表す構造体\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct Matrix33F : ICloneable, IEquatable<Matrix33F>, ISerializable
+    content.vb: >-
+      <Serializable>
+
+      Public Structure Matrix33F
+          Implements ICloneable, IEquatable(Of Matrix33F), ISerializable
+  implements:
+  - System.ICloneable
+  - System.IEquatable{Altseed2.Matrix33F}
+  - System.Runtime.Serialization.ISerializable
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: Altseed2.Matrix33F.Identity
+  commentId: P:Altseed2.Matrix33F.Identity
+  id: Identity
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: Identity
+  nameWithType: Matrix33F.Identity
+  fullName: Altseed2.Matrix33F.Identity
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Identity
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 21
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n単位行列を取得します。\n"
+  example: []
+  syntax:
+    content: public static Matrix33F Identity { get; }
+    parameters: []
+    return:
+      type: Altseed2.Matrix33F
+    content.vb: Public Shared ReadOnly Property Identity As Matrix33F
+  overload: Altseed2.Matrix33F.Identity*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Altseed2.Matrix33F.Inversion
+  commentId: P:Altseed2.Matrix33F.Inversion
+  id: Inversion
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: Inversion
+  nameWithType: Matrix33F.Inversion
+  fullName: Altseed2.Matrix33F.Inversion
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Inversion
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 39
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n逆行列を取得します。\n"
+  example: []
+  syntax:
+    content: public Matrix33F Inversion { get; }
+    parameters: []
+    return:
+      type: Altseed2.Matrix33F
+    content.vb: Public ReadOnly Property Inversion As Matrix33F
+  overload: Altseed2.Matrix33F.Inversion*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Altseed2.Matrix33F.TransPosition
+  commentId: P:Altseed2.Matrix33F.TransPosition
+  id: TransPosition
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: TransPosition
+  nameWithType: Matrix33F.TransPosition
+  fullName: Altseed2.Matrix33F.TransPosition
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: TransPosition
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 91
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n転置行列を取得します。\n"
+  example: []
+  syntax:
+    content: public Matrix33F TransPosition { get; }
+    parameters: []
+    return:
+      type: Altseed2.Matrix33F
+    content.vb: Public ReadOnly Property TransPosition As Matrix33F
+  overload: Altseed2.Matrix33F.TransPosition*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Altseed2.Matrix33F.Item(System.Int32,System.Int32)
+  commentId: P:Altseed2.Matrix33F.Item(System.Int32,System.Int32)
+  id: Item(System.Int32,System.Int32)
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: Item[Int32, Int32]
+  nameWithType: Matrix33F.Item[Int32, Int32]
+  fullName: Altseed2.Matrix33F.Item[System.Int32, System.Int32]
+  type: Property
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: this[]
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 116
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n指定した位置の値を取得または設定します。\n"
+  example: []
+  syntax:
+    content: public float this[int x, int y] { get; set; }
+    parameters:
+    - id: x
+      type: System.Int32
+      description: 取得する要素の位置
+    - id: y
+      type: System.Int32
+      description: 取得する要素の位置
+    return:
+      type: System.Single
+      description: <code data-dev-comment-type="paramref" class="paramref">x</code>と<code data-dev-comment-type="paramref" class="paramref">y</code>に対応する値
+    content.vb: Public Property Item(x As Integer, y As Integer) As Single
+  overload: Altseed2.Matrix33F.Item*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code data-dev-comment-type="paramref" class="paramref">x</code>または<code data-dev-comment-type="paramref" class="paramref">y</code>が0未満または3以上
+  nameWithType.vb: Matrix33F.Item(Int32, Int32)
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Altseed2.Matrix33F.Item(System.Int32, System.Int32)
+  name.vb: Item(Int32, Int32)
+- uid: Altseed2.Matrix33F.GetRotation(System.Single)
+  commentId: M:Altseed2.Matrix33F.GetRotation(System.Single)
+  id: GetRotation(System.Single)
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: GetRotation(Single)
+  nameWithType: Matrix33F.GetRotation(Single)
+  fullName: Altseed2.Matrix33F.GetRotation(System.Single)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: GetRotation
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 137
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n指定した角度分の回転を表す行列を取得します。\n"
+  example: []
+  syntax:
+    content: public static Matrix33F GetRotation(float radian)
+    parameters:
+    - id: radian
+      type: System.Single
+      description: 回転させる角度(弧度法)
+    return:
+      type: Altseed2.Matrix33F
+      description: <code data-dev-comment-type="paramref" class="paramref">radian</code>の回転分を表す行列
+    content.vb: Public Shared Function GetRotation(radian As Single) As Matrix33F
+  overload: Altseed2.Matrix33F.GetRotation*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Matrix33F.GetScale(Altseed2.Vector2F)
+  commentId: M:Altseed2.Matrix33F.GetScale(Altseed2.Vector2F)
+  id: GetScale(Altseed2.Vector2F)
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: GetScale(Vector2F)
+  nameWithType: Matrix33F.GetScale(Vector2F)
+  fullName: Altseed2.Matrix33F.GetScale(Altseed2.Vector2F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: GetScale
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 156
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n2D座標の拡大率を表す行列を取得します。\n"
+  example: []
+  syntax:
+    content: public static Matrix33F GetScale(Vector2F scale)
+    parameters:
+    - id: scale
+      type: Altseed2.Vector2F
+      description: 設定する拡大率
+    return:
+      type: Altseed2.Matrix33F
+      description: <code data-dev-comment-type="paramref" class="paramref">scale</code>分の拡大/縮小を表す行列
+    content.vb: Public Shared Function GetScale(scale As Vector2F) As Matrix33F
+  overload: Altseed2.Matrix33F.GetScale*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Matrix33F.GetTranslation(Altseed2.Vector2F)
+  commentId: M:Altseed2.Matrix33F.GetTranslation(Altseed2.Vector2F)
+  id: GetTranslation(Altseed2.Vector2F)
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: GetTranslation(Vector2F)
+  nameWithType: Matrix33F.GetTranslation(Vector2F)
+  fullName: Altseed2.Matrix33F.GetTranslation(Altseed2.Vector2F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: GetTranslation
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 170
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n2D座標の平行移動分を表す行列を取得します。\n"
+  example: []
+  syntax:
+    content: public static Matrix33F GetTranslation(Vector2F position)
+    parameters:
+    - id: position
+      type: Altseed2.Vector2F
+      description: 平行移動する座標
+    return:
+      type: Altseed2.Matrix33F
+      description: <code data-dev-comment-type="paramref" class="paramref">position</code>分の平行移動を表す行列
+    content.vb: Public Shared Function GetTranslation(position As Vector2F) As Matrix33F
+  overload: Altseed2.Matrix33F.GetTranslation*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Altseed2.Matrix33F.Transform2D(Altseed2.Vector2F)
+  commentId: M:Altseed2.Matrix33F.Transform2D(Altseed2.Vector2F)
+  id: Transform2D(Altseed2.Vector2F)
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: Transform2D(Vector2F)
+  nameWithType: Matrix33F.Transform2D(Vector2F)
+  fullName: Altseed2.Matrix33F.Transform2D(Altseed2.Vector2F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Transform2D
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 184
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n行列でベクトルを変形させる。\n"
+  example: []
+  syntax:
+    content: public Vector2F Transform2D(Vector2F in_)
+    parameters:
+    - id: in_
+      type: Altseed2.Vector2F
+      description: 変形前ベクトル
+    return:
+      type: Altseed2.Vector2F
+      description: 変形後ベクトル
+    content.vb: Public Function Transform2D(in_ As Vector2F) As Vector2F
+  overload: Altseed2.Matrix33F.Transform2D*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Matrix33F.Transform3D(Altseed2.Vector3F)
+  commentId: M:Altseed2.Matrix33F.Transform3D(Altseed2.Vector3F)
+  id: Transform3D(Altseed2.Vector3F)
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: Transform3D(Vector3F)
+  nameWithType: Matrix33F.Transform3D(Vector3F)
+  fullName: Altseed2.Matrix33F.Transform3D(Altseed2.Vector3F)
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Transform3D
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 204
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n行列でベクトルを変形させる。\n"
+  example: []
+  syntax:
+    content: public Vector3F Transform3D(Vector3F in_)
+    parameters:
+    - id: in_
+      type: Altseed2.Vector3F
+      description: 変形前ベクトル
+    return:
+      type: Altseed2.Vector3F
+      description: 変形後ベクトル
+    content.vb: Public Function Transform3D(in_ As Vector3F) As Vector3F
+  overload: Altseed2.Matrix33F.Transform3D*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.Matrix33F.Clone
+  commentId: M:Altseed2.Matrix33F.Clone
+  id: Clone
+  parent: Altseed2.Matrix33F
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Matrix33F.Clone()
+  fullName: Altseed2.Matrix33F.Clone()
+  type: Method
+  source:
+    remote:
+      path: Engine/Math/Matrix33F.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Clone
+    path: Src/Engine/Math/Matrix33F.cs
+    startLine: 365
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nこのインスタンスの複製を作成します。\n"
+  example: []
+  syntax:
+    content: public Matrix33F Clone()
+    return:
+      type: Altseed2.Matrix33F
+      description: このインスタンスの複製
+    content.vb: Public Function Clone As Matrix33F
+  overload: Altseed2.Matrix33F.Clone*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: System.IEquatable{Altseed2.Matrix33F}
+  commentId: T:System.IEquatable{Altseed2.Matrix33F}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Matrix33F>
+  nameWithType: IEquatable<Matrix33F>
+  fullName: System.IEquatable<Altseed2.Matrix33F>
+  nameWithType.vb: IEquatable(Of Matrix33F)
+  fullName.vb: System.IEquatable(Of Altseed2.Matrix33F)
+  name.vb: IEquatable(Of Matrix33F)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Altseed2.Matrix33F
+    name: Matrix33F
+    nameWithType: Matrix33F
+    fullName: Altseed2.Matrix33F
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Altseed2.Matrix33F
+    name: Matrix33F
+    nameWithType: Matrix33F
+    fullName: Altseed2.Matrix33F
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Runtime.Serialization.ISerializable
+  commentId: T:System.Runtime.Serialization.ISerializable
+  parent: System.Runtime.Serialization
+  isExternal: true
+  name: ISerializable
+  nameWithType: ISerializable
+  fullName: System.Runtime.Serialization.ISerializable
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: ValueType.Equals(Object)
+  fullName: System.ValueType.Equals(System.Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Runtime.Serialization
+  commentId: N:System.Runtime.Serialization
+  isExternal: true
+  name: System.Runtime.Serialization
+  nameWithType: System.Runtime.Serialization
+  fullName: System.Runtime.Serialization
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Altseed2.Matrix33F.Identity*
+  commentId: Overload:Altseed2.Matrix33F.Identity
+  name: Identity
+  nameWithType: Matrix33F.Identity
+  fullName: Altseed2.Matrix33F.Identity
+- uid: Altseed2.Matrix33F
+  commentId: T:Altseed2.Matrix33F
+  parent: Altseed2
+  name: Matrix33F
+  nameWithType: Matrix33F
+  fullName: Altseed2.Matrix33F
+- uid: Altseed2.Matrix33F.Inversion*
+  commentId: Overload:Altseed2.Matrix33F.Inversion
+  name: Inversion
+  nameWithType: Matrix33F.Inversion
+  fullName: Altseed2.Matrix33F.Inversion
+- uid: Altseed2.Matrix33F.TransPosition*
+  commentId: Overload:Altseed2.Matrix33F.TransPosition
+  name: TransPosition
+  nameWithType: Matrix33F.TransPosition
+  fullName: Altseed2.Matrix33F.TransPosition
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+- uid: Altseed2.Matrix33F.Item*
+  commentId: Overload:Altseed2.Matrix33F.Item
+  name: Item
+  nameWithType: Matrix33F.Item
+  fullName: Altseed2.Matrix33F.Item
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Altseed2.Matrix33F.GetRotation*
+  commentId: Overload:Altseed2.Matrix33F.GetRotation
+  name: GetRotation
+  nameWithType: Matrix33F.GetRotation
+  fullName: Altseed2.Matrix33F.GetRotation
+- uid: Altseed2.Matrix33F.GetScale*
+  commentId: Overload:Altseed2.Matrix33F.GetScale
+  name: GetScale
+  nameWithType: Matrix33F.GetScale
+  fullName: Altseed2.Matrix33F.GetScale
+- uid: Altseed2.Vector2F
+  commentId: T:Altseed2.Vector2F
+  parent: Altseed2
+  name: Vector2F
+  nameWithType: Vector2F
+  fullName: Altseed2.Vector2F
+- uid: Altseed2.Matrix33F.GetTranslation*
+  commentId: Overload:Altseed2.Matrix33F.GetTranslation
+  name: GetTranslation
+  nameWithType: Matrix33F.GetTranslation
+  fullName: Altseed2.Matrix33F.GetTranslation
+- uid: Altseed2.Matrix33F.Transform2D*
+  commentId: Overload:Altseed2.Matrix33F.Transform2D
+  name: Transform2D
+  nameWithType: Matrix33F.Transform2D
+  fullName: Altseed2.Matrix33F.Transform2D
+- uid: Altseed2.Matrix33F.Transform3D*
+  commentId: Overload:Altseed2.Matrix33F.Transform3D
+  name: Transform3D
+  nameWithType: Matrix33F.Transform3D
+  fullName: Altseed2.Matrix33F.Transform3D
+- uid: Altseed2.Vector3F
+  commentId: T:Altseed2.Vector3F
+  parent: Altseed2
+  name: Vector3F
+  nameWithType: Vector3F
+  fullName: Altseed2.Vector3F
+- uid: Altseed2.Matrix33F.Clone*
+  commentId: Overload:Altseed2.Matrix33F.Clone
+  name: Clone
+  nameWithType: Matrix33F.Clone
+  fullName: Altseed2.Matrix33F.Clone

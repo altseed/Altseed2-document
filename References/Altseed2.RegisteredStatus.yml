@@ -1,0 +1,198 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.RegisteredStatus
+  commentId: T:Altseed2.RegisteredStatus
+  id: RegisteredStatus
+  parent: Altseed2
+  children:
+  - Altseed2.RegisteredStatus.Free
+  - Altseed2.RegisteredStatus.Registered
+  - Altseed2.RegisteredStatus.WaitingAdded
+  - Altseed2.RegisteredStatus.WaitingRemoved
+  langs:
+  - csharp
+  - vb
+  name: RegisteredStatus
+  nameWithType: RegisteredStatus
+  fullName: Altseed2.RegisteredStatus
+  type: Enum
+  source:
+    remote:
+      path: Engine/Collection/Registerable.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: RegisteredStatus
+    path: Src/Engine/Collection/Registerable.cs
+    startLine: 7
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n登録状況を表します。\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public enum RegisteredStatus
+    content.vb: >-
+      <Serializable>
+
+      Public Enum RegisteredStatus
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Altseed2.RegisteredStatus.Free
+  commentId: F:Altseed2.RegisteredStatus.Free
+  id: Free
+  parent: Altseed2.RegisteredStatus
+  langs:
+  - csharp
+  - vb
+  name: Free
+  nameWithType: RegisteredStatus.Free
+  fullName: Altseed2.RegisteredStatus.Free
+  type: Field
+  source:
+    remote:
+      path: Engine/Collection/Registerable.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Free
+    path: Src/Engine/Collection/Registerable.cs
+    startLine: 13
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n所属なし\n"
+  example: []
+  syntax:
+    content: Free = 0
+    return:
+      type: Altseed2.RegisteredStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.RegisteredStatus.WaitingAdded
+  commentId: F:Altseed2.RegisteredStatus.WaitingAdded
+  id: WaitingAdded
+  parent: Altseed2.RegisteredStatus
+  langs:
+  - csharp
+  - vb
+  name: WaitingAdded
+  nameWithType: RegisteredStatus.WaitingAdded
+  fullName: Altseed2.RegisteredStatus.WaitingAdded
+  type: Field
+  source:
+    remote:
+      path: Engine/Collection/Registerable.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: WaitingAdded
+    path: Src/Engine/Collection/Registerable.cs
+    startLine: 18
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n追加待ち\n"
+  example: []
+  syntax:
+    content: WaitingAdded = 1
+    return:
+      type: Altseed2.RegisteredStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.RegisteredStatus.Registered
+  commentId: F:Altseed2.RegisteredStatus.Registered
+  id: Registered
+  parent: Altseed2.RegisteredStatus
+  langs:
+  - csharp
+  - vb
+  name: Registered
+  nameWithType: RegisteredStatus.Registered
+  fullName: Altseed2.RegisteredStatus.Registered
+  type: Field
+  source:
+    remote:
+      path: Engine/Collection/Registerable.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Registered
+    path: Src/Engine/Collection/Registerable.cs
+    startLine: 23
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n所属有り\n"
+  example: []
+  syntax:
+    content: Registered = 2
+    return:
+      type: Altseed2.RegisteredStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.RegisteredStatus.WaitingRemoved
+  commentId: F:Altseed2.RegisteredStatus.WaitingRemoved
+  id: WaitingRemoved
+  parent: Altseed2.RegisteredStatus
+  langs:
+  - csharp
+  - vb
+  name: WaitingRemoved
+  nameWithType: RegisteredStatus.WaitingRemoved
+  fullName: Altseed2.RegisteredStatus.WaitingRemoved
+  type: Field
+  source:
+    remote:
+      path: Engine/Collection/Registerable.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: WaitingRemoved
+    path: Src/Engine/Collection/Registerable.cs
+    startLine: 28
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n削除待ち\n"
+  example: []
+  syntax:
+    content: WaitingRemoved = 3
+    return:
+      type: Altseed2.RegisteredStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: Altseed2.RegisteredStatus
+  commentId: T:Altseed2.RegisteredStatus
+  parent: Altseed2
+  name: RegisteredStatus
+  nameWithType: RegisteredStatus
+  fullName: Altseed2.RegisteredStatus

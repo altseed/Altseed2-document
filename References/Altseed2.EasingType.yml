@@ -1,0 +1,1081 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.EasingType
+  commentId: T:Altseed2.EasingType
+  id: EasingType
+  parent: Altseed2
+  children:
+  - Altseed2.EasingType.InBack
+  - Altseed2.EasingType.InBounce
+  - Altseed2.EasingType.InCirc
+  - Altseed2.EasingType.InCubic
+  - Altseed2.EasingType.InElastic
+  - Altseed2.EasingType.InExpo
+  - Altseed2.EasingType.InOutBack
+  - Altseed2.EasingType.InOutBounce
+  - Altseed2.EasingType.InOutCirc
+  - Altseed2.EasingType.InOutCubic
+  - Altseed2.EasingType.InOutElastic
+  - Altseed2.EasingType.InOutExpo
+  - Altseed2.EasingType.InOutQuad
+  - Altseed2.EasingType.InOutQuart
+  - Altseed2.EasingType.InOutQuint
+  - Altseed2.EasingType.InOutSine
+  - Altseed2.EasingType.InQuad
+  - Altseed2.EasingType.InQuart
+  - Altseed2.EasingType.InQuint
+  - Altseed2.EasingType.InSine
+  - Altseed2.EasingType.Linear
+  - Altseed2.EasingType.OutBack
+  - Altseed2.EasingType.OutBounce
+  - Altseed2.EasingType.OutCirc
+  - Altseed2.EasingType.OutCubic
+  - Altseed2.EasingType.OutElastic
+  - Altseed2.EasingType.OutExpo
+  - Altseed2.EasingType.OutQuad
+  - Altseed2.EasingType.OutQuart
+  - Altseed2.EasingType.OutQuint
+  - Altseed2.EasingType.OutSine
+  langs:
+  - csharp
+  - vb
+  name: EasingType
+  nameWithType: EasingType
+  fullName: Altseed2.EasingType
+  type: Enum
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: EasingType
+    path: Src/Engine/Math/Easing.cs
+    startLine: 30
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\nイージングの種類を表します。\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public enum EasingType
+    content.vb: >-
+      <Serializable>
+
+      Public Enum EasingType
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Altseed2.EasingType.Linear
+  commentId: F:Altseed2.EasingType.Linear
+  id: Linear
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: Linear
+  nameWithType: EasingType.Linear
+  fullName: Altseed2.EasingType.Linear
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Linear
+    path: Src/Engine/Math/Easing.cs
+    startLine: 33
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: Linear = 0
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InSine
+  commentId: F:Altseed2.EasingType.InSine
+  id: InSine
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InSine
+  nameWithType: EasingType.InSine
+  fullName: Altseed2.EasingType.InSine
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InSine
+    path: Src/Engine/Math/Easing.cs
+    startLine: 34
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InSine = 1
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutSine
+  commentId: F:Altseed2.EasingType.OutSine
+  id: OutSine
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutSine
+  nameWithType: EasingType.OutSine
+  fullName: Altseed2.EasingType.OutSine
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutSine
+    path: Src/Engine/Math/Easing.cs
+    startLine: 35
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutSine = 2
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutSine
+  commentId: F:Altseed2.EasingType.InOutSine
+  id: InOutSine
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutSine
+  nameWithType: EasingType.InOutSine
+  fullName: Altseed2.EasingType.InOutSine
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutSine
+    path: Src/Engine/Math/Easing.cs
+    startLine: 36
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutSine = 3
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InQuad
+  commentId: F:Altseed2.EasingType.InQuad
+  id: InQuad
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InQuad
+  nameWithType: EasingType.InQuad
+  fullName: Altseed2.EasingType.InQuad
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InQuad
+    path: Src/Engine/Math/Easing.cs
+    startLine: 37
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InQuad = 4
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutQuad
+  commentId: F:Altseed2.EasingType.OutQuad
+  id: OutQuad
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutQuad
+  nameWithType: EasingType.OutQuad
+  fullName: Altseed2.EasingType.OutQuad
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutQuad
+    path: Src/Engine/Math/Easing.cs
+    startLine: 38
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutQuad = 5
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutQuad
+  commentId: F:Altseed2.EasingType.InOutQuad
+  id: InOutQuad
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutQuad
+  nameWithType: EasingType.InOutQuad
+  fullName: Altseed2.EasingType.InOutQuad
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutQuad
+    path: Src/Engine/Math/Easing.cs
+    startLine: 39
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutQuad = 6
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InCubic
+  commentId: F:Altseed2.EasingType.InCubic
+  id: InCubic
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InCubic
+  nameWithType: EasingType.InCubic
+  fullName: Altseed2.EasingType.InCubic
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InCubic
+    path: Src/Engine/Math/Easing.cs
+    startLine: 40
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InCubic = 7
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutCubic
+  commentId: F:Altseed2.EasingType.OutCubic
+  id: OutCubic
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutCubic
+  nameWithType: EasingType.OutCubic
+  fullName: Altseed2.EasingType.OutCubic
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutCubic
+    path: Src/Engine/Math/Easing.cs
+    startLine: 41
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutCubic = 8
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutCubic
+  commentId: F:Altseed2.EasingType.InOutCubic
+  id: InOutCubic
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutCubic
+  nameWithType: EasingType.InOutCubic
+  fullName: Altseed2.EasingType.InOutCubic
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutCubic
+    path: Src/Engine/Math/Easing.cs
+    startLine: 42
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutCubic = 9
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InQuart
+  commentId: F:Altseed2.EasingType.InQuart
+  id: InQuart
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InQuart
+  nameWithType: EasingType.InQuart
+  fullName: Altseed2.EasingType.InQuart
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InQuart
+    path: Src/Engine/Math/Easing.cs
+    startLine: 43
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InQuart = 10
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutQuart
+  commentId: F:Altseed2.EasingType.OutQuart
+  id: OutQuart
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutQuart
+  nameWithType: EasingType.OutQuart
+  fullName: Altseed2.EasingType.OutQuart
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutQuart
+    path: Src/Engine/Math/Easing.cs
+    startLine: 44
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutQuart = 11
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutQuart
+  commentId: F:Altseed2.EasingType.InOutQuart
+  id: InOutQuart
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutQuart
+  nameWithType: EasingType.InOutQuart
+  fullName: Altseed2.EasingType.InOutQuart
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutQuart
+    path: Src/Engine/Math/Easing.cs
+    startLine: 45
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutQuart = 12
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InQuint
+  commentId: F:Altseed2.EasingType.InQuint
+  id: InQuint
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InQuint
+  nameWithType: EasingType.InQuint
+  fullName: Altseed2.EasingType.InQuint
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InQuint
+    path: Src/Engine/Math/Easing.cs
+    startLine: 46
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InQuint = 13
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutQuint
+  commentId: F:Altseed2.EasingType.OutQuint
+  id: OutQuint
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutQuint
+  nameWithType: EasingType.OutQuint
+  fullName: Altseed2.EasingType.OutQuint
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutQuint
+    path: Src/Engine/Math/Easing.cs
+    startLine: 47
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutQuint = 14
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutQuint
+  commentId: F:Altseed2.EasingType.InOutQuint
+  id: InOutQuint
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutQuint
+  nameWithType: EasingType.InOutQuint
+  fullName: Altseed2.EasingType.InOutQuint
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutQuint
+    path: Src/Engine/Math/Easing.cs
+    startLine: 48
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutQuint = 15
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InExpo
+  commentId: F:Altseed2.EasingType.InExpo
+  id: InExpo
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InExpo
+  nameWithType: EasingType.InExpo
+  fullName: Altseed2.EasingType.InExpo
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InExpo
+    path: Src/Engine/Math/Easing.cs
+    startLine: 49
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InExpo = 16
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutExpo
+  commentId: F:Altseed2.EasingType.OutExpo
+  id: OutExpo
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutExpo
+  nameWithType: EasingType.OutExpo
+  fullName: Altseed2.EasingType.OutExpo
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutExpo
+    path: Src/Engine/Math/Easing.cs
+    startLine: 50
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutExpo = 17
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutExpo
+  commentId: F:Altseed2.EasingType.InOutExpo
+  id: InOutExpo
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutExpo
+  nameWithType: EasingType.InOutExpo
+  fullName: Altseed2.EasingType.InOutExpo
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutExpo
+    path: Src/Engine/Math/Easing.cs
+    startLine: 51
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutExpo = 18
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InCirc
+  commentId: F:Altseed2.EasingType.InCirc
+  id: InCirc
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InCirc
+  nameWithType: EasingType.InCirc
+  fullName: Altseed2.EasingType.InCirc
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InCirc
+    path: Src/Engine/Math/Easing.cs
+    startLine: 52
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InCirc = 19
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutCirc
+  commentId: F:Altseed2.EasingType.OutCirc
+  id: OutCirc
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutCirc
+  nameWithType: EasingType.OutCirc
+  fullName: Altseed2.EasingType.OutCirc
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutCirc
+    path: Src/Engine/Math/Easing.cs
+    startLine: 53
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutCirc = 20
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutCirc
+  commentId: F:Altseed2.EasingType.InOutCirc
+  id: InOutCirc
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutCirc
+  nameWithType: EasingType.InOutCirc
+  fullName: Altseed2.EasingType.InOutCirc
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutCirc
+    path: Src/Engine/Math/Easing.cs
+    startLine: 54
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutCirc = 21
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InBack
+  commentId: F:Altseed2.EasingType.InBack
+  id: InBack
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InBack
+  nameWithType: EasingType.InBack
+  fullName: Altseed2.EasingType.InBack
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InBack
+    path: Src/Engine/Math/Easing.cs
+    startLine: 55
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InBack = 22
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutBack
+  commentId: F:Altseed2.EasingType.OutBack
+  id: OutBack
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutBack
+  nameWithType: EasingType.OutBack
+  fullName: Altseed2.EasingType.OutBack
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutBack
+    path: Src/Engine/Math/Easing.cs
+    startLine: 56
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutBack = 23
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutBack
+  commentId: F:Altseed2.EasingType.InOutBack
+  id: InOutBack
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutBack
+  nameWithType: EasingType.InOutBack
+  fullName: Altseed2.EasingType.InOutBack
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutBack
+    path: Src/Engine/Math/Easing.cs
+    startLine: 57
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutBack = 24
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InElastic
+  commentId: F:Altseed2.EasingType.InElastic
+  id: InElastic
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InElastic
+  nameWithType: EasingType.InElastic
+  fullName: Altseed2.EasingType.InElastic
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InElastic
+    path: Src/Engine/Math/Easing.cs
+    startLine: 58
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InElastic = 25
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutElastic
+  commentId: F:Altseed2.EasingType.OutElastic
+  id: OutElastic
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutElastic
+  nameWithType: EasingType.OutElastic
+  fullName: Altseed2.EasingType.OutElastic
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutElastic
+    path: Src/Engine/Math/Easing.cs
+    startLine: 59
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutElastic = 26
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutElastic
+  commentId: F:Altseed2.EasingType.InOutElastic
+  id: InOutElastic
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutElastic
+  nameWithType: EasingType.InOutElastic
+  fullName: Altseed2.EasingType.InOutElastic
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutElastic
+    path: Src/Engine/Math/Easing.cs
+    startLine: 60
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutElastic = 27
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InBounce
+  commentId: F:Altseed2.EasingType.InBounce
+  id: InBounce
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InBounce
+  nameWithType: EasingType.InBounce
+  fullName: Altseed2.EasingType.InBounce
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InBounce
+    path: Src/Engine/Math/Easing.cs
+    startLine: 61
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InBounce = 28
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.OutBounce
+  commentId: F:Altseed2.EasingType.OutBounce
+  id: OutBounce
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: OutBounce
+  nameWithType: EasingType.OutBounce
+  fullName: Altseed2.EasingType.OutBounce
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: OutBounce
+    path: Src/Engine/Math/Easing.cs
+    startLine: 62
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: OutBounce = 29
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.EasingType.InOutBounce
+  commentId: F:Altseed2.EasingType.InOutBounce
+  id: InOutBounce
+  parent: Altseed2.EasingType
+  langs:
+  - csharp
+  - vb
+  name: InOutBounce
+  nameWithType: EasingType.InOutBounce
+  fullName: Altseed2.EasingType.InOutBounce
+  type: Field
+  source:
+    remote:
+      path: Engine/Math/Easing.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: InOutBounce
+    path: Src/Engine/Math/Easing.cs
+    startLine: 63
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  syntax:
+    content: InOutBounce = 30
+    return:
+      type: Altseed2.EasingType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: Altseed2.EasingType
+  commentId: T:Altseed2.EasingType
+  parent: Altseed2
+  name: EasingType
+  nameWithType: EasingType
+  fullName: Altseed2.EasingType

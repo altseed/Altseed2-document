@@ -1,0 +1,1144 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.CollisionManagerNode
+  commentId: T:Altseed2.CollisionManagerNode
+  id: CollisionManagerNode
+  parent: Altseed2
+  children:
+  - Altseed2.CollisionManagerNode.#ctor
+  - Altseed2.CollisionManagerNode.ColliderCount
+  - Altseed2.CollisionManagerNode.Colliders
+  - Altseed2.CollisionManagerNode.ContainsCollider(Altseed2.ColliderNode)
+  langs:
+  - csharp
+  - vb
+  name: CollisionManagerNode
+  nameWithType: CollisionManagerNode
+  fullName: Altseed2.CollisionManagerNode
+  type: Class
+  source:
+    remote:
+      path: Engine/Physics/CollisionManagerNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: CollisionManagerNode
+    path: Src/Engine/Physics/CollisionManagerNode.cs
+    startLine: 8
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n衝突判定を制御するノード\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class CollisionManagerNode : Node
+    content.vb: >-
+      <Serializable>
+
+      Public Class CollisionManagerNode
+          Inherits Node
+  inheritance:
+  - System.Object
+  - Altseed2.Registerable{Altseed2.Node}
+  - Altseed2.Node
+  inheritedMembers:
+  - Altseed2.Node.Parent
+  - Altseed2.Node.Status
+  - Altseed2.Node.Children
+  - Altseed2.Node.AddChildNode(Altseed2.Node)
+  - Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  - Altseed2.Node.OnAdded
+  - Altseed2.Node.OnRemoved
+  - Altseed2.Node.OnUpdate
+  - Altseed2.Node.EnumerateAncestors
+  - Altseed2.Node.EnumerateDescendants
+  - Altseed2.Node.EnumerateDescendants``1
+  - Altseed2.Node.EnumerateDescendants``1(System.Func{{T},System.Boolean})
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Altseed2.CollisionManagerNode.ColliderCount
+  commentId: P:Altseed2.CollisionManagerNode.ColliderCount
+  id: ColliderCount
+  parent: Altseed2.CollisionManagerNode
+  langs:
+  - csharp
+  - vb
+  name: ColliderCount
+  nameWithType: CollisionManagerNode.ColliderCount
+  fullName: Altseed2.CollisionManagerNode.ColliderCount
+  type: Property
+  source:
+    remote:
+      path: Engine/Physics/CollisionManagerNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: ColliderCount
+    path: Src/Engine/Physics/CollisionManagerNode.cs
+    startLine: 16
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n格納されているコライダの個数を取得します。\n"
+  example: []
+  syntax:
+    content: public int ColliderCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ColliderCount As Integer
+  overload: Altseed2.CollisionManagerNode.ColliderCount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Altseed2.CollisionManagerNode.Colliders
+  commentId: P:Altseed2.CollisionManagerNode.Colliders
+  id: Colliders
+  parent: Altseed2.CollisionManagerNode
+  langs:
+  - csharp
+  - vb
+  name: Colliders
+  nameWithType: CollisionManagerNode.Colliders
+  fullName: Altseed2.CollisionManagerNode.Colliders
+  type: Property
+  source:
+    remote:
+      path: Engine/Physics/CollisionManagerNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Colliders
+    path: Src/Engine/Physics/CollisionManagerNode.cs
+    startLine: 21
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n登録されているコライダを取得します。\n"
+  example: []
+  syntax:
+    content: public IEnumerable<ColliderNode> Colliders { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{Altseed2.ColliderNode}
+    content.vb: Public ReadOnly Property Colliders As IEnumerable(Of ColliderNode)
+  overload: Altseed2.CollisionManagerNode.Colliders*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Altseed2.CollisionManagerNode.#ctor
+  commentId: M:Altseed2.CollisionManagerNode.#ctor
+  id: '#ctor'
+  parent: Altseed2.CollisionManagerNode
+  langs:
+  - csharp
+  - vb
+  name: CollisionManagerNode()
+  nameWithType: CollisionManagerNode.CollisionManagerNode()
+  fullName: Altseed2.CollisionManagerNode.CollisionManagerNode()
+  type: Constructor
+  source:
+    remote:
+      path: Engine/Physics/CollisionManagerNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: .ctor
+    path: Src/Engine/Physics/CollisionManagerNode.cs
+    startLine: 26
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n<xref href=\"Altseed2.CollisionManagerNode\" data-throw-if-not-resolved=\"false\"></xref>の新しいインスタンスを生成します。\n"
+  example: []
+  syntax:
+    content: public CollisionManagerNode()
+    content.vb: Public Sub New
+  overload: Altseed2.CollisionManagerNode.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Altseed2.CollisionManagerNode.ContainsCollider(Altseed2.ColliderNode)
+  commentId: M:Altseed2.CollisionManagerNode.ContainsCollider(Altseed2.ColliderNode)
+  id: ContainsCollider(Altseed2.ColliderNode)
+  parent: Altseed2.CollisionManagerNode
+  langs:
+  - csharp
+  - vb
+  name: ContainsCollider(ColliderNode)
+  nameWithType: CollisionManagerNode.ContainsCollider(ColliderNode)
+  fullName: Altseed2.CollisionManagerNode.ContainsCollider(Altseed2.ColliderNode)
+  type: Method
+  source:
+    remote:
+      path: Engine/Physics/CollisionManagerNode.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: ContainsCollider
+    path: Src/Engine/Physics/CollisionManagerNode.cs
+    startLine: 33
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n指定した<xref href=\"Altseed2.ColliderNode\" data-throw-if-not-resolved=\"false\"></xref>が格納されているかどうかを返します。\n"
+  example: []
+  syntax:
+    content: public bool ContainsCollider(ColliderNode node)
+    parameters:
+    - id: node
+      type: Altseed2.ColliderNode
+      description: 検索する<xref href="Altseed2.ColliderNode" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Boolean
+      description: <code data-dev-comment-type="paramref" class="paramref">node</code>が格納されていたらtrue，それ以外でfalse
+    content.vb: Public Function ContainsCollider(node As ColliderNode) As Boolean
+  overload: Altseed2.CollisionManagerNode.ContainsCollider*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Altseed2.Registerable{Altseed2.Node}
+  commentId: T:Altseed2.Registerable{Altseed2.Node}
+  parent: Altseed2
+  definition: Altseed2.Registerable`1
+  name: Registerable<Node>
+  nameWithType: Registerable<Node>
+  fullName: Altseed2.Registerable<Altseed2.Node>
+  nameWithType.vb: Registerable(Of Node)
+  fullName.vb: Altseed2.Registerable(Of Altseed2.Node)
+  name.vb: Registerable(Of Node)
+  spec.csharp:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node
+  commentId: T:Altseed2.Node
+  parent: Altseed2
+  name: Node
+  nameWithType: Node
+  fullName: Altseed2.Node
+- uid: Altseed2.Node.Parent
+  commentId: P:Altseed2.Node.Parent
+  parent: Altseed2.Node
+  name: Parent
+  nameWithType: Node.Parent
+  fullName: Altseed2.Node.Parent
+- uid: Altseed2.Node.Status
+  commentId: P:Altseed2.Node.Status
+  parent: Altseed2.Node
+  name: Status
+  nameWithType: Node.Status
+  fullName: Altseed2.Node.Status
+- uid: Altseed2.Node.Children
+  commentId: P:Altseed2.Node.Children
+  parent: Altseed2.Node
+  name: Children
+  nameWithType: Node.Children
+  fullName: Altseed2.Node.Children
+- uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+  commentId: M:Altseed2.Node.AddChildNode(Altseed2.Node)
+  parent: Altseed2.Node
+  name: AddChildNode(Node)
+  nameWithType: Node.AddChildNode(Node)
+  fullName: Altseed2.Node.AddChildNode(Altseed2.Node)
+  spec.csharp:
+  - uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+    name: AddChildNode
+    nameWithType: Node.AddChildNode
+    fullName: Altseed2.Node.AddChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.AddChildNode(Altseed2.Node)
+    name: AddChildNode
+    nameWithType: Node.AddChildNode
+    fullName: Altseed2.Node.AddChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  commentId: M:Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  parent: Altseed2.Node
+  name: RemoveChildNode(Node)
+  nameWithType: Node.RemoveChildNode(Node)
+  fullName: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+  spec.csharp:
+  - uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+    name: RemoveChildNode
+    nameWithType: Node.RemoveChildNode
+    fullName: Altseed2.Node.RemoveChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.RemoveChildNode(Altseed2.Node)
+    name: RemoveChildNode
+    nameWithType: Node.RemoveChildNode
+    fullName: Altseed2.Node.RemoveChildNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Altseed2.Node
+    name: Node
+    nameWithType: Node
+    fullName: Altseed2.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnAdded
+  commentId: M:Altseed2.Node.OnAdded
+  parent: Altseed2.Node
+  name: OnAdded()
+  nameWithType: Node.OnAdded()
+  fullName: Altseed2.Node.OnAdded()
+  spec.csharp:
+  - uid: Altseed2.Node.OnAdded
+    name: OnAdded
+    nameWithType: Node.OnAdded
+    fullName: Altseed2.Node.OnAdded
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnAdded
+    name: OnAdded
+    nameWithType: Node.OnAdded
+    fullName: Altseed2.Node.OnAdded
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnRemoved
+  commentId: M:Altseed2.Node.OnRemoved
+  parent: Altseed2.Node
+  name: OnRemoved()
+  nameWithType: Node.OnRemoved()
+  fullName: Altseed2.Node.OnRemoved()
+  spec.csharp:
+  - uid: Altseed2.Node.OnRemoved
+    name: OnRemoved
+    nameWithType: Node.OnRemoved
+    fullName: Altseed2.Node.OnRemoved
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnRemoved
+    name: OnRemoved
+    nameWithType: Node.OnRemoved
+    fullName: Altseed2.Node.OnRemoved
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.OnUpdate
+  commentId: M:Altseed2.Node.OnUpdate
+  parent: Altseed2.Node
+  name: OnUpdate()
+  nameWithType: Node.OnUpdate()
+  fullName: Altseed2.Node.OnUpdate()
+  spec.csharp:
+  - uid: Altseed2.Node.OnUpdate
+    name: OnUpdate
+    nameWithType: Node.OnUpdate
+    fullName: Altseed2.Node.OnUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.OnUpdate
+    name: OnUpdate
+    nameWithType: Node.OnUpdate
+    fullName: Altseed2.Node.OnUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateAncestors
+  commentId: M:Altseed2.Node.EnumerateAncestors
+  parent: Altseed2.Node
+  name: EnumerateAncestors()
+  nameWithType: Node.EnumerateAncestors()
+  fullName: Altseed2.Node.EnumerateAncestors()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateAncestors
+    name: EnumerateAncestors
+    nameWithType: Node.EnumerateAncestors
+    fullName: Altseed2.Node.EnumerateAncestors
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateAncestors
+    name: EnumerateAncestors
+    nameWithType: Node.EnumerateAncestors
+    fullName: Altseed2.Node.EnumerateAncestors
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants
+  commentId: M:Altseed2.Node.EnumerateDescendants
+  parent: Altseed2.Node
+  name: EnumerateDescendants()
+  nameWithType: Node.EnumerateDescendants()
+  fullName: Altseed2.Node.EnumerateDescendants()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants
+    name: EnumerateDescendants
+    nameWithType: Node.EnumerateDescendants
+    fullName: Altseed2.Node.EnumerateDescendants
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants
+    name: EnumerateDescendants
+    nameWithType: Node.EnumerateDescendants
+    fullName: Altseed2.Node.EnumerateDescendants
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1
+  commentId: M:Altseed2.Node.EnumerateDescendants``1
+  parent: Altseed2.Node
+  name: EnumerateDescendants<T>()
+  nameWithType: Node.EnumerateDescendants<T>()
+  fullName: Altseed2.Node.EnumerateDescendants<T>()
+  nameWithType.vb: Node.EnumerateDescendants(Of T)()
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)()
+  name.vb: EnumerateDescendants(Of T)()
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1(System.Func{{T},System.Boolean})
+  commentId: M:Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  parent: Altseed2.Node
+  definition: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  name: EnumerateDescendants<T>(Func<T, Boolean>)
+  nameWithType: Node.EnumerateDescendants<T>(Func<T, Boolean>)
+  fullName: Altseed2.Node.EnumerateDescendants<T>(System.Func<T, System.Boolean>)
+  nameWithType.vb: Node.EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)(System.Func(Of T, System.Boolean))
+  name.vb: EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Altseed2.Registerable`1
+  commentId: T:Altseed2.Registerable`1
+  name: Registerable<T>
+  nameWithType: Registerable<T>
+  fullName: Altseed2.Registerable<T>
+  nameWithType.vb: Registerable(Of T)
+  fullName.vb: Altseed2.Registerable(Of T)
+  name.vb: Registerable(Of T)
+  spec.csharp:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Altseed2.Registerable`1
+    name: Registerable
+    nameWithType: Registerable
+    fullName: Altseed2.Registerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  commentId: M:Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+  isExternal: true
+  name: EnumerateDescendants<T>(Func<T, Boolean>)
+  nameWithType: Node.EnumerateDescendants<T>(Func<T, Boolean>)
+  fullName: Altseed2.Node.EnumerateDescendants<T>(System.Func<T, System.Boolean>)
+  nameWithType.vb: Node.EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  fullName.vb: Altseed2.Node.EnumerateDescendants(Of T)(System.Func(Of T, System.Boolean))
+  name.vb: EnumerateDescendants(Of T)(Func(Of T, Boolean))
+  spec.csharp:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants<T>
+    nameWithType: Node.EnumerateDescendants<T>
+    fullName: Altseed2.Node.EnumerateDescendants<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+    name: EnumerateDescendants(Of T)
+    nameWithType: Node.EnumerateDescendants(Of T)
+    fullName: Altseed2.Node.EnumerateDescendants(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Altseed2.CollisionManagerNode.ColliderCount*
+  commentId: Overload:Altseed2.CollisionManagerNode.ColliderCount
+  name: ColliderCount
+  nameWithType: CollisionManagerNode.ColliderCount
+  fullName: Altseed2.CollisionManagerNode.ColliderCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Altseed2.CollisionManagerNode.Colliders*
+  commentId: Overload:Altseed2.CollisionManagerNode.Colliders
+  name: Colliders
+  nameWithType: CollisionManagerNode.Colliders
+  fullName: Altseed2.CollisionManagerNode.Colliders
+- uid: System.Collections.Generic.IEnumerable{Altseed2.ColliderNode}
+  commentId: T:System.Collections.Generic.IEnumerable{Altseed2.ColliderNode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ColliderNode>
+  nameWithType: IEnumerable<ColliderNode>
+  fullName: System.Collections.Generic.IEnumerable<Altseed2.ColliderNode>
+  nameWithType.vb: IEnumerable(Of ColliderNode)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Altseed2.ColliderNode)
+  name.vb: IEnumerable(Of ColliderNode)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Altseed2.ColliderNode
+    name: ColliderNode
+    nameWithType: ColliderNode
+    fullName: Altseed2.ColliderNode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Altseed2.ColliderNode
+    name: ColliderNode
+    nameWithType: ColliderNode
+    fullName: Altseed2.ColliderNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Altseed2.CollisionManagerNode
+  commentId: T:Altseed2.CollisionManagerNode
+  name: CollisionManagerNode
+  nameWithType: CollisionManagerNode
+  fullName: Altseed2.CollisionManagerNode
+- uid: Altseed2.CollisionManagerNode.#ctor*
+  commentId: Overload:Altseed2.CollisionManagerNode.#ctor
+  name: CollisionManagerNode
+  nameWithType: CollisionManagerNode.CollisionManagerNode
+  fullName: Altseed2.CollisionManagerNode.CollisionManagerNode
+- uid: Altseed2.ColliderNode
+  commentId: T:Altseed2.ColliderNode
+  parent: Altseed2
+  name: ColliderNode
+  nameWithType: ColliderNode
+  fullName: Altseed2.ColliderNode
+- uid: Altseed2.CollisionManagerNode.ContainsCollider*
+  commentId: Overload:Altseed2.CollisionManagerNode.ContainsCollider
+  name: ContainsCollider
+  nameWithType: CollisionManagerNode.ContainsCollider
+  fullName: Altseed2.CollisionManagerNode.ContainsCollider
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

@@ -1,0 +1,163 @@
+### YamlMime:ManagedReference
+items:
+- uid: Altseed2.CollisionType
+  commentId: T:Altseed2.CollisionType
+  id: CollisionType
+  parent: Altseed2
+  children:
+  - Altseed2.CollisionType.Enter
+  - Altseed2.CollisionType.Exit
+  - Altseed2.CollisionType.Stay
+  langs:
+  - csharp
+  - vb
+  name: CollisionType
+  nameWithType: CollisionType
+  fullName: Altseed2.CollisionType
+  type: Enum
+  source:
+    remote:
+      path: Engine/Physics/CollisionType.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: CollisionType
+    path: Src/Engine/Physics/CollisionType.cs
+    startLine: 7
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n衝突のタイプ\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public enum CollisionType
+    content.vb: >-
+      <Serializable>
+
+      Public Enum CollisionType
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Altseed2.CollisionType.Enter
+  commentId: F:Altseed2.CollisionType.Enter
+  id: Enter
+  parent: Altseed2.CollisionType
+  langs:
+  - csharp
+  - vb
+  name: Enter
+  nameWithType: CollisionType.Enter
+  fullName: Altseed2.CollisionType.Enter
+  type: Field
+  source:
+    remote:
+      path: Engine/Physics/CollisionType.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Enter
+    path: Src/Engine/Physics/CollisionType.cs
+    startLine: 13
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n前フレームでは衝突しておらず，このフレームで衝突している\n"
+  example: []
+  syntax:
+    content: Enter = 0
+    return:
+      type: Altseed2.CollisionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.CollisionType.Stay
+  commentId: F:Altseed2.CollisionType.Stay
+  id: Stay
+  parent: Altseed2.CollisionType
+  langs:
+  - csharp
+  - vb
+  name: Stay
+  nameWithType: CollisionType.Stay
+  fullName: Altseed2.CollisionType.Stay
+  type: Field
+  source:
+    remote:
+      path: Engine/Physics/CollisionType.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Stay
+    path: Src/Engine/Physics/CollisionType.cs
+    startLine: 17
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n前フレームでは衝突しており，このフレームでも衝突している\n"
+  example: []
+  syntax:
+    content: Stay = 1
+    return:
+      type: Altseed2.CollisionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Altseed2.CollisionType.Exit
+  commentId: F:Altseed2.CollisionType.Exit
+  id: Exit
+  parent: Altseed2.CollisionType
+  langs:
+  - csharp
+  - vb
+  name: Exit
+  nameWithType: CollisionType.Exit
+  fullName: Altseed2.CollisionType.Exit
+  type: Field
+  source:
+    remote:
+      path: Engine/Physics/CollisionType.cs
+      branch: bca2a8ec4d1342197d3f85b9007ee6da648523a2
+      repo: https://github.com/altseed/altseed2-csharp.git
+    id: Exit
+    path: Src/Engine/Physics/CollisionType.cs
+    startLine: 21
+  assemblies:
+  - Altseed2
+  namespace: Altseed2
+  summary: "\n前フレームでは衝突しており，このフレームで衝突していない\n"
+  example: []
+  syntax:
+    content: Exit = 2
+    return:
+      type: Altseed2.CollisionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Altseed2
+  commentId: N:Altseed2
+  name: Altseed2
+  nameWithType: Altseed2
+  fullName: Altseed2
+- uid: Altseed2.CollisionType
+  commentId: T:Altseed2.CollisionType
+  parent: Altseed2
+  name: CollisionType
+  nameWithType: CollisionType
+  fullName: Altseed2.CollisionType
