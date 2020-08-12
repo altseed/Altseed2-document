@@ -25,7 +25,19 @@ Altseed2 で新たに追加された機能の中に、再生中の音声につ�
   <img src="Images/Spectrum.png">
 </video>
 
-<!--[!code-csharp[Main](Src/Samples/Demonstration/Demonstration.cs)]-->
+<!--[!code-csharp[Main](Src/Samples/AudioVisualizerDemonstration/AudioVisualizerDemonstration.cs)]-->
+
+### 例 : 衝突判定
+Altseed2 では、オブジェクト同士の衝突判定機能が実装されています。
+衝突時の処理を、メソッドとしてクラスの中に記述することができます。
+
+<video width="320" height="240" autoplay muted="true" loop="true" preload poster="Images/Collision.png">
+  <source src="Images/Collision.mp4" type="video/mp4">
+  <source src="Images/Collision.webm" type="video/webm">
+  <img src="Images/Collision.png">
+</video>
+
+<!--[!code-csharp[Main](Src/Samples/CollisionDemonstration/CollisionDemonstration.cs)]-->
 
 ## 必要な環境
 Windows : 10 以降 (DirectX11 以上が必要)  
