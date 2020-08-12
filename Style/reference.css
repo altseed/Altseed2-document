@@ -51,3 +51,21 @@ div.alert {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+.inheritance
+.level6, .inheritance
+.level7, .inheritance
+.level8, .inheritance
+.level9 {
+    margin-left: 6em;
+}
+
+.inheritance 
+.level5:before, .inheritance 
+.level6:before, .inheritance 
+.level7:before, .inheritance 
+.level8:before, .inheritance 
+.level9:before {
+    content: '↳';
+    margin-right: 5px;
+}

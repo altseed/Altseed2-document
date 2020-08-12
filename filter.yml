@@ -1,6 +1,6 @@
 apiRules:
     - exclude:
-          uidRegex: ^System\.object
+          uidRegex: ^System\.(Object|ValueType)
     - exclude:
           hasAttribute:
               uid: System.ComponentModel.EditorBrowsableAttribute

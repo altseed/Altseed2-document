@@ -3,9 +3,10 @@
 <h1 id="{{id}}" data-uid="{{uid}}" class="text-break">{{>partials/title}}</h1>
 <div class="markdown level0 summary">{{{summary}}}</div>
 <div class="markdown level0 conceptual">{{{conceptual}}}</div>
+
 {{#inClass}}
+  <h3 id="{{{__global.inheritance}}}">{{{__global.inheritance}}}</h3>
 <div class="inheritance">
-  <h5>{{__global.inheritance}}</h5>
   {{#inheritance}}
   <div class="level{{index}}">{{{specName.0.value}}}</div>
   {{/inheritance}}
@@ -15,6 +16,25 @@
   {{/derivedClasses}}
 </div>
 {{/inClass}}
+
+{{#inheritedMembers.0}}
+<h3 id="{{{__global.inheritedMembers}}}">{{{__global.inheritedMembers}}}</h3>
+
+<div class="inheritedMembers">
+{{/inheritedMembers.0}}
+
+{{#inheritedMembers}}
+  <div>
+  {{^definition}}
+    <h5><xref uid="{{uid}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/></h5>
+    {{{summary}}}
+  {{/definition}}
+  </div>
+{{/inheritedMembers}}
+
+{{#inheritedMembers.0}}
+</div>
+{{/inheritedMembers.0}}
 
 {{#syntax.parameters.0}}
 <h5 class="parameters">{{__global.parameters}}</h5>
