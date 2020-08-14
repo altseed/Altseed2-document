@@ -4,7 +4,11 @@ documentType: index
 master: _titlemaster
 ---
 
-# ダミー
+>[!div id="budges"]
+>NuGet:[![NuGet Package](https://img.shields.io/nuget/vpre/Altseed2?color=darkgreen&logo=nuget&label=%20&style=plastic)](https://www.nuget.org/packages/Altseed2)
+>Engine:[![GitHub Engine](https://img.shields.io/github/commits-since/altseed/Altseed2-csharp/2.0.0-beta1?include_prereleases&logo=github&color=blue&style=plastic)](https://github.com/altseed/Altseed2-csharp)
+>Core:[![Github Core](https://img.shields.io/github/milestones/progress/altseed/Altseed2/1?color=orange&logo=github&style=plastic)](https://github.com/altseed/Altseed2)
+
 
 ## Altseed2とは
 
@@ -12,6 +16,12 @@ Altseed2 はグラフィック、サウンド、ジョイスティックなど�
 オブジェクト指向を用いた開発に適したインタフェースにより、複雑になりがちな機能を少ないコード量で実装することができます。
 かつての Altseed と異なり、ノードシステムを採用しており、オブジェクトやオブジェクトが持つ機能の管理を、より柔軟に行うことができます。
 その他にも、Altseed2 には初代 Altseed にはなかった機能がいくつか実装されています。
+
+## 使い方
+
+チュートリアルは[こちら](Tutorials/Chap0/index.md)！
+
+
 
 ## Altseed2 でできること
 
