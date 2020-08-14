@@ -11,6 +11,7 @@ img#logo {
 
 #title {
     margin: 20px 0;
+    padding: 8px;
     width: 80%;
     background-color: #84a5ce;
     filter: drop-shadow(10px 5px 5px rgba(0,0,0,0.6));
@@ -27,7 +28,7 @@ img#logo {
 }
 
 #title img {
-    margin: 5px 20px;
+    margin: auto 20px;
     border-radius: 50%;
     background-color:#FFF;
 }
