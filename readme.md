@@ -3,7 +3,7 @@
 [Altseed2](https://github.com/altseed/altseed2-csharp)のドキュメント
 
 ## Issue
-issueは[Altseed2/issues](https://github.com/altseed/Altseed2/issues)に`project:Document`Labelをつけて作成してください。
+issueは[Altseed2/issues](https://github.com/altseed/Altseed2/issues)に作成してください。
 
 
 # 生成に必要なもの
