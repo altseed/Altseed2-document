@@ -23,6 +23,16 @@ namespace Tutorial
             // UIノードを追加
             AddChildNode(uiNode);
 
++           // 背景に使用するテクスチャ
++           var backTexture = new SpriteNode();
++           // 背景のテクスチャを読み込む
++           backTexture.Texture = Texture2D.LoadStrict("Resources/Background.png");
++           // 表示位置を奥に設定
++           backTexture.ZOrder = -100;
++
++           // 背景テクスチャを追加
++           AddChildNode(backTexture);
+
             // プレイヤーを設定
             player = new Player(new Vector2F(100, 360));
 
