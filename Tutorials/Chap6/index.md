@@ -23,38 +23,14 @@
 
 `CollidableObject`のコードは以下のようになります。 
 
-[!code-cs[Main](Text/CollidableObject.cs)]
+[!code-cs[Main](Text/Spl1.cs)]
 
 これまで`SpriteNode`を継承していたため、`CollidableObject`でも`SpriteNode`を継承しています。  
 また、`Enemy`クラスと`Bullet`クラスに定義していた`RemoveMyselfIfOutOfWindow`関数ですが同じ処理が二か所にあって冗長です。基本的に同じ処理は一か所にまとめた方が良いのでそれぞれの親クラスになる`CollidableObject`でこの関数を定義することにします。
 
 変数とコンストラクタを解説していきます。
-```C#
-// コライダのコレクション
-public static HashSet<CollidableObject> objects = new HashSet<CollidableObject>();
 
-// コライダ
-protected CircleCollider collider = new CircleCollider();
-
-// OnUpdate内で衝突判定を調査するかどうか
-protected bool doSurvey;
-
-// 所属するメインノードへの参照
-public MainNode mainNode;
-
-// コンストラクタ
-public CollidableObject(MainNode mainNode, Vector2F position)
-{
-    // メインノードへの参照を設定
-    this.mainNode = mainNode;
-
-    // コライダの座標を設定
-    collider.Position = position;
-
-    // 座標を設定
-    Position = position;
-}
-```
+[!code-cs[Main](Text/Spl2.cs)]
   
 それぞれのコライダとの当たり判定をとるためにコライダのコレクションを保存しておく必要があります。コライダオブジェクトは変数`objects`に保存します。  
 この変数`objects`の宣言には`static`というキーワードが使われています。これは静的メンバーと呼ばれるもので、すべてのインスタンスから共有されるような変数を宣言できます。詳しい説明は以下のリンク先を参照してください。  
@@ -194,89 +170,19 @@ protected virtual void OnCollision(CollidableObject obj)
 
 さらにコンストラクタも書き換えていきます。
 冒頭でも少し触れましたが`Enemy`クラスと`Bullet`クラスの`RemoveMyselfIfOutOfWindow`関数は親クラスである`CollidableObject`に移したのでついでに削除しましょう。
+また，`CollidableObject`の`OnUpdate`に処理を書いたので，`base.OnUpdate`を呼び出しましょう。
 
 `Player` クラス
 
-```diff
--       public Player(Vector2F position)
-+       public Player(MainNode mainNode, Vector2F position) : base(mainNode, position)
-        {
-+           // 衝突判定を行うように設定
-+           doSurvey = true;
-
-            // テクスチャを読み込む
-            Texture = Texture2D.LoadStrict("Resources/Player.png");
-
-            // 中心座標を設定
-            CenterPosition = ContentSize / 2;
-
-+           // コライダの半径を設定
-+           collider.Radius = Texture.Size.Y / 2;
-        }
-```
+[!code-diff[Main](Text/Spl3.cs)]
 
 `Enemy` クラス
 
-```diff
--       public Enemy(Player player, Vector2F position)
-+       public Enemy(Player player, Vector2F position) : base(player.mainNode, position)
-        {
-+           // 衝突判定を行うように設定
-+           doSurvey = true;
-
--           // 座標を設定
--           Position = position;
-
-            // プレイヤーへの参照を設定
-            this.player = player;
-        }
-
--       private void RemoveMyselfIfOutOfWindow()
--       {
--           var halfSize = Texture.Size / 2;
--           if (Position.X < -halfSize.X
--               || Position.X > Engine.WindowSize.X + halfSize.X
--               || Position.Y < -halfSize.Y
--               || Position.Y > Engine.WindowSize.Y + halfSize.Y)
--           {
--               // 自身を削除
--               Parent?.RemoveChildNode(this);
--           }
--       }
-```
+[!code-diff[Main](Text/Spl4.cs)]
 
 `Bullet` クラス
 
-```diff
--       public Bullet(Vector2F position, Vector2F velocity)
-+       public Bullet(MainNode mainNpde, Vector2F position, Vector2F velocity) : base(mainNpde, position)
-        {
-+           // 衝突判定を行わないように設定
-+           doSurvey = false;
-
--           // 座標を設定
--           Position = position;
-
-            // 弾速を設定
-            this.velocity = velocity;
-
-            // 表示位置をプレイヤーや敵より奥に設定
-            ZOrder--;
-        }
-
--       private void RemoveMyselfIfOutOfWindow()
--       {
--           var halfSize = Texture.Size / 2;
--           if (Position.X < -halfSize.X
--               || Position.X > Engine.WindowSize.X + halfSize.X
--               || Position.Y < -halfSize.Y
--               || Position.Y > Engine.WindowSize.Y + halfSize.Y)
--           {
--               // 自身を削除
--               Parent?.RemoveChildNode(this);
--           }
--       }
-```  
+[!code-diff[Main](Text/Spl5.cs)]
 
 ここでコンストラクタの後ろに`base`というキーワードが出てきました。これは親クラスのコンストラクタ呼び出しという意味です。今回だと`ColliderObject`のコンストラクタを呼び出します。`ColliderObject`のコンストラクタでは`MainNode`と`position`が必要なため`base`の後の引数で受け渡します。`base`についての詳しい解説はこちらを参照してください。  
 
@@ -290,172 +196,42 @@ protected virtual void OnCollision(CollidableObject obj)
 
 `EnemyBullet` クラス
 
-```diff
-+       public EnemyBullet(MainNode mainNode, Vector2F position, Vector2F velocity) : base(mainNode, position, velocity)
--       public EnemyBullet(Vector2F position, Vector2F velocity) : base(position, velocity)
-        {
-            // テクスチャを読み込む
-            Texture = Texture2D.LoadStrict("Resources/Bullet_Red.png");
-
-            // 中心座標を設定
-            CenterPosition = ContentSize / 2;
-
-+           // 半径を設定
-+           collider.Radius = Texture.Size.X / 2;
-        }
-```
+[!code-diff[Main](Text/Spl6.cs)]
 
 `PlayerBullet` クラス
-```diff
-+       public PlayerBullet(MainNode mainNode, Vector2F position) : base(mainNode, position, new Vector2F(10f, 0.0f))
--       public PlayerBullet(Vector2F position) : base(position, new Vector2F(10f, 0.0f))
-        {
-            // テクスチャを読み込む
-            Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
 
-            // 中心座標を設定
-            CenterPosition = ContentSize / 2;
-
-+           // 半径を設定
-+           collider.Radius = Texture.Size.X / 2;
-        }
-```
+[!code-diff[Main](Text/Spl7.cs)]
 
 次に`Enemy`クラスの変更に併せてその派生クラスである`ChaseEnemy`クラスと`RadialShotEnemy`クラスと`StraightShotEnemy`クラスと`Meteor`クラスを書き換えていきます。先ほど`EnemyBullet`クラスの引数を変更したので`Shot`関数の`EnemyBullet`を生成するコードもついでに書き換えましょう。
 
 `ChaseEnemy` クラス
-```diff
-        public ChaseEnemy(Player player, Vector2F position, float speed) : base(player, position)
-        {
-            // テクスチャを読み込む
-            Texture = Texture2D.LoadStrict("Resources/UFO.png");
 
-            // 中心座標を設定
-            CenterPosition = ConentSize / 2;
-
-+           // 半径を設定
-+           collider.Radius = Texture.Size.X / 2;
-
-            // 移動速度を設定
-            this.speed = speed;
-
-            // 自身が倒された時に加算されるスコアを設定
-            score = 10;
-        }
-
-
-```
+[!code-diff[Main](Text/Spl8.cs)]
 
 `RadialShotEnemy` クラス
-```diff
-        public RadialShotEnemy(Player player, Vector2F position, int shotAmount) : base(player, position)
-        {
-            // 撃ち出すショットの個数を設定
-            this.shotAmount = shotAmount;
 
-            // テクスチャを読み込む
-            Texture = Texture2D.LoadStrict("Resources/UFO.png");
-
-            // 中心座標を設定
-            CenterPosition = ContentSize / 2;
-
-+           // 半径を設定
-+           collider.Radius = Texture.Size.X / 2;
-
-            // スコアを設定
-            score = 30;
-        }
-
-        // 弾を撃つ
-        private void Shot(Vector2F velocity)
-        {
-            // 敵弾を画面に追加
-+            Parent.AddChildNode(new EnemyBullet(mainNode, Position, velocity));
--            Parent.AddChildNode(new EnemyBullet(Position, velocity));
-        }        
-```
+[!code-diff[Main](Text/Spl9.cs)]
 
 `StraightShotEnemy` クラス
-```diff
-        public StraightShotEnemy(Player player, Vector2F position) : base(player, position)
-        {
-            // テクスチャを読み込む
-            Texture = Texture2D.LoadStrict("Resources/UFO.png");
 
-            // 中心座標を設定
-            CenterPosition = ContentSize / 2;
-
-+           // 半径を設定
-+           collider.Radius = Texture.Size.X / 2;
-
-            // 倒された時に加算されるスコアを設定
-            score = 20;
-        }
-
-                // 弾を撃つ
-        private void Shot(Vector2F velocity)
-        {
-            // 敵弾を画面に追加
-+            Parent.AddChildNode(new EnemyBullet(mainNode, Position, velocity));
--            Parent.AddChildNode(new EnemyBullet(Position, velocity));
-        }
-```
+[!code-diff[Main](Text/Spl10.cs)]
 
 `Meteor` クラス
-```diff
-        public Meteor(Player player, Vector2F position, Vector2F velocity) : base(player, position)
-        {
-            // 速度の設定
-            this.velocity = velocity;
 
-            // テクスチャの設定
-            Texture = Texture2D.LoadStrict("Resources/Meteor.png");
-
-            // 中心座標の設定
-            CenterPosition = ContentSize / 2;
-
-+           // 半径の設定
-+           collider.Radius = Texture.Size.X / 2;
-
-            // スコアの設定
-            score = 1;
-        }
-```
+[!code-diff[Main](Text/Spl11.cs)]
 
 さらに`Player`クラスで`PlayerBullet`を使用していたのでこちらも修正が必要になります。  
 
 `Player` クラスの `Shot` 関数
-```diff
-        // ショット
-        private void Shot()
-        {
-            // Zキーでショットを放つ
-            if (Engine.Keyboard.GetKeyState(Key.Z) == ButtonState.Push)
-            {
-+               Parent.AddChildNode(new PlayerBullet(mainNode, Position));
--               Parent.AddChildNode(new PlayerBullet(Position));
-            }
-        }
-```
+
+[!code-diff[Main](Text/Spl12.cs)]
 
 最後に`MainNode`クラスを修正します。まず、`Player`クラスの呼び出しの変更が必要です。さらにもう一つ変更が必要です。もし`MainNode`が消去されてもコライダがコレクションに残っている場合、使われていないコライダがコレクションに保存され続けるとになります。この場合、ゲームのリトライなどを行うとリトライ前のコライダが残ってしまい、バグなどを引き起こす恐れがあるのでコライダの消去を行います。`HashSet`クラスの中身消去は`Clear`関数でできます。
 
 `MainNode` クラス
-```diff
-        protected override void OnAdded()
-        {
-            // プレイヤーを設定
-+            player = new Player(this, new Vector2F(100, 360));
--            player = new Player(new Vector2F(100, 360));
-        }
 
-+       // エンジンから削除されたときに実行
-+       protected override void OnRemoved()
-+       {
-+           // 衝突判定を全てリセット
-+           CollidableObject.objects.Clear();
-+       }
-```
+[!code-diff[Main](Text/Spl13.cs)]
+
 
 これでひと段落と思いきや、衝突時の処理をまだ書いていないので衝突してもまだ何も起こりません。次にそれぞれのクラスで衝突した時の処理を書いていきたいところですが、先に衝突したときのエフェクトを作りましょう。
 
@@ -463,7 +239,7 @@ protected virtual void OnCollision(CollidableObject obj)
 衝突したときに出すエフェクトである`DeathEffect`クラスを作ります。  
 `DeathEffect`のコードは以下のようになります。  
 
-[!code-csharp[Main](Text/DeathEffect.cs)]  
+[!code-csharp[Main](Text/Spl14.cs)]  
 
 どのように実装されているかというと以下のような画像の一部を表示して表示位置をずらしてあげることでアニメーションのような効果を出しています。  
 
@@ -480,25 +256,7 @@ Src = new RectF(pos, size);
 
 設定する変数`size`と`pos`は`count`という毎フレーム1ずつ増える整数の変数を作って計算します。今回は2フレームごとに画像をずらすような式にしてあります。上に示した画像は爆破の画像が横に9枚並んでいるもので、2フレーム×9=18なので`count`が18になった場合`Parent.RemoveChildNode(this);`により自身を削除してエフェクトの再生を終了します。
 
-```C#
-// 表示されるテクスチャのサイズを取得
-var size = new Vector2F(Texture.Size.X / 9, Texture.Size.Y);
-
-// 表示されるテクスチャの左上の座標を計算する
-var pos = new Vector2F(size.X * (count / 2 % 9), size.Y);
-
-// 描画範囲を設定
-Src = new RectF(pos, size);
-
-// カウントを進める
-count++;
-
-// カウントが18以上で自身を削除
-if (count >= 18)
-{
-    Parent.RemoveChildNode(this);
-}
-```
+[!code-cs[Main](Text/Spl15.cs)]
 
 爆破のエフェクトが完成したので衝突時の処理を書いていきましょう。  
 
@@ -509,64 +267,19 @@ if (count >= 18)
 
 `Player` クラス
 
-```C#
-// 衝突時に実行
-protected override void OnCollision(CollidableObject obj)
-{
-    // 衝突対象が敵か敵の弾だったら
-    if (obj is Enemy || obj is EnemyBullet)
-    {
-        // 自身を親から削除
-        Parent.RemoveChildNode(this);
-    }
-}
-```
+[!code-cs[Main](Text/Spl16.cs)]
 
 `PlayerBullet` クラス
-```C#
-// 衝突時に実行
-protected override void OnCollision(CollidableObject obj)
-{
-    // 衝突対象が敵だったら自身を削除
-    if (obj is Enemy)
-    {
-        Parent?.RemoveChildNode(this);
-    }
-}
-```
+
+[!code-cs[Main](Text/Spl17.cs)]
 
 `Enemy` クラス
-```C#
-// 衝突時に実行
-protected override void OnCollision(CollidableObject obj)
-{
-    // 衝突対象が自機弾だったら
-    if (obj is PlayerBullet)
-    {
-        // スコアを加算
-        mainNode.score += score;
 
-        // 死亡時エフェクトを再生
-        Parent.AddChildNode(new DeathEffect(Position));
-
-        // 自身を削除
-        Parent.RemoveChildNode(this);
-    }
-}
-```
+[!code-cs[Main](Text/Spl18.cs)]
 
 `EnemyBullet` クラス
-```C#
-// 衝突時に実行
-protected override void OnCollision(CollidableObject obj)
-{
-    // 衝突対象がプレイヤーだったらBulletのOnCollisionを実行して削除
-    if (obj is Player)
-    {
-        Parent?.RemoveChildNode(this);
-    }
-}
-```  
+
+[!code-cs[Main](Text/Spl19.cs)]
 
 ここで`is`というキーワードがありますね。これは**is演算子**と呼ばれるものです。この`is`というのは変数`obj`がどの型を継承しているのか判断するために使えます。一例ですが、`if (obj is Enemy)`と書けば、`obj`が`Enemy`クラスか、その派生クラスの時に処理をすることができます。  
 余談ですが似たような機能に**as演算子**というものがあります。こちらは戻り値が`bool`ではなく型変換したものになります。
@@ -578,39 +291,8 @@ protected override void OnCollision(CollidableObject obj)
 今、`Meteor`クラスの衝突処理は`Enemy`クラスの`OnCollide`が呼ばれるので、`Player`の弾に当たると消滅します。これで完成してもよいのですが、`Meteor`というからには岩石で硬いはずなので`Player`の弾ごとき3回くらいまでなら耐えると思います。 そのように改変しましょう。  
 
 `Meteor` クラス
-```diff
-using Altseed;
 
-namespace Tutorial
-{
-    // 隕石
-    public class Meteor : Enemy
-    {
-        // フレーム毎の移動速度
-        private Vector2F velocity;
-
-+       // HP
-+       private int HP = 3;
-
-        // コンストラクタ、OnUpdate略
-
-+        protected override void OnCollision(CollidableObject obj)
-+        {
-+           // 衝突したのが自機弾だったら
-+           if (obj is PlayerBullet)
-+           {
-+               // HPを1減らす
-+               HP--;
-+               // HPが0になったらEnemyクラスのOnCollisionを呼び出して削除
-+               if (HP == 0)
-+               {
-+                  base.OnCollision(obj);
-+              }
-+           }
-+       }
-+   }
-}
-```
+[!code-diff[Main](Text/Spl20.cs)]
 
 HPというフィールドを追加して、プレイヤーの弾に当たる度にHPを1減らしていき、HPが0になったら消滅するというシンプルな処理です。  
 このように`Enemy`クラスでオーバーライドした`OnCollision`をさらにオーバーライドすると親クラスの`OnCollision`は呼ばれなくなり、子クラスの処理に切り替わります。  

@@ -24,7 +24,7 @@ namespace Tutorial
 +       // スコアを表示するノード
 +       private TextNode scoreNode;
 
-        // スコア
-        public int score;
++       // スコア
++       public int score;
 
         ...略...

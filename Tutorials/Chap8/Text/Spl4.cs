@@ -6,26 +6,8 @@ namespace Tutorial
     // メインステージのクラス
     public class MainNode : Node
     {
-        // BGMのID
-        private int? bgmID = null;
 
-        // カウンタ
-        private int count = 0;
-
-        // 敵を格納するキュー
-        private Queue<Enemy> enemies = new Queue<Enemy>();
-
-        // キャラクターを表示するノード
-        private Node characterNode = new Node();
-        
-        // プレイヤーの参照
-        private Player player;
-
-        // スコアを表示するノード
-        private TextNode scoreNode;
-
-        // スコア
-        public int score;
+        ...略...
 
         // エンジンに追加された時に実行
         protected override void OnAdded()
@@ -61,6 +43,8 @@ namespace Tutorial
             scoreNode.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 30);
             // スコア表示の位置を設定
             scoreNode.Position = new Vector2F();
+-           // スコア表示の文字を設定
+-           scoreNode.Text = "スコア";
 
             // UIノードにスコア表示ノードを追加
             uiNode.AddChildNode(scoreNode);
@@ -72,53 +56,13 @@ namespace Tutorial
             InitBGM();
         }
 
-        // エンジンから削除されたときに実行
-        protected override void OnRemoved()
-        {
-            // 衝突判定を全てリセット
-            CollidableObject.objects.Clear();
-        }
-
-        // BGMを初期化
-        private void InitBGM()
-        {
-            // BGMを読み込む
-            var bgm = Sound.LoadStrict("Resources/BGM.wav", false);
-
-            // BGMをループするように設定
-            bgm.IsLoopingMode = true;
-
-            // ループ開始位置を設定
-            bgm.LoopStartingPoint = 11.33f;
-
-            // ループ終了位置を設定
-            bgm.LoopEndPoint = 33.93f;
-
-            // BGMのプレイ開始
-            bgmID = Engine.Sound.Play(bgm);
-        }
-
-        // ウェーブの初期化
-        private void InitWave()
-        {
-            // enemies.Enqueue～でウェーブに敵を追加
-            // 追加した順番に敵が出現する
-
-
-            enemies.Enqueue(new ChaseEnemy(player, new Vector2F(700, 160), 2.0f));
-
-            enemies.Enqueue(new StraightShotEnemy(player, new Vector2F(600, 620)));
-
-            enemies.Enqueue(new Meteor(player, new Vector2F(910, 400), new Vector2F(-4.0f, 0.0f)));
-
-            enemies.Enqueue(new RadialShotEnemy(player, new Vector2F(400, 160), 3));
-        }
+        ...略...
 
         // フレーム毎に実行
         protected override void OnUpdate()
         {
-            // スコア表示の更新
-            scoreNode.Text = "Score : " + score;
++           // スコア表示の更新
++           scoreNode.Text = "Score : " + score;
 
             // ステージの更新
             UpdateStage();
@@ -127,18 +71,7 @@ namespace Tutorial
             count++;
         }
 
-        // 敵召還関連
-        private void UpdateStage()
-        {
-            // カウントが100の倍数だったら
-            if (count % 100 == 0)
-            {
-                // 敵が残っていたら画面に追加
-                if (enemies.Count > 0)
-                {
-                    characterNode.AddChildNode(enemies.Dequeue());
-                }
-            }
-        }
+        ...略...
+
     }
 }

@@ -37,38 +37,23 @@ namespace Tutorial
             // キャラクターノードにプレイヤーを追加
             characterNode.AddChildNode(player);
 
-            // スコアを表示するノードを設定
-            scoreNode = new TextNode();
-            // スコア表示に使うフォントを読み込む
-            scoreNode.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 30);
-            // スコア表示の位置を設定
-            scoreNode.Position = new Vector2F();
--           // スコア表示の文字を設定
--           scoreNode.Text = "スコア";
-
-            // UIノードにスコア表示ノードを追加
-            uiNode.AddChildNode(scoreNode);
++           // スコアを表示するノードを設定
++           scoreNode = new TextNode();
++           // スコア表示に使うフォントを読み込む
++           scoreNode.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 30);
++           // スコア表示の位置を設定
++           scoreNode.Position = new Vector2F();
++           // スコア表示の文字を設定
++           scoreNode.Text = "スコア";
++
++           // UIノードにスコア表示ノードを追加
++           uiNode.AddChildNode(scoreNode);
 
             // ウェーブを初期化する
             InitWave();
 
             // BGMを初期化する
             InitBGM();
-        }
-
-        ...略...
-
-        // フレーム毎に実行
-        protected override void OnUpdate()
-        {
-+           // スコア表示の更新
-+           scoreNode.Text = "Score : " + score;
-
-            // ステージの更新
-            UpdateStage();
-
-            // カウントを進める
-            count++;
         }
 
         ...略...

@@ -138,11 +138,20 @@ public class Bullet : SpriteNode
 ソースコードでは、`Player`クラスと`Bullet`クラスのコンストラクタに、引数　`position`を持たせています。
 このようにすることで、プレイヤーや弾の最初の位置を外部から設定できるようになります。
 
+次に、コンストラクタで弾の速度を設定できるようにしましょう。
+`Bullet`クラスのコンストラクタに速度を引数として設定してそこからいじれるようにします。
+
+[!code-diff[Main](Text/Spl8.cs)]
+
+`Bullet`クラスのコンストラクタの引数を変えたので、それを呼び出すコードを修正しましょう。
+
+[!code-diff[Main](Text/Spl9.cs)]
+
 ## プレイヤーが画面外に出ないようにする
 ここまででできたプログラムを実行してわかると思いますが、方向キーを押しっぱなしにしていると、プレイヤーが画面外に出てしまいます。
 そこで、プレイヤーが画面外に出ないように、処理を追加する必要があります。
 
-[!code-diff[Main](Text/Spl8.cs)]
+[!code-diff[Main](Text/Spl10.cs)]
 
 追加した処理では、変更後の x 座標と y 座標について、画面に表示される範囲に収まるように数値を設定しています。
 このようにすることで、プレイヤーが画面外に出ることはなくなります。
@@ -152,7 +161,7 @@ public class Bullet : SpriteNode
 しかし、画面外に出た弾を削除せずに、エンジンに弾を追加していくと、エンジンの処理が重くなっていきます。
 そのため、弾が画面外に出て行ったら削除する処理を追加する必要があります。
 
-[!code-diff[Main](Text/Spl9.cs)]
+[!code-diff[Main](Text/Spl11.cs)]
 
 弾が画面外に出たら、親ノードを取得して`RemoveChildNode`メソッドを実行します。
 このメソッドを実行すると、弾のインスタンスはAltseed2の管理対象から除外されます。
@@ -182,7 +191,7 @@ public class Bullet : SpriteNode
 あとは、Program.csに記述されている`Player`クラスの部分を切り取って、Player.csに貼り付けるだけです。
 ただし、ただ切り貼りしただけではエラーが発生します。
 これは、ソースファイルに`Altseed`という名前空間が知らされていないことが原因です。
-Player.csの頭に「`using Altseed;`」と記述しましょう。
+Player.csの頭に「`using Altseed2;`」と記述しましょう。
 
 ![newfile_win_4](Image/newfile_win_4.png)
 ![newfile_win_5](Image/newfile_win_5.png)
@@ -218,7 +227,7 @@ Player.csの頭に「`using Altseed;`」と記述しましょう。
 
 ソースコードが複数のファイルに振り分けられたことで、Program.csの内容がこれだけになりました。
 
-[!code-diff[Main](Text/Spl10.cs)]
+[!code-diff[Main](Text/Spl12.cs)]
 
 しかし、このソースコードでは、プレイヤーや弾を、エンジンに直接登録してしまっています。
 このままでは、何か別の画面に切り替えようとした場合に、エンジンに直接登録されたオブジェクトをいちいち登録解除するのが面倒です。
@@ -230,7 +239,7 @@ Player.csの頭に「`using Altseed;`」と記述しましょう。
 ファイルを新規作成できたら、メインステージを表す`MainNode`クラスに処理を書き込んでいきます。
 MainNode.csに以下のように書いてください。
 
-[!code-diff[Main](Text/Spl11.cs)]
+[!code-diff[Main](Text/Spl13.cs)]
 
 `OnAdded`は、このノードがエンジンに登録されたときに実行されるメソッドです。
 ノードの初期状態を設定するには、このメソッドを使います。
@@ -253,9 +262,29 @@ protected override void OnAdded()
 では、`MainNode`クラスのインスタンスを作成し、それをエンジンに登録してみましょう。
 Program.csに移って、以下のようにソースコードを書き換えてください。
 
-[!code-diff[Main](Text/Spl12.cs)]
+[!code-diff[Main](Text/Spl14.cs)]
 
 このようにすると、`MainNode`の子ノードとして登録されているオブジェクト群が更新され、先ほどと同じ挙動をします。
+
+また、ゲームシーンとして`MainNode`を定義したため、`Player`クラスで行っている自機弾の追加先をエンジンから、`MainNode`にある`characterNode`に変更しましょう。
+
+[!code-diff[Main](Text/Spl15.cs)]
+
+ここで，`MainNode.characterNode`がないではないかと思うかもしれませんが、`Parent`が`MainNode.characterNode`を表しています。
+MainNode.csにて、
+```cs
+// キャラクターノードを追加
+AddChildNode(characterNode);
+
+......
+
+// キャラクターノードにプレイヤーを追加
+characterNode.AddChildNode(player);
+```
+という記述があります。これは、
+`エンジン-MainNode-characterNode-Player`
+という親子関係を示しています。
+ここで`MainNode.characterNode`の参照が欲しいとなったときは`Player`から`Parent`を呼び出すことで解決できます。
 
 ## 背景を追加する
 ソースコードが整理できたので、ここから敵を追加していっても良い頃合いです。
@@ -263,7 +292,7 @@ Program.csに移って、以下のようにソースコードを書き換えて�
 それっぽい背景が欲しいものです。
 ということで、`MainNode`に背景を追加する機能を追加しておきましょう。
 
-[!code-diff[Main](Text/Spl13.cs)]
+[!code-diff[Main](Text/Spl16.cs)]
 
 シューティングゲームらしい絵面になりました。
 

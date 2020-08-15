@@ -13,7 +13,7 @@ namespace Tutorial
 +           // ↑キーでY座標を減少
 +           if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 +           {
-+               Position += new Vector2F(0.0f, -2.5f);
++               Position -= new Vector2F(0.0f, 2.5f);
 +           }
 +
 +           // ↓キーでY座標を増加
@@ -44,7 +44,7 @@ namespace Tutorial
 -           // ↑キーでY座標を減少
 -           if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
 -           {
--               player.Position += new Vector2F(0.0f, -2.5f);
+-               player.Position -= new Vector2F(0.0f, 2.5f);
 -           }
 -
 -           // ↓キーでY座標を増加

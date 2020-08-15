@@ -1,5 +1,6 @@
 using Altseed2;
 using System;
+using System.Collections.Generic;
 
 namespace Tutorial
 {
@@ -11,29 +12,19 @@ namespace Tutorial
             // エンジンを初期化
             Engine.Initialize("Tutorial", 960, 720);
 
-            // 自機
-            var player = new SpriteNode();
-            // 自機のテクスチャを読み込む
-            player.Texture = Texture2D.LoadStrict("Resources/Player.png");
-            // 自機の座標を設定
-            player.Position = new Vector2F(100, 360);
-            // 自機の中心座標を設定
-            player.CenterPosition = player.Texture.Size / 2;
-
-            // 自機をエンジンに追加
-            Engine.AddNode(player);
+-           // 自機
+-           var player = new Player(new Vector2F(100, 360));
+-
+-           // 自機をエンジンに追加
+-           Engine.AddNode(player);
++           // メイン画面をエンジンに追加
++           Engine.AddNode(new MainNode());
 
             // メインループ
             while (Engine.DoEvents())
             {
                 // エンジンを更新
                 Engine.Update();
-
-+               // ↑キーでY座標を減少
-+               if (Engine.Keyboard.GetKeyState(Key.Up) == ButtonState.Hold)
-+               {
-+                   player.Position -= new Vector2F(0.0f, 2.5f);
-+               }
 
                 // Escapeキーでゲーム終了
                 if (Engine.Keyboard.GetKeyState(Key.Escape) == ButtonState.Push)
