@@ -1,12 +1,12 @@
 +       public EnemyBullet(MainNode mainNode, Vector2F position, Vector2F velocity) : base(mainNode, position, velocity)
 -       public EnemyBullet(Vector2F position, Vector2F velocity) : base(position, velocity)
         {
-            // ƒeƒNƒXƒ`ƒƒ‚ğ“Ç‚İ‚Ş
+            // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’èª­ã¿è¾¼ã‚€
             Texture = Texture2D.LoadStrict("Resources/Bullet_Red.png");
 
-            // ’†SÀ•W‚ğİ’è
+            // ä¸­å¿ƒåº§æ¨™ã‚’è¨­å®š
             CenterPosition = ContentSize / 2;
 
-+           // ”¼Œa‚ğİ’è
++           // åŠå¾„ã‚’è¨­å®š
 +           collider.Radius = Texture.Size.X / 2;
         }

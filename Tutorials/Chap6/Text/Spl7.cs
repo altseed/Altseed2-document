@@ -1,12 +1,12 @@
 +       public PlayerBullet(MainNode mainNode, Vector2F position) : base(mainNode, position, new Vector2F(10f, 0.0f))
 -       public PlayerBullet(Vector2F position) : base(position, new Vector2F(10f, 0.0f))
         {
-            // ƒeƒNƒXƒ`ƒƒ‚ğ“Ç‚İ‚Ş
+            // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’èª­ã¿è¾¼ã‚€
             Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
 
-            // ’†SÀ•W‚ğİ’è
+            // ä¸­å¿ƒåº§æ¨™ã‚’è¨­å®š
             CenterPosition = ContentSize / 2;
 
-+           // ”¼Œa‚ğİ’è
++           // åŠå¾„ã‚’è¨­å®š
 +           collider.Radius = Texture.Size.X / 2;
         }
