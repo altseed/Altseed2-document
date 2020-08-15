@@ -57,7 +57,7 @@ namespace Tutorial
 +               // 自機弾のテクスチャを読み込む
 +               bullet.Texture = Texture2D.LoadStrict("Resources/Bullet_Blue.png");
 +               // 自機弾の座標を設定
-+               bullet.Position = player.Position;
++               bullet.Position = Position;
 +               // 自機弾の中心座標を設定
 +               bullet.CenterPosition = bullet.ContentSize / 2;
 +               // 自機弾の表示位置を自機より奥に設定
