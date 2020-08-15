@@ -66,7 +66,7 @@ namespace Tutorial
             {
                 // 発射される自機弾
 -               var bullet = new Bullet(Position);
-+               var bullet = new Bullet(new Vector2F(10f, 0f));
++               var bullet = new Bullet(Position, new Vector2F(10f, 0f));
 
                 // 自機弾をエンジンに追加
                 Engine.AddNode(bullet);
