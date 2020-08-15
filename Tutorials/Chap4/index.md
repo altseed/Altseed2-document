@@ -182,7 +182,7 @@ public class Bullet : SpriteNode
 あとは、Program.csに記述されている`Player`クラスの部分を切り取って、Player.csに貼り付けるだけです。
 ただし、ただ切り貼りしただけではエラーが発生します。
 これは、ソースファイルに`Altseed`という名前空間が知らされていないことが原因です。
-Player.csの頭に「`using Altseed;`」と記述しましょう。
+Player.csの頭に「`using Altseed2;`」と記述しましょう。
 
 ![newfile_win_4](Image/newfile_win_4.png)
 ![newfile_win_5](Image/newfile_win_5.png)
