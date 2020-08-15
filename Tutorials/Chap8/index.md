@@ -10,7 +10,7 @@
 
 ## テキストを表示
 
-まずは、スコア表示用の`TextNode`を追加していきます。
+まずは、スコア変数とスコア表示用の`TextNode`を追加していきます。
 
 以下のコードを追加してください。
 
@@ -18,9 +18,15 @@
 
 二つの`TextNode`用の変数を書いたら、
 
-次はこの`TextNode`の設定していきます。
+次は敵を倒したときにスコア加算が行われるようにします。
+
+以下のコードを追加してください。
 
 [!code-diff[MainNode](Text/Spl2.cs)]
+
+次はこの`TextNode`の設定していきます。
+
+[!code-diff[MainNode](Text/Spl3.cs)]
 
 設定した内容は、
 * `TextNode`インスタンスの代入
@@ -47,7 +53,7 @@
 
 では、以下のコードを追加・削除してください。
 
-[!code-diff[MainNode](Text/Spl3.cs)]
+[!code-diff[MainNode](Text/Spl4.cs)]
 
 まず、先ほど追加した仮テキストを代入する箇所を削除します。
 
@@ -74,4 +80,4 @@
 ## コード全体
 
 最後に、今回修正を加えた、今回の`MainNode`全体を載せておきます。困ったときは見比べたりコピペしてみてください。
-[!code-diff[MainNode](Text/Spl4.cs)]
+[!code-diff[MainNode](Text/Spl5.cs)]
