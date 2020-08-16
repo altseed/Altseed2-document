@@ -7,3 +7,8 @@ rmdir /s /q Src\Engine\obj
 
 docfx metadata
 docfx build
+
+cd Scripts
+
+pip install pyyaml -t .
+ReferenceExtract.py

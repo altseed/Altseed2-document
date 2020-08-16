@@ -13,10 +13,25 @@ issueは[Altseed2/issues](https://github.com/altseed/Altseed2/issues)に作成�
   - Homebrew で入れた Mono はダメとある。
 - [DocFX](https://github.com/dotnet/docfx)
   - `choco install docfx` するか Release からバイナリを落として解凍し、パスを通す
+- Python3
+  - PyYaml
 
 # 生成
 
-`docfx --serve` 
+1. `Pull.bat` を実行しサブモジュールを更新する
+1. `Build.bat を実行しリファレンスと各ページを生成する
+
+# ローカルでの閲覧
+
+- 生成された `Src` フォルダ以下を直接ブラウザで見るのは CORS policy に引っかかって TOC など一部の機能が動作しないため非推奨
+- `docfx --serve` を実行すると リファレンスとページが生成されたのち、HTTPサーバが起動してブラウザから localhost:8080 で見られるようになる。ただし`docfx --serve` を実行している端末からしか閲覧できない。
+- `docfx metadata` と `docfx build` を実行したのち、`Web Server for Chrome` などを使って別のHTTPサーバを立てて見るという方法もある。
+
+# ReferenceExtract.yml について
+
+内部向けクラスなど、ユーザに向けて公開しない要素は適切にフィルタを書いておかないと、すべて出力されてしまう。
+エンジンの更新のたびに公開することを意図していないものが混入していないかを検出するため、出力したメンバーの
+一覧を保存しておく。
 
 # 書き方
 
@@ -30,7 +45,7 @@ issueは[Altseed2/issues](https://github.com/altseed/Altseed2/issues)に作成�
 - References　・・・ リファレンス（自動生成なので触らない）
 - Manual
   - *.md ・・・ 各機能に関する文書（書く）
-  - *.cs ・・・ ~~各機能に埋め込むサンプルコード（書く）~~ サンプルコードは Engineへ
+  - *.cs ・・・ ~~各機能に埋め込むサンプルコード（書く）~~ サンプルコードは EngineのSamplesフォルダ以下に置く
   - *.png ・・・ 埋め込む画像（撮るか描く）
   - toc.yml ・・・ サンプルの目次（書く）
 - Tutorials

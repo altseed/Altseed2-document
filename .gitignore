@@ -3,3 +3,5 @@ obj
 .DS_Store
 .vscode
 /_exported_templates
+References
+Scripts/*[Yy]aml*
