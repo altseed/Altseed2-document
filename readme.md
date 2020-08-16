@@ -13,6 +13,7 @@ issueは[Altseed2/issues](https://github.com/altseed/Altseed2/issues)に作成�
   - Homebrew で入れた Mono はダメとある。
 - [DocFX](https://github.com/dotnet/docfx)
   - `choco install docfx` するか Release からバイナリを落として解凍し、パスを通す
+  - バージョンは 2.56.1
 - Python3
   - PyYaml
 
