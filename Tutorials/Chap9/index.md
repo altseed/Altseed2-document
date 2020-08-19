@@ -114,7 +114,7 @@ if (bgmID.HasValue)
 
 この部分ではBGMのフェードアウトを行っています。
 `SoundMixer.FadeOut(int id, float seconds)`は，指定した音を指定した秒数でフェードアウトするというものです。
-BGMが再生中，つまり`bgmID`がnullじゃないときに`bgmID.HasValue`が`true`のときにフェードアウトを行い，`bgmID`を`null`にします。ここで`bgmID`を`null`にすることで`bgmID.HasValue`が`false`となるため，フェードアウト処理は一度だけしか行われません。
+BGMが再生中，つまり`bgmID`がnullじゃないとき(=`bgmID.HasValue`が`true`のとき)にフェードアウトを行い，`bgmID`を`null`にします。ここで`bgmID`を`null`にすることで`bgmID.HasValue`が`false`となるため，フェードアウト処理は一度だけしか行われません。
 
 ## クリア画面の追加
 
