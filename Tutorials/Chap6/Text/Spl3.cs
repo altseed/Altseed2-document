@@ -9,6 +9,9 @@ namespace Tutorial
 -       public Player(Vector2F position)
 +       public Player(MainNode mainNode, Vector2F position) : base(mainNode, position)
         {
+-           // 座標を設定
+-           Position = position;
+
 +           // 衝突判定を行うように設定
 +           doSurvey = true;
 
