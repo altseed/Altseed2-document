@@ -11,6 +11,29 @@ Altseed2.AlphaBlend:
 - Altseed2.AlphaBlend.Normal
 - Altseed2.AlphaBlend.Opacity
 - Altseed2.AlphaBlend.Substract
+Altseed2.AnchorMode:
+- Altseed2.AnchorMode.ContentSize
+- Altseed2.AnchorMode.Fill
+- Altseed2.AnchorMode.KeepAspect
+Altseed2.AnchorTransformerNode:
+- Altseed2.AnchorTransformerNode.AbsoluteTransform
+- Altseed2.AnchorTransformerNode.AnchorMax
+- Altseed2.AnchorTransformerNode.AnchorMin
+- Altseed2.AnchorTransformerNode.AnchorMode
+- Altseed2.AnchorTransformerNode.Angle
+- Altseed2.AnchorTransformerNode.CenterPosition
+- Altseed2.AnchorTransformerNode.HorizontalAlignment
+- Altseed2.AnchorTransformerNode.HorizontalFlip
+- Altseed2.AnchorTransformerNode.InheritedTransform
+- Altseed2.AnchorTransformerNode.LeftTop
+- Altseed2.AnchorTransformerNode.Pivot
+- Altseed2.AnchorTransformerNode.Position
+- Altseed2.AnchorTransformerNode.RightBottom
+- Altseed2.AnchorTransformerNode.Scale
+- Altseed2.AnchorTransformerNode.Size
+- Altseed2.AnchorTransformerNode.Transform
+- Altseed2.AnchorTransformerNode.VerticalAlignment
+- Altseed2.AnchorTransformerNode.VerticalFlip
 Altseed2.ArcNode:
 - Altseed2.ArcNode.#ctor
 - Altseed2.ArcNode.Color
@@ -93,7 +116,6 @@ Altseed2.Collider:
 - Altseed2.Collider.Transform
 Altseed2.ColliderNode:
 - Altseed2.ColliderNode.#ctor
-- Altseed2.ColliderNode.AbsoluteTransform
 Altseed2.ColliderVisualizeNodeFactory:
 - Altseed2.ColliderVisualizeNodeFactory.Create(Altseed2.ColliderNode)
 Altseed2.CollisionInfo:
@@ -130,12 +152,11 @@ Altseed2.Configuration:
 - Altseed2.Configuration.#ctor
 - Altseed2.Configuration.ConsoleLoggingEnabled
 - Altseed2.Configuration.DeviceType
+- Altseed2.Configuration.EnabledCoreModules
 - Altseed2.Configuration.FileLoggingEnabled
 - Altseed2.Configuration.IsFullscreen
-- Altseed2.Configuration.IsGraphicsOnly
 - Altseed2.Configuration.IsResizable
 - Altseed2.Configuration.LogFileName
-- Altseed2.Configuration.ToolEnabled
 - Altseed2.Configuration.VisibleTransformInfo
 - Altseed2.Configuration.WaitVSync
 Altseed2.Cursor:
@@ -250,10 +271,21 @@ Altseed2.Glyph:
 - Altseed2.Glyph.Size
 - Altseed2.Glyph.TextureIndex
 - Altseed2.Glyph.TextureSize
+Altseed2.HorizontalAlignment:
+- Altseed2.HorizontalAlignment.Center
+- Altseed2.HorizontalAlignment.Left
+- Altseed2.HorizontalAlignment.Right
 Altseed2.ICollisionEventReceiver:
 - Altseed2.ICollisionEventReceiver.OnCollisionEnter(Altseed2.CollisionInfo)
 - Altseed2.ICollisionEventReceiver.OnCollisionExit(Altseed2.CollisionInfo)
 - Altseed2.ICollisionEventReceiver.OnCollisionStay(Altseed2.CollisionInfo)
+Altseed2.ICullableDrawn:
+- Altseed2.ICullableDrawn.ContentSize
+- Altseed2.ICullableDrawn.IsDrawn
+- Altseed2.ICullableDrawn.IsDrawnActually
+Altseed2.IDrawn:
+- Altseed2.IDrawn.CameraGroup
+- Altseed2.IDrawn.ZOrder
 Altseed2.Joystick:
 - Altseed2.Joystick.ConnectedJoystickCount
 - Altseed2.Joystick.GetAxisState(System.Int32,Altseed2.JoystickAxis)
@@ -564,8 +596,9 @@ Altseed2.Node:
 - Altseed2.Node.Children
 - Altseed2.Node.EnumerateAncestors
 - Altseed2.Node.EnumerateDescendants
-- Altseed2.Node.EnumerateDescendants``1
 - Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
+- Altseed2.Node.FlushQueue
+- Altseed2.Node.IsRegistered
 - Altseed2.Node.OnAdded
 - Altseed2.Node.OnRemoved
 - Altseed2.Node.OnUpdate
@@ -575,17 +608,18 @@ Altseed2.Node:
 Altseed2.PolygonCollider:
 - Altseed2.PolygonCollider.Create
 - Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
+- Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})
 - Altseed2.PolygonCollider.Vertexes
 Altseed2.PolygonColliderNode:
 - Altseed2.PolygonColliderNode.#ctor
 - Altseed2.PolygonColliderNode.ContentSize
 - Altseed2.PolygonColliderNode.InheritedTransform
 - Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
+- Altseed2.PolygonColliderNode.SetVertexes(System.Span{Altseed2.Vector2F})
 - Altseed2.PolygonColliderNode.Vertexes
 Altseed2.PolygonColliderVisualizeNode: []
 Altseed2.PolygonNode:
 - Altseed2.PolygonNode.#ctor
-- Altseed2.PolygonNode.AbsoluteTransform
 - Altseed2.PolygonNode.AlphaBlend
 - Altseed2.PolygonNode.CameraGroup
 - Altseed2.PolygonNode.ContentSize
@@ -596,6 +630,8 @@ Altseed2.PolygonNode:
 - Altseed2.PolygonNode.OverwriteVertexColor(Altseed2.Color)
 - Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color)
 - Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex})
+- Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color)
+- Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex})
 - Altseed2.PolygonNode.Src
 - Altseed2.PolygonNode.Texture
 - Altseed2.PolygonNode.Vertexes
@@ -681,12 +717,11 @@ Altseed2.RuledTransitionEffectNode:
 - Altseed2.RuledTransitionEffectNode.Softness
 - Altseed2.RuledTransitionEffectNode.UseCaptionAsMaskTexture
 Altseed2.RuledTransitionNode:
-- Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState)
 - Altseed2.RuledTransitionNode.#ctor(Altseed2.RuledTransitionState,Altseed2.RuledTransitionState,Altseed2.Texture2D)
-- Altseed2.RuledTransitionNode.OnClosing(System.Single)
-- Altseed2.RuledTransitionNode.OnNodeSwapped
-- Altseed2.RuledTransitionNode.OnOpening(System.Single)
-- Altseed2.RuledTransitionNode.OnTransitionBegin
+- Altseed2.RuledTransitionNode.Closing(System.Single)
+- Altseed2.RuledTransitionNode.NodeSwapped
+- Altseed2.RuledTransitionNode.Opening(System.Single)
+- Altseed2.RuledTransitionNode.TransitionBegin
 Altseed2.RuledTransitionState:
 - Altseed2.RuledTransitionState.#ctor
 - Altseed2.RuledTransitionState.Duration
@@ -706,7 +741,6 @@ Altseed2.ShaderStage:
 - Altseed2.ShaderStage.Vertex
 Altseed2.ShapeNode:
 - Altseed2.ShapeNode.#ctor
-- Altseed2.ShapeNode.AbsoluteTransform
 - Altseed2.ShapeNode.AlphaBlend
 - Altseed2.ShapeNode.CameraGroup
 - Altseed2.ShapeNode.ContentSize
@@ -736,6 +770,7 @@ Altseed2.SoundMixer:
 - Altseed2.SoundMixer.GetPlaybackPosition(System.Int32)
 - Altseed2.SoundMixer.GetPlaybackSpeed(System.Int32)
 - Altseed2.SoundMixer.GetSpectrum(System.Int32,System.Int32,Altseed2.FFTWindow)
+- Altseed2.SoundMixer.GetSpectrum(System.Int32,System.Int32,Altseed2.FFTWindow,System.Span{System.Single})
 - Altseed2.SoundMixer.Pause(System.Int32)
 - Altseed2.SoundMixer.Play(Altseed2.Sound)
 - Altseed2.SoundMixer.Resume(System.Int32)
@@ -748,7 +783,6 @@ Altseed2.SoundMixer:
 - Altseed2.SoundMixer.StopAll
 Altseed2.SpriteNode:
 - Altseed2.SpriteNode.#ctor
-- Altseed2.SpriteNode.AbsoluteTransform
 - Altseed2.SpriteNode.AlphaBlend
 - Altseed2.SpriteNode.CameraGroup
 - Altseed2.SpriteNode.Color
@@ -783,7 +817,6 @@ Altseed2.StreamFile:
 - Altseed2.StreamFile.TempBufferSize
 Altseed2.TextNode:
 - Altseed2.TextNode.#ctor
-- Altseed2.TextNode.AbsoluteTransform
 - Altseed2.TextNode.AlphaBlend
 - Altseed2.TextNode.CameraGroup
 - Altseed2.TextNode.CharacterSpace
@@ -916,13 +949,13 @@ Altseed2.Tool:
 - Altseed2.Tool.ImageButton(Altseed2.TextureBase,Altseed2.Vector2F,Altseed2.Vector2F,Altseed2.Vector2F,System.Int32,Altseed2.Color,Altseed2.Color)
 - Altseed2.Tool.Indent
 - Altseed2.Tool.InputFloat(System.String,System.Single@)
-- Altseed2.Tool.InputFloat2(System.String,System.Single[])
-- Altseed2.Tool.InputFloat3(System.String,System.Single[])
-- Altseed2.Tool.InputFloat4(System.String,System.Single[])
+- Altseed2.Tool.InputFloat2(System.String,System.Span{System.Single})
+- Altseed2.Tool.InputFloat3(System.String,System.Span{System.Single})
+- Altseed2.Tool.InputFloat4(System.String,System.Span{System.Single})
 - Altseed2.Tool.InputInt(System.String,System.Int32@)
-- Altseed2.Tool.InputInt2(System.String,System.Int32[])
-- Altseed2.Tool.InputInt3(System.String,System.Int32[])
-- Altseed2.Tool.InputInt4(System.String,System.Int32[])
+- Altseed2.Tool.InputInt2(System.String,System.Span{System.Int32})
+- Altseed2.Tool.InputInt3(System.String,System.Span{System.Int32})
+- Altseed2.Tool.InputInt4(System.String,System.Span{System.Int32})
 - Altseed2.Tool.InputText(System.String,System.String,System.Int32,Altseed2.ToolInputTextFlags)
 - Altseed2.Tool.InputTextMultiline(System.String,System.String,System.Int32,Altseed2.Vector2F,Altseed2.ToolInputTextFlags)
 - Altseed2.Tool.InputTextWithHint(System.String,System.String,System.String,System.Int32,Altseed2.ToolInputTextFlags)
@@ -965,8 +998,8 @@ Altseed2.Tool:
 - Altseed2.Tool.OpenPopup(System.String)
 - Altseed2.Tool.OpenPopupOnItemClick(System.String,System.Int32)
 - Altseed2.Tool.PickFolder(System.String)
-- Altseed2.Tool.PlotHistogram(System.String,System.Single[],System.Int32,System.Int32,System.String,System.Single,System.Single,Altseed2.Vector2F,System.Int32)
-- Altseed2.Tool.PlotLines(System.String,System.Single[],System.Int32,System.Int32,System.String,System.Single,System.Single,Altseed2.Vector2F,System.Int32)
+- Altseed2.Tool.PlotHistogram(System.String,System.Span{System.Single},System.Int32,System.Int32,System.String,System.Single,System.Single,Altseed2.Vector2F,System.Int32)
+- Altseed2.Tool.PlotLines(System.String,System.Span{System.Single},System.Int32,System.Int32,System.String,System.Single,System.Single,Altseed2.Vector2F,System.Int32)
 - Altseed2.Tool.PopAllowKeyboardFocus
 - Altseed2.Tool.PopButtonRepeat
 - Altseed2.Tool.PopClipRect
@@ -1031,13 +1064,13 @@ Altseed2.Tool:
 - Altseed2.Tool.SetWindowSizeWithCond(Altseed2.Vector2F,Altseed2.ToolCond)
 - Altseed2.Tool.SliderAngle(System.String,System.Single@)
 - Altseed2.Tool.SliderFloat(System.String,System.Single@,System.Single,System.Single,System.Single)
-- Altseed2.Tool.SliderFloat2(System.String,System.Single[],System.Single,System.Single,System.Single)
-- Altseed2.Tool.SliderFloat3(System.String,System.Single[],System.Single,System.Single,System.Single)
-- Altseed2.Tool.SliderFloat4(System.String,System.Single[],System.Single,System.Single,System.Single)
+- Altseed2.Tool.SliderFloat2(System.String,System.Span{System.Single},System.Single,System.Single,System.Single)
+- Altseed2.Tool.SliderFloat3(System.String,System.Span{System.Single},System.Single,System.Single,System.Single)
+- Altseed2.Tool.SliderFloat4(System.String,System.Span{System.Single},System.Single,System.Single,System.Single)
 - Altseed2.Tool.SliderInt(System.String,System.Int32@,System.Single,System.Int32,System.Int32)
-- Altseed2.Tool.SliderInt2(System.String,System.Int32[],System.Single,System.Int32,System.Int32)
-- Altseed2.Tool.SliderInt3(System.String,System.Int32[],System.Single,System.Int32,System.Int32)
-- Altseed2.Tool.SliderInt4(System.String,System.Int32[],System.Single,System.Int32,System.Int32)
+- Altseed2.Tool.SliderInt2(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32)
+- Altseed2.Tool.SliderInt3(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32)
+- Altseed2.Tool.SliderInt4(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32)
 - Altseed2.Tool.SmallButton(System.String)
 - Altseed2.Tool.Spacing
 - Altseed2.Tool.Text(System.String)
@@ -1299,7 +1332,12 @@ Altseed2.TransformNode:
 - Altseed2.TransformNode.Position
 - Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
 - Altseed2.TransformNode.Scale
+- Altseed2.TransformNode.Transfomer
 - Altseed2.TransformNode.VerticalFlip
+Altseed2.TransformerNode:
+- Altseed2.TransformerNode.AbsoluteTransform
+- Altseed2.TransformerNode.InheritedTransform
+- Altseed2.TransformerNode.Transform
 Altseed2.TransitionNode:
 - Altseed2.TransitionNode.#ctor(Altseed2.Node,Altseed2.Node,System.Single,System.Single)
 - Altseed2.TransitionNode.GetCoroutine(System.Single,System.Single)
@@ -1395,6 +1433,10 @@ Altseed2.Vertex:
 - Altseed2.Vertex.Position
 - Altseed2.Vertex.UV1
 - Altseed2.Vertex.UV2
+Altseed2.VerticalAlignment:
+- Altseed2.VerticalAlignment.Bottom
+- Altseed2.VerticalAlignment.Center
+- Altseed2.VerticalAlignment.Top
 Altseed2.WritingDirection:
 - Altseed2.WritingDirection.Horizontal
 - Altseed2.WritingDirection.Vertical

@@ -40,8 +40,6 @@ apiRules:
     - exclude:
           uidRegex: ^Altseed2\.IArray.*
     - exclude:
-          uidRegex: ^Altseed2\.I(Cullable)?Drawn
-    - exclude:
           uidRegex: ^Altseed2\.IOHelper
     - exclude:
           uidRegex: ^Altseed2\.Registerable.*
@@ -73,6 +71,8 @@ apiRules:
     - exclude:
           uidRegex: ^Altseed2\..*Node\.Update
     - exclude:
+          uidRegex: ^Altseed2\.AnchorTransformerNode\.(SetPositionDirectly|SetSizeDirectly|ApplySizeChanged.*|UpdateMargin|CalcInternalTransform)
+    - exclude:
           uidRegex: ^Altseed2\.ArcNode\.(Get.*|UpdateVertexes)
     - exclude:
           uidRegex: ^Altseed2\.CameraNode\.RenderedCamera
@@ -85,9 +85,13 @@ apiRules:
     - exclude:
           uidRegex: ^Altseed2\.CollisionManagerNode\.(AddCollider|EnumerateColliderNodes|RemoveCollider)
     - exclude:
-          uidRegex: ^Altseed2\.Engine\.(Config|Core|Context|CullingSystem|Renderer|Resources|Window|DrawCameraGroup.*|(Unr|R)egister.*|Update.+)$
+          uidRegex: ^Altseed2\.Engine\.(Config|Core|Context|CullingSystem|Renderer|Resources|Window|DrawCameraGroup.*|(Unr|R)egister.*|Update.+|.*Buffer|MaxStackalloclLength)$
     - exclude:
           uidRegex: ^Altseed2\.Engine\.MathHelper\.(CalcTransform.*|GetMinMax.*)
+    - exclude:
+          uidRegex: ^Altseed2\.ICullableDrawn\.(CullingId|Rendered)
+    - exclude:
+          uidRegex: ^Altseed2\.IDrawn\.Draw
     - exclude:
           uidRegex: ^Altseed2\.Matrix.*\.(Values|CalcTransform)
     - exclude:
@@ -103,5 +107,9 @@ apiRules:
     - exclude:
           uidRegex: ^Altseed2\.Tool\.Render
     - exclude:
-          uidRegex: ^Altseed2\.TransformNode\.Transform
- 
+          uidRegex: ^Altseed2\.TransformNode\.(Transform|Transfomer|CalcTransform|PropagateTransform.*)
+    - exclude:
+          uidRegex: ^Altseed2\.TransformerNode\.RequireCalcTransform
+    - exclude:
+          uidRegex: ^Altseed2\.TransitionNode\.(TransitionBegin|Closing|NodeSwapping|NodeSwapped|Opening|TransitionEnd)
+
