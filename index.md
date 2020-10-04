@@ -59,6 +59,8 @@ Linux : 2.1 以降
 
 ## サポート
 - [GitHub](https://github.com/altseed/Altseed2)
+- [Twitter](https://twitter.com/altseed)
+- [Slack](https://altseed.herokuapp.com/)
 
 ## Altseed2 For Rust について
 
