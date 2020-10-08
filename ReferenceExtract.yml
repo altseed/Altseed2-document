@@ -78,16 +78,12 @@ Altseed2.ButtonState:
 - Altseed2.ButtonState.Release
 Altseed2.CameraNode:
 - Altseed2.CameraNode.#ctor
-- Altseed2.CameraNode.Angle
-- Altseed2.CameraNode.CenterPosition
 - Altseed2.CameraNode.ClearColor
 - Altseed2.CameraNode.Group
 - Altseed2.CameraNode.IsColorCleared
-- Altseed2.CameraNode.Position
-- Altseed2.CameraNode.Scale
 - Altseed2.CameraNode.TargetTexture
 Altseed2.CircleCollider:
-- Altseed2.CircleCollider.Create
+- Altseed2.CircleCollider.#ctor
 - Altseed2.CircleCollider.Radius
 Altseed2.CircleColliderNode:
 - Altseed2.CircleColliderNode.#ctor
@@ -199,6 +195,10 @@ Altseed2.EasingType:
 - Altseed2.EasingType.OutQuart
 - Altseed2.EasingType.OutQuint
 - Altseed2.EasingType.OutSine
+Altseed2.EdgeCollider:
+- Altseed2.EdgeCollider.#ctor
+- Altseed2.EdgeCollider.Point1
+- Altseed2.EdgeCollider.Point2
 Altseed2.Engine:
 - Altseed2.Engine.AddNode(Altseed2.Node)
 - Altseed2.Engine.ClearColor
@@ -599,28 +599,39 @@ Altseed2.Node:
 - Altseed2.Node.EnumerateDescendants``1(System.Func{``0,System.Boolean})
 - Altseed2.Node.FlushQueue
 - Altseed2.Node.IsRegistered
+- Altseed2.Node.IsUpdated
+- Altseed2.Node.IsUpdatedActually
 - Altseed2.Node.OnAdded
 - Altseed2.Node.OnRemoved
 - Altseed2.Node.OnUpdate
 - Altseed2.Node.Parent
+- Altseed2.Node.PropagateIsUpdatedActually(Altseed2.Node,System.Boolean)
 - Altseed2.Node.RemoveChildNode(Altseed2.Node)
 - Altseed2.Node.Status
 Altseed2.PolygonCollider:
-- Altseed2.PolygonCollider.Create
-- Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
-- Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})
+- Altseed2.PolygonCollider.#ctor
+- Altseed2.PolygonCollider.Buffers
+- Altseed2.PolygonCollider.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+- Altseed2.PolygonCollider.SetBuffers(System.ReadOnlySpan{System.Int32})
+- Altseed2.PolygonCollider.SetDefaultIndexBuffer
+- Altseed2.PolygonCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},System.Boolean)
+- Altseed2.PolygonCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},System.Boolean)
 - Altseed2.PolygonCollider.Vertexes
 Altseed2.PolygonColliderNode:
 - Altseed2.PolygonColliderNode.#ctor
+- Altseed2.PolygonColliderNode.Buffers
 - Altseed2.PolygonColliderNode.ContentSize
 - Altseed2.PolygonColliderNode.InheritedTransform
-- Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
-- Altseed2.PolygonColliderNode.SetVertexes(System.Span{Altseed2.Vector2F})
+- Altseed2.PolygonColliderNode.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+- Altseed2.PolygonColliderNode.SetBuffers(System.ReadOnlySpan{System.Int32})
+- Altseed2.PolygonColliderNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},System.Boolean)
+- Altseed2.PolygonColliderNode.SetVertexes(System.Span{Altseed2.Vector2F},System.Boolean)
 - Altseed2.PolygonColliderNode.Vertexes
 Altseed2.PolygonColliderVisualizeNode: []
 Altseed2.PolygonNode:
 - Altseed2.PolygonNode.#ctor
 - Altseed2.PolygonNode.AlphaBlend
+- Altseed2.PolygonNode.Buffers
 - Altseed2.PolygonNode.CameraGroup
 - Altseed2.PolygonNode.ContentSize
 - Altseed2.PolygonNode.InheritedTransform
@@ -628,10 +639,15 @@ Altseed2.PolygonNode:
 - Altseed2.PolygonNode.IsDrawnActually
 - Altseed2.PolygonNode.Material
 - Altseed2.PolygonNode.OverwriteVertexColor(Altseed2.Color)
-- Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color)
-- Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex})
-- Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color)
-- Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex})
+- Altseed2.PolygonNode.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
+- Altseed2.PolygonNode.SetBuffers(System.ReadOnlySpan{System.Int32})
+- Altseed2.PolygonNode.SetDefaultIndexBuffer
+- Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F},Altseed2.Color,System.Boolean)
+- Altseed2.PolygonNode.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vertex},System.Boolean)
+- Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F},Altseed2.Color,System.Boolean)
+- Altseed2.PolygonNode.SetVertexes(System.ReadOnlySpan{Altseed2.Vertex},System.Boolean)
+- Altseed2.PolygonNode.SetVertexGroups(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Altseed2.Vertex}})
+- Altseed2.PolygonNode.SetVertexGroupsFromPositions(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Altseed2.Vector2F}},Altseed2.Color)
 - Altseed2.PolygonNode.Src
 - Altseed2.PolygonNode.Texture
 - Altseed2.PolygonNode.Vertexes
@@ -683,9 +699,11 @@ Altseed2.RectI:
 - Altseed2.RectI.X
 - Altseed2.RectI.Y
 Altseed2.RectangleCollider:
+- Altseed2.RectangleCollider.#ctor
 - Altseed2.RectangleCollider.CenterPosition
-- Altseed2.RectangleCollider.Create
+- Altseed2.RectangleCollider.GetIsCollidedWith(Altseed2.Collider)
 - Altseed2.RectangleCollider.Size
+- Altseed2.RectangleCollider.UpdateVertexes
 Altseed2.RectangleColliderNode:
 - Altseed2.RectangleColliderNode.#ctor
 - Altseed2.RectangleColliderNode.ContentSize
@@ -739,6 +757,11 @@ Altseed2.Shader:
 Altseed2.ShaderStage:
 - Altseed2.ShaderStage.Pixel
 - Altseed2.ShaderStage.Vertex
+Altseed2.ShapeCollider:
+- Altseed2.ShapeCollider.#ctor
+- Altseed2.ShapeCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
+- Altseed2.ShapeCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})
+- Altseed2.ShapeCollider.Vertexes
 Altseed2.ShapeNode:
 - Altseed2.ShapeNode.#ctor
 - Altseed2.ShapeNode.AlphaBlend
@@ -1324,15 +1347,12 @@ Altseed2.TransformNode:
 - Altseed2.TransformNode.#ctor
 - Altseed2.TransformNode.AbsoluteTransform
 - Altseed2.TransformNode.Angle
-- Altseed2.TransformNode.CalcTransform
 - Altseed2.TransformNode.CenterPosition
 - Altseed2.TransformNode.ContentSize
 - Altseed2.TransformNode.HorizontalFlip
 - Altseed2.TransformNode.InheritedTransform
 - Altseed2.TransformNode.Position
-- Altseed2.TransformNode.PropagateTransform(Altseed2.Node,Altseed2.Matrix44F)
 - Altseed2.TransformNode.Scale
-- Altseed2.TransformNode.Transfomer
 - Altseed2.TransformNode.VerticalFlip
 Altseed2.TransformerNode:
 - Altseed2.TransformerNode.AbsoluteTransform
