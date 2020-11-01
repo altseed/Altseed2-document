@@ -3,7 +3,7 @@
 [CameraNode](xref:Altseed2.CameraNode)は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。[CameraNode](xref:Altseed2.CameraNode)が撮影する領域は[Angle](xref:Altseed2.CameraNode.Angle)、[CenterPosition](xref:Altseed2.CameraNode.CenterPosition)、[Position](xref:Altseed2.CameraNode.Position)、[Scale](xref:Altseed2.CameraNode.Scale) プロパティを用いることで設定できます。
 
 > [!NOTE]
-> 既定では、[CameraNode](xref:Altseed2.CameraNode)が撮影する領域は、点 (0, 0) を左上とする、[ウインドウサイズ](xref:Altseed2.Engine.WindowSize)と同じ大きさ（[TargetTexture](xref:Altseed2.CameraNode.TargetTexture)を設定した場合はその[大きさ](xref:Altseed2.TextureBase.Size)）の長方形の領域です。上記の各種プロパティを設定することで、この長方形を変形することで撮影する領域を調整すると考えるとよいです。
+> 既定では、[CameraNode](xref:Altseed2.CameraNode)が撮影する領域は、点 (0, 0) を左上とする、[ウインドウサイズ](xref:Altseed2.Engine.WindowSize)と同じ大きさ（[TargetTexture](xref:Altseed2.CameraNode.TargetTexture)を設定した場合はその[大きさ](xref:Altseed2.TextureBase.Size)）の長方形の領域です。上記の各種プロパティを設定してこの長方形を変形することで、撮影する領域を調整すると考えるとよいです。
 
 描画結果を [RenderTexure](xref:Altseed2.RenderTexture) として取り出して再利用することもできます。[Material](xref:Altseed2.Material) などを付けて再描画することができます。
 
