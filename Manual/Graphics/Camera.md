@@ -20,7 +20,7 @@
 ## グループ
 
 [SpriteNode](xref:Altseed2.SpriteNode) や [PostEffectNode](xref:Altseed2.PostEffectNode) のような描画できるノードが持っている[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティは、どのカメラの描画によって描画されるかを指定するものです。
-[Group](xref:Altseed2.CameraNode.Group) プロパティが n である[CameraNode](xref:Altseed2.CameraNode)は、描画できるノードのうち [CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティの下から n ビット目が 1 であるものを描画します。例えば、[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) が 6（二進数で110）である[SpriteNode](xref:Altseed2.SpriteNode)は、[Group](xref:Altseed2.CameraNode.Group) プロパティが 1 または 2 である[CameraNode](xref:Altseed2.CameraNode)によって描画されますが、[Group](xref:Altseed2.CameraNode.Group) プロパティが 0 または 2 以上である[CameraNode](xref:Altseed2.CameraNode)には描画されません。
+描画の対象となる[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup)は、[CameraNode](xref:Altseed2.CameraNode)クラスが持つ[Group](xref:Altseed2.CameraNode.Group) プロパティと、 [CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティの AND 演算の結果が 0 以外である場合、描画します。
 
 > [!NOTE]
 > [CameraNode](xref:Altseed2.CameraNode) は [Group](xref:Altseed2.CameraNode.Group) プロパティの値に従い **降順** に描画結果を生成します。これはペイントソフトなどにおけるレイヤーの重ね順のように機能します。
