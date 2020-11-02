@@ -3,7 +3,7 @@
 [CameraNode](xref:Altseed2.CameraNode)は指定の領域の描画結果を写し撮るノードです。既定では写し撮った領域は画面に描画されます。[CameraNode](xref:Altseed2.CameraNode)が撮影する領域は[Angle](xref:Altseed2.CameraNode.Angle)、[CenterPosition](xref:Altseed2.CameraNode.CenterPosition)、[Position](xref:Altseed2.CameraNode.Position)、[Scale](xref:Altseed2.CameraNode.Scale) プロパティを用いることで設定できます。
 
 > [!NOTE]
-> 既定では、[CameraNode](xref:Altseed2.CameraNode)が撮影する領域は、点 (0, 0) を左上とする、[ウインドウサイズ](xref:Altseed2.Engine.WindowSize)と同じ大きさ（[TargetTexture](xref:Altseed2.CameraNode.TargetTexture)を設定した場合はその[大きさ](xref:Altseed2.TextureBase.Size)）の長方形の領域です。上記の各種プロパティを設定することで、この長方形を変形することで撮影する領域を調整すると考えるとよいです。
+> 既定では、[CameraNode](xref:Altseed2.CameraNode)が撮影する領域は、点 (0, 0) を左上とする、[ウインドウサイズ](xref:Altseed2.Engine.WindowSize)と同じ大きさ（[TargetTexture](xref:Altseed2.CameraNode.TargetTexture)を設定した場合はその[大きさ](xref:Altseed2.TextureBase.Size)）の長方形の領域です。上記の各種プロパティを設定してこの長方形を変形することで、撮影する領域を調整すると考えるとよいです。
 
 描画結果を [RenderTexure](xref:Altseed2.RenderTexture) として取り出して再利用することもできます。[Material](xref:Altseed2.Material) などを付けて再描画することができます。
 
@@ -20,7 +20,7 @@
 ## グループ
 
 [SpriteNode](xref:Altseed2.SpriteNode) や [PostEffectNode](xref:Altseed2.PostEffectNode) のような描画できるノードが持っている[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティは、どのカメラの描画によって描画されるかを指定するものです。
-[Group](xref:Altseed2.CameraNode.Group) プロパティが n である[CameraNode](xref:Altseed2.CameraNode)は、描画できるノードのうち [CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティの下から n ビット目が 1 であるものを描画します。例えば、[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) が 6（二進数で110）である[SpriteNode](xref:Altseed2.SpriteNode)は、[Group](xref:Altseed2.CameraNode.Group) プロパティが 1 または 2 である[CameraNode](xref:Altseed2.CameraNode)によって描画されますが、[Group](xref:Altseed2.CameraNode.Group) プロパティが 0 または 2 以上である[CameraNode](xref:Altseed2.CameraNode)には描画されません。
+描画の対象となる[CameraGroup](xref:Altseed2.SpriteNode.CameraGroup)は、[CameraNode](xref:Altseed2.CameraNode)クラスが持つ[Group](xref:Altseed2.CameraNode.Group) プロパティと、 [CameraGroup](xref:Altseed2.SpriteNode.CameraGroup) プロパティの AND 演算の結果が 0 以外である場合、描画します。
 
 > [!NOTE]
 > [CameraNode](xref:Altseed2.CameraNode) は [Group](xref:Altseed2.CameraNode.Group) プロパティの値に従い **降順** に描画結果を生成します。これはペイントソフトなどにおけるレイヤーの重ね順のように機能します。
