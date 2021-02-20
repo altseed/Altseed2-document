@@ -16,6 +16,8 @@
   href: Sound/Sound.md
 - name: ログ
   href: Log/Log.md
+- name: プロファイラ
+  href: Profiler/Profiler.md
 - name: ファイル
   href: File/File.md
 - name: ファイルパッケージ
