@@ -1,7 +1,7 @@
 - name: チュートリアル
   href: Tutorials/
 - name: 機能解説
-  href: Manual/
+  href: Manual/Engine/Engine.md
 - name: リファレンス
   href: References/
 - name: 初代Altseedはコチラ
