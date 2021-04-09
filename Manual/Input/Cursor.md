@@ -5,7 +5,7 @@
 
 ## 基本的な使い方
 
-Altseed2の[Create](xref:Altseed2.Cursor.Create(System.String,Altseed2.Vector2I)を呼び出し、カーソルインスタンスを生成します。
+Altseed2の[Create](xref:Altseed2.Cursor.Create(System.String,Altseed2.Vector2I))を呼び出し、カーソルインスタンスを生成します。
 生成したカーソルインスタンスを、Mouseの[Create](xref:Altseed2.Cursor.Create(System.String,Altseed2.Vector2I))に入れてカーソルをセットすると、カーソル画像が変更されます。
 > [!NOTE]
 > ホットスポットとは、カーソルのクリック判定の出る座標のことです。
