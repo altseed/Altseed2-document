@@ -10,7 +10,7 @@ namespace Tutorial
         public static HashSet<CollidableObject> objects = new HashSet<CollidableObject>();
 
         // コライダ
-        protected CircleCollider collider = CircleCollider.Create();
+        protected CircleCollider collider = new CircleCollider();
 
         // OnUpdate内で衝突判定を調査するかどうか
         protected bool doSurvey;
