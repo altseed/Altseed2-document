@@ -61,7 +61,7 @@ jobs:
         git switch master
     
     - name: Copy Site
-      run: mv ./Site/* ./altseed.github.io
+      run: cp -r ./Site/* ./altseed.github.io/.
     - name: Deploy
       env:
         GIT_SSH_COMMAND: ssh -i ~/deploy_key.pem -o StrictHostKeyChecking=no -F /dev/null
