@@ -5,6 +5,9 @@
 ## Issue
 issueは[Altseed2/issues](https://github.com/altseed/Altseed2/issues)に作成してください。
 
+## ウェブサイトへの反映
+master ブランチへ push されると自動的に [altseed/altseed.github.io](https://github.com/altseed/altseed.github.io) へのCommitが作成されて、最新の内容が反映されます。
+
 
 # 生成に必要なもの
 
