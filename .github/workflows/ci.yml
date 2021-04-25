@@ -2,31 +2,68 @@ name: Altseed
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - workflow
   pull_request:
-    branches: [ master ]
 
 jobs:
-
   doc:
-    runs-on: windows-latest
     name: Doc
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        submodules: true
 
-    - name: Update Submodules
-      run: |
-        choco install docfx
-        git submodule update --init
+    - name: Setup
+      run: choco install docfx
 
     - name: Build
-      run: |
-        docfx --serve
+      run: docfx build
 
-    - name: Upload artifact
-      continue-on-error: true
-      uses: actions/upload-artifact@v1.0.0
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v1
       with:
         name: Site
         path: ./Site/
 
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    needs: doc
+    if: github.ref == 'refs/heads/master'
+    steps:
+
+    - name: Download Artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: Site
+    
+    - name: Setup git repositories
+      env:
+        WEBSITE_PUBLISH_TOKEN: ${{ secrets.WEBSITE_PUBLISH_TOKEN }}
+      run: |
+        echo "$WEBSITE_PUBLISH_TOKEN" > ~/deploy_key.pem
+        chmod 600 ~/deploy_key.pem
+        git config --global user.email "altseed.gameengine@gmail.com"
+        git config --global user.name "Altseed"
+        git clone git@github.com:altseed/altseed.github.io.git
+        cd altseed.github.io
+        git config remote.origin.url "git@github.com:altseed/altseed.github.io.git"
+        git switch master
+    
+    - name: Copy Site
+      run: mv ./Site/* ./altseed.github.io
+    - name: Deploy
+      env:
+        GIT_SSH_COMMAND: ssh -i ~/deploy_key.pem -o StrictHostKeyChecking=no -F /dev/null
+      run: |
+        cd altseed.github.io
+        git add -A
+        if ! git diff --cached --quiet; then
+          git commit -m "Deploy $GITHUB_SHA by Github Actions"
+          git pull origin master
+          git push origin master
+        fi
