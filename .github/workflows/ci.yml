@@ -40,6 +40,13 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: Site
+
+    - name: Checkout (altseed.github.io)
+      uses: actions/checkout@v2
+      with:
+        repository: altseed/altseed.github.io
+        ref: master
+        path: altseed.github.io
     
     - name: Setup git repositories
       env:
@@ -49,7 +56,6 @@ jobs:
         chmod 600 ~/deploy_key.pem
         git config --global user.email "altseed.gameengine@gmail.com"
         git config --global user.name "Altseed"
-        git clone git@github.com:altseed/altseed.github.io.git
         cd altseed.github.io
         git config remote.origin.url "git@github.com:altseed/altseed.github.io.git"
         git switch master
