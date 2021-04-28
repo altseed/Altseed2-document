@@ -4,6 +4,13 @@
 この機能を使用することで、Altseed2で使用するリソースデータを、ユーザから簡単に見られないようにすることができます。
 
 ## パッケージの作り方
+
+### ツールを利用して生成する（推奨）
+[Altseed2.Tools (.NETツール)](../CLITool.md)を利用して、CLIコマンドまたはGUIを用いてパッケージを作成することができます。
+
+### ソースコード上から生成する
+Altseed2を用いてソースコード上から生成する方法を説明します。
+
 パッケージの作成は、[Engine.File.Pack](xref:Altseed2.File.Pack(System.String,System.String))メソッドで、パッケージ化するディレクトリとパッケージのパスを指定することでできます。
 また、[Engine.File.PackWithPassword](xref:Altseed2.File.PackWithPassword(System.String,System.String,System.String))メソッドによって、パスワード付きでパッケージ化することが可能です。
 パスワード付きのパッケージにすることで、パッケージ化されたリソースデータをユーザから抽出されるのを防ぐことができます。

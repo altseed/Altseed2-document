@@ -71,7 +71,11 @@ var fontWithSamplingSize = Font.LoadDynamicFont("path/to/dynamicfont.otf", 96);
 
 静的フォントを使用する場合は、事前にa2fファイルを作成する必要があります。
 
-GUIを利用したい場合は、 FontGenerator を使って生成することができます。
+#### ツールを利用して生成する（推奨）
+
+[Altseed2.Tools (.NETツール)](../CLITool.md)を利用して、CLIコマンドまたはGUIを用いて静的フォントを作成することができます。
+
+### ソースコード上から生成する
 
 Altseed2 から直接呼び出したい場合は、
 [GenerateFontFile](xref:Altseed2.Font.GenerateFontFile(System.String,System.String,System.String,System.Int32))
