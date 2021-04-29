@@ -6,6 +6,8 @@
   href: Node.md
 - name: 画像
   href: Graphics/Sprite.md
+- name: 文字
+  href: Graphics/Text.md
 - name: マテリアル
   href: Graphics/Material.md
 - name: カメラ
@@ -38,3 +40,5 @@
   href: ShapeNode/ShapeNode.md
 - name: トランジション
   href: Transition/Transition.md
+- name: Altseed2.Tools (.NETツール)
+  href: CLITool.md
