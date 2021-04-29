@@ -761,7 +761,6 @@ Altseed2.ShapeCollider:
 - Altseed2.ShapeCollider.#ctor
 - Altseed2.ShapeCollider.SetVertexes(System.Collections.Generic.IEnumerable{Altseed2.Vector2F})
 - Altseed2.ShapeCollider.SetVertexes(System.ReadOnlySpan{Altseed2.Vector2F})
-- Altseed2.ShapeCollider.Vertexes
 Altseed2.ShapeNode:
 - Altseed2.ShapeNode.#ctor
 - Altseed2.ShapeNode.AlphaBlend
