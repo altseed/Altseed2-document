@@ -6,7 +6,7 @@ master: _titlemaster
 
 >[!div id="budges"]
 >NuGet: <a href="https://www.nuget.org/packages/Altseed2" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/nuget/vpre/Altseed2?color=darkgreen&logo=nuget&label=%20&style=plastic)](https://www.nuget.org/packages/Altseed2"/></a>
->Engine:<a href="https://github.com/altseed/Altseed2-csharp" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/commits-since/altseed/Altseed2-csharp/2.0.0-beta4?include_prereleases&logo=github&color=blue&style=plastic"/></a>
+>Engine:<a href="https://github.com/altseed/Altseed2-csharp" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/commits-since/altseed/Altseed2-csharp/2.0.0?include_prereleases&logo=github&color=blue&style=plastic"/></a>
 >Core:<a href="https://github.com/altseed/Altseed2" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/milestones/progress/altseed/Altseed2/1?color=orange&logo=github&style=plastic"/></a>
 
 
