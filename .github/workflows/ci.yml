@@ -20,6 +20,9 @@ jobs:
     - name: Setup
       run: choco install docfx
 
+    - name: MetaData
+      run: docfx metadata
+
     - name: Build
       run: docfx build
 
@@ -61,7 +64,9 @@ jobs:
         git switch master
     
     - name: Copy Site
-      run: cp -r ./Site/* ./altseed.github.io/.
+      run: |
+        cp -r ./Reference/* ./altseed.github.io/Reference/.
+        cp -r ./Site/* ./altseed.github.io/.
     - name: Deploy
       env:
         GIT_SSH_COMMAND: ssh -i ~/deploy_key.pem -o StrictHostKeyChecking=no -F /dev/null
