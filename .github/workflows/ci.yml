@@ -26,11 +26,17 @@ jobs:
     - name: Build
       run: docfx build
 
-    - name: Upload Artifact
+    - name: Upload Artifact (Site)
       uses: actions/upload-artifact@v1
       with:
         name: Site
         path: ./Site/
+  
+    - name: Upload Artifact (References)
+      uses: actions/upload-artifact@v1
+      with:
+        name: References
+        path: ./References/
 
   publish:
     name: Publish
@@ -39,10 +45,15 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
 
-    - name: Download Artifact
+    - name: Download Artifact (Site)
       uses: actions/download-artifact@v1
       with:
         name: Site
+  
+    - name: Download Artifact (References)
+      uses: actions/download-artifact@v1
+      with:
+        name: References
 
     - name: Checkout (altseed.github.io)
       uses: actions/checkout@v2
