@@ -58,7 +58,9 @@ namespace Tutorial
             // スコアを表示するノードを設定
             scoreNode = new TextNode();
             // スコア表示に使うフォントを読み込む
-            scoreNode.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 30);
+            scoreNode.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf");
+            // スコア表示に使う文字のサイズを設定
+            scoreNode.FontSize = 30;
             // スコア表示の位置を設定
             scoreNode.Position = new Vector2F();
 
