@@ -14,7 +14,9 @@
 +           // タイトル
 +           var titleText = new TextNode();
 +           // タイトルのフォントを読み込む
-+           titleText.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 100);
++           titleText.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf");
++           // タイトルの文字のサイズを設定
++           titleText.FontSize = 100;
 +           // タイトルの文字を設定
 +           titleText.Text = "Clear!";
 +           // タイトルの座標を設定
@@ -27,7 +29,9 @@
 +           // 画面下の案内
 +           var announce = new TextNode();
 +           // 案内のフォントを読み込む
-+           announce.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 50);
++           announce.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf");
++           // タイトルの文字のサイズを設定
++           announce.FontSize = 50;
 +           // 案内のテキストを設定
 +           announce.Text = "Press Z to go title";
 +           // 案内の座標を設定

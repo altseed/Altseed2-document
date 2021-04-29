@@ -14,7 +14,9 @@
 +           // タイトル
 +           var titleText = new TextNode();
 +           // タイトルのフォントを読み込む
-+           titleText.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 100);
++           titleText.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf");
++           // タイトルの文字のサイズを設定
++           titleText.FontSize = 100;
 +           // タイトルの文字を設定
 +           titleText.Text = "Tutorial STG";
 +           // タイトルの座標を設定
@@ -28,7 +30,9 @@
 +           // 画面下に表示される案内
 +           var announce = new TextNode();
 +           // 案内のフォントを読み込む
-+           announce.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf", 50);
++           announce.Font = Font.LoadDynamicFontStrict("Resources/GenYoMinJP-Bold.ttf");
++           // 案内の文字のサイズを設定
++           announce.FontSize = 50;
 +           // 案内の文字を設定
 +           announce.Text = "Press Z to start";
 +           // 案内の座標を設定
