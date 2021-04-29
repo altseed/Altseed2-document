@@ -63,9 +63,7 @@ jobs:
         git switch master
     
     - name: Copy Output
-      run: |
-        cp -r ./References/* ./altseed.github.io/References/.
-        cp -r ./Site/* ./altseed.github.io/.
+      run: cp -r ./Site/* ./altseed.github.io/.
 
     - name: Deploy
       env:
@@ -74,7 +72,7 @@ jobs:
         cd altseed.github.io
         git add -A
         if ! git diff --cached --quiet; then
-          git commit -m "Deploy $GITHUB_SHA by Github Actions"
+          git commit -m "Auto Deploy by Github Actions" -m "https://github.com/altseed/Altseed2-document/commit/$GITHUB_SHA"
           git pull origin master
           git push origin master
         fi
