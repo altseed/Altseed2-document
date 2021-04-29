@@ -63,10 +63,11 @@ jobs:
         git config remote.origin.url "git@github.com:altseed/altseed.github.io.git"
         git switch master
     
-    - name: Copy Site
+    - name: Copy Output
       run: |
-        cp -r ./Reference/* ./altseed.github.io/Reference/.
+        cp -r ./References/* ./altseed.github.io/References/.
         cp -r ./Site/* ./altseed.github.io/.
+
     - name: Deploy
       env:
         GIT_SSH_COMMAND: ssh -i ~/deploy_key.pem -o StrictHostKeyChecking=no -F /dev/null
