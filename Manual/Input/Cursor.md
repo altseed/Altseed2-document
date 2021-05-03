@@ -19,7 +19,7 @@ Altseed2の[Create](xref:Altseed2.Cursor.Create(System.String,Altseed2.Vector2I)
 
 サンプル
 
-[!code-csharp[Main](../../Src/Samples/Input/Mouse.cs)]
+[!code-csharp[Main](../../Src/Samples/Input/MouseCursor.cs)]
 
 カーソルインスタンスを生成するメソッドです。
 第一引数にカーソルの画像、第二引数にホットスポットを指定します。
