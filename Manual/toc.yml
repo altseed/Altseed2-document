@@ -40,5 +40,7 @@
   href: ShapeNode/ShapeNode.md
 - name: トランジション
   href: Transition/Transition.md
+- name: メディアプレイヤー
+  href: Media/MediaPlayer.md
 - name: Altseed2.Tools (.NETツール)
   href: CLITool.md
