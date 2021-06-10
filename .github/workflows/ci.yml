@@ -10,20 +10,33 @@ on:
 jobs:
   doc:
     name: Doc
-    runs-on: windows-latest
+    env:
+      DOTNET_VERSION: 5.0.203
+
+    runs-on: windows-2019
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
         submodules: true
 
-    - name: Setup
-      run: choco install docfx
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Build
-      run: |
-        docfx metadata
-        docfx build
+    - name: Install docfx
+      run: choco install docfx -Version 2.57.2
+
+    - name: Docfx Metadata
+      run: docfx metadata --warningsAsErrors
+      env:
+        MSBuildSDKsPath: ${{ env.DOTNET_ROOT }}\sdk\${{ env.DOTNET_VERSION }}\Sdks
+
+    - name: Docfx Build
+      run: docfx build
+      env:
+        MSBuildSDKsPath: ${{ env.DOTNET_ROOT }}\sdk\${{ env.DOTNET_VERSION }}\Sdks
 
     - name: Upload Artifact (Site)
       uses: actions/upload-artifact@v1

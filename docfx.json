@@ -27,7 +27,7 @@
                     "Manual/**.yml",
                     "Manual/**.md",
                     "Tutorials/**.yml",
-                    "Tutorials/**.md",
+                    "Tutorials/**.md"
                 ]
             }
         ],

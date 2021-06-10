@@ -16,6 +16,7 @@ Altseed2.AnchorMode:
 - Altseed2.AnchorMode.Fill
 - Altseed2.AnchorMode.KeepAspect
 Altseed2.AnchorTransformerNode:
+- Altseed2.AnchorTransformerNode.#ctor
 - Altseed2.AnchorTransformerNode.AbsoluteTransform
 - Altseed2.AnchorTransformerNode.AnchorMax
 - Altseed2.AnchorTransformerNode.AnchorMin
@@ -34,6 +35,16 @@ Altseed2.AnchorTransformerNode:
 - Altseed2.AnchorTransformerNode.Transform
 - Altseed2.AnchorTransformerNode.VerticalAlignment
 - Altseed2.AnchorTransformerNode.VerticalFlip
+Altseed2.AnchorTransformerNodeInfo:
+- Altseed2.AnchorTransformerNodeInfo.#ctor(Altseed2.AnchorTransformerNode)
+- Altseed2.AnchorTransformerNodeInfo.AnchorTransformerNode
+- Altseed2.AnchorTransformerNodeInfo.Draw
+- Altseed2.AnchorTransformerNodeInfo.SetLine(Altseed2.RenderedPolygon,Altseed2.Vector2F,Altseed2.Vector2F,Altseed2.Color)
+- Altseed2.AnchorTransformerNodeInfo.SetPoint(Altseed2.RenderedPolygon,Altseed2.Vector2F,System.Single,Altseed2.Color)
+- Altseed2.AnchorTransformerNodeInfo.Update
+- Altseed2.AnchorTransformerNodeInfo.UpdateAnchor
+- Altseed2.AnchorTransformerNodeInfo.UpdatePositionBox
+- Altseed2.AnchorTransformerNodeInfo.UpdateSizeBox
 Altseed2.ArcNode:
 - Altseed2.ArcNode.#ctor
 - Altseed2.ArcNode.Color
@@ -84,6 +95,7 @@ Altseed2.CameraNode:
 - Altseed2.CameraNode.TargetTexture
 Altseed2.CircleCollider:
 - Altseed2.CircleCollider.#ctor
+- Altseed2.CircleCollider.Create
 - Altseed2.CircleCollider.Radius
 Altseed2.CircleColliderNode:
 - Altseed2.CircleColliderNode.#ctor
@@ -139,9 +151,11 @@ Altseed2.Color:
 - Altseed2.Color.ToString
 Altseed2.CommandList:
 - Altseed2.CommandList.CopyTexture(Altseed2.RenderTexture,Altseed2.RenderTexture)
-- Altseed2.CommandList.GetScreenTexture
+- Altseed2.CommandList.Create
 - Altseed2.CommandList.RenderToRenderTarget(Altseed2.Material)
 - Altseed2.CommandList.RenderToRenderTexture(Altseed2.Material,Altseed2.RenderTexture,Altseed2.RenderPassParameter)
+- Altseed2.CommandList.SaveRenderTexture(System.String,Altseed2.RenderTexture)
+- Altseed2.CommandList.ScreenTexture
 - Altseed2.CommandList.ScreenTextureFormat
 - Altseed2.CommandList.SetRenderTarget(Altseed2.RenderTexture,Altseed2.RenderPassParameter)
 Altseed2.Configuration:
@@ -153,6 +167,7 @@ Altseed2.Configuration:
 - Altseed2.Configuration.IsFullscreen
 - Altseed2.Configuration.IsResizable
 - Altseed2.Configuration.LogFileName
+- Altseed2.Configuration.ToolSettingFileName
 - Altseed2.Configuration.VisibleTransformInfo
 - Altseed2.Configuration.WaitVSync
 Altseed2.Cursor:
@@ -197,8 +212,16 @@ Altseed2.EasingType:
 - Altseed2.EasingType.OutSine
 Altseed2.EdgeCollider:
 - Altseed2.EdgeCollider.#ctor
+- Altseed2.EdgeCollider.Create
 - Altseed2.EdgeCollider.Point1
 - Altseed2.EdgeCollider.Point2
+Altseed2.EdgeColliderNode:
+- Altseed2.EdgeColliderNode.#ctor
+- Altseed2.EdgeColliderNode.ContentSize
+- Altseed2.EdgeColliderNode.InheritedTransform
+- Altseed2.EdgeColliderNode.Point1
+- Altseed2.EdgeColliderNode.Point2
+Altseed2.EdgeColliderVisualizeNode: []
 Altseed2.Engine:
 - Altseed2.Engine.AddNode(Altseed2.Node)
 - Altseed2.Engine.ClearColor
@@ -218,6 +241,7 @@ Altseed2.Engine:
 - Altseed2.Engine.MaxCameraGroupCount
 - Altseed2.Engine.Mouse
 - Altseed2.Engine.Pause(Altseed2.Node)
+- Altseed2.Engine.Profiler
 - Altseed2.Engine.RemoveNode(Altseed2.Node)
 - Altseed2.Engine.Resume
 - Altseed2.Engine.Sound
@@ -244,11 +268,13 @@ Altseed2.File:
 - Altseed2.File.PackWithPassword(System.String,System.String,System.String)
 Altseed2.Font:
 - Altseed2.Font.AddImageGlyph(System.Char,Altseed2.Texture2D)
-- Altseed2.Font.AddImageGlyph(System.Int32,Altseed2.Texture2D)
+- Altseed2.Font.AddImageGlyph(System.Int32,Altseed2.TextureBase)
 - Altseed2.Font.Ascent
 - Altseed2.Font.CreateImageFont(Altseed2.Font)
+- Altseed2.Font.DefaultSamplingSize
 - Altseed2.Font.Descent
-- Altseed2.Font.GenerateFontFile(System.String,System.String,System.Int32,System.String)
+- Altseed2.Font.EmSize
+- Altseed2.Font.GenerateFontFile(System.String,System.String,System.String,System.Int32)
 - Altseed2.Font.GetFontTexture(System.Int32)
 - Altseed2.Font.GetGlyph(System.Int32)
 - Altseed2.Font.GetImageGlyph(System.Int32)
@@ -260,14 +286,16 @@ Altseed2.Font:
 - Altseed2.Font.LoadStaticFont(System.String)
 - Altseed2.Font.LoadStaticFontStrict(System.String)
 - Altseed2.Font.Path
-- Altseed2.Font.Size
+- Altseed2.Font.Reload
+- Altseed2.Font.SamplingSize
 Altseed2.FramerateMode:
 - Altseed2.FramerateMode.Constant
 - Altseed2.FramerateMode.Variable
 Altseed2.Glyph:
-- Altseed2.Glyph.GlyphWidth
+- Altseed2.Glyph.Advance
 - Altseed2.Glyph.Offset
 - Altseed2.Glyph.Position
+- Altseed2.Glyph.Scale
 - Altseed2.Glyph.Size
 - Altseed2.Glyph.TextureIndex
 - Altseed2.Glyph.TextureSize
@@ -286,6 +314,18 @@ Altseed2.ICullableDrawn:
 Altseed2.IDrawn:
 - Altseed2.IDrawn.CameraGroup
 - Altseed2.IDrawn.ZOrder
+Altseed2.ImageFont:
+- Altseed2.ImageFont.AddImageGlyph(System.Int32,Altseed2.TextureBase)
+- Altseed2.ImageFont.Ascent
+- Altseed2.ImageFont.Descent
+- Altseed2.ImageFont.EmSize
+- Altseed2.ImageFont.GetFontTexture(System.Int32)
+- Altseed2.ImageFont.GetGlyph(System.Int32)
+- Altseed2.ImageFont.GetImageGlyph(System.Int32)
+- Altseed2.ImageFont.GetKerning(System.Int32,System.Int32)
+- Altseed2.ImageFont.IsStaticFont
+- Altseed2.ImageFont.LineGap
+- Altseed2.ImageFont.SamplingSize
 Altseed2.Joystick:
 - Altseed2.Joystick.ConnectedJoystickCount
 - Altseed2.Joystick.GetAxisState(System.Int32,Altseed2.JoystickAxis)
@@ -295,6 +335,7 @@ Altseed2.Joystick:
 - Altseed2.Joystick.GetJoystickInfo(System.Int32)
 - Altseed2.Joystick.IsPresent(System.Int32)
 - Altseed2.Joystick.MaxCount
+- Altseed2.Joystick.RefreshInputState
 Altseed2.JoystickAxis:
 - Altseed2.JoystickAxis.LeftTrigger
 - Altseed2.JoystickAxis.LeftX
@@ -416,6 +457,7 @@ Altseed2.Key:
 - Altseed2.Key.LeftShift
 - Altseed2.Key.LeftWin
 - Altseed2.Key.M
+- Altseed2.Key.MAX
 - Altseed2.Key.Menu
 - Altseed2.Key.Minus
 - Altseed2.Key.N
@@ -464,6 +506,7 @@ Altseed2.Key:
 - Altseed2.Key.Z
 Altseed2.Keyboard:
 - Altseed2.Keyboard.GetKeyState(Altseed2.Key)
+- Altseed2.Keyboard.RefleshKeyStates
 Altseed2.LineNode:
 - Altseed2.LineNode.#ctor
 - Altseed2.LineNode.Color
@@ -499,6 +542,7 @@ Altseed2.Material:
 - Altseed2.Material.GetShader(Altseed2.ShaderStage)
 - Altseed2.Material.GetTexture(System.String)
 - Altseed2.Material.GetVector4F(System.String)
+- Altseed2.Material.PropertyBlock
 - Altseed2.Material.SetMatrix44F(System.String,Altseed2.Matrix44F)
 - Altseed2.Material.SetMatrix44FPrivate(System.String,Altseed2.Matrix44F,System.Boolean)
 - Altseed2.Material.SetShader(Altseed2.Shader)
@@ -507,6 +551,20 @@ Altseed2.Material:
 - Altseed2.Material.SetTexturePrivate(System.String,Altseed2.TextureBase,System.Boolean)
 - Altseed2.Material.SetVector4F(System.String,Altseed2.Vector4F)
 - Altseed2.Material.SetVector4FPrivate(System.String,Altseed2.Vector4F,System.Boolean)
+- Altseed2.Material.Shader
+Altseed2.MaterialPropertyBlock:
+- Altseed2.MaterialPropertyBlock.GetMatrix44F(System.String)
+- Altseed2.MaterialPropertyBlock.GetTexture(System.String)
+- Altseed2.MaterialPropertyBlock.GetVector4F(System.String)
+- Altseed2.MaterialPropertyBlock.SetMatrix44F(System.String,Altseed2.Matrix44F)
+- Altseed2.MaterialPropertyBlock.SetTexture(System.String,Altseed2.TextureBase)
+- Altseed2.MaterialPropertyBlock.SetVector4F(System.String,Altseed2.Vector4F)
+Altseed2.MaterialPropertyBlockCollection:
+- Altseed2.MaterialPropertyBlockCollection.Add(Altseed2.MaterialPropertyBlock)
+- Altseed2.MaterialPropertyBlockCollection.Clear
+- Altseed2.MaterialPropertyBlockCollection.GetMatrix44F(System.String)
+- Altseed2.MaterialPropertyBlockCollection.GetTexture(System.String)
+- Altseed2.MaterialPropertyBlockCollection.GetVector4F(System.String)
 Altseed2.MathHelper:
 - Altseed2.MathHelper.CalcFromTransform2D(Altseed2.Matrix44F,Altseed2.Vector2F@,Altseed2.Vector2F@,System.Single@)
 - Altseed2.MathHelper.CalcFromTransform3D(Altseed2.Matrix44F,Altseed2.Vector3F@,Altseed2.Vector3F@,Altseed2.Matrix44F@)
@@ -575,11 +633,18 @@ Altseed2.Matrix44I:
 - Altseed2.Matrix44I.Transform3D(Altseed2.Vector3I)
 - Altseed2.Matrix44I.Transform4D(Altseed2.Vector4I)
 - Altseed2.Matrix44I.TransPosition
+Altseed2.MediaPlayer:
+- Altseed2.MediaPlayer.CurrentFrame
+- Altseed2.MediaPlayer.Load(System.String)
+- Altseed2.MediaPlayer.Play(System.Boolean)
+- Altseed2.MediaPlayer.Size
+- Altseed2.MediaPlayer.WriteToTexture2D(Altseed2.Texture2D)
 Altseed2.Mouse:
+- Altseed2.Mouse.CursorImage
 - Altseed2.Mouse.CursorMode
 - Altseed2.Mouse.GetMouseButtonState(Altseed2.MouseButton)
 - Altseed2.Mouse.Position
-- Altseed2.Mouse.SetCursorImage(Altseed2.Cursor)
+- Altseed2.Mouse.RefreshInputState
 - Altseed2.Mouse.Wheel
 Altseed2.MouseButton:
 - Altseed2.MouseButton.ButtonLeft
@@ -611,6 +676,7 @@ Altseed2.Node:
 Altseed2.PolygonCollider:
 - Altseed2.PolygonCollider.#ctor
 - Altseed2.PolygonCollider.Buffers
+- Altseed2.PolygonCollider.Create
 - Altseed2.PolygonCollider.SetBuffers(System.Collections.Generic.IEnumerable{System.Int32})
 - Altseed2.PolygonCollider.SetBuffers(System.ReadOnlySpan{System.Int32})
 - Altseed2.PolygonCollider.SetDefaultIndexBuffer
@@ -634,6 +700,7 @@ Altseed2.PolygonNode:
 - Altseed2.PolygonNode.Buffers
 - Altseed2.PolygonNode.CameraGroup
 - Altseed2.PolygonNode.ContentSize
+- Altseed2.PolygonNode.FlushQueue
 - Altseed2.PolygonNode.InheritedTransform
 - Altseed2.PolygonNode.IsDrawn
 - Altseed2.PolygonNode.IsDrawnActually
@@ -678,6 +745,17 @@ Altseed2.PostEffectNode:
 Altseed2.PostEffectSepiaNode:
 - Altseed2.PostEffectSepiaNode.#ctor
 - Altseed2.PostEffectSepiaNode.Draw(Altseed2.RenderTexture,Altseed2.Color)
+Altseed2.Profiler:
+- Altseed2.Profiler.BeginBlock(System.String,System.String,System.Int32,Altseed2.Color)
+- Altseed2.Profiler.DumpToFileAndStopCapture(System.String)
+- Altseed2.Profiler.EndBlock
+- Altseed2.Profiler.IsProfilerRunning
+- Altseed2.Profiler.StartCapture
+- Altseed2.Profiler.StartListen(System.Int32)
+- Altseed2.Profiler.StopCapture
+Altseed2.ProfilerBlock:
+- Altseed2.ProfilerBlock.#ctor(System.String,Altseed2.Color,System.String,System.Int32)
+- Altseed2.ProfilerBlock.Dispose
 Altseed2.RectF:
 - Altseed2.RectF.#ctor(Altseed2.Vector2F,Altseed2.Vector2F)
 - Altseed2.RectF.#ctor(System.Single,System.Single,System.Single,System.Single)
@@ -724,8 +802,13 @@ Altseed2.RenderPassParameter:
 - Altseed2.RenderPassParameter.ClearColor
 - Altseed2.RenderPassParameter.IsColorCleared
 - Altseed2.RenderPassParameter.IsDepthCleared
+Altseed2.RenderTargetCareType:
+- Altseed2.RenderTargetCareType.Clear
+- Altseed2.RenderTargetCareType.DontCare
 Altseed2.RenderTexture:
 - Altseed2.RenderTexture.Create(Altseed2.Vector2I,Altseed2.TextureFormat)
+- Altseed2.RenderTexture.Reload
+- Altseed2.RenderTexture.Save(System.String)
 Altseed2.RuledTransitionEffectNode:
 - Altseed2.RuledTransitionEffectNode.#ctor
 - Altseed2.RuledTransitionEffectNode.Draw(Altseed2.RenderTexture,Altseed2.Color)
@@ -745,7 +828,6 @@ Altseed2.RuledTransitionState:
 - Altseed2.RuledTransitionState.Duration
 - Altseed2.RuledTransitionState.RuleTexture
 - Altseed2.RuledTransitionState.Softness
-- Altseed2.RuledTransitionState.TargetNode
 Altseed2.Shader:
 - Altseed2.Shader.Code
 - Altseed2.Shader.Create(System.String,System.String,Altseed2.ShaderStage)
@@ -754,6 +836,10 @@ Altseed2.Shader:
 - Altseed2.Shader.StageType
 - Altseed2.Shader.TryCreate(System.String,System.String,Altseed2.ShaderStage,Altseed2.Shader@)
 - Altseed2.Shader.TryCreateFromFile(System.String,System.String,Altseed2.ShaderStage,Altseed2.Shader@)
+- Altseed2.Shader.UniformSize
+Altseed2.ShaderCompiler:
+- Altseed2.ShaderCompiler.Initialize(Altseed2.Graphics,Altseed2.File)
+- Altseed2.ShaderCompiler.Terminate
 Altseed2.ShaderStage:
 - Altseed2.ShaderStage.Pixel
 - Altseed2.ShaderStage.Vertex
@@ -766,6 +852,7 @@ Altseed2.ShapeNode:
 - Altseed2.ShapeNode.AlphaBlend
 - Altseed2.ShapeNode.CameraGroup
 - Altseed2.ShapeNode.ContentSize
+- Altseed2.ShapeNode.FlushQueue
 - Altseed2.ShapeNode.InheritedTransform
 - Altseed2.ShapeNode.IsDrawn
 - Altseed2.ShapeNode.IsDrawnActually
@@ -782,6 +869,7 @@ Altseed2.Sound:
 - Altseed2.Sound.LoopEndPoint
 - Altseed2.Sound.LoopStartingPoint
 - Altseed2.Sound.Path
+- Altseed2.Sound.Reload
 Altseed2.SoundMixer:
 - Altseed2.SoundMixer.Fade(System.Int32,System.Single,System.Single)
 - Altseed2.SoundMixer.FadeIn(System.Int32,System.Single)
@@ -795,6 +883,7 @@ Altseed2.SoundMixer:
 - Altseed2.SoundMixer.GetSpectrum(System.Int32,System.Int32,Altseed2.FFTWindow,System.Span{System.Single})
 - Altseed2.SoundMixer.Pause(System.Int32)
 - Altseed2.SoundMixer.Play(Altseed2.Sound)
+- Altseed2.SoundMixer.Reload
 - Altseed2.SoundMixer.Resume(System.Int32)
 - Altseed2.SoundMixer.SetIsPlaybackSpeedEnabled(System.Int32,System.Boolean)
 - Altseed2.SoundMixer.SetPanningPosition(System.Int32,System.Single)
@@ -809,6 +898,7 @@ Altseed2.SpriteNode:
 - Altseed2.SpriteNode.CameraGroup
 - Altseed2.SpriteNode.Color
 - Altseed2.SpriteNode.ContentSize
+- Altseed2.SpriteNode.FlushQueue
 - Altseed2.SpriteNode.InheritedTransform
 - Altseed2.SpriteNode.IsDrawn
 - Altseed2.SpriteNode.IsDrawnActually
@@ -829,7 +919,6 @@ Altseed2.StreamFile:
 - Altseed2.StreamFile.Create(System.String)
 - Altseed2.StreamFile.CreateStrict(System.String)
 - Altseed2.StreamFile.CurrentPosition
-- Altseed2.StreamFile.GetTempBuffer
 - Altseed2.StreamFile.IsInPackage
 - Altseed2.StreamFile.Path
 - Altseed2.StreamFile.Read(System.Int32)
@@ -844,7 +933,9 @@ Altseed2.TextNode:
 - Altseed2.TextNode.CharacterSpace
 - Altseed2.TextNode.Color
 - Altseed2.TextNode.ContentSize
+- Altseed2.TextNode.FlushQueue
 - Altseed2.TextNode.Font
+- Altseed2.TextNode.FontSize
 - Altseed2.TextNode.InheritedTransform
 - Altseed2.TextNode.IsDrawn
 - Altseed2.TextNode.IsDrawnActually
@@ -853,10 +944,10 @@ Altseed2.TextNode:
 - Altseed2.TextNode.MaterialGlyph
 - Altseed2.TextNode.MaterialImage
 - Altseed2.TextNode.Text
-- Altseed2.TextNode.Weight
 - Altseed2.TextNode.WritingDirection
 - Altseed2.TextNode.ZOrder
 Altseed2.Texture2D:
+- Altseed2.Texture2D.Create(Altseed2.Vector2I)
 - Altseed2.Texture2D.Load(System.String)
 - Altseed2.Texture2D.LoadAsync(System.String)
 - Altseed2.Texture2D.LoadStrict(System.String)
@@ -889,44 +980,68 @@ Altseed2.Tool:
 - Altseed2.Tool.AlignTextToFramePadding
 - Altseed2.Tool.ArrowButton(System.String,Altseed2.ToolDir)
 - Altseed2.Tool.Begin(System.String,Altseed2.ToolWindowFlags)
+- Altseed2.Tool.Begin(System.String,System.Boolean@,Altseed2.ToolWindowFlags)
+- Altseed2.Tool.BeginChild(System.Int32,Altseed2.Vector2F,System.Boolean,Altseed2.ToolWindowFlags)
 - Altseed2.Tool.BeginChild(System.String,Altseed2.Vector2F,System.Boolean,Altseed2.ToolWindowFlags)
+- Altseed2.Tool.BeginChildFrame(System.Int32,Altseed2.Vector2F,Altseed2.ToolWindowFlags)
 - Altseed2.Tool.BeginCombo(System.String,System.String,Altseed2.ToolComboFlags)
-- Altseed2.Tool.BeginFullScreen(System.Int32)
+- Altseed2.Tool.BeginDockHost(System.String,Altseed2.Vector2F)
+- Altseed2.Tool.BeginDragDropSource(Altseed2.ToolDragDropFlags)
+- Altseed2.Tool.BeginDragDropTarget
+- Altseed2.Tool.BeginFullScreen(System.Int32,Altseed2.ToolWindowFlags)
 - Altseed2.Tool.BeginGroup
 - Altseed2.Tool.BeginMainMenuBar
 - Altseed2.Tool.BeginMenu(System.String,System.Boolean)
 - Altseed2.Tool.BeginMenuBar
-- Altseed2.Tool.BeginPopup(System.String)
-- Altseed2.Tool.BeginPopupContextItem(System.String,System.Int32)
-- Altseed2.Tool.BeginPopupContextVoid(System.String,System.Int32)
-- Altseed2.Tool.BeginPopupContextWindow(System.String,System.Int32,System.Boolean)
-- Altseed2.Tool.BeginPopupModal(System.String)
-- Altseed2.Tool.BeginPopupModalEx(System.String,System.Boolean@,Altseed2.ToolWindowFlags)
+- Altseed2.Tool.BeginPopup(System.String,Altseed2.ToolWindowFlags)
+- Altseed2.Tool.BeginPopupContextItem(System.String,Altseed2.ToolPopupFlags)
+- Altseed2.Tool.BeginPopupContextVoid(System.String,Altseed2.ToolPopupFlags)
+- Altseed2.Tool.BeginPopupContextWindow(System.String,Altseed2.ToolPopupFlags)
+- Altseed2.Tool.BeginPopupModal(System.String,Altseed2.ToolWindowFlags)
+- Altseed2.Tool.BeginPopupModal(System.String,System.Boolean@,Altseed2.ToolWindowFlags)
 - Altseed2.Tool.BeginTabBar(System.String,Altseed2.ToolTabBarFlags)
-- Altseed2.Tool.BeginTabItem(System.String)
+- Altseed2.Tool.BeginTabItem(System.String,Altseed2.ToolTabItemFlags)
+- Altseed2.Tool.BeginTabItem(System.String,System.Boolean@,Altseed2.ToolTabItemFlags)
 - Altseed2.Tool.BeginTooltip
 - Altseed2.Tool.Bullet
 - Altseed2.Tool.BulletText(System.String)
 - Altseed2.Tool.Button(System.String)
 - Altseed2.Tool.Button(System.String,Altseed2.Vector2F)
 - Altseed2.Tool.CalcItemWidth
-- Altseed2.Tool.CheckBox(System.String,System.Boolean@)
+- Altseed2.Tool.CalcListClipping(System.Int32,System.Single,System.Int32@,System.Int32@)
+- Altseed2.Tool.CalcTextSize(System.String,System.String,System.Boolean,System.Single)
+- Altseed2.Tool.CaptureKeyboardFromApp(System.Boolean)
+- Altseed2.Tool.CaptureMouseFromApp(System.Boolean)
+- Altseed2.Tool.Checkbox(System.String,System.Boolean@)
 - Altseed2.Tool.CloseCurrentPopup
 - Altseed2.Tool.CollapsingHeader(System.String,Altseed2.ToolTreeNodeFlags)
-- Altseed2.Tool.ColorButton(System.String,Altseed2.Color@,Altseed2.ToolColorEditFlags,Altseed2.Vector2F)
+- Altseed2.Tool.CollapsingHeader(System.String,System.Boolean@,Altseed2.ToolTreeNodeFlags)
+- Altseed2.Tool.ColorConvertFloat4ToU32(Altseed2.Vector4F)
+- Altseed2.Tool.ColorConvertU32ToFloat4(System.Int32)
 - Altseed2.Tool.ColorEdit3(System.String,Altseed2.Color@,Altseed2.ToolColorEditFlags)
 - Altseed2.Tool.ColorEdit4(System.String,Altseed2.Color@,Altseed2.ToolColorEditFlags)
-- Altseed2.Tool.Columns(System.Int32,System.Boolean)
+- Altseed2.Tool.Columns(System.Int32,System.String,System.Boolean)
 - Altseed2.Tool.Combo(System.String,System.Int32@,System.Collections.Generic.IEnumerable{System.String},System.Int32)
 - Altseed2.Tool.Combo(System.String,System.Int32@,System.String,System.Int32)
-- Altseed2.Tool.DragFloat(System.String,System.Single@,System.Single,System.Single,System.Single)
-- Altseed2.Tool.DragFloatRange2(System.String,System.Single@,System.Single@,System.Single,System.Single,System.Single)
-- Altseed2.Tool.DragInt(System.String,System.Int32@,System.Single,System.Int32,System.Int32)
-- Altseed2.Tool.DragIntRange2(System.String,System.Int32@,System.Int32@,System.Single,System.Int32,System.Int32)
+- Altseed2.Tool.DestroyPlatformWindows
+- Altseed2.Tool.DockSpace(System.Int32,Altseed2.Vector2F,Altseed2.ToolDockNodeFlags)
+- Altseed2.Tool.DragFloat(System.String,System.Single@,System.Single,System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragFloat2(System.String,System.Span{System.Single},System.Single,System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragFloat3(System.String,System.Span{System.Single},System.Single,System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragFloat4(System.String,System.Span{System.Single},System.Single,System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragFloatRange2(System.String,System.Single@,System.Single@,System.Single,System.Single,System.Single,System.String,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragInt(System.String,System.Int32@,System.Single,System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragInt2(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragInt3(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragInt4(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.DragIntRange2(System.String,System.Int32@,System.Int32@,System.Single,System.Int32,System.Int32,System.String,System.String,Altseed2.ToolSliderFlags)
 - Altseed2.Tool.Dummy(Altseed2.Vector2F)
 - Altseed2.Tool.End
 - Altseed2.Tool.EndChild
+- Altseed2.Tool.EndChildFrame
 - Altseed2.Tool.EndCombo
+- Altseed2.Tool.EndDragDropSource
+- Altseed2.Tool.EndDragDropTarget
 - Altseed2.Tool.EndGroup
 - Altseed2.Tool.EndMainMenuBar
 - Altseed2.Tool.EndMenu
@@ -936,6 +1051,9 @@ Altseed2.Tool:
 - Altseed2.Tool.EndTabItem
 - Altseed2.Tool.EndTooltip
 - Altseed2.Tool.GetClipboardText
+- Altseed2.Tool.GetColorU32(Altseed2.ToolCol,System.Single)
+- Altseed2.Tool.GetColorU32(Altseed2.Vector4F)
+- Altseed2.Tool.GetColorU32(System.Int32)
 - Altseed2.Tool.GetColumnIndex
 - Altseed2.Tool.GetColumnOffset(System.Int32)
 - Altseed2.Tool.GetColumnsCount
@@ -943,88 +1061,124 @@ Altseed2.Tool:
 - Altseed2.Tool.GetContentRegionAvail
 - Altseed2.Tool.GetContentRegionMax
 - Altseed2.Tool.GetCursorPos
+- Altseed2.Tool.GetCursorPosX
+- Altseed2.Tool.GetCursorPosY
 - Altseed2.Tool.GetCursorScreenPos
 - Altseed2.Tool.GetCursorStartPos
 - Altseed2.Tool.GetFontSize
 - Altseed2.Tool.GetFontTexUvWhitePixel
+- Altseed2.Tool.GetFrameCount
 - Altseed2.Tool.GetFrameHeight
 - Altseed2.Tool.GetFrameHeightWithSpacing
+- Altseed2.Tool.GetID(System.String)
+- Altseed2.Tool.GetID(System.String,System.String)
 - Altseed2.Tool.GetItemRectMax
 - Altseed2.Tool.GetItemRectMin
 - Altseed2.Tool.GetItemRectSize
-- Altseed2.Tool.GetMouseDragDelta(System.Int32)
+- Altseed2.Tool.GetKeyIndex(Altseed2.ToolKey)
+- Altseed2.Tool.GetKeyPressedAmount(System.Int32,System.Single,System.Single)
+- Altseed2.Tool.GetMainViewportID
+- Altseed2.Tool.GetMainViewportPos
+- Altseed2.Tool.GetMainViewportSize
+- Altseed2.Tool.GetMainViewportWorkPos
+- Altseed2.Tool.GetMainViewportWorkSize
+- Altseed2.Tool.GetMouseDragDelta(Altseed2.ToolMouseButton,System.Single)
+- Altseed2.Tool.GetMousePos
+- Altseed2.Tool.GetMousePosOnOpeningCurrentPopup
 - Altseed2.Tool.GetScrollMaxX
 - Altseed2.Tool.GetScrollMaxY
 - Altseed2.Tool.GetScrollX
 - Altseed2.Tool.GetScrollY
-- Altseed2.Tool.GetStyleColor(Altseed2.ToolColor)
+- Altseed2.Tool.GetStyleColorName(Altseed2.ToolCol)
 - Altseed2.Tool.GetTextLineHeight
 - Altseed2.Tool.GetTextLineHeightWithSpacing
 - Altseed2.Tool.GetTime
 - Altseed2.Tool.GetTreeNodeToLabelSpacing
+- Altseed2.Tool.GetVersion
 - Altseed2.Tool.GetWindowContentRegionMax
 - Altseed2.Tool.GetWindowContentRegionMin
 - Altseed2.Tool.GetWindowContentRegionWidth
+- Altseed2.Tool.GetWindowDockID
+- Altseed2.Tool.GetWindowDpiScale
+- Altseed2.Tool.GetWindowHeight
 - Altseed2.Tool.GetWindowPos
 - Altseed2.Tool.GetWindowSize
+- Altseed2.Tool.GetWindowWidth
 - Altseed2.Tool.Image(Altseed2.TextureBase,Altseed2.Vector2F,Altseed2.Vector2F,Altseed2.Vector2F,Altseed2.Color,Altseed2.Color)
 - Altseed2.Tool.ImageButton(Altseed2.TextureBase,Altseed2.Vector2F,Altseed2.Vector2F,Altseed2.Vector2F,System.Int32,Altseed2.Color,Altseed2.Color)
-- Altseed2.Tool.Indent
-- Altseed2.Tool.InputFloat(System.String,System.Single@)
-- Altseed2.Tool.InputFloat2(System.String,System.Span{System.Single})
-- Altseed2.Tool.InputFloat3(System.String,System.Span{System.Single})
-- Altseed2.Tool.InputFloat4(System.String,System.Span{System.Single})
-- Altseed2.Tool.InputInt(System.String,System.Int32@)
-- Altseed2.Tool.InputInt2(System.String,System.Span{System.Int32})
-- Altseed2.Tool.InputInt3(System.String,System.Span{System.Int32})
-- Altseed2.Tool.InputInt4(System.String,System.Span{System.Int32})
+- Altseed2.Tool.Indent(System.Single)
+- Altseed2.Tool.InputFloat(System.String,System.Single@,System.Single,System.Single,System.String,Altseed2.ToolInputTextFlags)
+- Altseed2.Tool.InputFloat2(System.String,System.Span{System.Single},System.String,Altseed2.ToolInputTextFlags)
+- Altseed2.Tool.InputFloat3(System.String,System.Span{System.Single},System.String,Altseed2.ToolInputTextFlags)
+- Altseed2.Tool.InputFloat4(System.String,System.Span{System.Single},System.String,Altseed2.ToolInputTextFlags)
+- Altseed2.Tool.InputInt(System.String,System.Int32@,System.Int32,System.Int32,Altseed2.ToolInputTextFlags)
+- Altseed2.Tool.InputInt2(System.String,System.Span{System.Int32},Altseed2.ToolInputTextFlags)
+- Altseed2.Tool.InputInt3(System.String,System.Span{System.Int32},Altseed2.ToolInputTextFlags)
+- Altseed2.Tool.InputInt4(System.String,System.Span{System.Int32},Altseed2.ToolInputTextFlags)
 - Altseed2.Tool.InputText(System.String,System.String,System.Int32,Altseed2.ToolInputTextFlags)
 - Altseed2.Tool.InputTextMultiline(System.String,System.String,System.Int32,Altseed2.Vector2F,Altseed2.ToolInputTextFlags)
 - Altseed2.Tool.InputTextWithHint(System.String,System.String,System.String,System.Int32,Altseed2.ToolInputTextFlags)
-- Altseed2.Tool.InvisibleButton(System.String,Altseed2.Vector2F)
+- Altseed2.Tool.InvisibleButton(System.String,Altseed2.Vector2F,Altseed2.ToolButtonFlags)
 - Altseed2.Tool.IsAnyItemActive
 - Altseed2.Tool.IsAnyItemFocused
 - Altseed2.Tool.IsAnyItemHovered
+- Altseed2.Tool.IsAnyMouseDown
 - Altseed2.Tool.IsItemActivated
 - Altseed2.Tool.IsItemActive
-- Altseed2.Tool.IsItemClicked(System.Int32)
+- Altseed2.Tool.IsItemClicked(Altseed2.ToolMouseButton)
 - Altseed2.Tool.IsItemDeactivated
 - Altseed2.Tool.IsItemDeactivatedAfterEdit
 - Altseed2.Tool.IsItemEdited
 - Altseed2.Tool.IsItemFocused
-- Altseed2.Tool.IsItemHovered
-- Altseed2.Tool.IsItemHoveredWithFlags(Altseed2.ToolHoveredFlags)
+- Altseed2.Tool.IsItemHovered(Altseed2.ToolHoveredFlags)
+- Altseed2.Tool.IsItemToggledOpen
 - Altseed2.Tool.IsItemVisible
-- Altseed2.Tool.IsMouseDoubleClicked(System.Int32)
-- Altseed2.Tool.IsMouseDragging
-- Altseed2.Tool.IsMousePosValid
-- Altseed2.Tool.IsPopupOpen(System.String)
+- Altseed2.Tool.IsKeyDown(System.Int32)
+- Altseed2.Tool.IsKeyPressed(System.Int32,System.Boolean)
+- Altseed2.Tool.IsKeyReleased(System.Int32)
+- Altseed2.Tool.IsMouseClicked(Altseed2.ToolMouseButton,System.Boolean)
+- Altseed2.Tool.IsMouseDoubleClicked(Altseed2.ToolMouseButton)
+- Altseed2.Tool.IsMouseDown(Altseed2.ToolMouseButton)
+- Altseed2.Tool.IsMouseDragging(Altseed2.ToolMouseButton,System.Single)
+- Altseed2.Tool.IsMouseHoveringRect(Altseed2.Vector2F,Altseed2.Vector2F,System.Boolean)
+- Altseed2.Tool.IsMouseReleased(Altseed2.ToolMouseButton)
+- Altseed2.Tool.IsPopupOpen(System.String,Altseed2.ToolPopupFlags)
 - Altseed2.Tool.IsRectVisible(Altseed2.Vector2F)
-- Altseed2.Tool.IsRectVisibleVector2F2(Altseed2.Vector2F,Altseed2.Vector2F)
+- Altseed2.Tool.IsRectVisible(Altseed2.Vector2F,Altseed2.Vector2F)
 - Altseed2.Tool.IsWindowAppearing
 - Altseed2.Tool.IsWindowCollapsed
-- Altseed2.Tool.IsWindowFocused(Altseed2.ToolFocused)
-- Altseed2.Tool.IsWindowHovered(Altseed2.ToolFocused)
+- Altseed2.Tool.IsWindowDocked
+- Altseed2.Tool.IsWindowFocused(Altseed2.ToolFocusedFlags)
+- Altseed2.Tool.IsWindowHovered(Altseed2.ToolHoveredFlags)
 - Altseed2.Tool.LabelText(System.String,System.String)
 - Altseed2.Tool.ListBox(System.String,System.Int32@,System.Collections.Generic.IEnumerable{System.String},System.Int32)
 - Altseed2.Tool.ListBox(System.String,System.Int32@,System.String,System.Int32)
 - Altseed2.Tool.ListBoxFooter
 - Altseed2.Tool.ListBoxHeader(System.String,Altseed2.Vector2F)
+- Altseed2.Tool.ListBoxHeader(System.String,System.Int32,System.Int32)
 - Altseed2.Tool.LoadIniSettingsFromDisk(System.String)
+- Altseed2.Tool.LogButtons
+- Altseed2.Tool.LogFinish
+- Altseed2.Tool.LogText(System.String)
+- Altseed2.Tool.LogToClipboard(System.Int32)
+- Altseed2.Tool.LogToFile(System.Int32,System.String)
+- Altseed2.Tool.LogToTTY(System.Int32)
 - Altseed2.Tool.MenuItem(System.String,System.String,System.Boolean,System.Boolean)
+- Altseed2.Tool.MenuItem(System.String,System.String,System.Boolean@,System.Boolean)
 - Altseed2.Tool.NewFrame
 - Altseed2.Tool.NewLine
 - Altseed2.Tool.NextColumn
 - Altseed2.Tool.OpenDialog(System.String,System.String)
 - Altseed2.Tool.OpenDialogMultiple(System.String,System.String)
-- Altseed2.Tool.OpenPopup(System.String)
-- Altseed2.Tool.OpenPopupOnItemClick(System.String,System.Int32)
+- Altseed2.Tool.OpenPopup(System.String,Altseed2.ToolPopupFlags)
+- Altseed2.Tool.OpenPopupOnItemClick(System.String,Altseed2.ToolPopupFlags)
 - Altseed2.Tool.PickFolder(System.String)
 - Altseed2.Tool.PlotHistogram(System.String,System.Span{System.Single},System.Int32,System.Int32,System.String,System.Single,System.Single,Altseed2.Vector2F,System.Int32)
 - Altseed2.Tool.PlotLines(System.String,System.Span{System.Single},System.Int32,System.Int32,System.String,System.Single,System.Single,Altseed2.Vector2F,System.Int32)
 - Altseed2.Tool.PopAllowKeyboardFocus
 - Altseed2.Tool.PopButtonRepeat
 - Altseed2.Tool.PopClipRect
+- Altseed2.Tool.PopFont
 - Altseed2.Tool.PopID
 - Altseed2.Tool.PopItemWidth
 - Altseed2.Tool.PopStyleColor(System.Int32)
@@ -1035,143 +1189,184 @@ Altseed2.Tool:
 - Altseed2.Tool.PushButtonRepeat(System.Boolean)
 - Altseed2.Tool.PushClipRect(Altseed2.Vector2F,Altseed2.Vector2F,System.Boolean)
 - Altseed2.Tool.PushID(System.Int32)
+- Altseed2.Tool.PushID(System.String)
+- Altseed2.Tool.PushID(System.String,System.String)
 - Altseed2.Tool.PushItemWidth(System.Single)
-- Altseed2.Tool.PushStyleColor(Altseed2.ToolColor,Altseed2.Color)
-- Altseed2.Tool.PushStyleVarFloat(Altseed2.ToolStyleVar,System.Single)
-- Altseed2.Tool.PushStyleVarVector2F(Altseed2.ToolStyleVar,Altseed2.Vector2F)
+- Altseed2.Tool.PushStyleColor(Altseed2.ToolCol,Altseed2.Vector4F)
+- Altseed2.Tool.PushStyleColor(Altseed2.ToolCol,System.Int32)
+- Altseed2.Tool.PushStyleVar(Altseed2.ToolStyleVar,Altseed2.Vector2F)
+- Altseed2.Tool.PushStyleVar(Altseed2.ToolStyleVar,System.Single)
 - Altseed2.Tool.PushTextWrapPos(System.Single)
 - Altseed2.Tool.RadioButton(System.String,System.Boolean)
 - Altseed2.Tool.RadioButton(System.String,System.Int32@,System.Int32)
-- Altseed2.Tool.RadioButton_2(System.String,System.Int32@,System.Int32)
-- Altseed2.Tool.ResetMouseDragDelta(System.Int32)
-- Altseed2.Tool.SameLine
+- Altseed2.Tool.ResetMouseDragDelta(Altseed2.ToolMouseButton)
+- Altseed2.Tool.SameLine(System.Single,System.Single)
 - Altseed2.Tool.SaveDialog(System.String,System.String)
 - Altseed2.Tool.SaveIniSettingsToDisk(System.String)
-- Altseed2.Tool.Selectable(System.String,System.Boolean@,Altseed2.ToolSelectableFlags)
+- Altseed2.Tool.Selectable(System.String,System.Boolean,Altseed2.ToolSelectableFlags,Altseed2.Vector2F)
+- Altseed2.Tool.Selectable(System.String,System.Boolean@,Altseed2.ToolSelectableFlags,Altseed2.Vector2F)
 - Altseed2.Tool.Separator
 - Altseed2.Tool.SetClipboardText(System.String)
 - Altseed2.Tool.SetColorEditOptions(Altseed2.ToolColorEditFlags)
 - Altseed2.Tool.SetColumnOffset(System.Int32,System.Single)
 - Altseed2.Tool.SetColumnWidth(System.Int32,System.Single)
 - Altseed2.Tool.SetCursorPos(Altseed2.Vector2F)
+- Altseed2.Tool.SetCursorPosX(System.Single)
+- Altseed2.Tool.SetCursorPosY(System.Single)
+- Altseed2.Tool.SetCursorScreenPos(Altseed2.Vector2F)
 - Altseed2.Tool.SetItemAllowOverlap
 - Altseed2.Tool.SetItemDefaultFocus
 - Altseed2.Tool.SetKeyboardFocusHere(System.Int32)
+- Altseed2.Tool.SetMouseCursor(Altseed2.ToolMouseCursor)
 - Altseed2.Tool.SetNextItemOpen(System.Boolean,Altseed2.ToolCond)
 - Altseed2.Tool.SetNextItemWidth(System.Single)
 - Altseed2.Tool.SetNextWindowBgAlpha(System.Single)
 - Altseed2.Tool.SetNextWindowCollapsed(System.Boolean,Altseed2.ToolCond)
 - Altseed2.Tool.SetNextWindowContentSize(Altseed2.Vector2F)
+- Altseed2.Tool.SetNextWindowDockID(System.Int32,Altseed2.ToolCond)
 - Altseed2.Tool.SetNextWindowFocus
-- Altseed2.Tool.SetNextWindowPos(Altseed2.Vector2F,Altseed2.ToolCond)
+- Altseed2.Tool.SetNextWindowPos(Altseed2.Vector2F,Altseed2.ToolCond,Altseed2.Vector2F)
 - Altseed2.Tool.SetNextWindowSize(Altseed2.Vector2F,Altseed2.ToolCond)
+- Altseed2.Tool.SetNextWindowViewport(System.Int32)
 - Altseed2.Tool.SetScrollFromPosX(System.Single,System.Single)
 - Altseed2.Tool.SetScrollFromPosY(System.Single,System.Single)
-- Altseed2.Tool.SetScrollHere
 - Altseed2.Tool.SetScrollHereX(System.Single)
 - Altseed2.Tool.SetScrollHereY(System.Single)
 - Altseed2.Tool.SetScrollX(System.Single)
 - Altseed2.Tool.SetScrollY(System.Single)
 - Altseed2.Tool.SetTabItemClosed(System.String)
 - Altseed2.Tool.SetTooltip(System.String)
-- Altseed2.Tool.SetWindowCollapsedByName(System.String,System.Boolean,Altseed2.ToolCond)
-- Altseed2.Tool.SetWindowCollapsedWithCond(System.Boolean,Altseed2.ToolCond)
+- Altseed2.Tool.SetWindowCollapsed(System.Boolean,Altseed2.ToolCond)
+- Altseed2.Tool.SetWindowCollapsed(System.String,System.Boolean,Altseed2.ToolCond)
 - Altseed2.Tool.SetWindowFocus
-- Altseed2.Tool.SetWindowFocusByName(System.String)
+- Altseed2.Tool.SetWindowFocus(System.String)
 - Altseed2.Tool.SetWindowFontScale(System.Single)
-- Altseed2.Tool.SetWindowPosByName(System.String,Altseed2.Vector2F,Altseed2.ToolCond)
-- Altseed2.Tool.SetWindowPosWithCond(Altseed2.Vector2F,Altseed2.ToolCond)
-- Altseed2.Tool.SetWindowSize(Altseed2.Vector2F)
-- Altseed2.Tool.SetWindowSizeByName(System.String,Altseed2.Vector2F,Altseed2.ToolCond)
-- Altseed2.Tool.SetWindowSizeWithCond(Altseed2.Vector2F,Altseed2.ToolCond)
-- Altseed2.Tool.SliderAngle(System.String,System.Single@)
-- Altseed2.Tool.SliderFloat(System.String,System.Single@,System.Single,System.Single,System.Single)
-- Altseed2.Tool.SliderFloat2(System.String,System.Span{System.Single},System.Single,System.Single,System.Single)
-- Altseed2.Tool.SliderFloat3(System.String,System.Span{System.Single},System.Single,System.Single,System.Single)
-- Altseed2.Tool.SliderFloat4(System.String,System.Span{System.Single},System.Single,System.Single,System.Single)
-- Altseed2.Tool.SliderInt(System.String,System.Int32@,System.Single,System.Int32,System.Int32)
-- Altseed2.Tool.SliderInt2(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32)
-- Altseed2.Tool.SliderInt3(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32)
-- Altseed2.Tool.SliderInt4(System.String,System.Span{System.Int32},System.Single,System.Int32,System.Int32)
+- Altseed2.Tool.SetWindowPos(Altseed2.Vector2F,Altseed2.ToolCond)
+- Altseed2.Tool.SetWindowPos(System.String,Altseed2.Vector2F,Altseed2.ToolCond)
+- Altseed2.Tool.SetWindowSize(Altseed2.Vector2F,Altseed2.ToolCond)
+- Altseed2.Tool.SetWindowSize(System.String,Altseed2.Vector2F,Altseed2.ToolCond)
+- Altseed2.Tool.ShowAboutWindow(System.Boolean@)
+- Altseed2.Tool.ShowAboutWindowNoCloseButton
+- Altseed2.Tool.ShowDemoWindow(System.Boolean@)
+- Altseed2.Tool.ShowDemoWindowNoCloseButton
+- Altseed2.Tool.ShowFontSelector(System.String)
+- Altseed2.Tool.ShowMetricsWindow(System.Boolean@)
+- Altseed2.Tool.ShowMetricsWindowNoCloseButton
+- Altseed2.Tool.ShowStyleSelector(System.String)
+- Altseed2.Tool.ShowUserGuide
+- Altseed2.Tool.SliderAngle(System.String,System.Single@,System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.SliderFloat(System.String,System.Single@,System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.SliderFloat2(System.String,System.Span{System.Single},System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.SliderFloat3(System.String,System.Span{System.Single},System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.SliderFloat4(System.String,System.Span{System.Single},System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.SliderInt(System.String,System.Int32@,System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.SliderInt2(System.String,System.Span{System.Int32},System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.SliderInt3(System.String,System.Span{System.Int32},System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.SliderInt4(System.String,System.Span{System.Int32},System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
 - Altseed2.Tool.SmallButton(System.String)
 - Altseed2.Tool.Spacing
+- Altseed2.Tool.TabItemButton(System.String,Altseed2.ToolTabItemFlags)
 - Altseed2.Tool.Text(System.String)
-- Altseed2.Tool.TextColored(Altseed2.Color,System.String)
+- Altseed2.Tool.TextColored(Altseed2.Vector4F,System.String)
 - Altseed2.Tool.TextDisabled(System.String)
-- Altseed2.Tool.TextUnformatted(System.String)
+- Altseed2.Tool.TextUnformatted(System.String,System.String)
 - Altseed2.Tool.TextWrapped(System.String)
 - Altseed2.Tool.ToolUsage
 - Altseed2.Tool.TreeNode(System.String)
+- Altseed2.Tool.TreeNode(System.String,System.String)
 - Altseed2.Tool.TreeNodeEx(System.String,Altseed2.ToolTreeNodeFlags)
+- Altseed2.Tool.TreeNodeEx(System.String,Altseed2.ToolTreeNodeFlags,System.String)
 - Altseed2.Tool.TreePop
-- Altseed2.Tool.Unindent
-- Altseed2.Tool.ValueBool(System.String,System.Boolean)
-- Altseed2.Tool.ValueFloat(System.String,System.Single,System.String)
-- Altseed2.Tool.ValueInt(System.String,System.Int32)
-- Altseed2.Tool.VSliderFloat(System.String,Altseed2.Vector2F,System.Single@,System.Single,System.Single)
-- Altseed2.Tool.VSliderInt(System.String,Altseed2.Vector2F,System.Int32@,System.Int32,System.Int32)
-Altseed2.ToolColor:
-- Altseed2.ToolColor.Border
-- Altseed2.ToolColor.BorderShadow
-- Altseed2.ToolColor.Button
-- Altseed2.ToolColor.ButtonActive
-- Altseed2.ToolColor.ButtonHovered
-- Altseed2.ToolColor.CheckMark
-- Altseed2.ToolColor.ChildBg
-- Altseed2.ToolColor.COUNT
-- Altseed2.ToolColor.DragDropTarget
-- Altseed2.ToolColor.FrameBg
-- Altseed2.ToolColor.FrameBgActive
-- Altseed2.ToolColor.FrameBgHovered
-- Altseed2.ToolColor.Header
-- Altseed2.ToolColor.HeaderActive
-- Altseed2.ToolColor.HeaderHovered
-- Altseed2.ToolColor.MenuBarBg
-- Altseed2.ToolColor.ModalWindowDimBg
-- Altseed2.ToolColor.NavHighlight
-- Altseed2.ToolColor.NavWindowingDimBg
-- Altseed2.ToolColor.NavWindowingHighlight
-- Altseed2.ToolColor.PlotHistogram
-- Altseed2.ToolColor.PlotHistogramHovered
-- Altseed2.ToolColor.PlotLines
-- Altseed2.ToolColor.PlotLinesHovered
-- Altseed2.ToolColor.PopupBg
-- Altseed2.ToolColor.ResizeGrip
-- Altseed2.ToolColor.ResizeGripActive
-- Altseed2.ToolColor.ResizeGripHovered
-- Altseed2.ToolColor.ScrollbarBg
-- Altseed2.ToolColor.ScrollbarGrab
-- Altseed2.ToolColor.ScrollbarGrabActive
-- Altseed2.ToolColor.ScrollbarGrabHovered
-- Altseed2.ToolColor.Separator
-- Altseed2.ToolColor.SeparatorActive
-- Altseed2.ToolColor.SeparatorHovered
-- Altseed2.ToolColor.SliderGrab
-- Altseed2.ToolColor.SliderGrabActive
-- Altseed2.ToolColor.Tab
-- Altseed2.ToolColor.TabActive
-- Altseed2.ToolColor.TabHovered
-- Altseed2.ToolColor.TabUnfocused
-- Altseed2.ToolColor.TabUnfocusedActive
-- Altseed2.ToolColor.Text
-- Altseed2.ToolColor.TextDisabled
-- Altseed2.ToolColor.TextSelectedBg
-- Altseed2.ToolColor.TitleBg
-- Altseed2.ToolColor.TitleBgActive
-- Altseed2.ToolColor.TitleBgCollapsed
-- Altseed2.ToolColor.WindowBg
+- Altseed2.Tool.TreePush(System.String)
+- Altseed2.Tool.Unindent(System.Single)
+- Altseed2.Tool.UpdatePlatformWindows
+- Altseed2.Tool.Value(System.String,System.Boolean)
+- Altseed2.Tool.Value(System.String,System.Int32)
+- Altseed2.Tool.Value(System.String,System.Single,System.String)
+- Altseed2.Tool.VSliderFloat(System.String,Altseed2.Vector2F,System.Single@,System.Single,System.Single,System.String,Altseed2.ToolSliderFlags)
+- Altseed2.Tool.VSliderInt(System.String,Altseed2.Vector2F,System.Int32@,System.Int32,System.Int32,System.String,Altseed2.ToolSliderFlags)
+Altseed2.ToolBackendFlags:
+- Altseed2.ToolBackendFlags.HasGamepad
+- Altseed2.ToolBackendFlags.HasMouseCursors
+- Altseed2.ToolBackendFlags.HasMouseHoveredViewport
+- Altseed2.ToolBackendFlags.HasSetMousePos
+- Altseed2.ToolBackendFlags.None
+- Altseed2.ToolBackendFlags.PlatformHasViewports
+- Altseed2.ToolBackendFlags.RendererHasViewports
+- Altseed2.ToolBackendFlags.RendererHasVtxOffset
+Altseed2.ToolButtonFlags:
+- Altseed2.ToolButtonFlags.MouseButtonLeft
+- Altseed2.ToolButtonFlags.MouseButtonMiddle
+- Altseed2.ToolButtonFlags.MouseButtonRight
+- Altseed2.ToolButtonFlags.None
+Altseed2.ToolCol:
+- Altseed2.ToolCol.Border
+- Altseed2.ToolCol.BorderShadow
+- Altseed2.ToolCol.Button
+- Altseed2.ToolCol.ButtonActive
+- Altseed2.ToolCol.ButtonHovered
+- Altseed2.ToolCol.CheckMark
+- Altseed2.ToolCol.ChildBg
+- Altseed2.ToolCol.COUNT
+- Altseed2.ToolCol.DockingEmptyBg
+- Altseed2.ToolCol.DockingPreview
+- Altseed2.ToolCol.DragDropTarget
+- Altseed2.ToolCol.FrameBg
+- Altseed2.ToolCol.FrameBgActive
+- Altseed2.ToolCol.FrameBgHovered
+- Altseed2.ToolCol.Header
+- Altseed2.ToolCol.HeaderActive
+- Altseed2.ToolCol.HeaderHovered
+- Altseed2.ToolCol.MenuBarBg
+- Altseed2.ToolCol.ModalWindowDimBg
+- Altseed2.ToolCol.NavHighlight
+- Altseed2.ToolCol.NavWindowingDimBg
+- Altseed2.ToolCol.NavWindowingHighlight
+- Altseed2.ToolCol.PlotHistogram
+- Altseed2.ToolCol.PlotHistogramHovered
+- Altseed2.ToolCol.PlotLines
+- Altseed2.ToolCol.PlotLinesHovered
+- Altseed2.ToolCol.PopupBg
+- Altseed2.ToolCol.ResizeGrip
+- Altseed2.ToolCol.ResizeGripActive
+- Altseed2.ToolCol.ResizeGripHovered
+- Altseed2.ToolCol.ScrollbarBg
+- Altseed2.ToolCol.ScrollbarGrab
+- Altseed2.ToolCol.ScrollbarGrabActive
+- Altseed2.ToolCol.ScrollbarGrabHovered
+- Altseed2.ToolCol.Separator
+- Altseed2.ToolCol.SeparatorActive
+- Altseed2.ToolCol.SeparatorHovered
+- Altseed2.ToolCol.SliderGrab
+- Altseed2.ToolCol.SliderGrabActive
+- Altseed2.ToolCol.Tab
+- Altseed2.ToolCol.TabActive
+- Altseed2.ToolCol.TabHovered
+- Altseed2.ToolCol.TabUnfocused
+- Altseed2.ToolCol.TabUnfocusedActive
+- Altseed2.ToolCol.Text
+- Altseed2.ToolCol.TextDisabled
+- Altseed2.ToolCol.TextSelectedBg
+- Altseed2.ToolCol.TitleBg
+- Altseed2.ToolCol.TitleBgActive
+- Altseed2.ToolCol.TitleBgCollapsed
+- Altseed2.ToolCol.WindowBg
 Altseed2.ToolColorEditFlags:
 - Altseed2.ToolColorEditFlags.AlphaBar
 - Altseed2.ToolColorEditFlags.AlphaPreview
 - Altseed2.ToolColorEditFlags.AlphaPreviewHalf
+- Altseed2.ToolColorEditFlags.DataTypeMask
 - Altseed2.ToolColorEditFlags.DisplayHex
 - Altseed2.ToolColorEditFlags.DisplayHSV
+- Altseed2.ToolColorEditFlags.DisplayMask
 - Altseed2.ToolColorEditFlags.DisplayRGB
 - Altseed2.ToolColorEditFlags.Float
 - Altseed2.ToolColorEditFlags.HDR
 - Altseed2.ToolColorEditFlags.InputHSV
+- Altseed2.ToolColorEditFlags.InputMask
 - Altseed2.ToolColorEditFlags.InputRGB
 - Altseed2.ToolColorEditFlags.NoAlpha
+- Altseed2.ToolColorEditFlags.NoBorder
 - Altseed2.ToolColorEditFlags.NoDragDrop
 - Altseed2.ToolColorEditFlags.NoInputs
 - Altseed2.ToolColorEditFlags.NoLabel
@@ -1184,11 +1379,11 @@ Altseed2.ToolColorEditFlags:
 - Altseed2.ToolColorEditFlags.OptionsDefault
 - Altseed2.ToolColorEditFlags.PickerHueBar
 - Altseed2.ToolColorEditFlags.PickerHueWheel
+- Altseed2.ToolColorEditFlags.PickerMask
 - Altseed2.ToolColorEditFlags.Uint8
 Altseed2.ToolComboFlags:
 - Altseed2.ToolComboFlags.HeightLarge
 - Altseed2.ToolComboFlags.HeightLargest
-- Altseed2.ToolComboFlags.HeightMask_
 - Altseed2.ToolComboFlags.HeightRegular
 - Altseed2.ToolComboFlags.HeightSmall
 - Altseed2.ToolComboFlags.NoArrowButton
@@ -1201,18 +1396,87 @@ Altseed2.ToolCond:
 - Altseed2.ToolCond.FirstUseEver
 - Altseed2.ToolCond.None
 - Altseed2.ToolCond.Once
+Altseed2.ToolConfigFlags:
+- Altseed2.ToolConfigFlags.DockingEnable
+- Altseed2.ToolConfigFlags.DpiEnableScaleFonts
+- Altseed2.ToolConfigFlags.DpiEnableScaleViewports
+- Altseed2.ToolConfigFlags.IsSRGB
+- Altseed2.ToolConfigFlags.IsTouchScreen
+- Altseed2.ToolConfigFlags.NavEnableGamepad
+- Altseed2.ToolConfigFlags.NavEnableKeyboard
+- Altseed2.ToolConfigFlags.NavEnableSetMousePos
+- Altseed2.ToolConfigFlags.NavNoCaptureKeyboard
+- Altseed2.ToolConfigFlags.NoMouse
+- Altseed2.ToolConfigFlags.NoMouseCursorChange
+- Altseed2.ToolConfigFlags.None
+- Altseed2.ToolConfigFlags.ViewportsEnable
+Altseed2.ToolDataType:
+- Altseed2.ToolDataType.COUNT
+- Altseed2.ToolDataType.Double
+- Altseed2.ToolDataType.Float
+- Altseed2.ToolDataType.S16
+- Altseed2.ToolDataType.S32
+- Altseed2.ToolDataType.S64
+- Altseed2.ToolDataType.S8
+- Altseed2.ToolDataType.U16
+- Altseed2.ToolDataType.U32
+- Altseed2.ToolDataType.U64
+- Altseed2.ToolDataType.U8
 Altseed2.ToolDir:
+- Altseed2.ToolDir.COUNT
 - Altseed2.ToolDir.Down
 - Altseed2.ToolDir.Left
 - Altseed2.ToolDir.None
 - Altseed2.ToolDir.Right
 - Altseed2.ToolDir.Up
-Altseed2.ToolFocused:
-- Altseed2.ToolFocused.AnyWindow
-- Altseed2.ToolFocused.ChildWindows
-- Altseed2.ToolFocused.None
-- Altseed2.ToolFocused.RootAndChildWindows
-- Altseed2.ToolFocused.RootWindow
+Altseed2.ToolDockNodeFlags:
+- Altseed2.ToolDockNodeFlags.AutoHideTabBar
+- Altseed2.ToolDockNodeFlags.KeepAliveOnly
+- Altseed2.ToolDockNodeFlags.NoDockingInCentralNode
+- Altseed2.ToolDockNodeFlags.None
+- Altseed2.ToolDockNodeFlags.NoResize
+- Altseed2.ToolDockNodeFlags.NoSplit
+- Altseed2.ToolDockNodeFlags.PassthruCentralNode
+Altseed2.ToolDragDropFlags:
+- Altseed2.ToolDragDropFlags.AcceptBeforeDelivery
+- Altseed2.ToolDragDropFlags.AcceptNoDrawDefaultRect
+- Altseed2.ToolDragDropFlags.AcceptNoPreviewTooltip
+- Altseed2.ToolDragDropFlags.AcceptPeekOnly
+- Altseed2.ToolDragDropFlags.None
+- Altseed2.ToolDragDropFlags.SourceAllowNullID
+- Altseed2.ToolDragDropFlags.SourceAutoExpirePayload
+- Altseed2.ToolDragDropFlags.SourceExtern
+- Altseed2.ToolDragDropFlags.SourceNoDisableHover
+- Altseed2.ToolDragDropFlags.SourceNoHoldToOpenOthers
+- Altseed2.ToolDragDropFlags.SourceNoPreviewTooltip
+Altseed2.ToolDrawCornerFlags:
+- Altseed2.ToolDrawCornerFlags.All
+- Altseed2.ToolDrawCornerFlags.Bot
+- Altseed2.ToolDrawCornerFlags.BotLeft
+- Altseed2.ToolDrawCornerFlags.BotRight
+- Altseed2.ToolDrawCornerFlags.Left
+- Altseed2.ToolDrawCornerFlags.None
+- Altseed2.ToolDrawCornerFlags.Right
+- Altseed2.ToolDrawCornerFlags.Top
+- Altseed2.ToolDrawCornerFlags.TopLeft
+- Altseed2.ToolDrawCornerFlags.TopRight
+Altseed2.ToolDrawListFlags:
+- Altseed2.ToolDrawListFlags.AllowVtxOffset
+- Altseed2.ToolDrawListFlags.AntiAliasedFill
+- Altseed2.ToolDrawListFlags.AntiAliasedLines
+- Altseed2.ToolDrawListFlags.AntiAliasedLinesUseTex
+- Altseed2.ToolDrawListFlags.None
+Altseed2.ToolFocusedFlags:
+- Altseed2.ToolFocusedFlags.AnyWindow
+- Altseed2.ToolFocusedFlags.ChildWindows
+- Altseed2.ToolFocusedFlags.None
+- Altseed2.ToolFocusedFlags.RootAndChildWindows
+- Altseed2.ToolFocusedFlags.RootWindow
+Altseed2.ToolFontAtlasFlags:
+- Altseed2.ToolFontAtlasFlags.NoBakedLines
+- Altseed2.ToolFontAtlasFlags.NoMouseCursors
+- Altseed2.ToolFontAtlasFlags.None
+- Altseed2.ToolFontAtlasFlags.NoPowerOfTwoHeight
 Altseed2.ToolGlyphRange:
 - Altseed2.ToolGlyphRange.ChineseFull
 - Altseed2.ToolGlyphRange.ChineseSimplifiedCommon
@@ -1239,6 +1503,7 @@ Altseed2.ToolInputTextFlags:
 - Altseed2.ToolInputTextFlags.CallbackAlways
 - Altseed2.ToolInputTextFlags.CallbackCharFilter
 - Altseed2.ToolInputTextFlags.CallbackCompletion
+- Altseed2.ToolInputTextFlags.CallbackEdit
 - Altseed2.ToolInputTextFlags.CallbackHistory
 - Altseed2.ToolInputTextFlags.CallbackResize
 - Altseed2.ToolInputTextFlags.CharsDecimal
@@ -1248,11 +1513,88 @@ Altseed2.ToolInputTextFlags:
 - Altseed2.ToolInputTextFlags.CharsUppercase
 - Altseed2.ToolInputTextFlags.CtrlEnterForNewLine
 - Altseed2.ToolInputTextFlags.EnterReturnsTrue
+- Altseed2.ToolInputTextFlags.Multiline
 - Altseed2.ToolInputTextFlags.NoHorizontalScroll
+- Altseed2.ToolInputTextFlags.NoMarkEdited
 - Altseed2.ToolInputTextFlags.None
 - Altseed2.ToolInputTextFlags.NoUndoRedo
 - Altseed2.ToolInputTextFlags.Password
 - Altseed2.ToolInputTextFlags.ReadOnly
+Altseed2.ToolKey:
+- Altseed2.ToolKey.A
+- Altseed2.ToolKey.Backspace
+- Altseed2.ToolKey.C
+- Altseed2.ToolKey.COUNT
+- Altseed2.ToolKey.Delete
+- Altseed2.ToolKey.DownArrow
+- Altseed2.ToolKey.End
+- Altseed2.ToolKey.Enter
+- Altseed2.ToolKey.Escape
+- Altseed2.ToolKey.Home
+- Altseed2.ToolKey.Insert
+- Altseed2.ToolKey.KeyPadEnter
+- Altseed2.ToolKey.LeftArrow
+- Altseed2.ToolKey.PageDown
+- Altseed2.ToolKey.PageUp
+- Altseed2.ToolKey.RightArrow
+- Altseed2.ToolKey.Space
+- Altseed2.ToolKey.Tab
+- Altseed2.ToolKey.UpArrow
+- Altseed2.ToolKey.V
+- Altseed2.ToolKey.X
+- Altseed2.ToolKey.Y
+- Altseed2.ToolKey.Z
+Altseed2.ToolKeyModFlags:
+- Altseed2.ToolKeyModFlags.Alt
+- Altseed2.ToolKeyModFlags.Ctrl
+- Altseed2.ToolKeyModFlags.None
+- Altseed2.ToolKeyModFlags.Shift
+- Altseed2.ToolKeyModFlags.Super
+Altseed2.ToolMouseButton:
+- Altseed2.ToolMouseButton.COUNT
+- Altseed2.ToolMouseButton.Left
+- Altseed2.ToolMouseButton.Middle
+- Altseed2.ToolMouseButton.Right
+Altseed2.ToolMouseCursor:
+- Altseed2.ToolMouseCursor.Arrow
+- Altseed2.ToolMouseCursor.COUNT
+- Altseed2.ToolMouseCursor.Hand
+- Altseed2.ToolMouseCursor.None
+- Altseed2.ToolMouseCursor.NotAllowed
+- Altseed2.ToolMouseCursor.ResizeAll
+- Altseed2.ToolMouseCursor.ResizeEW
+- Altseed2.ToolMouseCursor.ResizeNESW
+- Altseed2.ToolMouseCursor.ResizeNS
+- Altseed2.ToolMouseCursor.ResizeNWSE
+- Altseed2.ToolMouseCursor.TextInput
+Altseed2.ToolNavInput:
+- Altseed2.ToolNavInput.Activate
+- Altseed2.ToolNavInput.Cancel
+- Altseed2.ToolNavInput.COUNT
+- Altseed2.ToolNavInput.DpadDown
+- Altseed2.ToolNavInput.DpadLeft
+- Altseed2.ToolNavInput.DpadRight
+- Altseed2.ToolNavInput.DpadUp
+- Altseed2.ToolNavInput.FocusNext
+- Altseed2.ToolNavInput.FocusPrev
+- Altseed2.ToolNavInput.Input
+- Altseed2.ToolNavInput.LStickDown
+- Altseed2.ToolNavInput.LStickLeft
+- Altseed2.ToolNavInput.LStickRight
+- Altseed2.ToolNavInput.LStickUp
+- Altseed2.ToolNavInput.Menu
+- Altseed2.ToolNavInput.TweakFast
+- Altseed2.ToolNavInput.TweakSlow
+Altseed2.ToolPopupFlags:
+- Altseed2.ToolPopupFlags.AnyPopup
+- Altseed2.ToolPopupFlags.AnyPopupId
+- Altseed2.ToolPopupFlags.AnyPopupLevel
+- Altseed2.ToolPopupFlags.MouseButtonLeft
+- Altseed2.ToolPopupFlags.MouseButtonMiddle
+- Altseed2.ToolPopupFlags.MouseButtonRight
+- Altseed2.ToolPopupFlags.None
+- Altseed2.ToolPopupFlags.NoOpenOverExistingPopup
+- Altseed2.ToolPopupFlags.NoOpenOverItems
 Altseed2.ToolSelectableFlags:
 - Altseed2.ToolSelectableFlags.AllowDoubleClick
 - Altseed2.ToolSelectableFlags.AllowItemOverlap
@@ -1260,6 +1602,12 @@ Altseed2.ToolSelectableFlags:
 - Altseed2.ToolSelectableFlags.DontClosePopups
 - Altseed2.ToolSelectableFlags.None
 - Altseed2.ToolSelectableFlags.SpanAllColumns
+Altseed2.ToolSliderFlags:
+- Altseed2.ToolSliderFlags.AlwaysClamp
+- Altseed2.ToolSliderFlags.Logarithmic
+- Altseed2.ToolSliderFlags.NoInput
+- Altseed2.ToolSliderFlags.None
+- Altseed2.ToolSliderFlags.NoRoundToFormat
 Altseed2.ToolStyleVar:
 - Altseed2.ToolStyleVar.Alpha
 - Altseed2.ToolStyleVar.ButtonTextAlign
@@ -1287,8 +1635,6 @@ Altseed2.ToolStyleVar:
 - Altseed2.ToolStyleVar.WindowTitleAlign
 Altseed2.ToolTabBarFlags:
 - Altseed2.ToolTabBarFlags.AutoSelectNewTabs
-- Altseed2.ToolTabBarFlags.FittingPolicyDefault
-- Altseed2.ToolTabBarFlags.FittingPolicyMask
 - Altseed2.ToolTabBarFlags.FittingPolicyResizeDown
 - Altseed2.ToolTabBarFlags.FittingPolicyScroll
 - Altseed2.ToolTabBarFlags.NoCloseWithMiddleMouseButton
@@ -1297,6 +1643,16 @@ Altseed2.ToolTabBarFlags:
 - Altseed2.ToolTabBarFlags.NoTooltip
 - Altseed2.ToolTabBarFlags.Reorderable
 - Altseed2.ToolTabBarFlags.TabListPopupButton
+Altseed2.ToolTabItemFlags:
+- Altseed2.ToolTabItemFlags.Leading
+- Altseed2.ToolTabItemFlags.NoCloseWithMiddleMouseButton
+- Altseed2.ToolTabItemFlags.None
+- Altseed2.ToolTabItemFlags.NoPushId
+- Altseed2.ToolTabItemFlags.NoReorder
+- Altseed2.ToolTabItemFlags.NoTooltip
+- Altseed2.ToolTabItemFlags.SetSelected
+- Altseed2.ToolTabItemFlags.Trailing
+- Altseed2.ToolTabItemFlags.UnsavedDocument
 Altseed2.ToolTreeNodeFlags:
 - Altseed2.ToolTreeNodeFlags.AllowItemOverlap
 - Altseed2.ToolTreeNodeFlags.Bullet
@@ -1317,17 +1673,35 @@ Altseed2.ToolTreeNodeFlags:
 Altseed2.ToolUsage:
 - Altseed2.ToolUsage.Main
 - Altseed2.ToolUsage.Overwrapped
+Altseed2.ToolViewportFlags:
+- Altseed2.ToolViewportFlags.CanHostOtherWindows
+- Altseed2.ToolViewportFlags.Minimized
+- Altseed2.ToolViewportFlags.NoAutoMerge
+- Altseed2.ToolViewportFlags.NoDecoration
+- Altseed2.ToolViewportFlags.NoFocusOnAppearing
+- Altseed2.ToolViewportFlags.NoFocusOnClick
+- Altseed2.ToolViewportFlags.NoInputs
+- Altseed2.ToolViewportFlags.None
+- Altseed2.ToolViewportFlags.NoRendererClear
+- Altseed2.ToolViewportFlags.NoTaskBarIcon
+- Altseed2.ToolViewportFlags.TopMost
 Altseed2.ToolWindowFlags:
 - Altseed2.ToolWindowFlags.AlwaysAutoResize
 - Altseed2.ToolWindowFlags.AlwaysHorizontalScrollbar
 - Altseed2.ToolWindowFlags.AlwaysUseWindowPadding
 - Altseed2.ToolWindowFlags.AlwaysVerticalScrollbar
+- Altseed2.ToolWindowFlags.ChildMenu
+- Altseed2.ToolWindowFlags.ChildWindow
+- Altseed2.ToolWindowFlags.DockNodeHost
 - Altseed2.ToolWindowFlags.HorizontalScrollbar
 - Altseed2.ToolWindowFlags.MenuBar
+- Altseed2.ToolWindowFlags.Modal
+- Altseed2.ToolWindowFlags.NavFlattened
 - Altseed2.ToolWindowFlags.NoBackground
 - Altseed2.ToolWindowFlags.NoBringToFrontOnFocus
 - Altseed2.ToolWindowFlags.NoCollapse
 - Altseed2.ToolWindowFlags.NoDecoration
+- Altseed2.ToolWindowFlags.NoDocking
 - Altseed2.ToolWindowFlags.NoFocusOnAppearing
 - Altseed2.ToolWindowFlags.NoInputs
 - Altseed2.ToolWindowFlags.NoMouseInputs
@@ -1341,6 +1715,8 @@ Altseed2.ToolWindowFlags:
 - Altseed2.ToolWindowFlags.NoScrollbar
 - Altseed2.ToolWindowFlags.NoScrollWithMouse
 - Altseed2.ToolWindowFlags.NoTitleBar
+- Altseed2.ToolWindowFlags.Popup
+- Altseed2.ToolWindowFlags.Tooltip
 - Altseed2.ToolWindowFlags.UnsavedDocument
 Altseed2.TransformNode:
 - Altseed2.TransformNode.#ctor
@@ -1348,6 +1724,7 @@ Altseed2.TransformNode:
 - Altseed2.TransformNode.Angle
 - Altseed2.TransformNode.CenterPosition
 - Altseed2.TransformNode.ContentSize
+- Altseed2.TransformNode.DrawTransformInfo
 - Altseed2.TransformNode.HorizontalFlip
 - Altseed2.TransformNode.InheritedTransform
 - Altseed2.TransformNode.Position
@@ -1357,15 +1734,23 @@ Altseed2.TransformerNode:
 - Altseed2.TransformerNode.AbsoluteTransform
 - Altseed2.TransformerNode.InheritedTransform
 - Altseed2.TransformerNode.Transform
+- Altseed2.TransformerNode.TransformerNodeInfo
+Altseed2.TransformerNodeInfo:
+- Altseed2.TransformerNodeInfo.#ctor(Altseed2.TransformerNode)
+- Altseed2.TransformerNodeInfo.Draw
+- Altseed2.TransformerNodeInfo.Update
 Altseed2.TransitionNode:
-- Altseed2.TransitionNode.#ctor(Altseed2.Node,Altseed2.Node,System.Single,System.Single)
-- Altseed2.TransitionNode.GetCoroutine(System.Single,System.Single)
+- Altseed2.TransitionNode.#ctor
+- Altseed2.TransitionNode.GetCoroutine
+- Altseed2.TransitionNode.NextNode
 - Altseed2.TransitionNode.OnClosing(System.Single)
 - Altseed2.TransitionNode.OnNodeSwapped
 - Altseed2.TransitionNode.OnNodeSwapping
 - Altseed2.TransitionNode.OnOpening(System.Single)
 - Altseed2.TransitionNode.OnTransitionBegin
 - Altseed2.TransitionNode.OnTransitionEnd
+- Altseed2.TransitionNode.PrevNode
+- Altseed2.TransitionNode.StartTransition(Altseed2.Node,Altseed2.Node)
 Altseed2.TriangleNode:
 - Altseed2.TriangleNode.#ctor
 - Altseed2.TriangleNode.Color
