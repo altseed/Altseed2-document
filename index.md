@@ -17,6 +17,8 @@ Altseed2 は画面描画・音・入力・衝突判定などの機能をまと�
 かつての Altseed と異なり、ノードシステムを採用しており、オブジェクトやオブジェクトが持つ機能の管理を、より柔軟かつ統一的に行うことができます。
 その他にも、Altseed2 には初代 Altseed にはなかった機能がいくつか実装されています。
 
+Altseed2は初代Altseedとの互換性はなく、新しく作り直されたゲームエンジンです。初代Altseedの情報を見たい方は[Altseed](First/index.html)のページをご覧ください。
+
 ## ページ
 
 - [チュートリアル](Tutorials/Chap0/index.md) : プログラミング初心者向けに、Altseed2 を使ってシューティングゲームを実装するコースを用意してあります。
@@ -34,6 +36,9 @@ Altseed2 の開発者が書いたコードは MIT ライセンスですが、Alt
 Altseed2 をダウンロードした際に含まれている `LICENSE` ファイルを、または GitHub 上の <a href="https://github.com/altseed/Altseed2/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">`LICENSE`</a> ファイルをダウンロードして、アプリケーション配布時に含めるようにしてください。
 
 ## サポート
+
+Altseed2に関して質問や相談がある場合は、GitHubのissueやTwitterのリプライで気軽に聞いてください。または、Slackワークスペースに入って質問することもできます。特にAltseed2の開発に興味のある方は、ぜひSlackに入ってみてください。
+
 - <a href="https://github.com/altseed/Altseed2" target="_blank" rel="noopener noreferrer">GitHub</a>
 - <a href="https://twitter.com/altseed" target="_blank" rel="noopener noreferrer">Twitter</a>
 - <a href="https://altseed.herokuapp.com/" target="_blank" rel="noopener noreferrer">Slack</a>
